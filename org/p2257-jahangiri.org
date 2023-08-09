@@ -1,0 +1,149 @@
+:PROPERTIES:
+:ID:       4fddc47b-bc3a-42c9-a9ae-b4445c42de9e
+:END:
+#+TITLE: Design Trade-offs for a Robust Dynamic Hybrid Hash Join
+#+AUTHOR: Yang,Ying-chao
+#+EMAIL:  yang.yingchao@qq.com
+#+OPTIONS:  ^:nil _:nil H:7 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate 
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+TAGS:     noexport(n)
+#+LANGUAGE: en
+#+EXCLUDE_TAGS: noexport
+
+#+NOTER_DOCUMENT: ../pdf/f/p2257-jahangiri.pdf
+
+
+
+* ABSTRACT
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/f/p2257-jahangiri.pdf
+:NOTER_PAGE: 1
+:CUSTOM_ID: h:9e1fc2bd-a46c-4f59-826f-d16bf450d7bd
+:END:
+
+- 探索分片数量对 HHJ 性能的影响
+- propose a new lower bound for number of partitions
+- design and evaluate different partition insertion techniques to maximize memory utilization with the lest CPU cost
+
+
+* INTRODUCTION
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/f/p2257-jahangiri.pdf
+:NOTER_PAGE: 1
+:CUSTOM_ID: h:23eb29f4-1c34-4d76-80b0-6eec925e2ccd
+:END:
+- HHJ: Hybrid Hash Join
+- 算法
+  + 将数据划分成多个分片
+    * 一个分片在内存中
+    * 其余分片溢出到磁盘
+    * 处理内存中的分片
+    * 多趟，处理其余分片
+
+- 分片数量以及选择哪个分片放在内存中，是生成 operator 时候静态指定的
+  + 依据代价模型
+  + 有不足之处：
+    1) 假设 join 列的值程均匀分布
+    2) 代价模型倚赖于精确的统计信息，如 输入大小等。
+
+- 然而收集、访问或者预测这些信息有时并不可行：
+  + 外部表的统计信息经常不准或者缺失
+  + join 输入的来源如果是其他算子，则其大小可能不准确
+
+
+* BACKGROUND
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/f/p2257-jahangiri.pdf
+:NOTER_PAGE: 2
+:CUSTOM_ID: h:acbe6540-05c1-45da-8752-d8eee5626a9d
+:END:
+
+
+** Hybrid Hash Join
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/f/p2257-jahangiri.pdf
+:NOTER_PAGE: 2
+:CUSTOM_ID: h:4b1b3de2-12ce-4f80-92d2-a6e9104b0ddb
+:END:
+
+
+*** Grace Hash Join (GHI)
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/f/p2257-jahangiri.pdf
+:NOTER_PAGE: 2
+:CUSTOM_ID: h:c9017a0c-0884-493e-9908-d8c351237edd
+:END:
+- 使用内存作为中间介质，将数据划分成内存中可以装下的分片，然后在做 join
+- 算法
+  + Grace Hash Join 连续的处理 build 和 probe 过程
+  + 每个分片都写入磁盘，存程单独的文件
+  + 重复划分过程，直到一个分片可以装入内存为止
+  + 每个分片创建一个 hash table, 开始 join
+- 适用于 \\
+  小表 (build 表) 也远远大于内存时候
+
+
+*** Simple Hash Join (SHJ)
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/f/p2257-jahangiri.pdf
+:NOTER_PAGE: 2
+:CUSTOM_ID: h:8c63a062-7b34-4e16-a1f1-660dc4a8e8c1
+:END:
+- 始终在内存中保存一部分数据，以期减少 IO 的总体开销
+- 算法
+  + records 哈希划分成两个部分：
+    * 内存分片
+    * 溢出分片
+- 适用于内存可以装下大部分小表数据的时候
+
+
+*** Hybrid Hash Join (HHJ)
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/f/p2257-jahangiri.pdf
+:NOTER_PAGE: 2
+:CUSTOM_ID: h:e85d3dee-7c3d-4675-8a3b-4742df84e4b0
+:END:
+混合了 GHJ & SHJ:
+- 通过划分分片来避免不必要的数据比较
+- 使用内存来保存一个分片及其对应的哈希表
+
+如图 [[fig:screenshot@2022-09-15_15:19:35]] (a) 所示。
+
+#+CAPTION:
+#+NAME: fig:screenshot@2022-09-15_15:19:35
+#+attr_html: :width 800px
+#+attr_org: :width 800px
+[[file:images/p2257-jahangiri/screenshot@2022-09-15_15:19:35.png]]
+
+步骤：
+- Build Phase, 使用拆分函数 (split function) 将输入进行哈希划分，其结果：
+  + 划分进入内存分片的，驻留内存
+  + 其余溢出到磁盘中对应文件
+  + 由内存分片构建哈希表
+
+- Probe Phase 使用同样的拆分函数 (split function) 将输入进行哈希划分，其结果：
+  + 划入内存分片的，直接 probe
+  + 其余写入磁盘的对应文件
+  + 处理完内存分片后，逐一处理溢出文件。
+
+
+*** Dynamic Hybrid Hash Join
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/f/p2257-jahangiri.pdf
+:NOTER_PAGE: 3
+:CUSTOM_ID: h:a9e5ed71-2527-4a22-a3bc-d7ddd1a0bc0f
+:END:
+与 HHJ 相比：
+- HHJ: 选择预先定义的一个分片常驻内存
+- DHHJ: 使用动态降级策略来选择内存分片：
+
+如图 [[fig:screenshot@2022-09-15_15:19:35]] (b) 所示，
+- Build Phase:
+  + build 开始时候，所有分片都在内存中，
+  + 只要内存还够用，始终使用内存来保存分片
+  + 随着输入的增加，由于数据可能倾斜，各个分片的大小开始不一样
+  + 当内存耗尽时， *动态选择* 一个分片进行溢出操作
+
+
+该方法尤其适用于当输入大小或者join 属性的分布未知或者不准确的时候。

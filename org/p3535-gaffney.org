@@ -1,0 +1,88 @@
+:PROPERTIES:
+:ID:       ab53321e-b103-47b5-bf1a-9f3483f38062
+:NOTER_DOCUMENT: ../pdf/2/p3535-gaffney.pdf
+:END:
+#+TITLE: SQLite: Past, Present, and Future
+#+AUTHOR: Yang Yingchao
+#+EMAIL:  yang.yingchao@qq.com
+#+OPTIONS:  ^:nil _:nil H:7 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate 
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+TAGS:     noexport(n)
+#+LANGUAGE: en
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :sqlite:
+
+
+* INTRODUCTION
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/2/p3535-gaffney.pdf
+:NOTER_PAGE: 1
+:CUSTOM_ID: h:bbf2c939-edb3-4108-bbc0-51bcd7e678b5
+:END:
+
+- SQLite is embedded in the process of the host application
+- Instead of communicating with a database server across process boundaries,
+  applications manage a SQLite database by calling SQLite library functions
+
+- several characteristics combine to make SQLite useful in a broad range of scenario:
+  + Cross-platform
+    * 数据库保存在单一文件中，文件可以随意拷贝，兼容：
+      * 32位/64位
+      * 大端，小端架构
+    * SQLite 可以运行在很多类型的机器上
+
+  + Compact and self-contained
+    * sqlite 库可以从一个单一 C 文件编译
+    * 库很小 =< 570KiB=
+    * 倚赖很少
+    * 无需额外安装和配置
+
+  + Reliable
+    * 每一行 SQLite 的代码，有超过 600 行的测试代码
+    * 测试涵盖了所有分支
+
+  + Fast
+
+
+* ARCHITECTURE
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/2/p3535-gaffney.pdf
+:NOTER_PAGE: 3
+:CUSTOM_ID: h:a745cd6c-c855-4878-9e9b-0a4ade66be1a
+:END:
+
+
+** Modules
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/2/p3535-gaffney.pdf
+:NOTER_PAGE: 3
+:CUSTOM_ID: h:b330e68c-83ff-4a06-a693-0aae09fdbfec
+:END:
+
+如[[fig:screenshot@2022-10-21_17:53:09][下图]] 所示， SQLite 采用模块化设计，模块可以分成 4 组。
+
+#+NAME: fig:screenshot@2022-10-21_17:53:09
+[[file:images/p3535-gaffney/screenshot@2022-10-21_17:53:09.png]]
+
+
+*** SQL compiler modules
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/2/p3535-gaffney.pdf
+:NOTER_PAGE: 3
+:CUSTOM_ID: h:53047711-ae68-4caf-830b-6b072b565ff8
+:END:
+- 负责将 SQL 表达式转换成位可以被虚拟机执行的二进制代码
+- 神奇的思路，
+- 类似汇编代码。。。
+
+
+*** Core modules
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/2/p3535-gaffney.pdf
+:NOTER_PAGE: 3
+:CUSTOM_ID: h:35e9f215-5660-44f7-85a3-a62b546bf010
+:END:
+- 负责接收和执行 SQL
+- 执行引擎可视为虚拟机， 又称 Virtual Database Engine, VDBE
+- VDBE 执行 Compiler 模块生成的二进制程序

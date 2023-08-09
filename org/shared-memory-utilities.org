@@ -1,0 +1,54 @@
+:PROPERTIES:
+:ID:       b302c4ba-bcfb-4dd3-be0b-6f2208a01569
+:END:
+#+TITLE: shared memory utilities
+#+AUTHOR: Yang,Ying-chao
+#+EMAIL:  yang.yingchao@qq.com
+#+OPTIONS:  ^:nil _:nil H:7 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate 
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+TAGS:     noexport(n)
+#+LANGUAGE: en
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :ipcs:ipcrm:
+
+* RTFM...
+:PROPERTIES:
+:CUSTOM_ID: h:c32fe430-3144-4745-8d64-a0bce73720c9
+:END:
+
+** ipcs
+:PROPERTIES:
+:CUSTOM_ID: h:aa00c038-6852-443e-8679-c0081f6bcbd9
+:END:
+
+** ipcrm
+:PROPERTIES:
+:CUSTOM_ID: h:528e7c73-98e2-4f52-b45a-0715874093fd
+:END:
+
+
+* [[https://linuxopsys.com/topics/check-shared-memory-in-linux#:~:text=Check%20shared%20memory%20in%20Linux][Check shared memory in Linux]]
+:PROPERTIES:
+:NOTER_DOCUMENT: https://linuxopsys.com/topics/check-shared-memory-in-linux
+:NOTER_PAGE: 1314
+:CUSTOM_ID: h:06646b4f-87e4-4591-919b-cce0fe1f3983
+:END:
+
+
+Print active shared memory segments using -m option.
+
+#+BEGIN_SRC text -r
+# ipcs -m
+------ Shared Memory Segments --------
+key shmid owner perms bytes nattch status
+0x00000000 65536 root 600 393216 2 dest
+0x00000000 98305 root 600 393216 2 dest
+#+END_SRC
+
+where,
+
+"dest" status means memory segment is marked to be destroyed
+"nattach" field shows how many application pid's are still attached to the shared memory
+
+The following command print information about active shared memory segments:

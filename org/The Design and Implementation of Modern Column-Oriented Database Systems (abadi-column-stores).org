@@ -1,0 +1,172 @@
+:PROPERTIES:
+:ID:       b507ae09-9fe2-4c47-a671-204853fcde3f
+:NOTER_DOCUMENT: ../pdf/d/The Design and Implementation of Modern Column-Oriented Database Systems (abadi-column-stores).pdf
+:NOTER_OPEN: find-file
+:END:
+#+TITLE: The Design and Implementation of Modern Column-Oriented Database Systems
+#+AUTHOR: Yang,Ying-chao
+#+EMAIL:  yang.yingchao@qq.com
+#+OPTIONS:  ^:nil _:nil H:7 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+TAGS:     noexport(n)
+#+LANGUAGE: en
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :tag1:tag2:
+
+
+* Introduction
+:PROPERTIES:
+:NOTER_PAGE: 5
+:CUSTOM_ID: h:1830f5bb-c40e-4e6c-bb49-b7c5a663eafb
+:END:
+
+** Virtual IDs
+:PROPERTIES:
+:CUSTOM_ID: h:d0aa820f-c598-42ba-a0d8-3b91fc66b3c1
+:END:
+  通过固定大小来存储数据，省掉存储 ID 的开销
+
+
+#+CAPTION: Virtual IDs
+#+NAME: fig:screenshot@2023-03-02_11:35:50
+#+attr_html: :width 800px
+#+attr_org: :width 800px
+
+[[file:images/The Design and Implementation of Modern Column-Oriented Database Systems (abadi-column-stores)/screenshot@2023-03-02_11:35:50.png]]
+
+
+
+** Block-oriented and vectorized processing \\
+:PROPERTIES:
+:CUSTOM_ID: h:27970ca7-fdc5-47b7-8e35-b5681d23c7e9
+:END:
+  + CPU 效率和 Cache 使用率更高
+    * 算子间传递多个 tuple 组成的 block
+    * 每个 block 大小为 cache size 大小
+    * 每个 block 中一般包含多个记录
+    * 自动向量化（编译器 + CPU）
+
+** Late materialization 晚期物化
+:PROPERTIES:
+:CUSTOM_ID: h:316f88be-6095-440c-824d-2854f8f5ed3b
+:END:
+
++ 延迟将多列 join 成宽表的时机
+
+
+** Column-specific compression
+:PROPERTIES:
+:NOTER_PAGE: 9
+:CUSTOM_ID: h:6d9d9f56-20b9-46a0-af3c-a97c37122b77
+:END:
+
+
+** Direct operation on compressed data
+:PROPERTIES:
+:NOTER_PAGE: 9
+:CUSTOM_ID: h:024e71c4-1d2b-4d76-a57f-a1b4c3432355
+:END:
+
+尽量让数据以压缩方式存储在内存中，对其进行操作，直到必需的时候再解压给外层。
+
+
+** Efficient join implementations
+:PROPERTIES:
+:NOTER_PAGE: 9
+:CUSTOM_ID: h:a07de8d4-2df1-4961-963d-54c00cb99139
+:END:
+
+
+** Redundant representation of individual columns in dif- ferent sort orders
+:PROPERTIES:
+:NOTER_PAGE: 10
+:CUSTOM_ID: h:0b550a82-fc3d-4ca3-b8b2-a07cbf678b41
+:END:
+
+
+** Database cracking and adaptive indexing
+:PROPERTIES:
+:NOTER_PAGE: 10
+:CUSTOM_ID: h:68b92fa7-1e6b-4e68-b046-49b994359f86
+:END:
+
+
+** Efficient loading architectures
+:PROPERTIES:
+:NOTER_PAGE: 10
+:CUSTOM_ID: h:4705376a-f8ab-4314-b009-22b9fc0b6ef8
+:END:
+
+
+* Column-store internals and advanced techniques
+:PROPERTIES:
+:NOTER_PAGE: 34
+:CUSTOM_ID: h:54e3a749-27e2-46db-8446-154b812ae2b7
+:END:
+
+
+** Vectorized Processing 向量化处理
+:PROPERTIES:
+:NOTER_PAGE: 34
+:CUSTOM_ID: h:0cdfb744-7374-4e23-b52e-2bf01165cf66
+:END:
+
+
+** Compression
+:PROPERTIES:
+:NOTER_PAGE: 39
+:CUSTOM_ID: h:32d8ed7a-1090-4fb3-a9f4-7aaeec0cb330
+:END:
+
+
+*** Run-length Encoding
+:PROPERTIES:
+:NOTER_PAGE: 42
+:CUSTOM_ID: h:7a8bef04-ec63-4b0f-98c5-28f5d6455534
+:END:
+
+
+*** Bit-Vector Encoding
+:PROPERTIES:
+:NOTER_PAGE: 43
+:CUSTOM_ID: h:378fdd15-95c9-430f-8cec-5b8ed03c7b37
+:END:
+
+
+*** Dictionary
+:PROPERTIES:
+:NOTER_PAGE: 44
+:CUSTOM_ID: h:9b466ee6-89ac-439a-bc8c-670d6992a676
+:END:
+
+
+*** Frame Of Reference (FOR)
+:PROPERTIES:
+:NOTER_PAGE: 44
+:CUSTOM_ID: h:2675f355-c316-4d73-ad41-d9d9ea6c2fdd
+:END:
+
+
+*** The Patching Technique
+:PROPERTIES:
+:NOTER_PAGE: 45
+:CUSTOM_ID: h:ab2a36d8-0a3c-4de9-8871-6a944e2feee8
+:END:
+
+
+** Operating Directly on Compressed Data 压缩态计算
+:PROPERTIES:
+:NOTER_PAGE: 45
+:CUSTOM_ID: h:bcd324ec-1990-42c8-9b51-87ad6da5869b
+:END:
+
+- This benefit is magnified for compression schemes like run length encoding that combine multiple values within a column inside a single compression symbol.
+- Operating directly on compressed data requires modifica- tions to the query execution engine.
+
+
+** Late Materialization
+:PROPERTIES:
+:NOTER_PAGE: 47
+:CUSTOM_ID: h:7f251c9e-5241-4615-8478-dafb2890693c
+:END:

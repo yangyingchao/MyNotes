@@ -1,0 +1,140 @@
+:PROPERTIES:
+:ID:       58f092a3-dd40-447f-8b92-0138f0ffff1f
+:NOTER_DOCUMENT: ../pdf/a/Towards a New File Format for Big Data - SIMD-Friendly Composable Compression (2020-AzimAfroozeh).pdf
+:NOTER_OPEN: find-file
+:END:
+#+TITLE: Towards a New File Format for Big Data - SIMD-Friendly Composable Compression
+#+AUTHOR: Yang,Ying-chao
+#+EMAIL:  yang.yingchao@qq.com
+#+OPTIONS:  ^:nil _:nil H:7 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+TAGS:     noexport(n)
+#+LANGUAGE: en
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :simd:compression:
+
+
+* Introduction
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/a/Towards a New File Format for Big Data - SIMD-Friendly Composable Compression (2020-AzimAfroozeh).pdf
+:NOTER_OPEN: find-file
+:NOTER_PAGE: 15
+:CUSTOM_ID: h:580c0cb0-61f9-4a43-ac02-4fad348cc20a
+:END:
+
+
+* Related Work
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/a/Towards a New File Format for Big Data - SIMD-Friendly Composable Compression (2020-AzimAfroozeh).pdf
+:NOTER_OPEN: find-file
+:NOTER_PAGE: 27
+:CUSTOM_ID: h:03a34d6a-6bc6-438c-8f2d-9edd1ffaacdf
+:END:
+
+
+** Storage Layouts
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/a/Towards a New File Format for Big Data - SIMD-Friendly Composable Compression (2020-AzimAfroozeh).pdf
+:NOTER_OPEN: find-file
+:NOTER_PAGE: 27
+:CUSTOM_ID: h:0f05328b-cb9e-4cd6-98de-0224bc4b0b1b
+:END:
+
+
+*** NSM
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/a/Towards a New File Format for Big Data - SIMD-Friendly Composable Compression (2020-AzimAfroozeh).pdf
+:NOTER_OPEN: find-file
+:NOTER_PAGE: 27
+:CUSTOM_ID: h:afb0adde-6373-4a75-bcca-8531a04288a3
+:END:
+
+传统上，在数据库系统中，表格数据通常按照磁盘页的起始行逐行存储。这种存储方式被称为 N-ary
+存储模型（NSM）。如图 2.1 所示，如果元组大小是可变的，NSM 可能会在页面末尾使用偏移表来定
+位每个元组的起始位置。此外，每个元组都以元组头（RH）开头，包含有关元组的信息。RH 以空位图
+开头，用于支持空值；以偏移量开头，用于支持可变属性的变量长度值；以及其他实现特定的细节，
+以使布局更加灵活。
+
+
+#+CAPTION:
+#+NAME: fig:screenshot@2023-06-21_14:46:46
+[[file:images/Towards a New File Format for Big Data - SIMD-Friendly Composable Compression (2020-AzimAfroozeh)/screenshot@2023-06-21_14:46:46.png]]
+
+*** DSM
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/a/Towards a New File Format for Big Data - SIMD-Friendly Composable Compression (2020-AzimAfroozeh).pdf
+:NOTER_OPEN: find-file
+:NOTER_PAGE: 27
+:CUSTOM_ID: h:1116bf3c-43b2-43d0-8f73-83bb63e639e9
+:END:
+
+这段文字介绍了分解存储模型（DSM）和它与非分解存储模型（NSM）的比较。DSM 将数据按列存储，
+只提供需要的属性。与 NSM 相比，DSM 提供更高效的缓存利用，因为属性值聚集在一起。此外，由于相
+邻元组的相似性，DSM 相比 NSM 提供更多的压缩机会。
+
+
+*** PAX
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/a/Towards a New File Format for Big Data - SIMD-Friendly Composable Compression (2020-AzimAfroozeh).pdf
+:NOTER_OPEN: find-file
+:NOTER_PAGE: 28
+:CUSTOM_ID: h:73aa13b1-86f3-42bd-8933-8b331740ac35
+:END:
+这段文字介绍了在处理在线分析处理（OLAP）工作负载时，DSM 是更好的模型。但是，如果需要重构
+整个元组，DSM 会产生性能开销，因为需要在运行时显式地进行元组重构。Ailamaki 等人提出了“跨分
+区属性”（PAX）技术，该技术结合了 DSM 的元组间空间局部性和 NSM 的低元组重构成本。PAX 将元组的
+所有属性存储在同一个页面中。但是，在页面内，PAX 按列存储所有属性。
+
+#+NAME: fig:screenshot@2023-06-21_14:50:20
+[[file:images/Towards a New File Format for Big Data - SIMD-Friendly Composable Compression (2020-AzimAfroozeh)/screenshot@2023-06-21_14:50:20.png]]
+
+
+** Bit-(Un)Packing
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/a/Towards a New File Format for Big Data - SIMD-Friendly Composable Compression (2020-AzimAfroozeh).pdf
+:NOTER_OPEN: find-file
+:NOTER_PAGE: 29
+:CUSTOM_ID: h:ed60df52-edbb-4a50-97fc-7fdb583c275c
+:END:
+
+32 位系统架构中，整数通常使用 32 位存储，尽管可能可以使用更少的位来存储它们。例如，具有
+值为 70（0b1000110）的 32 位整数可以使用 7 位而不是 32 位进行存储。一般来说，在[0，2b]范
+围内的整数可以使用 b 位编码并连接成一个单独的位字符串。这个过程被称为位填充。反向操作，即
+将位字符串转换回可由机器寻址的整数数组的操作被称为位取消填充。位取消填充可以使用五个简单
+的操作（加载、移位、与、或和存储）来提取每个整数，如图 2.3 所示。
+
+
+* SIMD-Friendly Bit-(Un)Packing
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/a/Towards a New File Format for Big Data - SIMD-Friendly Composable Compression (2020-AzimAfroozeh).pdf
+:NOTER_OPEN: find-file
+:NOTER_PAGE: 53
+:CUSTOM_ID: h:d68b112b-a914-43aa-8e0f-d15256f92412
+:END:
+
+In this chapter we present our 1024-bit interleaved bit-(un)packing technique. As discussed
+in Section 2.2.1, the most efficient Bit-(un)packing approach is proposed by Lemire et
+al. (35), which uses a 4-way vertical layout.
+
+
+在本章中，我们介绍了我们的 1024 位交错位（非）打包技术。正如第 2.2.1 节
+所讨论的那样，Lemire 等人（35）提出了最有效的位（非）打包方法，采用 4 路垂直布局。
+
+
+* Composable Functions
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/a/Towards a New File Format for Big Data - SIMD-Friendly Composable Compression (2020-AzimAfroozeh).pdf
+:NOTER_OPEN: find-file
+:NOTER_PAGE: 69
+:CUSTOM_ID: h:f92acd3a-f139-465a-9376-9098f4ed8ed4
+:END:
+
+
+* Composable Compression Schemes
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/a/Towards a New File Format for Big Data - SIMD-Friendly Composable Compression (2020-AzimAfroozeh).pdf
+:NOTER_OPEN: find-file
+:NOTER_PAGE: 111
+:CUSTOM_ID: h:a085ae14-3c24-42f3-8747-92eef98eda99
+:END:

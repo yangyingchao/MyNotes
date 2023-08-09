@@ -1,0 +1,278 @@
+:PROPERTIES:
+:ID:       a92fbab7-63c1-43a9-b41b-467bd4c62510
+:NOTER_DOCUMENT: ../pdf/1/p3058-liakos.pdf
+:END:
+#+TITLE: Chimp: Efficient Lossless Floating Point Compression for Time Series Databases
+#+AUTHOR: Yang Yingchao
+#+EMAIL:  yang.yingchao@qq.com
+#+OPTIONS:  ^:nil _:nil H:7 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate 
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+TAGS:     noexport(n)
+#+LANGUAGE: en
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :timeseries:database:compression:
+
+
+
+* ABSTRACT
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/1/p3058-liakos.pdf
+:NOTER_PAGE: 1
+:CUSTOM_ID: h:9d71575b-ba21-4317-b723-f2c924610db6
+:END:
+
+- 时序数据难以高效存储，导致存储代价高昂。
+- *通用压缩* 技术可以减少数据大小，但给计算带来额外开销。
+  + 通常不能忍受
+- 通常采用快速、 *流式压缩* 将数据进行编码
+  + 该做法无法完全使用压缩的潜力
+
+- Chimp
+  + 新型流式压缩算法
+  + 适用于时间序列的浮点数运算
+  + 压缩比与通用算法相当，比目前标准的流式压缩比高 50%
+  + 压缩、解压时间更短
+
+
+* INTRODUCTION
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/1/p3058-liakos.pdf
+:NOTER_PAGE: 1
+:CUSTOM_ID: h:402fb889-e9f7-4816-83ac-5edfbc857d66
+:END:
+
+- TSMS: Time Series Management Systems
+- TSMS 压缩存储浮点数据的方法：
+  + 将当前值与前一时刻的值进行异或运算 （XOR）
+  + 得到的值中，大概率很多的 bit 会是 0:
+    * 因为数据一般不会突然变化很大
+- 我们发现，相邻数据 XOR 的结果：
+  + 0 通常不会出现在结果的尾部
+  + 而是出现在头部
+
+
+* PRELIMINARIES
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/1/p3058-liakos.pdf
+:NOTER_PAGE: 2
+:CUSTOM_ID: h:4d0e1916-a961-460c-b04b-37bf987e0d1d
+:END:
+
+
+** Floating Point Time Series
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/1/p3058-liakos.pdf
+:NOTER_PAGE: 2
+:CUSTOM_ID: h:eb874834-0cf9-4a3d-a6c2-37fe0153d2de
+:END:
+
+- 时间序列， Time series （TS）
+  + 一系列的数据点
+  + 数据点是一对 *时间戳* 和 *值*
+  + 数据点按照时间递增排序
+  + $$TS=\langle(\,t_1, v_1  )\,,(\,t_2, v_2  )\, ,...	\rangle $$
+    * $t_i$ 表示时间戳
+    * $v_i$ 表示值
+
+- Bounded Time series
+  + 特殊的时间序列
+  + 拥有固定个数的时间序列
+     $$TS=\langle(\,t_1, v_1  )\,,...,(\,t_n, v_n )\, 	\rangle $$
+
+- Floating Point Time series
+  + 特殊的时间序列
+  + $$TS=\langle(\,t_1, v_1  )\,,(\,t_2, v_2  )\, ,...	\rangle $$ \\
+    满足：
+    * $$v_i \in \mathbb{R}$$
+    * $$i \in \mathbb{N}$$
+
+
+** IEEE 754 Double Precision Floating Point Format
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/1/p3058-liakos.pdf
+:NOTER_PAGE: 2
+:CUSTOM_ID: h:87f9b9e3-a90d-404a-9c99-aaa46efe6355
+:END:
+
+#+CAPTION:
+#+NAME: fig:screenshot@2022-10-19_10:56:21
+[[file:images/p3058-liakos/screenshot@2022-10-19_10:56:21.png]]
+
+- 双精度浮点数的格式
+  + 符号位， Sign (S)
+    * 1 bit
+    * =0=: 正
+    * =1=: 负
+  + 指数位, biased exponent (E)
+    * 11 bits
+    * 偏移为 1023
+  + 分数位, Fractional (F)
+    * 52 bits
+- 数学表示： \\
+  $$x = (-1)^s \times 2 ^{(E-B)} \times 1.F$$
+
+
+** Gorilla Compression
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/1/p3058-liakos.pdf
+:NOTER_PAGE: 3
+:CUSTOM_ID: h:b534c224-1e44-453d-8ac1-5d03f6b7e9a7
+:END:
+- Gorilla 的变长编码：
+  + 第一个数值不压缩
+  + 后续数值与前一个做 XOR:
+    * 结果为 =0= （即两者相等）， 则存 =0=
+    * 如果不为 =0= ：则存 =1= ， 后接：
+      * 控制位 =0= ： \\
+        当前有效位数在前者有效位数范围内，即：
+        1. 当前值（XOR 后）的 leading zeros 的个数大于前值的 leading zeros, 且
+        2. 当前值的 trailing zeros 的个数大于前值的 trailing zeros
+
+        此情况下使用前值的信息，在控制位后进保存 XOR 后的有效数值
+
+      * 控制位 =1= ： \\
+        * 使用接下来的 5 bits 来保存 leading zero 的个数
+        * 使用接下来的 6 bits 来保存 XOR 结果的有效数值长度
+        * 最后保存 XOR 结果的有效数值
+
+
+
+#+CAPTION:
+#+NAME: fig:screenshot@2022-10-20_15:11:01
+#+attr_html: :width 600px
+#+attr_org: :width 600px
+[[file:images/p3058-liakos/screenshot@2022-10-20_15:11:01.png]]
+
+
+
+#+CAPTION:
+#+NAME: fig:screenshot@2022-10-20_15:44:31
+[[file:images/p3058-liakos/screenshot@2022-10-20_15:44:31.png]]
+
+* PROPERTIES OF REAL-WORLD TIME SERIES
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/1/p3058-liakos.pdf
+:NOTER_PAGE: 3
+:CUSTOM_ID: h:e61dbfe2-662e-4db1-8de6-33ccd572b0a1
+:END:
+
+
+** Trailing Zeros
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/1/p3058-liakos.pdf
+:NOTER_PAGE: 3
+:CUSTOM_ID: h:50b69b70-1b4b-4e2c-8c37-8d851fb920ce
+:END:
+
+
+** Leading Zeros
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/1/p3058-liakos.pdf
+:NOTER_PAGE: 4
+:CUSTOM_ID: h:06702259-3ebc-4672-b24b-d7f28c4eaedd
+:END:
+
+
+** Revisiting Gorilla Compression
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/1/p3058-liakos.pdf
+:NOTER_PAGE: 4
+:CUSTOM_ID: h:8c80901f-346f-4b1d-ba11-411436fd4516
+:END:
+
+
+*** Flag Bits.
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/1/p3058-liakos.pdf
+:NOTER_PAGE: 4
+:CUSTOM_ID: h:59848c4d-b8b4-48f4-a79e-c3496fc4bfc1
+:END:
+
+[[file:~/Documents/Database/org/p3058-liakos.org::#h:b534c224-1e44-453d-8ac1-5d03f6b7e9a7][前面]] 介绍 Gorilla 的 flag bits 有三种： =0= ， =10= 和 =11= 。其中 =0= 表示当前值和前面的值相等。
+然而这种情形并不常见。
+
+如果能够使用最少的比特位来表示最常见的情况，则应该能够提升压缩比。
+
+*** Length of Meaningful XORed Value (Center Bits).
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/1/p3058-liakos.pdf
+:NOTER_PAGE: 4
+:CUSTOM_ID: h:4b0ff4ff-e36d-4311-a8ae-9d885561f080
+:END:
+
+
+*** Previous Block Position.
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/1/p3058-liakos.pdf
+:NOTER_PAGE: 5
+:CUSTOM_ID: h:792dd029-00aa-4f31-b158-791e6ae0029a
+:END:
+
+
+* OVERVIEW
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/1/p3058-liakos.pdf
+:NOTER_PAGE: 5
+:CUSTOM_ID: h:3d2a78fa-6eed-4738-8d3d-5d4771119d8c
+:END:
+
+
+** Our Chimp Algorithm
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/1/p3058-liakos.pdf
+:NOTER_PAGE: 5
+:CUSTOM_ID: h:2ff4f7f7-de49-4982-86c5-e33535c188eb
+:END:
+
+
+*** Possible Flag Sequences
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/1/p3058-liakos.pdf
+:NOTER_PAGE: 5
+:CUSTOM_ID: h:6fe58ee9-803c-4b85-821f-fd84ae589b56
+:END:
+
+之前的研究表明相邻数据完全相同的概率并不大，使用最少的比特位来表示最常见的情况，能够提升压缩比。
+
+
+#+CAPTION:
+#+NAME: fig:screenshot@2022-10-20_15:49:41
+[[file:images/p3058-liakos/screenshot@2022-10-20_15:49:41.png]]
+
+
+
+#+CAPTION:
+#+NAME: fig:screenshot@2022-10-20_15:50:47
+[[file:images/p3058-liakos/screenshot@2022-10-20_15:50:47.png]]
+
+* 效果对比
+:PROPERTIES:
+:CUSTOM_ID: h:7aa7a756-dc81-4885-822b-de57dc9a59aa
+:END:
+
+
+** Compression size result
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/1/p3058-liakos.pdf
+:NOTER_PAGE: 10
+:CUSTOM_ID: h:2bd0b50a-9cc3-478d-90d2-e3a44cefe53e
+:END:
+
+#+CAPTION:
+#+NAME: fig:screenshot@2022-10-20_15:53:33
+#+attr_html: :width 800px
+#+attr_org: :width 800px
+[[file:images/p3058-liakos/screenshot@2022-10-20_15:53:33.png]]
+
+
+** Compression and decompression time
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/1/p3058-liakos.pdf
+:NOTER_PAGE: 10
+:CUSTOM_ID: h:7127ad57-9105-42b2-ac2c-0cfb641b6946
+:END:
+
+#+CAPTION:
+#+NAME: fig:screenshot@2022-10-20_15:53:56
+[[file:images/p3058-liakos/screenshot@2022-10-20_15:53:56.png]]

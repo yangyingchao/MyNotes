@@ -1,0 +1,21 @@
+:PROPERTIES:
+:ID:       8fc6db56-ba02-4e6e-a383-b354d6c46e61
+:NOTER_DOCUMENT: ../pdf/8/p21-skiadopoulos.pdf
+:END:
+#+TITLE: DBOS: A DBMS-oriented Operating System
+#+AUTHOR: Yang,Ying-chao
+#+EMAIL:  yang.yingchao@qq.com
+#+OPTIONS:  ^:nil _:nil H:7 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate 
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+TAGS:     noexport(n)
+#+LANGUAGE: en
+#+EXCLUDE_TAGS: noexport
+
+
+* INTRODUCTION
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/8/p21-skiadopoulos.pdf
+:NOTER_PAGE: 1
+:CUSTOM_ID: h:9db3cfec-9bea-46f3-bd57-d0300fc0e0a1
+:END:

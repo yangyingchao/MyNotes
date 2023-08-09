@@ -1,0 +1,22 @@
+:PROPERTIES:
+:ID:       a635b4c7-6f7a-48ff-99a4-c1471e3e8277
+:NOTER_DOCUMENT: https://mp.weixin.qq.com/s/xf7qb4oAVHyi4_U32FSKPA
+:NOTER_OPEN: eww
+:END:
+#+TITLE: 全方位对比 Postgres 和 MySQL
+#+AUTHOR: Yang Yingchao
+#+EMAIL:  yang.yingchao@qq.com
+#+OPTIONS:  ^:nil _:nil H:7 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+TAGS:     noexport(n)
+#+LANGUAGE: en
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :tag1:tag2:
+
+#+CAPTION:
+#+NAME: fig:640?wx_fmt=png
+#+DOWNLOADED: https://mmbiz.qpic.cn/sz_mmbiz_png/MYlicw4Vl5Sg6XnnPmUpVia59ABlXwpibBBCl6QLm47cZD5wA9YREa4PkmawkPDacicLvUyNBsVCuBjF6n0MqXmdpA/640?wx_fmt=png @ 2023-07-14 10:08:10
+#+attr_html: :width 800px
+#+attr_org: :width 800px
+[[file:images/全方位对比-postgres-和-mysql.org/640.png]]

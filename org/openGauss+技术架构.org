@@ -1,0 +1,56 @@
+:PROPERTIES:
+:ID:       3d9121dc-386b-43aa-9fe0-52467135385c
+:NOTER_DOCUMENT: ../pptx/9/openGauss+技术架构.pptx
+:NOTER_OPEN: find-file
+:END:
+#+TITLE: openGauss+技术架构
+#+AUTHOR: Yang,Ying-chao
+#+EMAIL:  yang.yingchao@qq.com
+#+OPTIONS:  ^:nil _:nil H:7 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+TAGS:     noexport(n)
+#+LANGUAGE: en
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :tag1:tag2:
+
+
+* 体系结构
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pptx/9/openGauss+技术架构.pptx
+:NOTER_OPEN: find-file
+:NOTER_PAGE: 10
+:CUSTOM_ID: h:ffedcec1-02e6-45ff-b383-ae60f29ec920
+:END:
+
+
+#+CAPTION:
+#+NAME: fig:screenshot@2023-05-23_18:32:14
+#+attr_html: :width 800px
+#+attr_org: :width 800px
+[[file:images/openGauss+技术架构/screenshot@2023-05-23_18:32:14.png]]
+
+
+#+CAPTION:
+#+NAME: fig:screenshot@2023-05-23_18:32:47
+#+attr_html: :width 800px
+#+attr_org: :width 800px
+[[file:images/openGauss+技术架构/screenshot@2023-05-23_18:32:47.png]]
+
+#+CAPTION:
+#+NAME: fig:screenshot@2023-05-23_18:34:33
+#+attr_html: :width 800px
+#+attr_org: :width 800px
+[[file:images/openGauss+技术架构/screenshot@2023-05-23_18:34:33.png]]
+
+#+CAPTION:
+#+NAME: fig:screenshot@2023-05-23_18:34:47
+#+attr_html: :width 800px
+#+attr_org: :width 800px
+[[file:images/openGauss+技术架构/screenshot@2023-05-23_18:34:47.png]]
+
+#+CAPTION:
+#+NAME: fig:screenshot@2023-05-23_18:36:47
+#+attr_html: :width 800px
+#+attr_org: :width 800px
+[[file:images/openGauss+技术架构/screenshot@2023-05-23_18:36:47.png]]

@@ -1,0 +1,109 @@
+:PROPERTIES:
+:ID:       ef9a5e1a-70e9-497f-be8f-a3623cf0d208
+:NOTER_DOCUMENT: ../pdf/a/p1632-vaidya.pdf
+:END:
+#+TITLE: SNARF: A Learning-Enhanced Range Filter
+#+AUTHOR: Yang,Ying-chao
+#+EMAIL:  yang.yingchao@qq.com
+#+OPTIONS:  ^:nil _:nil H:7 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate 
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+TAGS:     noexport(n)
+#+LANGUAGE: en
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :filter:range:
+
+* ABSTRACT
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/a/p1632-vaidya.pdf
+:NOTER_PAGE: 1
+:CUSTOM_ID: h:815ddced-2940-4ddc-a8f1-e53eeb9c4c7d
+:END:
+
+
+- *SNARF*: Sparse Numerical Array-Based Range Filters
+   基于稀疏数组的范围过滤器
+
+- 用于数值类型的范围过滤
+
+* INTRODUCTION
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/a/p1632-vaidya.pdf
+:NOTER_PAGE: 1
+:CUSTOM_ID: h:4d4ce086-8979-4ce0-8e14-e0771827e7ad
+:END:
+
+- Filters
+  + are space efficient but appropriate
+  + Answer membership queries on a set /S/
+
+  + Point Filters
+    * eg BloomFilter
+    * Support point queries:\\
+      "Is /x/ in the set /S/ ?"
+
+  + Range Filters (可用作范围过滤 where + 单表)
+    * for range query: \\
+      "Is there a key in the set S in between values =p= & =q=?"
+
+  + 允许误报
+
+
+** Range Filters
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/a/p1632-vaidya.pdf
+:NOTER_PAGE: 1
+:CUSTOM_ID: h:06c300b0-ac2c-4743-a09c-abb6ee673074
+:END:
+
+- range filters can significantly improve the performance of systems for synthetic and real-world workloads
+- e.g RocksDB, SQL Server
+  +  [[file:~/Documents/Database/pdf/f/p1714-kossmann.pdf][Adaptive Range Filters for Cold Data: Avoiding Trips to Siberia （TBD）]]
+
+
+* SNARF: A LEARNED FILTER
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/a/p1632-vaidya.pdf
+:NOTER_PAGE: 2
+:CUSTOM_ID: h:9ad4603f-9ca9-4dd4-a11b-086b2d5967fb
+:END:
+
+
+** SNARF Description
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/a/p1632-vaidya.pdf
+:NOTER_PAGE: 2
+:CUSTOM_ID: h:1952086c-7e65-4eee-b93d-38bb90429836
+:END:
+
+
+*** SNARF Construction:
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/a/p1632-vaidya.pdf
+:NOTER_PAGE: 2
+:CUSTOM_ID: h:372a603b-d9c3-4743-aa50-752da1e4dc32
+:END:
+- 给定一组 keys $$S=\{x_1, x_2, ...,x_n\}$$ , 构建一个可以进行范围查询的过滤器
+- SNARF 通过单调函数 $$f$$ 将 keys 映射进一个 bit array B:
+  + B 中有 $$|B| = K \times n$$ 个比特
+- 初始化时候，数组中所有元素均为 0
+- 将 B 中的某些位置置位: $$f(x_i) = 1$$ , 其中： $$x_i \in S$$
+- 隐射函数为： $$f(x) = \lfloor MCDF(x) \times nK\rfloor $$
+  * =MCDF= 为 S 中 key 的 CDF 经验值的单调估计
+
+- SNARF 使用压缩：提升空间效率：
+
+
+#+CAPTION:
+  #+NAME: fig:screenshot@2022-10-18_18:25:55
+  #+attr_html: :width 800px
+  #+attr_org: :width 800px
+  [[file:images/p1632-vaidya/screenshot@2022-10-18_18:25:55.png]]
+
+
+*** SNARF Range Query:
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/a/p1632-vaidya.pdf
+:NOTER_PAGE: 2
+:CUSTOM_ID: h:cddfe2b4-5b71-4ebd-885f-d7c67ab06373
+:END:

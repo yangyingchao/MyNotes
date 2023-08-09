@@ -1,0 +1,15 @@
+:PROPERTIES:
+:ID:       0196a1bf-793f-4191-ab17-ba7c58b7021e
+:END:
+#+TITLE: A Study of Database Performance Sensitivity to Experiment Settings
+#+AUTHOR: Yang,Ying-chao
+#+EMAIL:  yang.yingchao@qq.com
+#+FILETAGS: :database:performance:
+#+OPTIONS:  ^:nil _:nil H:7 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate 
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+TAGS:     noexport(n)
+#+LANGUAGE: en
+#+EXCLUDE_TAGS: noexport
+
+#+NOTER_DOCUMENT: ../pdf/a/p1439-wang.pdf

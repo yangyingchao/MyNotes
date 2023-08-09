@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html  lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# " class="no-js wf-loading">
+  <head>
+    <meta charset="utf-8" />
+<meta name="Generator" content="Drupal 8 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="/themes/linuxjournal/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="canonical" href="https://www.linuxjournal.com/article/9748" />
+<link rel="shortlink" href="https://www.linuxjournal.com/node/9748" />
+<link rel="revision" href="https://www.linuxjournal.com/article/9748" />
+
+    <title>Introduction to Stream Control Transmission Protocol | Linux Journal</title>
+    <link rel="stylesheet" media="all" href="/core/modules/system/css/components/align.module.css?r3i2mx" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/fieldgroup.module.css?r3i2mx" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/container-inline.module.css?r3i2mx" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/clearfix.module.css?r3i2mx" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/details.module.css?r3i2mx" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/hidden.module.css?r3i2mx" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/item-list.module.css?r3i2mx" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/js.module.css?r3i2mx" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/nowrap.module.css?r3i2mx" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/position-container.module.css?r3i2mx" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/progress.module.css?r3i2mx" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/reset-appearance.module.css?r3i2mx" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/resize.module.css?r3i2mx" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/sticky-header.module.css?r3i2mx" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/system-status-counter.css?r3i2mx" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/system-status-report-counters.css?r3i2mx" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/system-status-report-general-info.css?r3i2mx" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/tablesort.module.css?r3i2mx" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/tree-child.module.css?r3i2mx" />
+<link rel="stylesheet" media="all" href="/modules/contrib/poll/css/poll.base.css?r3i2mx" />
+<link rel="stylesheet" media="all" href="/modules/contrib/poll/css/poll.theme.css?r3i2mx" />
+<link rel="stylesheet" media="all" href="/core/modules/views/css/views.module.css?r3i2mx" />
+<link rel="stylesheet" media="all" href="/modules/contrib/webform/modules/webform_bootstrap/css/webform_bootstrap.css?r3i2mx" />
+<link rel="stylesheet" media="all" href="/libraries/shariff/shariff.complete.css?r3i2mx" />
+<link rel="stylesheet" media="all" href="/themes/linuxjournal/css/style.css?r3i2mx" />
+<link rel="stylesheet" media="all" href="/themes/linuxjournal/css/fonts.css?r3i2mx" />
+
+      <!--   <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>-->
+
+    <script>
+      // Non-blocking webfonts.
+      (function iife() {
+        'use strict';
+
+        // JS is able to start executing.
+        document.documentElement.classList.remove('no-js');
+
+        // Optimization for Repeat Views
+        // Stop early for repeat views that have already cached fonts.
+        if (sessionStorage.fontsLoadedLateef && sessionStorage.fontsLoadedOpensans /* && sessionStorage.fontsLoadedNEWFONT */) {
+          document.documentElement.classList.remove('wf-loading');
+          document.documentElement.classList.add('wf-opensans');
+          document.documentElement.classList.add('wf-lateef');
+          // document.documentElement.classList.add('wf-NEWFONT');
+          return;
+        }
+
+        // Inlined Font Face Observer script + Promise polyfill.
+        /*! Font Face Observer v2.0.13 - © Bram Stein. License: BSD-3-Clause */
+        (function(){'use strict';var f,g=[];function l(a){g.push(a);1==g.length&&f()}function m(){for(;g.length;)g[0](),g.shift()}f=function(){setTimeout(m)};function n(a){this.a=p;this.b=void 0;this.f=[];var b=this;try{a(function(a){q(b,a)},function(a){r(b,a)})}catch(c){r(b,c)}}var p=2;function t(a){return new n(function(b,c){c(a)})}function u(a){return new n(function(b){b(a)})}function q(a,b){if(a.a==p){if(b==a)throw new TypeError;var c=!1;try{var d=b&&b.then;if(null!=b&&"object"==typeof b&&"function"==typeof d){d.call(b,function(b){c||q(a,b);c=!0},function(b){c||r(a,b);c=!0});return}}catch(e){c||r(a,e);return}a.a=0;a.b=b;v(a)}}
+        function r(a,b){if(a.a==p){if(b==a)throw new TypeError;a.a=1;a.b=b;v(a)}}function v(a){l(function(){if(a.a!=p)for(;a.f.length;){var b=a.f.shift(),c=b[0],d=b[1],e=b[2],b=b[3];try{0==a.a?"function"==typeof c?e(c.call(void 0,a.b)):e(a.b):1==a.a&&("function"==typeof d?e(d.call(void 0,a.b)):b(a.b))}catch(h){b(h)}}})}n.prototype.g=function(a){return this.c(void 0,a)};n.prototype.c=function(a,b){var c=this;return new n(function(d,e){c.f.push([a,b,d,e]);v(c)})};
+        function w(a){return new n(function(b,c){function d(c){return function(d){h[c]=d;e+=1;e==a.length&&b(h)}}var e=0,h=[];0==a.length&&b(h);for(var k=0;k<a.length;k+=1)u(a[k]).c(d(k),c)})}function x(a){return new n(function(b,c){for(var d=0;d<a.length;d+=1)u(a[d]).c(b,c)})};window.Promise||(window.Promise=n,window.Promise.resolve=u,window.Promise.reject=t,window.Promise.race=x,window.Promise.all=w,window.Promise.prototype.then=n.prototype.c,window.Promise.prototype["catch"]=n.prototype.g);}());
+
+        (function(){function l(a,b){document.addEventListener?a.addEventListener("scroll",b,!1):a.attachEvent("scroll",b)}function m(a){document.body?a():document.addEventListener?document.addEventListener("DOMContentLoaded",function c(){document.removeEventListener("DOMContentLoaded",c);a()}):document.attachEvent("onreadystatechange",function k(){if("interactive"==document.readyState||"complete"==document.readyState)document.detachEvent("onreadystatechange",k),a()})};function r(a){this.a=document.createElement("div");this.a.setAttribute("aria-hidden","true");this.a.appendChild(document.createTextNode(a));this.b=document.createElement("span");this.c=document.createElement("span");this.h=document.createElement("span");this.f=document.createElement("span");this.g=-1;this.b.style.cssText="max-width:none;display:inline-block;position:absolute;height:100%;width:100%;overflow:scroll;font-size:16px;";this.c.style.cssText="max-width:none;display:inline-block;position:absolute;height:100%;width:100%;overflow:scroll;font-size:16px;";
+        this.f.style.cssText="max-width:none;display:inline-block;position:absolute;height:100%;width:100%;overflow:scroll;font-size:16px;";this.h.style.cssText="display:inline-block;width:200%;height:200%;font-size:16px;max-width:none;";this.b.appendChild(this.h);this.c.appendChild(this.f);this.a.appendChild(this.b);this.a.appendChild(this.c)}
+        function t(a,b){a.a.style.cssText="max-width:none;min-width:20px;min-height:20px;display:inline-block;overflow:hidden;position:absolute;width:auto;margin:0;padding:0;top:-999px;white-space:nowrap;font-synthesis:none;font:"+b+";"}function y(a){var b=a.a.offsetWidth,c=b+100;a.f.style.width=c+"px";a.c.scrollLeft=c;a.b.scrollLeft=a.b.scrollWidth+100;return a.g!==b?(a.g=b,!0):!1}function z(a,b){function c(){var a=k;y(a)&&a.a.parentNode&&b(a.g)}var k=a;l(a.b,c);l(a.c,c);y(a)};function A(a,b){var c=b||{};this.family=a;this.style=c.style||"normal";this.weight=c.weight||"normal";this.stretch=c.stretch||"normal"}var B=null,C=null,E=null,F=null;function G(){if(null===C)if(J()&&/Apple/.test(window.navigator.vendor)){var a=/AppleWebKit\/([0-9]+)(?:\.([0-9]+))(?:\.([0-9]+))/.exec(window.navigator.userAgent);C=!!a&&603>parseInt(a[1],10)}else C=!1;return C}function J(){null===F&&(F=!!document.fonts);return F}
+        function K(){if(null===E){var a=document.createElement("div");try{a.style.font="condensed 100px sans-serif"}catch(b){}E=""!==a.style.font}return E}function L(a,b){return[a.style,a.weight,K()?a.stretch:"","100px",b].join(" ")}
+        A.prototype.load=function(a,b){var c=this,k=a||"BESbswy",q=0,D=b||3E3,H=(new Date).getTime();return new Promise(function(a,b){if(J()&&!G()){var M=new Promise(function(a,b){function e(){(new Date).getTime()-H>=D?b():document.fonts.load(L(c,'"'+c.family+'"'),k).then(function(c){1<=c.length?a():setTimeout(e,25)},function(){b()})}e()}),N=new Promise(function(a,c){q=setTimeout(c,D)});Promise.race([N,M]).then(function(){clearTimeout(q);a(c)},function(){b(c)})}else m(function(){function u(){var b;if(b=-1!=
+        f&&-1!=g||-1!=f&&-1!=h||-1!=g&&-1!=h)(b=f!=g&&f!=h&&g!=h)||(null===B&&(b=/AppleWebKit\/([0-9]+)(?:\.([0-9]+))/.exec(window.navigator.userAgent),B=!!b&&(536>parseInt(b[1],10)||536===parseInt(b[1],10)&&11>=parseInt(b[2],10))),b=B&&(f==v&&g==v&&h==v||f==w&&g==w&&h==w||f==x&&g==x&&h==x)),b=!b;b&&(d.parentNode&&d.parentNode.removeChild(d),clearTimeout(q),a(c))}function I(){if((new Date).getTime()-H>=D)d.parentNode&&d.parentNode.removeChild(d),b(c);else{var a=document.hidden;if(!0===a||void 0===a)f=e.a.offsetWidth,
+        g=n.a.offsetWidth,h=p.a.offsetWidth,u();q=setTimeout(I,50)}}var e=new r(k),n=new r(k),p=new r(k),f=-1,g=-1,h=-1,v=-1,w=-1,x=-1,d=document.createElement("div");d.dir="ltr";t(e,L(c,"sans-serif"));t(n,L(c,"serif"));t(p,L(c,"monospace"));d.appendChild(e.a);d.appendChild(n.a);d.appendChild(p.a);document.body.appendChild(d);v=e.a.offsetWidth;w=n.a.offsetWidth;x=p.a.offsetWidth;I();z(e,function(a){f=a;u()});t(e,L(c,'"'+c.family+'",sans-serif'));z(n,function(a){g=a;u()});t(n,L(c,'"'+c.family+'",serif'));
+        z(p,function(a){h=a;u()});t(p,L(c,'"'+c.family+'",monospace'))})})};"object"===typeof module?module.exports=A:(window.FontFaceObserver=A,window.FontFaceObserver.prototype.load=A.prototype.load);}());
+
+        // Load and observe Lateef
+        var Lateef = new FontFaceObserver('Lateef', {weight: 400});
+        Promise.all([Lateef.load()]).then(function() {
+          document.documentElement.classList.remove('wf-loading');
+          document.documentElement.classList.add('wf-lateef');
+
+          // Optimization for Repeat Views
+          // Set a flag in localstorage so repeat views can skip processing FFO.
+          sessionStorage.fontsLoadedLateef = true;
+        });
+
+        // Load and observe Open Sans
+        var os300 = new FontFaceObserver('Open Sans', {weight: 300});
+        var os400 = new FontFaceObserver('Open Sans', {weight: 400});
+        Promise.all([os300.load(), os400.load()]).then(function() {
+          document.documentElement.classList.remove('wf-loading');
+          document.documentElement.classList.add('wf-opensans');
+
+          // Optimization for Repeat Views
+          // Set a flag in localstorage so repeat views can skip processing FFO.
+          sessionStorage.fontsLoadedOpensans = true;
+        });
+
+        // Load and observe NEWFONT
+        /*
+        var NEWFONT = new FontFaceObserver('NEWFONT', {weight: 400});
+        Promise.all([NEWFONT.load()]).then(function() {
+          document.documentElement.classList.remove('wf-loading');
+          document.documentElement.classList.add('wf-NEWFONT');
+
+          // Optimization for Repeat Views
+          // Set a flag in localstorage so repeat views can skip processing FFO.
+          sessionStorage.fontsLoadedNEWFONT = true;
+        });
+        */
+      })();
+    </script>
+    
+<!--[if lte IE 8]>
+<script src="/core/assets/vendor/html5shiv/html5shiv.min.js?v=3.7.3"></script>
+<![endif]-->
+
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src=https://slashdot.org/country.js></script>
+    <script src="//a.fsdn.com/con/js/sftheme/cmp2.js"></script>
+    <link rel="stylesheet" href="//a.fsdn.com/con/css/sftheme/sandiego/cmp.css" type="text/css">
+    <link rel="stylesheet" href="/themes/linuxjournal/css/ccpa.css" type="text/css">
+    <script>
+    if (window.is_euro_union == 1 || (window.country_code2 == 'US' && window.region == 'CA')) {
+     window.bizx.cmp.init({}, 'consentmanager.net');
+    }
+    </script>
+    <script>
+    function bm_trace() {
+        (function (w,d,t) {
+          _ml = w._ml || {};
+          _ml.eid = '771';
+          var s, cd, tag; s = d.getElementsByTagName(t)[0]; cd = new Date();
+          tag = d.createElement(t); tag.async = 1;
+          tag.src = 'https://ml314.com/tag.aspx?' + cd.getDate() + cd.getMonth();
+          s.parentNode.insertBefore(tag, s);
+        })(window,document,'script');
+    }
+    bizx.cmp.ifConsent('', ['all', 'bombora'],bm_trace);
+    </script>
+
+  </head>
+  <body class="path-node page-node-type-xmlnode has-glyphicons">
+    <a href="#main-content" class="visually-hidden focusable skip-link">
+      Skip to main content
+    </a>
+    
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div id="wrap">
+<div class="leader-wrapper" id="leader-wrapper">
+</div>
+
+<div class="brand-wrapper" id="brand-wrapper">
+  <div class="brand container">
+    <div class="region region-brand">
+          <a class="logo navbar-btn" href="/" title="Home" rel="home">
+      <h1><img src="/themes/linuxjournal/images/ljlogo.png" alt="Linux Journal" /></h1>
+    </a>
+      <section id="block-topbannernearlogo" class="block block-block-content block-block-contenta8e75a3d-967c-416d-8944-4015d1f90a84 clearfix">
+  
+    
+
+      
+            <div class="field field--name-body field--type-text-with-summary field--label-hidden field--item"><p></p>
+</div>
+      
+  </section>
+
+
+  </div>
+
+  </div>
+
+          <div class="header-wrapper">
+    <header class="navbar navbar-default container" id="navbar" role="banner">
+                                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+            <div class="region region-navigation-collapsible">
+    <section id="block-linuxjournal-main-menu" class="block block-system block-system-menu-blockmain clearfix navbar__menu col-xs-12 col-sm-8">
+  
+    
+
+      
+      <ul class="menu menu--main nav navbar-nav">
+                        <li class="expanded dropdown">
+        <a href="/" class="dropdown-toggle" data-toggle="dropdown">Topics+ <span class="caret"></span></a>
+                          <ul class="dropdown-menu">
+                        <li>
+        <a href="/tag/cloud">Cloud</a>
+                  </li>
+                        <li>
+        <a href="/tag/containers" data-drupal-link-system-path="taxonomy/term/978">Containers</a>
+                  </li>
+                        <li>
+        <a href="/tag/desktop">Desktop</a>
+                  </li>
+                        <li>
+        <a href="/tag/kernel" data-drupal-link-system-path="taxonomy/term/662">Kernel</a>
+                  </li>
+                        <li>
+        <a href="/tag/mobile">Mobile</a>
+                  </li>
+                        <li>
+        <a href="/tag/networking">Networking</a>
+                  </li>
+                        <li>
+        <a href="/tag/privacy">Privacy</a>
+                  </li>
+                        <li>
+        <a href="/tag/programming">Programming</a>
+                  </li>
+                        <li>
+        <a href="/tag/security" data-drupal-link-system-path="taxonomy/term/31">Security</a>
+                  </li>
+                        <li>
+        <a href="/tag/servers">Servers</a>
+                  </li>
+                        <li>
+        <a href="/tag/sysadmin" data-drupal-link-system-path="taxonomy/term/21">SysAdmin</a>
+                  </li>
+        </ul>
+  
+            </li>
+                        <li>
+        <a href="/news" data-drupal-link-system-path="news">News</a>
+                  </li>
+                        <li>
+        <a href="/books" data-drupal-link-system-path="books">eBooks</a>
+                  </li>
+        </ul>
+  
+
+  </section>
+
+<section class="search-block-form block block-search block-search-form-block clearfix navbar__search col-xs-12 col-sm-4 col-md-4 col-md-offset-0" data-drupal-selector="search-block-form" id="block-linuxjournal-search" role="search">
+  
+      <h2 class="block-title sr-only">Search</h2>
+    
+
+      <form action="/search/node" method="get" id="search-block-form" accept-charset="UTF-8">
+  <div class="form-item js-form-item form-type-search js-form-type-search form-item-keys js-form-item-keys form-no-label form-group">
+      <label for="edit-keys" class="control-label sr-only">Search</label>
+  
+  
+  <div class="input-group"><input title="Enter the terms you wish to search for." data-drupal-selector="edit-keys" class="form-search form-control" placeholder="Search" type="search" id="edit-keys" name="keys" value="" size="15" maxlength="128" /><span class="input-group-btn"><button type="submit" value="Search" class="button js-form-submit form-submit btn-primary btn icon-only" name=""><span class="sr-only">Search</span><span class="icon glyphicon glyphicon-search" aria-hidden="true"></span></button></span></div>
+
+  
+  
+      <div id="edit-keys--description" class="description help-block">
+      Enter the terms you wish to search for.
+    </div>
+  </div>
+<div class="form-actions form-group js-form-wrapper form-wrapper" data-drupal-selector="edit-actions" id="edit-actions"></div>
+
+</form>
+
+  </section>
+
+
+  </div>
+
+        </div>
+            <div class="navbar-header">
+          <div class="region region-navigation">
+    <section id="block-mobilenavigation" class="block block-system block-system-menu-blockmenu-mobile-navbar clearfix col-xs-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-0 navbar__menu navbar__mobilenavigation">
+  
+    
+
+      
+      <ul class="menu menu--menu-mobile-navbar nav">
+                        <li>
+        <a href="/news" data-drupal-link-system-path="news">News</a>
+                  </li>
+                        <li>
+        <a href="/popular" data-drupal-link-system-path="popular">Popular</a>
+                  </li>
+                        <li>
+        <a href="/recent" data-drupal-link-system-path="recent">Recent</a>
+                  </li>
+        </ul>
+  
+
+  </section>
+
+  </div>
+
+      </div>
+          </header>
+    </div>
+  
+</div>
+  <div role="main" class="main-container container js-quickedit-main-content" id="main">
+    <div class="row">
+
+            
+            
+                  <section class="col-sm-12">
+
+                                      <div class="highlighted">  <div class="region region-highlighted">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+</div>
+                  
+                
+                
+                
+                          <a id="main-content"></a>
+            <div class="region region-content">
+        <h1 class="page-header"><span>Introduction to Stream Control Transmission Protocol</span>
+</h1>
+
+  <div data-history-node-id="9748" class="row bs-2col-stacked node node--type-xmlnode node--view-mode-full">
+  
+
+    <div class="col-sm-12 bs-region bs-region--top">
+    
+      <div class="field field--name-field-tags field--type-entity-reference field--label-hidden field--items">
+              <div class="field--item"><div about="/tag/howtos" typeof="schema:Thing">
+  
+      <h2><a href="/tag/howtos">
+            <div property="schema:name" class="field field--name-name field--type-string field--label-hidden field--item">HOWTOs</div>
+      </a></h2>
+      <span property="schema:name" content="HOWTOs" class="hidden"></span>
+
+  
+</div>
+</div>
+          </div>
+  
+            <div class="field field--name-node-author field--type-ds field--label-hidden field--item">by Jan Newmarch</div>
+      
+            <div class="field field--name-node-post-date field--type-ds field--label-hidden field--item">on September 1, 2007</div>
+      
+  </div>
+  
+    <div class="col-sm-9 bs-region bs-region--left">
+    
+            <div class="field field--name-body field--type-text-with-summary field--label-hidden field--item"><div lang="en" xml:lang="en"><div lang="en" xml:lang="en"><div><a></a></div>
+
+<p>
+Most people who have written networking software are familiar with the
+TCP and UDP protocols. These are used to connect distributed applications
+and allow messages to flow between them. These protocols have been used
+successfully to build Internet applications as we know them: e-mail,
+HTTP, name services and so forth. But, these protocols are more than 20 years old, and
+over time, some of their deficiencies have become well known. Although there
+have been many attempts to devise new general-purpose transport protocols
+above the IP layer, only one so far has received the blessing of the IETF:
+SCTP (Stream Control Transmission Protocol). The central motivation behind
+SCTP is to provide a more reliable and robust protocol than either TCP
+or UDP that can take advantage of features such as multihoming.
+</p><p>
+SCTP is not a radical departure from TCP or UDP. It borrows from both but
+is most similar to TCP. It is a reliable session-oriented protocol, like
+TCP. It adds new features and options and allows finer control over the
+transport of packets. In all but the “edge” cases, it can be used as a
+drop-in in place of TCP. This means that TCP applications often
+can be ported trivially to SCTP. Of course, to benefit properly from the
+new features of SCTP, you need to use the additional API calls for SCTP.
+</p>
+
+<p>
+The first additional feature in SCTP is better support for multihomed
+devices—that is, computers with more than one network
+interface. At
+one time this
+meant only routers and bridges connecting different parts of the Internet,
+but now even computers on the edges of the network can be multihomed.
+Most laptops have built-in Ethernet cards and Wi-Fi cards, and many have
+Bluetooth cards as well (which have IP support through the Bluetooth PPP
+stack). Some laptops now are shipping with WiMAX cards, and it even
+is possible to run IP over the infrared port! So, the standard laptop is at
+least dual-homed, with possibly up to five distinct IP network interfaces.
+</p><p>
+TCP and UDP allow use of only one or all of the interfaces.
+But, what if you are running your laptop as a peer in, say, a file-sharing service? It probably would be silly to use the Bluetooth
+and infrared interfaces. WiMAX can be very expensive to shift large
+amounts of data. But, it would make sense to use both the Ethernet and Wi-Fi
+interfaces. SCTP can support this selective choosing of interfaces. Some
+implementations even can add and drop interfaces dynamically, so as you
+unplug your laptop and move out of the house, an application can switch
+to the WiMAX interface if you want.
+</p><p>
+The second main new feature is multistreaming—that is, one
+“association”
+(which is renamed from “connection” from TCP) can support multiple
+data streams. It is no longer necessary to open up multiple sockets;
+instead, a single socket can be used for multiple streams to a connected
+host. Several TCP applications could benefit from this. For example, FTP
+(the major file transfer protocol) uses two streams: one on port 21 for
+control messages and another on port 20 for data. This caused problems
+with firewalls in place. A client could connect to a server through a
+firewall, but the server could not connect to the client for data transfer
+because of the firewall. The FTP protocol had to be extended to allow for
+“passive” connections to overcome this. There would be no need for such
+an extension under SCTP—simply send the data on a separate stream in
+an association established by a client. 
+</p><p>
+The X Window System also
+uses multiple sockets on multiple ports. Although it is not common,
+a computer can have multiple display devices. Typically, the first is
+on port 6000, the second on port 6001 and so on. Under SCTP, these could
+all be separate streams on a single association. HTML documents often
+contain embedded references to image files, and to display a
+page properly requires downloading the original page and all of these images (or
+embedded frames too). HTTP originally used a separate TCP connection per
+downloaded URL, which was expensive and time consuming. HTTP 1.1 brought
+in “persistent connections”, so that a single socket could be reused for
+all of these sequential downloads. Under SCTP, the separate images could
+be downloaded concurrently in separate streams on a single association.
+</p><p>
+There are even more subtle uses of SCTP multiple streams. An MPEG movie
+consists of different types of frames: I frames, P frames and B
+frames. I frames encode complete images, and the other two types
+measure differences between frames. Typically, there is an I frame every
+ten frames, with the others “predicted” from these. It is critical that
+the I frames be delivered, but less so for the P and B frames. Although
+SCTP is not designed as a Quality-of-Service protocol, it does allow
+different delivery parameters on different streams within an association,
+so that the I frames can be delivered more reliably.
+</p><p>
+SCTP has many more features, such as:
+</p><div><ul type="disc"><li><p>
+TCP is a byte-oriented protocol, and UDP is message-oriented. The
+majority of applications are message-oriented, and applications using TCP
+have to jump through hoops, such as sending the message length as a first
+parameter. SCTP is message-oriented, so such tricks are not so necessary.
+</p></li><li><p>
+A single socket can support multiple associations—that is, a computer
+can use a single socket to talk to more than one computer. This is not
+multicast, but it could be useful in peer-to-peer situations.
+</p></li><li><p>
+SCTP has no “out of band” messages, but a large number of events can
+be interleaved onto a single association, so that an application can
+monitor the state of the association (for example, when the other end adds
+another interface to the association).
+</p></li><li><p>
+The range of socket options is greater than TCP or UDP. These also
+can be used to control individual associations or individual streams within
+a single association. For example, messages on one stream can be given
+a longer time-to-live than messages on other streams, increasing the
+likelihood of their delivery.
+</p></li></ul></div></div>
+
+<div lang="en" xml:lang="en"><div><a></a>
+Availability of SCTP</div><p>
+The SCTP Web site (<a href="http://www.sctp.org">www.sctp.org</a>) has a list of
+implementations of SCTP. There are implementations for BSD and
+Windows, and since 2001, there has been a Linux kernel project at
+<a href="https://sourceforge.net/projects/lksctp">sourceforge.net/projects/lksctp</a>. At present, SCTP is not in any
+Microsoft release, so applications running on Windows need to install
+one of the available stacks.
+</p><p>
+SCTP is included in the Linux kernel as an experimental network
+protocol. SCTP is normally built as a module. It may be necessary to
+load the module using <tt>modprobe sctp</tt>. To build user
+applications, you may need to install the SCTP tools—in Fedora Core
+6, these
+are in the RPM packages lksctp-tools-1.0.6-1.fc6.i386.rpm and
+lksctp-tools-devel-1.0.6-1.fc6.i386.rpm. On Fedora Core 6, I also had
+to add a symbolic link from /usr/lib/libsctp.so to /usr/lib/libsctp.so.1.
+</p><p>
+The lksctp-tools package contains the libraries to run SCTP
+applications. It also contains a program called checksctp, which tells you
+if your kernel has support for SCTP. When you run this program, it
+prints either “SCTP supported” or an error message.
+</p><p>
+The devel package contains the sctp.h header file, so you can
+compile and build your own applications, and man pages for the
+SCTP function calls.
+</p></div><div lang="en" xml:lang="en"><div><a></a>
+Firewalls</div><p>
+Most firewalls can be configured to deal with SCTP packets, but the
+documentation for each firewall may not mention SCTP explicitly. For
+example, the man page for iptables says, “The specified protocol [in a
+rule] can be one of tcp, udp, icmp, or all...”. But, it then goes on to
+say, “A protocol name from /etc/protocols is also allowed”, and in that
+file, we find that protocol 132 is sctp. So, rules for SCTP can be added to
+iptables in the same way as TCP and UDP rules.
+</p><p>
+For example, an iptables rule to accept SCTP connections to port 13
+would be:
+
+</p><pre>-A INPUT -p sctp -m sctp -i eth0 --dport 13 -j ACCEPT
+</pre>
+<p>
+Webmin is a popular administration tool for managing things like iptables
+rules. Unfortunately, as of version 1.340, it could not accept this
+rule, because it is hard-wired to accept port numbers only for TCP and
+UDP, not realising that SCTP also uses port numbers. Such a rule
+would need to be entered by hand into the iptables configuration file
+/etc/sysconfig/iptables. This will be fixed in later versions of Webmin
+after I logged a bug report, but similar problems may occur in other
+tools.
+</p></div><div lang="en" xml:lang="en"><div><a></a>
+One-to-One Socket API</div><p>
+As with TCP and UDP, SCTP provides a socket API for applications. A
+server creates a socket bound to a port and then uses this to accept a
+connection from a client. A client also creates a socket and then connects
+to a server. Both then use the socket file descriptor to read and write
+messages. SCTP is not a superset of TCP. Nevertheless, when restricted to
+a similar style of connection as TCP, there are sufficient similarities
+that an SCTP socket often can be used as a drop-in replacement for a
+TCP socket. When used in this way, SCTP sockets are called one-to-one
+sockets, as they simply connect one host to a single other host.
+</p><p>
+To create a TCP socket, use the system call:
+
+</p><pre>sockfd = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP)
+</pre>
+<p>
+This creates an IPv4 socket. To create an IPv6 socket, replace the first
+parameter with AF_INET6. The last parameter often is given as zero,
+meaning “use the only protocol value in the family”. It is better to
+use IPPROTO_TCP explicitly, because SCTP introduces another possible value.
+</p><p>
+To create an SCTP one-to-one socket, simply replace IPPROTO_TCP
+with IPPROTO_SCTP:
+
+</p><pre>sockfd = socket(AF_INET, SOCK_STREAM, IPPROTO_SCTP)
+</pre>
+</div><div lang="en" xml:lang="en"><div><a></a></div><p>
+and that (in many cases) is it! The client or server is now talking the
+SCTP protocol instead of TCP.
+</p><p>
+To see this in action, Listings 1 (echo_client.c) and 2
+(echo_server.c) give a simple echo-client and server, where the server
+returns a string sent to it when a client connects to it. Only the line
+above needs to change in both the client and the server (with also an
+extra include file, sctp.h).
+</p></div><div lang="en" xml:lang="en"><div><a></a></div><div><p><b>
+Listing 1. echo_client.c</b></p><pre>
+#define USE_SCTP
+
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;string.h&gt;
+#include &lt;sys/types.h&gt;
+#include &lt;sys/socket.h&gt;
+#include &lt;netinet/in.h&gt;
+
+#ifdef USE_SCTP
+#include &lt;netinet/sctp.h&gt;
+#endif
+
+#define SIZE 1024
+char buf[SIZE];
+char *msg = "hello\n";
+#define ECHO_PORT 2013
+
+int main(int argc, char *argv[]) {
+        int sockfd;
+        int nread;
+        struct sockaddr_in serv_addr;
+        if (argc != 2) {
+                fprintf(stderr, "usage: %s IPaddr\n", argv[0]);
+                exit(1);
+        }
+        /* create endpoint using TCP or SCTP */
+        sockfd = socket(AF_INET, SOCK_STREAM,
+#ifdef USE_SCTP
+                        IPPROTO_SCTP
+#else
+                        IPPROTO_TCP
+#endif
+                );
+        if (sockfd &lt; 0) {
+                perror("socket creation failed");
+                exit(2); }
+        /* connect to server */
+        serv_addr.sin_family = AF_INET;
+        serv_addr.sin_addr.s_addr = inet_addr(argv[1]);
+        serv_addr.sin_port = htons(ECHO_PORT);
+        if (connect(sockfd,
+                    (struct sockaddr *) &amp;serv_addr,
+                    sizeof(serv_addr)) &lt; 0) {
+                perror("connect to server failed");
+                exit(3);
+        }
+        /* write msg to server */
+        write(sockfd, msg, strlen(msg) + 1);
+        /* read the reply back */
+        nread = read(sockfd, buf, SIZE);
+        /* write reply to stdout */
+        write(1, buf, nread);
+
+        /* exit gracefully */
+        close(sockfd);
+        exit(0);
+}
+
+</pre></div></div>
+
+<div lang="en" xml:lang="en"><div><a></a></div><div><p><b>
+Listing 2. echo_server.c</b></p><pre>
+#define USE_SCTP
+
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;sys/types.h&gt;
+#include &lt;sys/socket.h&gt;
+#include &lt;netinet/in.h&gt;
+
+#ifdef USE_SCTP
+#include &lt;netinet/sctp.h&gt;
+#endif
+
+#define SIZE 1024
+char buf[SIZE];
+#define ECHO_PORT 2013
+
+int main(int argc, char *argv[]) {
+        int sockfd, client_sockfd;
+        int nread, len;
+        struct sockaddr_in serv_addr, client_addr;
+
+        /* create endpoint using TCP or SCTP */
+        sockfd = socket(AF_INET, SOCK_STREAM,
+#ifdef USE_SCTP
+                        IPPROTO_SCTP
+#else
+                        IPPROTO_TCP
+#endif
+                );
+        if (sockfd &lt; 0) {
+                perror("socket creation failed");
+                exit(2);
+        }
+        /* bind address */
+        serv_addr.sin_family = AF_INET;
+        serv_addr.sin_addr.s_addr = htonl(INADDR_ANY);
+        serv_addr.sin_port = htons(ECHO_PORT);
+        if (bind(sockfd,
+                 (struct sockaddr *) &amp;serv_addr,
+                 sizeof(serv_addr)) &lt; 0) {
+                perror("bind failed");
+                exit(3); }
+        /* specify queue length */
+        listen(sockfd, 5);
+        for (;;) {
+                len = sizeof(client_addr);
+                /* get a connection from client */
+                client_sockfd = accept(sockfd,
+                                       (struct sockaddr *) &amp;client_addr,
+                                       &amp;len);
+                if (client_sockfd == -1) {
+                        perror("accept failed");
+                        continue;
+                }
+                /* transfer data */
+                nread = read(client_sockfd, buf, SIZE);
+                /* write to stdout */
+                write(1, buf, nread);
+                /* and echo it back to client */
+                write(client_sockfd, buf, nread);
+                /* no more for this client */
+                close(client_sockfd);
+        }
+}
+
+</pre></div><p>
+The usual C compile command can be used to create object modules and
+executables. If the program uses SCTP-specific functions (the programs in
+Listings 1 and 2 don't), you also need to link in the SCTP library:
+
+</p><pre>cc -o echo_client echo_client.c -lsctp
+</pre>
+<p>
+Is it worthwhile to take an application that runs over TCP and move
+it to SCTP? The disadvantages are that SCTP is not as well supported
+as TCP, the tools are sometimes not aware of SCTP and the API is still
+evolving. On the other hand, it benefits from the experience of 20 years
+of seeing TCP and UDP applications in practice. For example, SCTP is
+secure from SYN attacks by design, and the protocol has no known security
+holes. SCTP also will take advantage of multihoming when
+needed automatically. If packets are getting lost, due to, say, congestion, SCTP will
+use different interfaces to try to avoid the losses, and this could
+result in faster throughput.
+</p></div><div lang="en" xml:lang="en"><div><a></a>
+The withsctp Tool</div><p>
+In the previous section, I discussed how to alter the source code of a client
+or server to use SCTP instead of TCP. The sctp-tools package contains a
+program called withsctp, which essentially does the same to binary code. This
+program acts as a wrapper around a TCP application to turn it into an
+SCTP application. It first saves the address of the “real” socket()
+function call, and then inserts its own version of socket() into the
+load library path. This new version of socket() simply gets the parameters
+of the function call, changes the third parameter from IPPROTO_TCP to
+IPPROTO_SCTP and calls the “real” socket() function.
+</p><p>
+For example, the xinetd dæmon can run a group of TCP and UDP
+services. The services are those listed in the directory /etc/xinetd.d,
+which have <tt>enable = yes</tt> or <tt>disable =
+no</tt>. The TCP services all
+can be run over SCTP by:
+
+</p><pre>withsctp xinetd
+</pre>
+<p>
+One of the simplest services that is run by xinetd is
+daytime. The
+service accepts a connection and returns an ASCII string for the current
+date. A quick Google search turns up source code for many clients, but
+the simplest way is to run Telnet:
+
+</p><pre>
+telnet &lt;host-name&gt; 13
+
+</pre>
+<p>
+If you have daytime running as an SCTP service rather than a TCP service,
+use withsctp to connect to it:
+
+</p><pre>
+withsctp telnet &lt;host-name&gt; 13
+
+</pre>
+<p>
+This is a quick way of testing whether a TCP service can be converted
+to SCTP.
+</p></div><div lang="en" xml:lang="en"><div><a></a>
+Message Orientation</div><p>
+TCP is a byte-oriented protocol—that is, you write bytes and read
+bytes. The UNIX system calls read() and write() typically are used for
+this. TCP also has send()/recv(), which have an extra flags parameter,
+but these do not change the byte-transfer model.
+</p><p>
+SCTP, on the other hand, is message-oriented, more like UDP. Most Internet
+applications have a message structure to their communications rather than
+merely a sequence of bytes. For example, a single HTTP request has a header
+and body section, and even the header section is composed of an arbitrary
+number of lines. The sender has to compose the parts into the single
+request, and the receiver of such a message has to parse it back into its
+component messages. A few protocols are only byte-oriented
+(for example, the file transfer mode of FTP), but these are the minority.
+</p><p>
+SCTP makes it easy to use a message-based structure—within limits. A
+write() call writes a complete message. The corresponding read() reads
+this complete message. So, to send an HTTP header over SCTP, you could do
+a write of each line, followed by a write of an empty line. The receiver
+would read each line as a separate message, stopping after reading an
+empty line. There would be no need to parse the received bytes into a
+set of lines before processing each one. Note that if the original TCP
+application already used a series of writes followed by a single read,
+expecting TCP to concatenate all the messages, the application would
+need to be modified to match each write to a corresponding read statement.
+</p><p>
+The caveats are with big messages. Applications that want to take
+advantage of these messaging capabilities must be careful when sending
+big messages (say 32KB or more). To send a message, you aren't
+merely passing a pointer to data on the stack, you're actually moving that data
+across the network. That means putting it into buffers on the sender side,
+passing it through buffers in intermediate nodes and, finally, delivering
+it to a buffer in the reading application. All of these buffers have
+limits that cannot be exceeded.
+</p><p>
+For example, say a sender uses a buffer with a size set by the socket
+option SO_SNDBUF. An attempt to write a message larger than that will
+fail and return -1. The size of this is generous, typically about
+64KB. It can be changed by using <tt>setsockopt(sockfd, SOL_SOCKET,
+SO_SNDBUF, &amp;val, &amp;val_len)</tt>, where val is an integer variable containing
+the length to which you want to set the buffer. But, then other limits may
+come into play. Each host along the route from sender to receiver will
+have a maximum packet size that it will pass along. The Path Maximum
+Transmission Unit (PMTU) is the minimum of all of these. If the message
+(plus any IP and SCTP headers) is larger than the PMTU, it will be
+fragmented and delivered in pieces. The sender can guard against this
+by setting the SCTP option SCTP_DISABLE_FRAGMENTS so that a message is
+delivered as a single entity or not at all, but this typically will only
+decrease the maximum possible message size.
+</p><p>
+The receiver of a message also has a receiving buffer size, which is
+controlled by the socket option SO_RCVBUF. It will not receive messages
+larger than this—fragmenting them if necessary. The major problem from
+the receiving side is how to deal with fragmented messages. The system
+calls read() and recv() do not contain any information about message
+boundaries, as they are byte-oriented. Fortunately, SCTP has a new
+system call, sctp_recvmsg(), which returns status information about the
+read in an integer parameter. In particular, if the MSG_EOR bit (message
+end-of-record) is set, read of a message has been completed. If it
+is not set, the message has been fragmented and more of the message
+needs to be read. This can be used by the reader to build up a complete
+message before processing it.
+</p><p>
+Listing 3 shows how the sctp_recvmsg() call can be used to receive
+fragmented messages and build them up into a complete message. It does
+so by reading each part of a message as it comes in and adding it to
+the parts already received. When a part arrives with the MSG_EOR bit
+set in the flags, the message is complete and can be returned to
+the reading application.
+</p></div>
+
+<div lang="en" xml:lang="en"><div><a></a></div><div><p><b>
+Listing 3. read_sctp_msg.c</b></p><pre>
+#include &lt;stdio.h&gt;
+#include &lt;sys/types.h&gt;
+#include &lt;sys/socket.h&gt;
+#include &lt;netinet/in.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;netinet/sctp.h&gt;
+
+/* call by
+     nread = read_sctp_msg(sockfd, &amp;msg)
+*/
+int read_sctp_msg(int sockfd, uint8_t **p_msg) {
+        int rcv_buf_size;
+        int rcv_buf_size_len = sizeof(rcv_buf_size);
+        uint8_t *buf;
+        struct sockaddr_in peeraddr;
+        int peer_len = sizeof(peeraddr);
+        struct sctp_sndrcvinfo sri;
+        int total_read = 0;
+
+        *p_msg = NULL; /* default fail value */
+
+        if (getsockopt(sockfd, SOL_SOCKET, SO_RCVBUF,
+                       &amp;rcv_buf_size, &amp;rcv_buf_size_len) == -1) {
+                return -1;
+        }
+        if ((buf = malloc(rcv_buf_size)) == NULL) {
+                return -1;
+        }
+
+        while (1) {
+                int nread;
+                int flags;
+
+                nread = sctp_recvmsg(sockfd, buf+total_read,rcv_buf_size,
+                                     (struct sockaddr *) &amp;peeraddr,&amp;peer_len,
+                                     &amp;sri, &amp;flags);
+                if (nread &lt; 0) {
+                        return nread;
+                }
+                total_read += nread;
+
+                if (flags &amp; MSG_EOR) {
+                        /* trim the buf and return msg */
+                        printf("Trimming buf to %d\n", total_read);
+                        *p_msg = realloc(buf, total_read);
+                        return total_read;
+                }
+                buf = realloc(buf, total_read + rcv_buf_size);
+        }
+
+        /* error to get here? */
+        free(buf);
+        return -1;
+}
+
+</pre></div></div><div lang="en" xml:lang="en"><div><a></a>
+IPv6</div><p>
+SCTP has full support out of the box for IPv6 as
+well as IPv4. You simply
+need to use IPv6 socket addresses instead of IPv4 socket addresses. If you
+create an IPv4 socket, SCTP will deal only with IPv4 addresses. But,
+if you create an IPv6 socket, SCTP will handle both IPv4 and IPv6
+addresses.
+</p></div><div lang="en" xml:lang="en"><div><a></a>
+Conclusion</div><p>
+This article provides a brief introduction to the IETF Stream Control
+Transmission Protocol and explains how it can be used as a replacement
+for TCP. In future articles, we will examine additional features
+of SCTP and show their use.
+</p></div><div lang="en" xml:lang="en"><div><a></a></div><div><p><b>
+Resources</b></p><p>
+The Principal Site for SCTP (contains pointers to the RFCs and Internet
+Drafts for SCTP): <a href="http://www.sctp.org">www.sctp.org</a>
+</p><p>
+The Linux Kernel Project Home Page:
+<a href="https://lists.sourceforge.net/lists/listinfo/lksctp-developers">https://lists.sourceforge.net/lists/listinfo/lksctp-developers</a>. 
+</p><p>
+<span class="emphasis"><em>Stream Control Transmission Protocol (SCTP): A Reference
+Guide</em></span> by Randall Stewart and Qiaobing Xie, Addison-Wesley.
+</p><p>
+<span class="emphasis"><em>Unix Network
+Programming</em></span> (volume 1, 3rd
+ed.) by W. Richard Stevens, et al., has several chapters on SCTP,
+although some of it is out of date.
+</p></div></div></div>
+<div><p>
+Jan Newmarch is Honorary Senior Research Fellow at Monash University. He
+has been using Linux since kernel 0.98. He has written four books and many
+papers and also has given courses on many technical topics, concentrating on
+network programming for the last six years. His Web site is
+<a href="http://jan.newmarch.name">jan.newmarch.name</a>.
+</p></div></div>
+      
+    <section class="section--disqus">
+    <a id="comments-link" class="btn btn-default" href="https://www.linuxjournal.com/article/9748#disqus_thread">Load Disqus comments</a>
+
+    <div id="disqus_thread"></div>
+  <noscript>Our discussions are <a href="https://disqus.com/?ref_noscript" rel="nofollow">powered by Disqus</a>, which require JavaScript.</noscript>
+
+    
+</section>
+  </div>
+  
+    <div class="col-sm-3 bs-region bs-region--right">
+    
+            <div class="field field--name-dynamic-block-fieldnode-sidebar-image field--type-ds field--label-hidden field--item"><div class="views-element-container form-group"><div class="view view-sidebar-image view-id-sidebar_image view-display-id-block_1 js-view-dom-id-7d952e42d673df82840628231db1004e54292271dcac024e3ad773416a424d71">
+  
+    
+      
+      <div class="view-content">
+          <div class="views-row">
+            <div class="field field--name-body field--type-text-with-summary field--label-hidden field--item"><p><a href="https://www.linode.com/lp/brand-free-credit/?utm_source=linux_journal&amp;utm_medium=dis[…]mpaign=display-linux_journal-side_rail&amp;utm_content=&amp;utm_term=" rel="nofollow" target="blank"><img alt="Linode Predictable Cloud" data-entity-type="file" data-entity-uuid="14963619-bd1f-413f-9abc-b94f8a1e1ecf" src="/sites/default/files/inline-images/linode_predictable_cloud.png" /></a></p>
+<p> </p>
+</div>
+      </div>
+
+    </div>
+  
+          </div>
+</div>
+</div>
+      
+            <div class="field field--name-dynamic-block-fieldnode-related-articles field--type-ds field--label-hidden field--item"><div class="views-element-container form-group"><div class="view view-related-content view-id-related_content view-display-id-block_1 js-view-dom-id-5e63583bbba0bcde73fa24a13c34aaacba6d9e9ca10eb07bde9c9a3a17fe31db">
+  
+    
+      <div class="view-header">
+      <h2>You May Like</h2>
+    </div>
+      
+      <div class="view-content">
+          <div class="views-row"><div class="views-field views-field-field-node-image"><div class="field-content">  <a href="/content/running-gnome-container"><img src="/sites/default/files/styles/75x75_square/public/nodeimage/story/bigstock-Container-Ship-In-Export-And-I-300095251_0.jpg?itok=5Sd3cn2G" width="75" height="75" alt="&quot;&quot;" typeof="foaf:Image" class="img-responsive" />
+
+</a>
+</div></div><div class="views-field views-field-title"><span class="field-content"><a href="/content/running-gnome-container" hreflang="en">Running GNOME in a Container</a></span></div><div class="views-field views-field-uid"><span class="field-content"><a href="/users/adam-verslype" hreflang="en">Adam Verslype</a></span></div></div>
+    <div class="views-row"><div class="views-field views-field-field-node-image"><div class="field-content">  <a href="/content/digital-will-part-i-requirements"><img src="/sites/default/files/styles/75x75_square/public/nodeimage/story/bigstock-Will-Concept--Paperwork-Repre-267778912.jpg?itok=FDp9v5I7" width="75" height="75" alt="last will and testament" typeof="foaf:Image" class="img-responsive" />
+
+</a>
+</div></div><div class="views-field views-field-title"><span class="field-content"><a href="/content/digital-will-part-i-requirements" hreflang="en">Digital Will, Part I: Requirements</a></span></div><div class="views-field views-field-uid"><span class="field-content"><a href="/users/kyle-rankin" hreflang="en">Kyle Rankin</a></span></div></div>
+    <div class="views-row"><div class="views-field views-field-field-node-image"><div class="field-content">  <a href="/content/build-your-own-internet-radio-receiver"><img src="/sites/default/files/styles/75x75_square/public/nodeimage/story/12693f1smaller.png?itok=HJuJw-sa" width="75" height="75" alt="DIY Internet Radio Receiver" typeof="foaf:Image" class="img-responsive" />
+
+</a>
+</div></div><div class="views-field views-field-title"><span class="field-content"><a href="/content/build-your-own-internet-radio-receiver" hreflang="en">Build Your Own Internet Radio Receiver</a></span></div><div class="views-field views-field-uid"><span class="field-content"><a href="/users/nick-tufillaro" hreflang="en">Nick Tufillaro</a></span></div></div>
+    <div class="views-row"><div class="views-field views-field-field-node-image"><div class="field-content">  <a href="/content/testing-models"><img src="/sites/default/files/styles/75x75_square/public/nodeimage/story/BinaryData50_1.jpg?itok=DBm0ULN_" width="75" height="75" alt="" typeof="foaf:Image" class="img-responsive" />
+
+</a>
+</div></div><div class="views-field views-field-title"><span class="field-content"><a href="/content/testing-models" hreflang="und">Testing Models</a></span></div><div class="views-field views-field-uid"><span class="field-content"><a href="/users/reuven-m-lerner" hreflang="en">Reuven M. Lerner</a></span></div></div>
+
+    </div>
+  
+          </div>
+</div>
+</div>
+      
+            <div class="field field--name-dynamic-block-fieldnode-sponsors field--type-ds field--label-hidden field--item"><div class="views-element-container form-group"><div class="view view-latest-sponsor-block view-id-latest_sponsor_block view-display-id-block_1 js-view-dom-id-964654ebf3d622d6811b14f9a8f3b02e88dc5cf55c34ffe9cdda5f5873d9ba67">
+  
+    
+      <div class="view-header">
+      
+    </div>
+      
+      <div class="view-content">
+          <div class="views-row">
+            <div class="field field--name-body field--type-text-with-summary field--label-hidden field--item"><p><a href="https://www.linode.com/lp/brand-free-credit/?utm_source=linux_journal&amp;utm_medium=dis[…]mpaign=display-linux_journal-side_rail&amp;utm_content=&amp;utm_term=" rel="nofollow" target="blank"><img alt="Linode Predictable Cloud" data-entity-type="file" data-entity-uuid="14963619-bd1f-413f-9abc-b94f8a1e1ecf" src="/sites/default/files/inline-images/linode_predictable_cloud.png" /></a></p>
+<p> </p>
+</div>
+      </div>
+
+    </div>
+  
+          </div>
+</div>
+</div>
+      
+  </div>
+  
+  
+</div>
+
+
+
+  </div>
+
+              </section>
+
+                </div>
+  </div>
+
+      <footer class="footer container" role="contentinfo">
+        <div class="region region-footer">
+    <section class="views-element-container block block-views block-views-blocknewsletter-promo-block-block-1 clearfix" id="block-views-block-newsletter-promo-block-block-1">
+  
+    
+
+      <div class="form-group"><div class="view view-newsletter-promo-block view-id-newsletter_promo_block view-display-id-block_1 js-view-dom-id-d16d7f0f2585212a2f1f64ced84060bef6de54db7a92e33912ec2499b4702abc">
+  
+    
+      
+      <div class="view-content">
+          <div class="views-row">
+            <div class="field field--name-body field--type-text-with-summary field--label-hidden field--item"><div class="newsletter-bottom">
+<div class="col-md-9 col-sm-12 signup-form">
+<!--<h3>Linux Journal Week in Review</h3>
+<p>Sign up to get all the good stuff delivered to your inbox every week.</p>
+
+
+<form id="subForm" class="js-cm-form" action="https://www.createsend.com/t/subscribeerror?description=" method="post" data-id="A61C50BEC994754B1D79C5819EC1255CDBC34DDF3E170B13E2BAC2D68C42BF424F853383C84F5BAE38EAB4CFA5C73907CAC074FF8192503AF80F3699F7FE5CE1">	
+<div class="flexform">-->
+    <!--<label for="fieldEmail">Email</label>
+    <br />-->
+    <!--<input id="fieldEmail" name="cm-gjjtdh-gjjtdh" type="email" class="js-cm-email-input" placeholder="Enter your email. Get the newsletter." 
+    required />
+
+    <button class="js-cm-submit-button" type="submit">Sign Up</button>
+</div>
+<div>
+    <input id="cm-privacy-consent" name="cm-privacy-consent" required type="checkbox"
+    />
+    <label for="cm-privacy-consent">I give my consent to be emailed</label>
+    <input id="cm-privacy-consent-hidden"
+    name="cm-privacy-consent-hidden" type="hidden" value="true" />
+</div>
+
+</form>
+<script type="text/javascript" src="https://js.createsend1.com/javascript/copypastesubscribeformlogic.js"></script>
+</div>-->
+<!--<div class="col-md-3 col-sm-12 subs-callout">
+<img src="/sites/default/files/styles/large/public/2019-01/LJ294-Jan2019-Cover_0.jpg" width="100px" />
+
+<h3>The Value of Open Source Journalism</h3>
+<p>
+Subscribe and support our coverage for technology's biggest thinkers – with up to 52% savings.
+</p>
+<strong><a href="https://www.linuxjournal.com/subscribe">Subscribe <i class="fa fa-angle-double-right" aria-hidden="true"></i></a> 
+</strong>
+
+
+
+</div>-->
+</div>
+
+</div>
+      </div>
+
+    </div>
+  
+          </div>
+</div>
+
+  </section>
+
+
+  </div>
+
+      		<div class="footer-blocks col-sm-12">
+                <div class="col-md-6 col-sm-12 footer-left">
+                        <div class="region region-footer-left">
+    <section id="block-connectwithusfooter" class="block block-block-content block-block-content5e722bd4-5e08-454b-8507-956089bfa661 clearfix">
+  
+    
+
+      
+            <div class="field field--name-body field--type-text-with-summary field--label-hidden field--item"><div class="footer-heading">Connect With Us <span class="social-media"><a href="https://youtube.com/linuxjournalonline"  alt="Linux Journal on YouTube"><i class="fa fa-youtube fa-2x"></i></a><a href="https://www.facebook.com/linuxjournal/" alt="Linux Journal on Facebook"><i class="fa fa-facebook-f fa-2x"></i><a href="https://twitter.com/linuxjournal" alt="Linux Journal on Twitter"><i class="fa fa-twitter fa-2x"></i></a></span></div>
+
+<p>Linux Journal, representing 25+ years of publication, is the original magazine of the global Open Source community.</p></div>
+      
+  </section>
+
+<section id="block-linuxjournal-block-9" class="block block-block-content block-block-content8669793b-e217-4426-a79e-eb3c21ede127 clearfix">
+  
+    
+
+      
+            <div class="field field--name-body field--type-text-with-summary field--label-hidden field--item"><div id="copyright">© 2022 Slashdot Media, LLC. All rights reserved.</div>
+</div>
+      
+  </section>
+
+<section id="block-privacyterms" class="block block-block-content block-block-contenta203b8bd-80ef-4982-bf6e-784dd7b44120 clearfix">
+  
+    
+
+      
+            <div class="field field--name-body field--type-text-with-summary field--label-hidden field--item"><ul class="menu menu--footer-submenu nav" id="terms-nav">
+	<li><a href="https://slashdotmedia.com/privacy-statement/" rel="nofollow" target="_blank">PRIVACY POLICY</a></li>
+	<li><a href="https://slashdotmedia.com/terms-of-use/" rel="nofollow" target="_blank">TERMS OF SERVICE</a></li>
+	<li><a href="/sponsors">ADVERTISE</a></li>
+</ul></div>
+      
+  </section>
+
+
+  </div>
+
+                  </div>
+        
+        		<div class="col-md-4 col-sm-8 footer-middle">
+                        <div class="region region-footer-middle">
+    <nav role="navigation" aria-labelledby="block-footermenucolumn2-menu" id="block-footermenucolumn2">
+            
+  <h2 class="visually-hidden" id="block-footermenucolumn2-menu">Footer Menu Column 2</h2>
+  
+
+        
+      <ul class="menu menu--footer-menu-column-2 nav">
+                        <li>
+        <a href="/content/masthead" data-drupal-link-system-path="node/1007727">Masthead</a>
+                  </li>
+                        <li>
+        <a href="/author" data-drupal-link-system-path="node/1009249">Authors</a>
+                  </li>
+                        <li>
+        <a href="/form/contact" data-drupal-link-system-path="webform/contact">Contact Us</a>
+                  </li>
+        </ul>
+  
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-footermenucolumn3-menu" id="block-footermenucolumn3">
+            
+  <h2 class="visually-hidden" id="block-footermenucolumn3-menu">Footer Menu Column 3</h2>
+  
+
+        
+      <ul class="menu menu--footer-menu-column-3 nav">
+                        <li>
+        <a href="/rss_feeds" data-drupal-link-system-path="node/1000457">RSS Feeds</a>
+                  </li>
+                        <li>
+        <a href="/aboutus" data-drupal-link-system-path="node/1000267">About Us</a>
+                  </li>
+        </ul>
+  
+
+  </nav>
+
+  </div>
+
+                  </div>
+        
+                </div>
+    </footer>
+  
+</div> 
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/9748","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","bootstrap":{"forms_has_error_value_toggle":1,"popover_enabled":1,"popover_animation":1,"popover_container":"body","popover_content":"","popover_delay":"0","popover_html":0,"popover_placement":"right","popover_selector":"","popover_title":"","popover_trigger":"click","popover_trigger_autoclose":1},"linuxjournal":{"disqus":{"origin":"https:\/\/www.linuxjournal.com","prettyUrl":"\/article\/9748","fullUrl":"https:\/\/www.linuxjournal.com\/article\/9748","embedUrl":"https:\/\/linuxjournal.disqus.com\/embed.js","shortname":"linuxjournal"}},"statistics":{"data":{"nid":"9748"},"url":"\/core\/modules\/statistics\/statistics.php"},"ajaxTrustedUrl":{"\/search\/node":true},"user":{"uid":0,"permissionsHash":"c6d560e532040877d2aa806f24e67b7bac958bcc1fbe108029a267aa475a1917"}}</script>
+<script src="/core/assets/vendor/domready/ready.min.js?v=1.0.8"></script>
+<script src="/core/assets/vendor/jquery/jquery.min.js?v=3.2.1"></script>
+<script src="/core/assets/vendor/underscore/underscore-min.js?v=1.8.3"></script>
+<script src="/core/assets/vendor/jquery/jquery-extend-3.4.0.js?v=3.2.1"></script>
+<script src="/core/misc/drupalSettingsLoader.js?v=8.7.3"></script>
+<script src="/core/misc/drupal.js?v=8.7.3"></script>
+<script src="/core/misc/drupal.init.js?v=8.7.3"></script>
+<script src="/themes/contrib/bootstrap/js/drupal.bootstrap.js?r3i2mx"></script>
+<script src="/themes/contrib/bootstrap/js/attributes.js?r3i2mx"></script>
+<script src="/themes/contrib/bootstrap/js/theme.js?r3i2mx"></script>
+<script src="/themes/linuxjournal/bootstrap/assets/javascripts/bootstrap/affix.js?r3i2mx"></script>
+<script src="/themes/linuxjournal/bootstrap/assets/javascripts/bootstrap/alert.js?r3i2mx"></script>
+<script src="/themes/linuxjournal/bootstrap/assets/javascripts/bootstrap/button.js?r3i2mx"></script>
+<script src="/themes/linuxjournal/bootstrap/assets/javascripts/bootstrap/carousel.js?r3i2mx"></script>
+<script src="/themes/linuxjournal/bootstrap/assets/javascripts/bootstrap/collapse.js?r3i2mx"></script>
+<script src="/themes/linuxjournal/bootstrap/assets/javascripts/bootstrap/dropdown.js?r3i2mx"></script>
+<script src="/themes/linuxjournal/bootstrap/assets/javascripts/bootstrap/modal.js?r3i2mx"></script>
+<script src="/themes/linuxjournal/bootstrap/assets/javascripts/bootstrap/tooltip.js?r3i2mx"></script>
+<script src="/themes/linuxjournal/bootstrap/assets/javascripts/bootstrap/popover.js?r3i2mx"></script>
+<script src="/themes/linuxjournal/bootstrap/assets/javascripts/bootstrap/scrollspy.js?r3i2mx"></script>
+<script src="/themes/linuxjournal/bootstrap/assets/javascripts/bootstrap/tab.js?r3i2mx"></script>
+<script src="/themes/linuxjournal/bootstrap/assets/javascripts/bootstrap/transition.js?r3i2mx"></script>
+<script src="/themes/linuxjournal/js/lj-consentmanager.js?r3i2mx"></script>
+<script src="/themes/contrib/bootstrap/js/popover.js?r3i2mx"></script>
+<script src="/core/modules/statistics/statistics.js?v=8.7.3"></script>
+<script src="https://linuxjournal.disqus.com/count.js" async defer id="dsq-count-scr"></script>
+<script src="/themes/linuxjournal/js/lj-disqus.js?r3i2mx"></script>
+
+    <!-- START EMBED -->
+    <script>
+      bizx.cmp.ifConsent('', 'all', function () {
+    	bizx.cmp.embedScript("https://api.b2c.com/api/init-448i7exgpyqpr9c144q.js");
+       });
+    </script>
+<noscript><img src="https://api.b2c.com/api/noscript-448i7exgpyqpr9c144q.gif"></noscript>
+<!-- END EMBED -->
+<!-- Matomo -->
+<script type="text/javascript">
+var _paq = _paq || [];
+function initPiwik() {
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="https://analytics.linuxjournal.com/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '50']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+}
+</script>
+<noscript><p><img src="https://analytics.linuxjournal.com/piwik.php?idsite=50&amp;rec=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Matomo Code -->
+<div class="modal-custom overlay-custom" id="ccpa-modal" style="margin-left: 0; display: none; max-width: 100%; width: 100%">
+    <div id="modal-content" class="modal-content">
+        <div class="modal-header" id="ccpa-modal-content-destination"></div>
+        <span class="close" id="modal-close">&times;</span>
+    </div>
+</div>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+:PROPERTIES:
+:ID:       7920836b-bf11-40d3-a17f-9f5fab96452b
+:END:
+#+TITLE: Prefix Filter: Better Than Bloom
+#+AUTHOR: Yang,Ying-chao
+#+EMAIL:  yang.yingchao@qq.com
+#+OPTIONS:  ^:nil _:nil H:7 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate 
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+TAGS:     noexport(n)
+#+LANGUAGE: en
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :runtime:filter:
+#+NOTER_DOCUMENT: ../pdf/d/p1311-even.pdf
+
+
+
+* Abstract
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/d/p1311-even.pdf
+:NOTER_PAGE: 1
+:CUSTOM_ID: h:1786f904-c305-4cb3-9883-b0040924d2b1
+:END:
+
+
+* INTRODUCTION
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/d/p1311-even.pdf
+:NOTER_PAGE: 1
+:CUSTOM_ID: h:4f4c58e1-3516-4df3-84ee-a73bb2ec5903
+:END:
+
+- What is a filter
+
+  属于近似查询 (approximate membership query), 用于判断独具是否在集合中。
+  + 如果输入在集合中，则必定输出 Yes
+  + 如果不在集合中，则输出 Yes 的概率不能多于 $\Sigma$
+
+
+- What are filters used for
+
+  + 与精确查询相比
+    * 更省资源， 与数据量无关，而与 \Sigma （误报率）有关
+    * 适于放在内存中，用于真正操作之前来过滤掉无效数据
+      * 比如 join

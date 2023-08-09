@@ -1,0 +1,94 @@
+:PROPERTIES:
+:ID:       13dba2b2-4ff1-4ce9-b610-d845185d72de
+:NOTER_DOCUMENT: ../pdf/7/sigmod-xengine.pdf
+:NOTER_OPEN: find-file
+:END:
+#+TITLE: X-Engine: An optimized storage engine for TP
+#+AUTHOR: Yang,Ying-chao
+#+EMAIL:  yang.yingchao@qq.com
+#+OPTIONS:  ^:nil _:nil H:7 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+TAGS:     noexport(n)
+#+LANGUAGE: en
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :LSM:xengine:
+
+
+* Abstract
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/7/sigmod-xengine.pdf
+:NOTER_OPEN: find-file
+:NOTER_PAGE: 1
+:CUSTOM_ID: h:2c165c11-315a-4b37-8b21-0aa7abc2c686
+:END:
+
+在线电商交易具有三个显著特点：
+1. 随着主要销售和促销活动的开始，每秒交易数量急剧增加；
+2. 大量的热门记录很容易压垮系统缓冲区；
+3. 由于不同类别的促销在不同的短时间内可用，不同记录的“温度”（热、温、冷）会快速转换。
+
+
+为了解决这些挑战，阿里巴巴引入了一种名为 X-Engine 的新的存储引擎，它是 POLARDB
+的一种优化的写入存储引擎。它采用分层存储体系结构和 LSM 树（日志结构合并树）来利用硬件加
+速，例如 FPGA 加速压实，并提供一系列优化，包括事务中的异步写入、多阶段管道和压实期间的增
+量缓存替换。评估结果表明，X-Engine 在此类事务负载下表现出更高的性能。
+
+
+为了提高系统性能，需要充分发掘内存层次结构（包括 RAM、SSD 和 HDD）提供的容量。
+X-Engine 采用分层存储的方案，根据数据的访问频率，把数据存储在不同的存储层中，并利用新的
+内存技术（如 NVM）来优化存储效能。同时，该系统采用 LSM-tree 数据结构作为一种天然的分层存储
+选择，其中包括内存和磁盘两部分。内存部分利用了追加写入方法实现了快速插入，而磁盘部分则采
+取不同层次构建树形结构，以更好地应对海啸和洪水般的数据量。本文还指出，单一的加速写入方法
+无法满足电子商务交易的需求，需要结合各种优化技术，选用适合复杂读写混合负载的数据结构来处
+理数据。
+
+The fast-moving current problem. “快速移动的当前问题”。
+
+热门记录往往在一个稳定的时间段内表现出强烈的空间局部性。然而，在诸如“双十一”购物节这样的
+大型促销活动中，热门记录的空间局部性常常会随着时间迅速发生变化。这是因为不同商品或记录会
+被不同的促销活动吸引，出现在不同的时间段内。文章举例说明，每天会有“秒杀”活动，用于刺激需
+求和吸引顾客在不同的商品上消费，而这些商品则会在不同的时间段内随机推出。因此，数据库缓存
+中的热门记录会不断变化，任何记录的温度都可能迅速从冷/温转变为热或从热转变为冷/温。如果把
+数据库缓存看作水库，把底层（大型）数据库看作海洋，这种现象就会导致一种“潮流”（即热门与冷
+门记录的变化）。
+
+
+* System Overview
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/7/sigmod-xengine.pdf
+:NOTER_OPEN: find-file
+:NOTER_PAGE: 3
+:CUSTOM_ID: h:9146fed8-4330-42f2-8e09-1b18a38a1c6d
+:END:
+
+X-Engine 是一种基于 LSM-Tree 的存储引擎，用于处理阿里巴巴电商平台面临的挑战。
+
+- 它利用多核处理器的线程级并行性（TLP）在主内存中处理大多数请求，
+- 并将写操作解耦，使其异步化，并将长的写操作路径分解为多个阶段以提高整体吞吐量。
+- 为了解决大流量问题，X-Engine 采用分层存储方法，利用优化的 LSM-Tree 结构和算法移动记录。
+- 将 FPGA 适用于压缩。
+- 最后，为了解决快速移动的当前问题，引入了多版本元数据索引，并采用写时复制的方式更新，以加速点查找操作。
+
+
+** Storage layout.
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/7/sigmod-xengine.pdf
+:NOTER_OPEN: find-file
+:NOTER_PAGE: 3
+:CUSTOM_ID: h:51404d1c-1567-40d0-a7fe-1f2481f6c3fa
+:END:
+
+#+NAME: fig:screenshot@2023-06-21_14:19:51
+[[file:images/sigmod-xengine/screenshot@2023-06-21_14:19:51.png]]
+
+图 2 展示了 X-Engine 的体系结构。
+
+- X-Engine 将每个表分成多个子表，并为每个子表维护 LSM 树、相关的元快照和索引。
+- X-Engine 包含每个数据库实例一个重做日志。
+- 每个 LSM 树由一个热数据层和一个暖/冷数据层组成，分别驻留在主内存和 NVM/SSD/HDD 上（这些层级进一步分成不同的级别），其中:
+  + 热、暖和冷是指数据温度，表示应该放置于相应层级的数据的理想访问频率。
+  + 热数据层包含一个活跃的内存表和多个不可变的内存表，它们存储最近插入的记录，并缓存热记录。
+  + 暖/冷数据层将数据组织成树形结构
+    * 树的每个级别都存储一系列有序的数据块。
+    * 一个数据块打包了记录的块和它们关联的过滤器和索引。

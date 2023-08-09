@@ -1,0 +1,219 @@
+:PROPERTIES:
+:ID:       190c9256-1e5a-4dff-a844-93ba39529899
+:NOTER_DOCUMENT: ../pdf/7/p46-li.pdf
+:END:
+#+TITLE: A Learned Query Rewrite System using Monte Carlo Tree Search
+#+AUTHOR: Yang,Ying-chao
+#+EMAIL:  yang.yingchao@qq.com
+#+OPTIONS:  ^:nil _:nil H:7 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate 
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+TAGS:     noexport(n)
+#+LANGUAGE: en
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :policytree:optimizer:rewrite
+- 查询重写使用启发式算法来实现，有两个限制
+  + 规则的应用顺序严重影响查询性能，但
+    * 可能的重写顺序随查询涉及到的算子指数增长
+    * 受限于搜索空间大小限制，很难找到最佳的顺序
+  + 针对不同的查询，不同的重写规则的收益也不同
+    * 当前的方法，只能应用于单个计划，而不能有效的估计查询重写的收益
+
+- 提出了基于策略树树的查询重写框架
+
+
+* INTRODUCTION
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/7/p46-li.pdf
+:NOTER_PAGE: 1
+:CUSTOM_ID: h:46536eca-7ea9-4ca8-80f5-de498e0868a9
+:END:
+
+- 查询重写：将一个 SQL 查询转换成为等价的、但性能更高的 SQL.
+
+- 规则的应用顺序严重影响查询性能， 以 [[fig:screenshot@2022-11-09_15:47:02][下图]] 为例：
+  + =q1=
+    * 采用传统的从上到下的顺序应用规则
+    * 仅能应用 =O1= 和 =O3=
+    * 执行时间 =>20 min=
+
+  + =q2=
+    * 通过策略树实现 =O1,O4,O3,O5= 的顺序应用规则
+    * 执行时间 =1.941s=
+
+   性能相差 600 倍。
+
+#+NAME: fig:screenshot@2022-11-09_15:47:02
+#+attr_html: :width 800px
+#+attr_org: :width 800px
+[[file:images/p46-li/screenshot@2022-11-09_15:47:02.png]]
+
+- 传统方法通过匹配预定义的规则顺序来重写
+  + 可能会陷入局部最优解
+
+* LearnedRewrite
+:PROPERTIES:
+:CUSTOM_ID: h:a4cf4c8f-4467-4181-b74c-5347a4209ae6
+:END:
+** 树形结构
+:PROPERTIES:
+:CUSTOM_ID: h:4e4f4b6c-db9f-46e4-8921-1ff6007daec1
+:END:
+
+- 使用 *策略树* 表达可能的顺序：
+  + 根节点 root: 表示输入的原始 SQL
+  + 每个非根节：点表示对其父节点应用重新规则之后生成的新的查询
+  + 根节点到其他节点的路径：表示重新的顺序
+
+- 策略树的优势
+  + 不同路径，可以共享相同的祖先 （已经重写的查询）
+    * 避免重复应用规则
+  + 可以通过蒙特卡罗树搜索 (Monte Carlo Tree Search, MCTS) 来探索策略树从而找到优化节点
+
+
+* PRELIMINARIES
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/7/p46-li.pdf
+:NOTER_PAGE: 2
+:CUSTOM_ID: h:44d869de-543c-466b-850e-e8f46557dcc5
+:END:
+
+
+** Query Rewrite Rules
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/7/p46-li.pdf
+:NOTER_PAGE: 2
+:CUSTOM_ID: h:5fd43385-0787-467c-9b88-873a9dca9406
+:END:
+
+*** Input Query
+:PROPERTIES:
+:CUSTOM_ID: h:0ba248e2-ddf1-4270-b6be-c6478f191999
+:END:
+
+
+#+CAPTION:
+#+NAME: fig:screenshot@2022-11-09_18:02:29
+[[file:images/p46-li/screenshot@2022-11-09_18:02:29.png]]
+
+
+*** Query Tree
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/7/p46-li.pdf
+:NOTER_PAGE: 2
+:CUSTOM_ID: h:bceebff8-90b2-4dc0-b2ff-836682b9f31d
+:END:
+
+#+CAPTION:
+#+NAME: fig:screenshot@2022-11-09_18:02:39
+[[file:images/p46-li/screenshot@2022-11-09_18:02:39.png]]
+
+
+*** Query Rewrite Rules
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/7/p46-li.pdf
+:NOTER_PAGE: 2
+:CUSTOM_ID: h:2052df80-43d1-414d-b812-efc69815e732
+:END:
+
+- 规则：针对查询的等价变换
+- 定义：  $$r = (o,c,a)$$
+  + 含义：
+    * o: operator, 算子
+    * c: condition, 条件
+    * a: rewrite action
+  + 解释：对于指定的查询 =q= ，规则
+    * 首先匹配到算子 =o=
+    * 如果 =c= 满足，或者 =o= 是子树的 root, 则对 =q= 应用 =a= ，得到 $$q^{(o,r)}$$ ,
+    * =q= 和 $$q^{(o,r)}$$ 等价
+
+
+*** Rewrite Benefit of Applying A Rewrite Rule
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/7/p46-li.pdf
+:NOTER_PAGE: 3
+:CUSTOM_ID: h:b2950e60-7f0c-4b5d-b703-4c88b7f41e1d
+:END:
+
+$$\Delta Cost(q^{(0,r)},q) = Cost(q) - Cost(q^{(o,r)})$$ where:
+- $$Cost(q)$$ : 重写之前的代价
+- $$Cost(q^{(o,r)})$$ ： 重写之后的代价
+
+
+*** The Rewrite Order of Applying Multiple Rewrite Rules
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/7/p46-li.pdf
+:NOTER_PAGE: 3
+:CUSTOM_ID: h:71790411-e9d5-4abd-bad0-43130750872d
+:END:
+
+
+** Query Rewrite
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/7/p46-li.pdf
+:NOTER_PAGE: 3
+:CUSTOM_ID: h:a32a0924-5b47-4885-9cea-878cb01dd027
+:END:
+
+
+*** Query Rewrite
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/7/p46-li.pdf
+:NOTER_PAGE: 3
+:CUSTOM_ID: h:01c94b89-3447-42b8-8239-6d9877adab66
+:END:
+
+- Human-involved methods
+  + 手动干预
+  + 性能高
+  + 分析，决策耗时长
+
+- Heuristic query rewrite 启发式 （如 PG）
+  + 自顶向下遍历查询计划中的算子，对每个算子：
+    * 如果匹配到规则，则应用规则
+
+  + 效率更高，但有两个主要限制：
+    * 应用规则的顺序是固定的 \\
+      可能会错过更好的重写顺序
+    * 该方法不考虑重写的收益 \\
+      可能会导致重写无用、甚至变得更慢
+
+
+*** Learning Models for Databases
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/7/p46-li.pdf
+:NOTER_PAGE: 3
+:CUSTOM_ID: h:e60dace2-5873-411a-afb8-6eba67661c54
+:END:
+
+
+*** Reinforcement Learning
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/7/p46-li.pdf
+:NOTER_PAGE: 4
+:CUSTOM_ID: h:6c83ebc3-f01d-47f5-a983-1977da0d0ab6
+:END:
+
+
+* TREE SEARCH FOR QUERY REWRITE
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/7/p46-li.pdf
+:NOTER_PAGE: 4
+:CUSTOM_ID: h:31bb8cdf-d5e0-41fe-a908-17e696dca69a
+:END:
+
+
+** Overview of Policy Tree Search
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/7/p46-li.pdf
+:NOTER_PAGE: 4
+:CUSTOM_ID: h:75f54fbc-fec3-421e-80be-b95c589828aa
+:END:
+
+
+- Policy Tree: \\
+  Given a query q and a set of rewrite rules, we build a policy tree T , where
+  the root node denotes the origin query q, any non-root node denotes a
+  rewritten query (that transforms the query of its parent by applying a
+  rewrite operation), and a leaf denotes a query that cannot be rewritten by
+  any rewrite rules.

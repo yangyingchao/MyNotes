@@ -1,0 +1,59 @@
+:PROPERTIES:
+:ID:       bca6bcc4-9268-427c-a8c0-42da3f5f49d2
+:END:
+#+TITLE: Ulimit conflict with PAM and Systemd
+#+AUTHOR: Yang,Ying-chao
+#+EMAIL:  yang.yingchao@qq.com
+#+OPTIONS:  ^:nil _:nil H:7 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate 
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+TAGS:     noexport(n)
+#+LANGUAGE: en
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :ulimit:pam:
+
+#+NOTER_DOCUMENT: https://mydbops.wordpress.com/2017/12/10/ulimit-conflict-with-pam-and-systemd%E2%80%8B%E2%80%8B%E2%80%8B/#content
+
+
+* =ulimit= 是做什么的
+:PROPERTIES:
+:NOTER_DOCUMENT: https://mydbops.wordpress.com/2017/12/10/ulimit-conflict-with-pam-and-systemd%E2%80%8B%E2%80%8B%E2%80%8B/#content
+:NOTER_PAGE: 1091
+:CUSTOM_ID: h:4f03ce15-57e7-4a81-9960-895d5e88acb4
+:END:
+
+User limits command, limit the use of system-wide resources.
+
+* ulimit 从哪里读取配置文件
+:PROPERTIES:
+:NOTER_DOCUMENT: https://mydbops.wordpress.com/2017/12/10/ulimit-conflict-with-pam-and-systemd%E2%80%8B%E2%80%8B%E2%80%8B/#content
+:NOTER_PAGE: 1232
+:CUSTOM_ID: h:09c51108-3b02-4b55-9d68-399352d01d07
+:END:
+
+
+#+CAPTION:
+#+NAME: fig:screen-shot-2017-12-08-at-3-24-21-pm
+#+DOWNLOADED: https://mydbops.files.wordpress.com/2017/12/screen-shot-2017-12-08-at-3-24-21-pm.png @ 2022-09-26 20:06:21
+#+attr_html: :width 800px
+#+attr_org: :width 800px
+[[file:images/ulimit-conflict-with-pam-and-systemd​​​/screen-shot-2017-12-08-at-3-24-21-pm.png]]
+
+- 从下面的文件、目录中读取配置文件
+  + /etc/security/limits.conf
+  + /etc/security/limits.d/*.conf
+
+- 默认从前者读取，然后用后面的文件中读取来覆盖前者。
+
+- 目录 /etc/security/limits.d/ 中的文件，按照 C locale 的顺序来读取、解析并应用
+
+
+* How PAM Modules related to  /etc/security/limit.d/*.conf
+:PROPERTIES:
+:NOTER_DOCUMENT: https://mydbops.wordpress.com/2017/12/10/ulimit-conflict-with-pam-and-systemd%E2%80%8B%E2%80%8B%E2%80%8B/#content
+:NOTER_PAGE: 2628
+:CUSTOM_ID: h:9f953590-6cd4-4b57-9a09-cd2ecbed0f7d
+:END:
+
+- The pam_limits PAM module sets limits on the system resources that can be obtained in a user session.
+- When accessing a system via ssh through sshd the /etc.pam.d/sshd policy file is consulted.

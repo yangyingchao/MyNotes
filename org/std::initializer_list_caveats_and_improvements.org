@@ -1,0 +1,78 @@
+:PROPERTIES:
+:ID:       54a0372b-b4c9-4ad8-b5cd-d663fc7f9dfb
+:NOTER_DOCUMENT: https://www.cppstories.com/2023/initializer_list_improvements/
+:NOTER_OPEN: browse-url
+:END:
+#+TITLE: std::initializer_list in C++
+#+AUTHOR: Yang,Ying-chao
+#+EMAIL:  yang.yingchao@qq.com
+#+OPTIONS:  ^:nil _:nil H:7 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+TAGS:     noexport(n)
+#+LANGUAGE: en
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :cpp:tag2:
+
+
+* [[https://www.cppstories.com/2023/initializer_list_improvements/#1-referencing-local-array][Referencing local array]]
+:PROPERTIES:
+:NOTER_DOCUMENT: https://www.cppstories.com/2023/initializer_list_improvements/
+:NOTER_PAGE: 806
+:CUSTOM_ID: h:bfb895f8-a465-4cb7-a534-ad7148fe328d
+:END:
+
+=std::initializer_list= 在使用中会转化成为常量对象的匿名局部数组：
+
+#+BEGIN_SRC c++ -r
+std::initializer_list<int> wrong() { // for illustration only!
+    return { 1, 2, 3, 4};
+}
+int main() {
+    std::initializer_list<int> x = wrong();
+}
+
+#+END_SRC
+
+The above code is equivalent to the following:
+
+#+BEGIN_SRC c++
+std::initializer_list<int> wrong() {
+    const int arr[] { 1, 2, 3, 4}
+    return std::initializer_list<int>{arr, arr+4};
+}
+int main() {
+    std::initializer_list<int> x = wrong();
+}
+#+END_SRC
+
+如果尝试编译的话，会出错：
+
+#+BEGIN_SRC text -r
+GCC:
+warning: returning temporary 'initializer_list' does not extend the lifetime of the underlying array [-Winit-list-lifetime]
+    5 |     return { 1, 2, 3, 4};
+
+Or in Clang:
+
+<source>:5:12: warning: returning address of local temporary object [-Wreturn-stack-address]
+    return { 1, 2, 3, 4};
+#+END_SRC
+
+
+*结论：* \\
+
+- =std::initializer_list= 是一种 “view” type
+- 他引用一个局部的常量数组 it references some implementation-dependent and a local array of const values.
+- Use it mainly for passing into functions when you need a variable number of arguments of the same type.
+- If you try to return such lists and pass them around, then you risk lifetime issues
+
+
+* [[https://www.cppstories.com/2023/initializer_list_improvements/#2-the-cost-of-copying-elements][The cost of copying elements]]
+:PROPERTIES:
+:NOTER_DOCUMENT: https://www.cppstories.com/2023/initializer_list_improvements/
+:NOTER_PAGE: 2049
+:CUSTOM_ID: h:e1ac2da6-09b6-49cc-95eb-c30b134cd45c
+:END:
+
+通过初始化列表来传递参数很方便，但最好知道，当向 vector 中传递对象时候，vector 中的每个元素都会进行一次拷贝构造，应该了解其代价。

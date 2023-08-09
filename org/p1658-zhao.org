@@ -1,0 +1,38 @@
+:PROPERTIES:
+:ID:       23bcdcf9-061d-4e51-9b6d-286856aa313d
+:NOTER_DOCUMENT: ../pdf/0/p1658-zhao.pdf
+:END:
+#+TITLE: QueryFormer: A Tree Transformer Model for Query Plan Representation
+#+AUTHOR: Yang Yingchao
+#+EMAIL:  yang.yingchao@qq.com
+#+OPTIONS:  ^:nil _:nil H:7 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate 
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+TAGS:     noexport(n)
+#+LANGUAGE: en
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :optimization:machie_learning:QueryFormer:
+
+QueryFormer:
+- learning-based query planer representation model
+- with tree-structured Transformer architecture
+-integrate histograms from database into query plan encoding
+
+
+* INTRODUCTION
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/0/p1658-zhao.pdf
+:NOTER_PAGE: 1
+:CUSTOM_ID: h:183f9122-54a5-402b-a116-7c3d46e8969d
+:END:
+
+- Physical Query Plan As DAG (Directed Acyclic Graph)
+  #+CAPTION: Example query and query plan
+  #+NAME: fig:screenshot@2022-11-03_11:43:04
+  [[file:images/p1658-zhao/screenshot@2022-11-03_11:43:04.png]]
+
+  + node 表示操作
+  + edge 表示方向
+  + 子节点先执行，执行结果给父节点作为输入
+
+- Physical Query Plan 作为机器学习的输入，用以数据库优化

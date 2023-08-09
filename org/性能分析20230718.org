@@ -1,0 +1,117 @@
+:PROPERTIES:
+:ID:       ab96a9f3-4023-430c-a843-3565d13c51d2
+:NOTER_DOCUMENT: ../../../Downloads/性能分析_20230718.pdf
+:NOTER_OPEN: find-file
+:END:
+#+TITLE: 性能分析
+#+AUTHOR: Yang,Ying-chao
+#+EMAIL:  yang.yingchao@qq.com
+#+OPTIONS:  ^:nil _:nil H:7 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+TAGS:     noexport(n)
+#+LANGUAGE: en
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :tag1:tag2:
+
+
+* 怎么看执行计划及执行过程
+:PROPERTIES:
+:NOTER_DOCUMENT: ../../../Downloads/性能分析_20230718.pdf
+:NOTER_OPEN: find-file
+:NOTER_PAGE: 2
+:CUSTOM_ID: h:b97b89bb-f9f7-47bd-8297-2bdf79f5ac6f
+:END:
+
+
+
+- =set sc_enable_explain_allstat=1= : 可以查看所有 executor 的执行时间
+
+
+* 4、算子执行性能
+:PROPERTIES:
+:NOTER_DOCUMENT: ../../../Downloads/性能分析_20230718.pdf
+:NOTER_OPEN: find-file
+:NOTER_PAGE: 3
+:CUSTOM_ID: h:e69bd07b-9bf7-4184-966a-64a4c06ee241
+:END:
+
+一般情况下，尤其数据量比较大的情况下，执行性能方面：
+- =indexjoin > hash join > mergejoin >> nestloop join;=
+- =hashagg > group agg(也就是 sort agg)=
+
+但是有些情况，sql 比较复杂，代价评估模型不能准确的做出正确的评估，导致性能不够优
+
+1. index join，条件比较苛刻，要求大表有索引，小表命中越少越容易走索引扫描， 这样大表既能快速命中又能避免全表扫描
+2. hash join，用的最多的一种 join，除了重复值极高的情况一般都适合使用 hash join
+3. merge join，两个表先排序，主要慢在排序上，尤其数据量大的时候溢出数据比较多
+4. nestloop join，一般情况下不会走到，基本要禁掉，一旦走进去且有一定数据量（单个 executor 超过 1 万行数据）基本就会长期 cpu 100%执行不出来
+5. hashagg 和 group agg 类似 hash join 和 merge join 的对比
+
+
+* 5、exists、not exists、in、not in
+:PROPERTIES:
+:NOTER_DOCUMENT: ../../../Downloads/性能分析_20230718.pdf
+:NOTER_OPEN: find-file
+:NOTER_PAGE: 4
+:CUSTOM_ID: h:cf979322-3e9e-499a-89ae-4435416ad352
+:END:
+
+
+** exists 和 in 是等价的
+:PROPERTIES:
+:NOTER_DOCUMENT: ../../../Downloads/性能分析_20230718.pdf
+:NOTER_OPEN: find-file
+:NOTER_PAGE: 4
+:CUSTOM_ID: h:a37df4b1-495a-49a9-a0dc-d10ab87b26ca
+:END:
+比如
+#+BEGIN_SRC sql
+select ... from t1 where a in (select a from t2);
+#+END_SRC
+
+可以改写为
+#+BEGIN_SRC sql
+select ... from t1 where exists(select 1 from t2 where t1.a = t2.a);
+#+END_SRC
+
+
+*结论：* semi join 会以子查询中的表作为 hash 表，普通 join 一般挑选小表作为 hash 表，因此当
+遇到 semi join 且子查询比较大时，要考虑尽量让子查询中的表关联字段为 hash 列， 避免拉表操
+作，如果业务逻辑允许，最好不要让子查询中的表为大表；另外如果子查询中的关联字段重复值比较
+多，但是代价评估不准，也可以通过改写变成普通 join,改成 select ... from t1 where a in
+(select *from (select a from t2 group by a) t22);
+
+
+** 2）not exists 与 not in 不等价
+:PROPERTIES:
+:NOTER_DOCUMENT: ../../../Downloads/性能分析_20230718.pdf
+:NOTER_OPEN: find-file
+:NOTER_PAGE: 5
+:CUSTOM_ID: h:7ad564b7-336c-47d6-b028-b0fcba246a23
+:END:
+- not exists 匹配是忽略 null 值的，
+- not in 操作中不忽略 null 值 null 被当做任意值处理；
+
+当数据中没有 null 时 not in 和 not exists 是等价的，当数据中存
+
+
+** 4）多列 not in（多列
+:PROPERTIES:
+:NOTER_DOCUMENT: ../../../Downloads/性能分析_20230718.pdf
+:NOTER_OPEN: find-file
+:NOTER_PAGE: 7
+:CUSTOM_ID: h:d0064e84-8964-4abe-9def-b832acde4a6b
+:END:
+多列 not in 操作走 nestloop join，数据量稍微大一些基本是 cpu 100%长时间执行不出来的情况，
+要尽量避免，如果没有 null 值可以改为 not exists 当然产品侧也尽量去优化这种场景，但是短期内
+解决不了这个问题
+
+
+** 5）not in 子查询中含有 union 类似操作，会产生 SubPlan
+:PROPERTIES:
+:NOTER_DOCUMENT: ../../../Downloads/性能分析_20230718.pdf
+:NOTER_OPEN: find-file
+:NOTER_PAGE: 7
+:CUSTOM_ID: h:c2766e52-5e26-4c56-9fbd-3f640e948aeb
+:END:

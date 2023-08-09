@@ -1,0 +1,78 @@
+:PROPERTIES:
+:ID:       beaedea8-a208-4832-80af-f6adae4817d3
+:NOTER_DOCUMENT: ../pdf/f/p1714-kossmann.pdf
+:END:
+#+TITLE: Adaptive Range Filters for Cold Data: Avoiding Trips to Siberia
+#+AUTHOR: Yang Yingchao
+#+EMAIL:  yang.yingchao@qq.com
+#+OPTIONS:  ^:nil _:nil H:7 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate 
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+TAGS:     noexport(n)
+#+LANGUAGE: en
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :range:filter:sqlserver:
+
+
+对目前的架构来讲，和 *粗糙索引* 作用重叠。。
+
+* ABSTRACT
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/f/p1714-kossmann.pdf
+:NOTER_PAGE: 1
+:CUSTOM_ID: h:925d40ea-36be-4f97-92e1-5a9583172847
+:END:
+
+- *ARF*: Adaptive Range Filter, 自适应范围过滤器
+- ARF is for Range queries, while
+- BloomFilter is for Point queries
+
+
+
+* INTRODUCTION
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/f/p1714-kossmann.pdf
+:NOTER_PAGE: 1
+:CUSTOM_ID: h:a4fb225f-a49e-4a9e-927c-a0173212264d
+:END:
+
+
+* APPLICATION EXAMPLE
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/f/p1714-kossmann.pdf
+:NOTER_PAGE: 1
+:CUSTOM_ID: h:a555d6ac-abe7-471a-872e-af21f9cfa13c
+:END:
+
+
+** Project Siberia
+:PROPERTIES:
+:NOTER_DOCUMENT: ../pdf/f/p1714-kossmann.pdf
+:NOTER_PAGE: 1
+:CUSTOM_ID: h:e89b04c8-78da-49f9-ae2b-4b9de35e7442
+:END:
+
+- Siberia 是 Hekaton 项目用于管理冷数据的一个项目
+  + Hekaton 则是 SQL Server 套件中的内存数据库
+
+
+- 查询处理
+#+CAPTION:
+#+NAME: fig:screenshot@2022-10-19_08:47:07
+[[file:images/p1714-kossmann/screenshot@2022-10-19_08:47:07.png]]
+
+  + Hot Store
+    * 用于查询热数据
+
+  + Cold Store
+    * 用于查询冷数据
+    * 标准的 SQL Server 表
+
+  + 冷热查询对客户端透明
+    * 需要时候由 QueryProcessor 对两种数据的结果进行聚合操作
+
+  + 冷数据的查询代价很高
+
+  + filter 用于判定冷数据中是否有符合条件的数据
+    * 返回 true:  可能有，需要访问冷数据
+    * 返回 false: 肯定无，无需访问冷数据

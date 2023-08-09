@@ -1,0 +1,89 @@
+:PROPERTIES:
+:ID:       38e03f8c-51d7-4465-9023-7505388643a7
+:NOTER_DOCUMENT: https://www.digitalocean.com/community/tutorials/how-to-use-journalctl-to-view-and-manipulate-systemd-logs
+:NOTER_OPEN: eww
+:END:
+#+TITLE: How To Use Journalctl to View and Manipulate Systemd Logs
+#+AUTHOR: Yang,Ying-chao
+#+EMAIL:  yang.yingchao@qq.com
+#+OPTIONS:  ^:nil _:nil H:7 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+TAGS:     noexport(n)
+#+LANGUAGE: en
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :journalctl:logs:
+
+
+* Basic Log Viewing
+:PROPERTIES:
+:NOTER_DOCUMENT: https://www.digitalocean.com/community/tutorials/how-to-use-journalctl-to-view-and-manipulate-systemd-logs
+:NOTER_OPEN: eww
+:NOTER_PAGE: 3961
+:CUSTOM_ID: h:cf631f63-41b8-4f82-8544-76d72d2bdcdf
+:END:
+
+
+* Journal Filtering by Time
+:PROPERTIES:
+:NOTER_DOCUMENT: https://www.digitalocean.com/community/tutorials/how-to-use-journalctl-to-view-and-manipulate-systemd-logs
+:NOTER_OPEN: eww
+:NOTER_PAGE: 6158
+:CUSTOM_ID: h:a95fc26a-5a39-458f-9a0f-bbbddcbab960
+:END:
+
+
+** Displaying Logs from the Current Boot
+:PROPERTIES:
+:NOTER_DOCUMENT: https://www.digitalocean.com/community/tutorials/how-to-use-journalctl-to-view-and-manipulate-systemd-logs
+:NOTER_OPEN: eww
+:NOTER_PAGE: 6458
+:CUSTOM_ID: h:692298a1-3c38-4603-9577-94123cec0d63
+:END:
+
+- journalctl -b
+- journalctl --list-boots
+- journalctl -b -1
+
+
+*** Time Windows
+:PROPERTIES:
+:NOTER_DOCUMENT: https://www.digitalocean.com/community/tutorials/how-to-use-journalctl-to-view-and-manipulate-systemd-logs
+:NOTER_OPEN: eww
+:NOTER_PAGE: 9099
+:CUSTOM_ID: h:9848389e-a8bf-4fb5-acf2-8e8d5a6c02f4
+:END:
+- journalctl --since "2015-01-10 17:15:00"
+- journalctl --since "2015-01-10" --until "2015-01-11 03:00"
+
+
+** Filtering by Message Interest
+:PROPERTIES:
+:NOTER_DOCUMENT: https://www.digitalocean.com/community/tutorials/how-to-use-journalctl-to-view-and-manipulate-systemd-logs
+:NOTER_OPEN: eww
+:NOTER_PAGE: 10834
+:CUSTOM_ID: h:d6a93171-ab71-47be-b173-951f3cc5675a
+:END:
+
+
+*** By Unit
+:PROPERTIES:
+:NOTER_DOCUMENT: https://www.digitalocean.com/community/tutorials/how-to-use-journalctl-to-view-and-manipulate-systemd-logs
+:NOTER_OPEN: eww
+:NOTER_PAGE: 11095
+:CUSTOM_ID: h:b4688189-5838-407a-9730-705f81f22dad
+:END:
+
+
+- journalctl -u nginx.service
+- journalctl -u nginx.service --since today
+- journalctl -u nginx.service -u php-fpm.service --since today
+
+
+*** By Process, User, or Group ID
+:PROPERTIES:
+:NOTER_DOCUMENT: https://www.digitalocean.com/community/tutorials/how-to-use-journalctl-to-view-and-manipulate-systemd-logs
+:NOTER_OPEN: eww
+:NOTER_PAGE: 12103
+:CUSTOM_ID: h:861a1506-8460-4fc3-bd7c-011f42a63112
+:END:
