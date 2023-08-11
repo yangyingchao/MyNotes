@@ -1,0 +1,49 @@
+:PROPERTIES:
+:ID:       cdf49246-7751-465c-b91c-7f10af09239a
+:END:
+#+TITLE: Tips of Bash/Zsh
+#+AUTHOR: Yang,Ying-chao
+#+EMAIL:  yang.yingchao@qq.com
+#+OPTIONS:  ^:nil _:nil H:7 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+TAGS:     noexport(n)
+#+LANGUAGE: en
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :utility:bash:zsh:
+
+* 展开 Bash 数组 (array) 时候， =${ARRARY[@]}= 和 =${ARRARY[**]}= 有什么区别？
+:PROPERTIES:
+:CUSTOM_ID: h:c2349cd1-7eb4-4ae1-9eea-323aea44ee72
+:END:
+
+
+INFO 中有相关说明：
+
+#+BEGIN_QUOTE
+数组的任何元素可以使用'${NAME[SUBSCRIPT]}'来引用。
+
+这些大括号是为了避免与 shell 的文件名扩展操作符产生冲突。如果 SUBSCRIPT 为'@'或'*'，那么
+该词会扩展为数组 NAME 的所有成员。这些下标在词出现在双引号内时才有所不同。如果该词被双引
+号括起来，'${NAME[*]}'会扩展为单词，其值为每个数组成员之间以 IFS 变量的第一个字符分隔，
+而'${NAME[@]}'会将 NAME 的每个元素扩展为独立的单词。当数组没有成员时，'${NAME[@]}'扩展为
+空。如果双引号扩展出现在一个单词中，第一个参数的扩展将与原始单词的开头部分连接，而最后一
+个参数的扩展将与最后部分连接。
+#+END_QUOTE
+
+
+例子：
+#+BEGIN_SRC sh -r
+a=('1' "2" "3" "4")
+export IFS="|"
+
+echo "${a[@]}"
+echo "${a[*]}"
+#+END_SRC
+
+输出为：
+#+BEGIN_SRC text -r
+  -*- mode: compilation; default-directory: "~/tmp/" -*-
+  1 2 3 4
+  1|2|3|4
+#+END_SRC
