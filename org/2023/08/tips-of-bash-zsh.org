@@ -4,7 +4,7 @@
 #+TITLE: Tips of Bash/Zsh
 #+AUTHOR: Yang,Ying-chao
 #+EMAIL:  yang.yingchao@qq.com
-#+OPTIONS:  ^:nil _:nil H:7 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+OPTIONS:  ^:nil _:nil H:7 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc author:nil
 #+STARTUP:  align nodlcheck oddeven lognotestate
 #+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
 #+TAGS:     noexport(n)
@@ -12,11 +12,10 @@
 #+EXCLUDE_TAGS: noexport
 #+FILETAGS: :utility:bash:zsh:
 
-* 展开 Bash 数组 (array) 时候， =${ARRARY[@]}= 和 =${ARRARY[**]}= 有什么区别？
+* 展开 Bash 数组 (array) 时候， =${ARRARY[@]}= 和 =${ARRARY[*]}= 有什么区别？
 :PROPERTIES:
 :CUSTOM_ID: h:c2349cd1-7eb4-4ae1-9eea-323aea44ee72
 :END:
-
 
 INFO 中有相关说明：
 

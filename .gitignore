@@ -1,3 +1,13 @@
 /.database
 /pdf
 /pptx
+/.hugo_build.lock
+/static/
+/content
+/public/
+/resources
+/straight/
+/hugo/static/
+/hugo/content/
+/hugo/resources/
+/hugo/public/

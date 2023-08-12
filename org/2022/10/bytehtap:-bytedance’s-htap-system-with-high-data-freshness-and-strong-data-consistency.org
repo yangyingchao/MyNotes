@@ -5,7 +5,7 @@
 #+AUTHOR: Yang,Ying-chao
 #+EMAIL:  yang.yingchao@qq.com
 #+FILETAGS: :HTAP:ByteDance:
-#+OPTIONS:  ^:nil _:nil H:7 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+OPTIONS:  ^:nil _:nil H:7 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc author:nil
 #+STARTUP:  align nodlcheck oddeven lognotestate
 #+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
 #+TAGS:     noexport(n)
@@ -64,7 +64,7 @@
 
   + 共享存储
     * 字节现有的基础系统采用存储计算分离模型
-    * ByteNDB 的架构类似于Amazon Aurora
+    * ByteNDB 的架构类似于 Amazon Aurora
     * 将 ByteNDB 的复制存储进行拓展，支持了列存，以便将变更以最小延迟在存储存传播
     * 列存用于 OLAP
     * 还做了一个内存中的 delta store, 用于保存最新的数据变更， 供 OLAP 使用

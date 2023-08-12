@@ -6,13 +6,14 @@
 #+TITLE: openGauss+技术架构
 #+AUTHOR: Yang,Ying-chao
 #+EMAIL:  yang.yingchao@qq.com
-#+OPTIONS:  ^:nil _:nil H:7 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+OPTIONS:  ^:nil _:nil H:7 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc author:nil author:nil
 #+STARTUP:  align nodlcheck oddeven lognotestate
 #+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
 #+TAGS:     noexport(n)
 #+LANGUAGE: en
+#+DATE:2023-05-05
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :tag1:tag2:
+#+FILETAGS: :database:guassdb:
 
 
 * 体系结构
