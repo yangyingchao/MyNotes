@@ -1,0 +1,227 @@
+:PROPERTIES:
+:ID:       ed87dd2a-5d6c-4f36-a430-00f80647e996
+:NOTER_DOCUMENT: https://mp.weixin.qq.com/s?__biz=MzU2MDcxODEyOA==&mid=2247516317&idx=1&sn=1ce041534c61c34cd1ab12d90df7c1d6&chksm=fc0108c2cb7681d4be8d3c1fdb3a10662ad10562288d149c964e8a3f99b3d8cbeb804039be2a&mpshare=1&scene=1&srcid=0822kXJqkOrYaspzxxbWHkai&sharer_sharetime=1692699939078&sharer_shareid=9e76a16cd9cee4d8b92e9f0cc7b3921c#rd
+:NOTER_OPEN: eww
+:END:
+#+TITLE: GaussDB技术解读系列之HTAP方向的探索与发展
+#+AUTHOR: Yang,Ying-chao
+#+EMAIL:  yang.yingchao@qq.com
+#+DATE:   2023-08-22
+#+OPTIONS:  ^:nil _:nil H:7 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+LANGUAGE: en
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :guassdb:htap:
+
+
+* 什么是 HTAP？
+:PROPERTIES:
+:NOTER_DOCUMENT: https://mp.weixin.qq.com/s?__biz=MzU2MDcxODEyOA==&mid=2247516317&idx=1&sn=1ce041534c61c34cd1ab12d90df7c1d6&chksm=fc0108c2cb7681d4be8d3c1fdb3a10662ad10562288d149c964e8a3f99b3d8cbeb804039be2a&mpshare=1&scene=1&srcid=0822kXJqkOrYaspzxxbWHkai&sharer_sharetime=1692699939078&sharer_shareid=9e76a16cd9cee4d8b92e9f0cc7b3921c#rd
+:NOTER_OPEN: eww
+:NOTER_PAGE: 235
+:CUSTOM_ID: h:5b21d35f-99bb-4d99-81d3-91a62417244e
+:END:
+
+- TP 和 AP 的特点
+  + TP 一般是做交易型的业务，
+    * 它的数据量通常来说比较小，在 GB~TB 的范围内，
+    * 它要求低时延、高吞吐，同时对高可用、故障恢复要求较高。
+  + AP 一般用于对历史数 据做分析，根据数据分析的结论为企业的商业决策提供一些支撑，因此
+    * AP 对时延和吞吐的要求没有 那么高，
+    * 主要面对数据量大、查询偏复杂的场景。
+
+- 2010 年左右，业内开始考虑把 TP 和 AP 同时融合到同一个数据库里，通过这种 方式提升数据库处理数据的能力
+
+- 总结了 HTAP 有两个关键特点:
+
+  + 一个是采用 In-Memory 的架构。\\
+    我们可以看到，无论是老牌的数据库厂商，还是新兴的数据库厂商，都不约而同采用 In-Memory 的架构来实现 HTAP。
+
+  + 另外一个是实时。\\
+    我们当前的架构主要是，交易型的业务在行存的数据库上，分析型的业务在列存的数仓上，中间
+    通过 ETL 工具传输数据。这个架构的问题是，它的数据新鲜度不够好，比如说先前在互联网应用
+    方面，我们经常做一些个性化的用户推荐，在给用户推荐感兴趣的商品时，会在登录时对它进行
+    一个用户画像，根据用户画像的结果推荐产品，这是一种实时分析的能力。另外就是防诈骗系统，
+    需要实时的响应，实时分析这笔交易是否为诈骗交易。这种实时性的特点，对 HTAP 方案提出了新
+    的要求。我们当前的 HTAP 架构主要应对实时 AP 分析的能力，实时 AP 对性能上有一些影响，它随着
+    数据新鲜度，也就是实时性要求变高，数据库的性能会有一些下降。
+
+
+* HTAP 架构模式有哪些？
+:PROPERTIES:
+:NOTER_DOCUMENT: https://mp.weixin.qq.com/s?__biz=MzU2MDcxODEyOA==&mid=2247516317&idx=1&sn=1ce041534c61c34cd1ab12d90df7c1d6&chksm=fc0108c2cb7681d4be8d3c1fdb3a10662ad10562288d149c964e8a3f99b3d8cbeb804039be2a&mpshare=1&scene=1&srcid=0822kXJqkOrYaspzxxbWHkai&sharer_sharetime=1692699939078&sharer_shareid=9e76a16cd9cee4d8b92e9f0cc7b3921c#rd
+:NOTER_OPEN: eww
+:NOTER_PAGE: 1170
+:CUSTOM_ID: h:cf283d8d-9c7c-4a64-8102-e08cef75921f
+:END:
+
+
+** IN-Memory Store 模式
+:PROPERTIES:
+:NOTER_DOCUMENT: https://mp.weixin.qq.com/s?__biz=MzU2MDcxODEyOA==&mid=2247516317&idx=1&sn=1ce041534c61c34cd1ab12d90df7c1d6&chksm=fc0108c2cb7681d4be8d3c1fdb3a10662ad10562288d149c964e8a3f99b3d8cbeb804039be2a&mpshare=1&scene=1&srcid=0822kXJqkOrYaspzxxbWHkai&sharer_sharetime=1692699939078&sharer_shareid=9e76a16cd9cee4d8b92e9f0cc7b3921c#rd
+:NOTER_OPEN: eww
+:NOTER_PAGE: 1304
+:CUSTOM_ID: h:e50df0a5-f62c-4e9e-b225-236d99e8e439
+:END:
+
+这种模式在同一个集群内对行存引擎做了增强，用空间换时间，在内存里保存一份列存数据，我们
+可以把他看成是一个列存索引，这种架构下的数据新鲜度比较好，行存和列存的数据完全同步，在
+行存和列存中间，会有一个 Delta 表记录增删改操作带来的增量数据，后台有进程定期将 Delta 表里
+的数据 Merge 到列存引擎。
+
+但是这种架构的扩展性一般，资源的隔离性不佳，能够支撑的列存的数据
+量也是有限度的，
+
+因此这种架构适用于 TP 为主，实时 AP 为辅的业务模型。
+
+
+** 主备架构模式
+:PROPERTIES:
+:NOTER_DOCUMENT: https://mp.weixin.qq.com/s?__biz=MzU2MDcxODEyOA==&mid=2247516317&idx=1&sn=1ce041534c61c34cd1ab12d90df7c1d6&chksm=fc0108c2cb7681d4be8d3c1fdb3a10662ad10562288d149c964e8a3f99b3d8cbeb804039be2a&mpshare=1&scene=1&srcid=0822kXJqkOrYaspzxxbWHkai&sharer_sharetime=1692699939078&sharer_shareid=9e76a16cd9cee4d8b92e9f0cc7b3921c#rd
+:NOTER_OPEN: eww
+:NOTER_PAGE: 1540
+:CUSTOM_ID: h:d30833b8-2140-4152-9ea7-e8f70bf3e8d1
+:END:
+这种模式下主机上是行存模式，应对 TP 业务负载，在只读的备机上是列存模式，应对 AP 的业务负载，
+主备之间通过物理复制或逻辑复制的方式实现数据同步。
+
+这种方式的扩展性、资源隔离性都比较好，
+
+但是数据的新鲜度取决于主备之间的数据传输模式，如果采用同步复制，则主备的数据新鲜度较好，
+但是对主机的事务吞吐量会有所影响；如果采用异步复制模式，则主备的数据新鲜度取决于数据的
+延迟。
+
+
+** IN-Memory Computing 模式
+:PROPERTIES:
+:NOTER_DOCUMENT: https://mp.weixin.qq.com/s?__biz=MzU2MDcxODEyOA==&mid=2247516317&idx=1&sn=1ce041534c61c34cd1ab12d90df7c1d6&chksm=fc0108c2cb7681d4be8d3c1fdb3a10662ad10562288d149c964e8a3f99b3d8cbeb804039be2a&mpshare=1&scene=1&srcid=0822kXJqkOrYaspzxxbWHkai&sharer_sharetime=1692699939078&sharer_shareid=9e76a16cd9cee4d8b92e9f0cc7b3921c#rd
+:NOTER_OPEN: eww
+:NOTER_PAGE: 1757
+:CUSTOM_ID: h:b651f209-8a4b-4faf-859e-e20feef34570
+:END:
+
+这种模式将列式内存引擎和数据库对接，由数据库负责 TP 业务，列式内存引擎负责 AP 业务。
+
+
+由于其部署在云上，因此有很好的计算弹性，数据库和列式内存引擎之间通过逻辑复制同步数据，数
+据的延迟小于 100ms，能够较好的兼顾数据新鲜度和性能之间的平衡。
+
+
+** 主列存+增量行存模式
+:PROPERTIES:
+:NOTER_DOCUMENT: https://mp.weixin.qq.com/s?__biz=MzU2MDcxODEyOA==&mid=2247516317&idx=1&sn=1ce041534c61c34cd1ab12d90df7c1d6&chksm=fc0108c2cb7681d4be8d3c1fdb3a10662ad10562288d149c964e8a3f99b3d8cbeb804039be2a&mpshare=1&scene=1&srcid=0822kXJqkOrYaspzxxbWHkai&sharer_sharetime=1692699939078&sharer_shareid=9e76a16cd9cee4d8b92e9f0cc7b3921c#rd
+:NOTER_OPEN: eww
+:NOTER_PAGE: 1900
+:CUSTOM_ID: h:5b382630-9cd4-4651-a0b5-3184be1119fd
+:END:
+
+
+通过主列存+增量行存的方式既能够较好的支撑 TP 业务，也能够应对 AP 业务，在 TP/AP 性能上做了一
+些均衡。其中增量行存可以看做是 delta 表，应对 TP 中的增删改操作，保证增删改操作的性能和 TP 系
+统基本一致，同时通过主列存引擎对 AP 业务进行加速，当然在做 AP 业务时，会同时访问增量数据和
+列存数据，达成数据的一致性。
+
+
+*  思考
+:PROPERTIES:
+:CUSTOM_ID: h:05ee8b35-d261-4b7b-9f39-ba3c95542278
+:END:
+我们有了这么多模式之后，可以思考两个问题。一个是到底什么样的架构才是真正的 HTAP 架构？我
+个人的观点是没有适合的定义，因为在不同的业务场景下，TP 和 AP 的占比不一样，包括周边各种环
+境，各种因素都不同，每个用户的选择也会不一样。包括我们在 HTAP 研发过程中接触到很多用户，
+每个用户都提出很多要求，像 Orcale 这种架构更适合重 TP、轻 AP 的场景，而 HANA 这种架构更多是做
+偏 AP 分析型的应用。如果我们以 TP、AP 业务占比做一个横轴的话，每个架构在上面都有一个独立的
+坐标点。
+
+另外一个问题，我们当前这些 HTAP 的主流架构能不能取代以前的那种 TP+ETL+AP 的架构？从目前看，
+如果我们把 HTAP 定义为实时 TP+实时 AP，实际上是不能取代的，因为 TP+ETL+AP 这种架构，AP 的数据
+量远远大于当前 HTAP 的主流架构所能支撑的 AP 数据量。
+
+
+** GaussDB 对 HTAP 的思考
+:PROPERTIES:
+:NOTER_DOCUMENT: https://mp.weixin.qq.com/s?__biz=MzU2MDcxODEyOA==&mid=2247516317&idx=1&sn=1ce041534c61c34cd1ab12d90df7c1d6&chksm=fc0108c2cb7681d4be8d3c1fdb3a10662ad10562288d149c964e8a3f99b3d8cbeb804039be2a&mpshare=1&scene=1&srcid=0822kXJqkOrYaspzxxbWHkai&sharer_sharetime=1692699939078&sharer_shareid=9e76a16cd9cee4d8b92e9f0cc7b3921c#rd
+:NOTER_OPEN: eww
+:NOTER_PAGE: 2457
+:CUSTOM_ID: h:19e241a9-66b3-446d-a2a7-cffe857e87d0
+:END:
+
+
+在 GaussDB HTAP 开发过程中，我们总结了以下实现 HTAP 架构需要关注的核心技术：
+*** 第一，透明路由。
+:PROPERTIES:
+:CUSTOM_ID: h:c056ed23-a65f-452b-b06f-50a9a8f0d208
+:END:
+
+它之所以成为关键的原因是因为增加了客户的易用性，提升了 HTAP 产品的商用价
+值。这里面有两个观点，一个是如果 HTAP 基于行存和冗余列存这种方式，需要判断哪些数据被冗余
+到列存里面来，因此提供一种自动化的方法根据业务特点来选择加载列存数据，并对用户透明就非
+常有意义。另外，TP 业务要路由到行存引擎，AP 业务路由到列存引擎，目前大部分架构还需要通过
+Hint 的方式来实现业务分流，如果借助优化器的代价系统、以及当前的 AI4DB 技术，能够更大程度的
+提供业务分流的准确性，从而对用户透明，提高系统的易用性。
+
+*** 第二，性能提升。
+:PROPERTIES:
+:CUSTOM_ID: h:75291a2a-b23f-47a6-be53-b01d51c65ae8
+:END:
+
+我们把 TP 和 AP 融合起来比较困难的关键原因，主要是因为 AP 查询的复杂度比较高。
+如果是一个纯 TP 数据库，一些常规执行优化技术，比如说并行、编译执行、向量化执行，TP 上虽然
+也有，但实际上很难有大的作为，因为 TP 要求的是低时延、高吞吐，这种情况下这些技术都有自己
+的启动代价，这些启动代价会对 TP 的性能产生很大的影响。在 TP 上，如果我们把 HTAP 里面的 AP 融入
+进来，这些技术就能大有可为，我们在这些技术的基础上对复杂查询进行加速，可以很好地支撑我
+们现在的性能，支撑我们的 HTAP。
+
+*** 第三，数据新鲜度。
+:PROPERTIES:
+:CUSTOM_ID: h:9fd3135d-6b8c-4b0d-9295-868f6e83a601
+:END:
+
+我们多次讨论实时性的问题，不同的数据新鲜度最后带来的就是我们不同的架
+构，有 In-Memory 的，有主备的，也有基于增量表技术的，都会带来不同的数据新鲜度。在这种数据
+新鲜度下，我们怎么保证数据新鲜度高，而且性能又好。在这些方面我们需要更多的思考，来保证
+我们 HTAP 架构能够具备更多应对用户的能力。
+
+*** 第四，资源隔离。
+:PROPERTIES:
+:CUSTOM_ID: h:8449b860-b8de-46c2-a31f-9cf24aeb6ea5
+:END:
+
+我们看到有的架构，比如说用户对 TP 性能要求比较高，要求你在引入实时 AP 的同
+时，不能影响 TP 的能力和性能。也有用户提出对整体的能力要求，对硬件没有什么诉求，如果有需
+要可以增加硬件。不同的用户有不同的要求，我们在面对这样的用户时，需要在资源隔离和数据新
+鲜度，以及性能的提升方面做好权衡。
+
+
+* GaussDB 在 HTAP 上的创新
+:PROPERTIES:
+:NOTER_DOCUMENT: https://mp.weixin.qq.com/s?__biz=MzU2MDcxODEyOA==&mid=2247516317&idx=1&sn=1ce041534c61c34cd1ab12d90df7c1d6&chksm=fc0108c2cb7681d4be8d3c1fdb3a10662ad10562288d149c964e8a3f99b3d8cbeb804039be2a&mpshare=1&scene=1&srcid=0822kXJqkOrYaspzxxbWHkai&sharer_sharetime=1692699939078&sharer_shareid=9e76a16cd9cee4d8b92e9f0cc7b3921c#rd
+:NOTER_OPEN: eww
+:NOTER_PAGE: 3352
+:CUSTOM_ID: h:fe8fe64e-4da2-4de3-8d67-65b166c68b46
+:END:
+
+GaussDB 在现有基础上对 HTAP 进行改造，并实现以下几个方面的提升：
+
+– 性能提升数十倍。GaussDB 已经实现向量化、并行、编译技术，性能提升 10+倍，一些场景下还有
+  更高的性能提升。最近我们基于 HTAP 做了更深度的挖掘和优化，比如基于降低内存拷贝、延迟读
+  等技术，向量化的扫描算子最新的数据又提升了大概 30 倍左右。
+
+– 100%的透明路由。我们既有基于 Hint 手工指定的方式，还有基于规则、基于代价、基于 AI 的透明
+  路由技术。我们在基于代价的透明度路由方面，做了向量化优化技术；基于 AI 的透明路由方面，
+  我们通过轻量的 AI 技术可以真正应用到商业版中，通过这些技术，TP、AP 分流的准确率目前表现
+  还是不错的。
+
+– 100%的数据新鲜度。我们实现了在同 Server 内的列式的内存引擎，数据同步方面支持实时同步、
+  在线同步、定期同步，保证了 TP 上的数据和 IUD 操作带来的数据修改及时同步到引擎上，可以实现
+  100%的数据新鲜度。
+
+– 100%的资源隔离。如果用户更关注的是 100%的资源隔离，我们也提供了基于主备复制 HTAP 模式，
+  通过读写分离，把 TP 业务放到主机上，AP 业务放到备机上，实现资源的隔离。
+
+
+  目前，GaussDB 既有基于同 Server 的实时的 HTAP，也有基于主备技术的准实时的 HTAP，同时在透明路
+由的加持下，能够准确的把业务分流同步分到实时的 HTAP 上，达成在性能、资源隔离、数据新鲜度
+方面有一个均衡的结果。
