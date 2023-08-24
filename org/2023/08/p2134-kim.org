@@ -1,0 +1,29 @@
+:PROPERTIES:
+:ID:       ab2111b0-23a4-474d-829f-668f67fc38fb
+:NOTER_DOCUMENT: ../pdf/6/p2134-kim.pdf
+:NOTER_OPEN: find-file
+:END:
+#+TITLE: ABC: Attributed Bipartite Co-clustering 双向联合集聚归因算法
+#+AUTHOR: Yang,Ying-chao
+#+EMAIL:  yang.yingchao@qq.com
+#+DATE:   2023-08-25
+#+OPTIONS:  ^:nil _:nil H:7 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+LANGUAGE: en
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :tag1:tag2:
+
+
+本文介绍了一种称为 ABC（Attributed Bipartite Co-clustering 双向联合集聚归因算法）的问题，
+
+它对于一个具有属性的二分图进行聚类。对于二分图的聚类问题是一个重要的基础问题。ABC 将两个
+重点内容结合起来：（一）二分图模块化优化；（二）属性的内聚性。本文证明了 ABC 是 NP 难的，
+并且不在 APX 类中，除非 P = NP。本文提出了三种算法：（1）自上而下的算法；（2）自下而上的
+算法；（3）分组匹配算法。在真实世界的带属性二分图上进行了广泛的实验结果表明，我们的算法
+具有高效性和有效性。本文的例子包括推荐和反欺诈等实际应用，另外 IEEE PVLDB Vol. 15,
+No. 10 ISSN 2150-8097， doi：10.14778/3547305.3547318 也被引用。
+
+
+双向联合集聚归因算法

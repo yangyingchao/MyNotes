@@ -3,7 +3,6 @@
 :END:
 #+TITLE: Inbox
 
- - [[file:../pdf/6/p2134-kim.pdf][ABC: A�ributed Bipartite Co-clustering]]
  - [[file:../pdf/d/p1835-zhao.pdf][AB-tree: Index for Concurrent Random Sampling and Updates]]
  - [[file:../pdf/f/p127-mahajan.pdf][Accelerating Recommendation System Training]]
  - [[file:../pdf/c/p1533-chen.pdf][Accurate Summary-based Cardinality Estimation Through the]]

@@ -1,0 +1,105 @@
+:PROPERTIES:
+:ID:       b87b49f5-bae7-48fb-ab3f-b36945d86ae0
+:NOTER_DOCUMENT: ../../../pdf/d/p1835-zhao.pdf
+:NOTER_OPEN: find-file
+:END:
+#+TITLE: AB-tree: Index for Concurrent Random Sampling and Updates
+#+AUTHOR: Yang,Ying-chao
+#+EMAIL:  yang.yingchao@qq.com
+#+DATE:   2023-08-25
+#+OPTIONS:  ^:nil _:nil H:7 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+LANGUAGE: en
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :aqp:近似估计:
+
+* ABSTRACT
+:PROPERTIES:
+:NOTER_DOCUMENT: ../../../pdf/d/p1835-zhao.pdf
+:NOTER_OPEN: find-file
+:NOTER_PAGE: 1
+:CUSTOM_ID: h:e45b6d32-a08f-4b57-93e8-82f7f09a3a3f
+:END:
+
+本文介绍了一种名为 AB-tree 的索引结构，用于高并发随机抽样和更新操作。
+
+- 实时数据分析需求日益日益增长
+- 近似查询处理（Approximate Query Processing, AQP） 适合用作实时数据分析：
+  + 使用随机抽样
+  + 通过降低查询延迟，换取一定的准确度。
+
+然而，现有的 AQP 系统:
+- 要么依赖于基于扫描的抽样算法来绘制样本（这仍然可能会产生相当高的表扫描成本），
+- 要么在预处理阶段中创建数据库样本，这些样本很难更新。
+
+
+另一种方法是使用聚合 B 树索引来支持数据库中的随机抽样和更新，以对数时间完成。然而，要实
+现高并发操作，正确且高效地维护聚合权重非常困难，因此目前还未有自然而然的聚合 B 树设计支
+持高并发随机抽样和更新。
+
+本文通过分析和识别实现高并发的关键挑战，提出了一种支持高并发随机抽样和更新操作的索引结构
+AB-tree，并通过广泛的实验展示了其效率和功效。
+
+
+* INTRODUCTION
+:PROPERTIES:
+:NOTER_DOCUMENT: ../../../pdf/d/p1835-zhao.pdf
+:NOTER_OPEN: find-file
+:NOTER_PAGE: 1
+:CUSTOM_ID: h:83dc47be-be7b-43ef-b003-64e0a4313af4
+:END:
+
+
+** AQP
+:PROPERTIES:
+:CUSTOM_ID: h:09b345e4-1744-4bc1-9ac4-62527fc76723
+:END:
+数据量非常大的数据库的实时数据分析中，使用近似查询处理（AQP）变得非常有吸引力，因为遍历
+整个表或使用索引范围扫描太慢了。AQP 提供了在分析查询中结果准确性和查询延迟之间独特的折衷
+方案。
+
+AQP 的一个主要方法是在从数据库中抽取的随机样本上估算查询结果。已经有很多工作使用不同的随
+机分布来为聚合查询提供准确的近似答案，以及设计从多表连接的结果中抽取随机样本的算法。实际
+上，相对于数据大小，人们可以在次线性甚至恒定的时间内用理论保证逼近简单的聚合查询。
+
+** 现有 AQP 的采样对实时处理不太适用
+:PROPERTIES:
+:CUSTOM_ID: h:5303ffee-9d4b-48b7-8816-b010fa4f804e
+:END:
+AQP 技术通常会将样本抽取机制视作黑匣子认为可以通过 SQL 实现或对现有 DBMS 进行小的修改
+来高效实现。
+
+但如果针对 *实时数据* 分析进行 AQP，则存在并发数据更新的情况： \\
+TABLESAMPLE 操作需要进行线性扫描或使用松弛的统计保证，这对 AQP 来说是不能接受的，特别是
+对于错误保证无效的系统或块采样。
+
+其他采样技术如分层采样、宇宙采样和不同采样都需要对基表进行全表或索引范围扫描，这会减少
+AQP 的好处，特别是当数据存储在外部存储器中时，扫描成为查询成本的主要因素。因此，许多 AQP
+系统选择离线抽样，并仅在一段时间后更新它们，使实时分析成为不可行。
+
+** Aggregated Btree Index
+:PROPERTIES:
+:CUSTOM_ID: h:0c93866c-b6c9-4773-b660-1e2d7b2c1828
+:END:
+
+- 为了支持 AQP 实时数据分析，我们需要在线绘制随机样本的能力，而不需要扫描基础表。
+- “聚合 B 树”可以在数据规模相对较小的情况下以对数时间在线绘制随机样本。
+- 聚合 B 树是一种带有“子树聚合权重”的 B 树索引，可以用于在线绘制随机样本。
+- 但是，目前还没有已知的方法可以在不锁定整个结构的情况下正确而高效地进行聚合 B 树的并发更新。
+- 这意味着，使用聚合 B 树的 AQP 系统可能：
+  + 在很少更新数据的情况下表现良好，但
+  + 随着数据更新的增加，其性能会迅速下降。
+
+
+这个问题的核心是:
+- 每个数据的更新都会涉及到整个树路径上所有内部节点的汇总权值的修改，
+- 这会导致根节点等高层节点的竞争非常激烈。
+
+除此之外，它可能会向并发读者展示不一致的权值视图，导致采样偏差。第二个问题可以通过强制按
+路径顺序进行权值更新来减轻，但在结构修改操作（SMO，即页面分裂/合并）和采样操作交替进行时，
+可能仍会严重影响并发性能。不幸的是，现有高性能并发 B 树的设计,（其中大多数争用发生在叶子
+层，SMO 可以实现为几个原子步骤，可以与其他操作交错）已经不再适用，因为它们的假设完全相反。
+此外，实际上，现代 DBMS 通常使用的多版本并发控制（MVCC）可以对并发更新下聚合 B 树的随机
+采样效率产生负面影响，原因是由不可见版本引起的采样拒绝。
