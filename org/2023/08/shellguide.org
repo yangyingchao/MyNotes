@@ -668,7 +668,7 @@ removed `./somefile'
 :END:
 
 
-=eval=应该避免使用。
+=eval= 应该避免使用。
 
 当用于对变量赋值时，eval 会修改输入，并且可以设置变量，无法检查这些变量是什么。
 #+BEGIN_SRC sh -r
