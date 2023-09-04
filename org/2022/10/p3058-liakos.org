@@ -6,7 +6,7 @@
 #+AUTHOR: Yang Yingchao
 #+EMAIL:  yang.yingchao@qq.com
 #+OPTIONS:  ^:nil _:nil H:7 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
-#+STARTUP:  align nodlcheck oddeven lognotestate 
+#+STARTUP:  align nodlcheck oddeven lognotestate
 #+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
 #+TAGS:     noexport(n)
 #+LANGUAGE: en
@@ -189,7 +189,7 @@
 :CUSTOM_ID: h:59848c4d-b8b4-48f4-a79e-c3496fc4bfc1
 :END:
 
-[[file:~/Documents/Database/org/p3058-liakos.org::#h:b534c224-1e44-453d-8ac1-5d03f6b7e9a7][前面]] 介绍 Gorilla 的 flag bits 有三种： =0= ， =10= 和 =11= 。其中 =0= 表示当前值和前面的值相等。
+前面介绍 Gorilla 的 flag bits 有三种： =0= ， =10= 和 =11= 。其中 =0= 表示当前值和前面的值相等。
 然而这种情形并不常见。
 
 如果能够使用最少的比特位来表示最常见的情况，则应该能够提升压缩比。
