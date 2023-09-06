@@ -1,64 +1,68 @@
 baseURL = "https://yangyingchao.github.io"
 languageCode = "zh-cn"
-defaultContentLanguage = "zh-cn"                             # en / zh-cn / ... (This field determines which i18n file to use)
+defaultContentLanguage = "zh-cn" # en / zh-cn / ... (This field determines which i18n file to use)
 title = "MyNotes"
 preserveTaxonomyNames = true
 enableRobotsTXT = true
 enableEmoji = true
-theme = "PaperMod"
+theme = "Coder"
+
 enableGitInfo = false # use git commit log to generate lastmod record # 可根据 Git 中的提交生成最近更新记录。
 
-# Syntax highlighting by Chroma. NOTE: Don't enable `highlightInClient` and `chroma` at the same time!
-pygmentsOptions = "linenos=table"
-pygmentsCodefences = true
-pygmentsUseClasses = true
-pygmentsCodefencesGuessSyntax = true
-
 hasCJKLanguage = true     # has chinese/japanese/korean ? # 自动检测是否包含 中文\日文\韩文
-paginate = 5                                              # 首页每页显示的文章数
+paginate = 20                                              # 首页每页显示的文章数
 disqusShortname = ""      # disqus_shortname
 googleAnalytics = ""      # UA-XXXXXXXX-X
 copyright = ""            # default: author.name ↓        # 默认为下面配置的author.name ↓
 
-[author]                  # essential                     # 必需
-  name = "yyc"
+noClasses = false
 
-[sitemap]                 # essential                     # 必需
-  changefreq = "weekly"
-  priority = 0.5
-  filename = "sitemap.xml"
+[markup.highlight]
+style = "pygments"
 
-[[menu.main]]             # config your menu              # 配置目录
-  name = "Home"
-  weight = 10
-  identifier = "home"
-  url = "/"
+[params]
+  author = "yyc"
+  info = "杂七杂八的，随手记录。"
+  description = "杂七杂八的，随手记录。"
+  keywords = "blog,developer,personal"
+
+  enableTwemoji = true
+
+  colorScheme = "auto"
+  hidecolorschemetoggle = false
+
+[taxonomies]
+  category = "categories"
+  series = "series"
+  tag = "tags"
+  author = "authors"
+
+# Social links
+[[params.social]]
+  name = "github"
+  url = "https://github.com/yangyingchao/MyNotes"
+  icon = "fa fa-github fa-2x"
+  weight = 1
+
+[[params.social]]
+  name = "RsS"
+  url = "index.xml"
+  icon = "fa fa-rss fa-2x"
+  weight = 2
+
+# Menu links
 [[menu.main]]
-  name = "Archives"
-  weight = 20
-  identifier = "archives"
-  url = "/posts/"
+  name = "Blog"
+  weight = 1
+  url  = "posts/"
+
 [[menu.main]]
   name = "Tags"
-  weight = 30
+  weight = 2
   identifier = "tags"
   url = "/tags/"
+
 [[menu.main]]
-  name = "Categories"
-  weight = 40
-  identifier = "categories"
-  url = "/categories/"
-
-[params.homeInfoParams]
-Title = "MyNotes"
-Content = """
-杂七杂八的，随手记录。
-"""
-
-[[params.socialIcons]]
-name = "github"
-url = "https://github.com/yangyingchao/MyNotes"
-
-[[params.socialIcons]]
-name = "RsS"
-url = "index.xml"
+name = "Contact me"
+weight = 5
+url = "contact/"
