@@ -115,7 +115,7 @@
 #+attr_html: :width 800px
 #+attr_org: :width 800px
 [[file:images/Towards a New File Format for Big Data - SIMD-Friendly Composable Compression (2020-AzimAfroozeh)/screenshot@2023-09-12_16:02:42.png]]
-
+- Bit Alignment:
 
 *** Vectorized Bit-Unpacking
 :PROPERTIES:
@@ -124,6 +124,43 @@
 :NOTER_PAGE: 30
 :CUSTOM_ID: h:5a388ec5-7e4f-493a-b9f5-4abac30ce812
 :END:
+
+Willhaml 等提出了一个方法来通过 SIMD 来批量 bitunpack:
+
+- 16-Byte Alignment: 通过 128 位的 SIMD aligned load 从内存中加载 128-bit 的数据 \\
+  使用一个 128 位的 SIMD 对齐加载指令从内存中加载 128 位的数据。对于一些位宽值，比如 9，
+  第一个整数值可能不完全加载，因为它跨越了两个 128 位的寄存器。为了处理这些情况，作者更
+  喜欢使用一个 128 位 SIMD 寄存器串联指令，而不是 128 位 SIMD 不对齐加载指令，因为 SIMD
+  不对齐的指令在旧处理器上的计算成本高昂。
+
+- 4-Byte Alignment: four compressed integer values are copied to four separate 32-bit
+  lanes in a new register using a SIMD shuffle mask instruction.
+
+  使用 SIMD 洗牌掩码指令将四个压缩整数值复制到新寄存器中的四个独立的 32 位通道。
+
+- Bit Alignment: 通过将每个语段任意移动几次，通过 SIMD 乘以四个不同整数和一个 SIMD 右移
+  指令将最后一个寄存器中的四个整数的每个语段的第一位对齐。
+
+
+然而，Willhalm 等人的方法仅适用于 SSE，无法扩展到 AVX2，因为 Shuffle 指令无法跨所有 lane 移动字节。
+
+Polychroniou 等人提出了一项更改，以调整 Willhalm 等人的方法以适用于 AVX2（33）。
+为了模拟 256 位跨 lane Shuffle，我们可以将寄存器的每个半段（128 位）复制到两个半段，并使用常规的 256 位 Shuffle。
+此外，Willhalm 等人将他们的位解压实现翻译为英特尔 AVX2 指令（34）。
+在 Willhalm 的新实现中，模拟的移位操作被 AVX2 矢量-矢量移位指令所取代。
+此外，与他们之前的实现相反，新的实现使用非对齐加载指令而不是对齐加载指令，因为他们声称对于当前架构，
+这个指令比对齐加载指令更快。只有在数据加载分裂跨越缓存线时才会有性能损失，这被其他情况下的减少所分摊。
+
+除了水平布局（即连续存储元组）外，Schlegel 等人提出了一种称为垂直布局的替代布局（2）。在
+k-垂直布局中，k个连续的位压缩元组存储在不同的存储字中。
+
+
+图 2.4 显示了一个 4 路垂直布局的示例，其中每个数字表示序列中整数的位置。可以看到，每 4
+个连续整数分布在 4 个不同的字中。垂直布局使我们能够使用单个加载/存储 SIMD 指令加载/存储
+压缩数据，而无需使用置换指令将元组分配到 SIMD lane 中。Lemire 等人使用 4 路垂直布局使用
+相同的位宽位压缩 128 个元组，以利用 SSE SIMD 指令（35）。
+
+
 
 * SIMD-Friendly Bit-(Un)Packing
 :PROPERTIES:

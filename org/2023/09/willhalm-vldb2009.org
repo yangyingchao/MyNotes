@@ -1,0 +1,16 @@
+:PROPERTIES:
+:ID:       06738d36-c1a1-4843-9032-e10e1ab30e2b
+:NOTER_DOCUMENT: attachments/pdf/6/willhalm-vldb2009.pdf
+:NOTER_OPEN: find-file
+:END:
+#+TITLE: SIMD-Scan: Ultra Fast in-Memory Table Scan using onChip Vector Processing Units
+#+AUTHOR: Yang,Ying-chao
+#+EMAIL:  yang.yingchao@qq.com
+#+DATE:   2023-09-12
+#+OPTIONS:  ^:nil _:nil H:7 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+LANGUAGE: en
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :simd::
