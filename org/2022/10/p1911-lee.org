@@ -1,6 +1,6 @@
 :PROPERTIES:
 :ID:       670edfbf-e811-403c-8f85-83df1999b3a6
-:NOTER_DOCUMENT: ../pdf/e/p1911-lee.pdf
+:NOTER_DOCUMENT: attachments/pdf/e/p1911-lee.pdf
 :END:
 #+TITLE: Your Read is Our Priority in Flash Storage
 #+AUTHOR: Yang,Ying-chao
@@ -16,7 +16,7 @@
 
 * ABSTRACT
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/e/p1911-lee.pdf
+:NOTER_DOCUMENT: attachments/pdf/e/p1911-lee.pdf
 :NOTER_PAGE: 1
 :CUSTOM_ID: h:ebffcd16-173e-4644-a00f-8f6d92c798f0
 :END:
@@ -44,7 +44,7 @@
 
 * INTRODUCTION
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/e/p1911-lee.pdf
+:NOTER_DOCUMENT: attachments/pdf/e/p1911-lee.pdf
 :NOTER_PAGE: 1
 :CUSTOM_ID: h:f8ebb4bf-cdee-4786-920f-9e5cca36c7ca
 :END:
@@ -52,7 +52,7 @@
 
 * BACKGROUND
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/e/p1911-lee.pdf
+:NOTER_DOCUMENT: attachments/pdf/e/p1911-lee.pdf
 :NOTER_PAGE: 2
 :CUSTOM_ID: h:3fd376b5-2ff5-4320-b346-b0e2e679ba7f
 :END:
@@ -60,7 +60,7 @@
 
 ** I/O Asymmetry in Flash SSDs
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/e/p1911-lee.pdf
+:NOTER_DOCUMENT: attachments/pdf/e/p1911-lee.pdf
 :NOTER_PAGE: 2
 :CUSTOM_ID: h:d5416d09-f7a7-4448-b41e-c5f56ce6dc40
 :END:
@@ -87,7 +87,7 @@
 
 ** RAW Protocol in DBMS Buffer
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/e/p1911-lee.pdf
+:NOTER_DOCUMENT: attachments/pdf/e/p1911-lee.pdf
 :NOTER_PAGE: 2
 :CUSTOM_ID: h:5a068019-5346-450f-b2b9-bb52b0395dfe
 :END:
@@ -95,7 +95,7 @@
 
 ** RAW Protocol in Storage Buffer
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/e/p1911-lee.pdf
+:NOTER_DOCUMENT: attachments/pdf/e/p1911-lee.pdf
 :NOTER_PAGE: 3
 :CUSTOM_ID: h:b1ad1102-62a1-4ebf-a3d0-5175fb229e15
 :END:
@@ -114,14 +114,14 @@
 
 * READ STALL IN DBMS AND RW COMMAND
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/e/p1911-lee.pdf
+:NOTER_DOCUMENT: attachments/pdf/e/p1911-lee.pdf
 :NOTER_PAGE: 3
 :CUSTOM_ID: h:120954ae-7c0b-4356-9db3-2603f1c95561
 :END:
 
 ** Read Stalls inRelational DBMS Buffer
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/e/p1911-lee.pdf
+:NOTER_DOCUMENT: attachments/pdf/e/p1911-lee.pdf
 :NOTER_PAGE: 3
 :CUSTOM_ID: h:1961aec8-3148-4626-8ea7-d7aa8e3630c7
 :END:
@@ -132,7 +132,7 @@
 
 *** Problem Definition
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/e/p1911-lee.pdf
+:NOTER_DOCUMENT: attachments/pdf/e/p1911-lee.pdf
 :NOTER_PAGE: 4
 :CUSTOM_ID: h:1a5ca1de-d6a6-486c-8980-c5f1c608985d
 :END:
@@ -142,7 +142,7 @@
 
 ** RW Command
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/e/p1911-lee.pdf
+:NOTER_DOCUMENT: attachments/pdf/e/p1911-lee.pdf
 :NOTER_PAGE: 4
 :CUSTOM_ID: h:f4ca1bee-0c63-49d3-ad37-d8b7ba336e23
 :END:
@@ -150,7 +150,7 @@
 
 *** Key Idea.
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/e/p1911-lee.pdf
+:NOTER_DOCUMENT: attachments/pdf/e/p1911-lee.pdf
 :NOTER_PAGE: 4
 :CUSTOM_ID: h:83e15275-818a-4f1a-84e7-f9f7dee84b52
 :END:
@@ -162,7 +162,7 @@ new block I/O command:
 
 *** Abstraction and Architecture.
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/e/p1911-lee.pdf
+:NOTER_DOCUMENT: attachments/pdf/e/p1911-lee.pdf
 :NOTER_PAGE: 5
 :CUSTOM_ID: h:bc88385d-6ad1-455f-a85f-5e51c84924c0
 :END:
@@ -191,7 +191,7 @@ new block I/O command:
 
 *** Prototype Implementation
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/e/p1911-lee.pdf
+:NOTER_DOCUMENT: attachments/pdf/e/p1911-lee.pdf
 :NOTER_PAGE: 5
 :CUSTOM_ID: h:ce460c46-a392-475e-a5c0-887d22858026
 :END:
@@ -222,7 +222,7 @@ new block I/O command:
 
 * READ STALL IN STORAGE AND R-BUF
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/e/p1911-lee.pdf
+:NOTER_DOCUMENT: attachments/pdf/e/p1911-lee.pdf
 :NOTER_PAGE: 5
 :CUSTOM_ID: h:83365df9-93ca-4225-93ac-036eb29a80cf
 :END:
@@ -230,7 +230,7 @@ new block I/O command:
 
 ** Read Stalls in SSD Buffer
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/e/p1911-lee.pdf
+:NOTER_DOCUMENT: attachments/pdf/e/p1911-lee.pdf
 :NOTER_PAGE: 5
 :CUSTOM_ID: h:4af9a557-45e7-494e-8d5b-540929258590
 :END:
@@ -238,7 +238,7 @@ new block I/O command:
 
 *** Problem Definition
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/e/p1911-lee.pdf
+:NOTER_DOCUMENT: attachments/pdf/e/p1911-lee.pdf
 :NOTER_PAGE: 6
 :CUSTOM_ID: h:df362158-d5d2-4a73-ad45-dd3ea3498de3
 :END:

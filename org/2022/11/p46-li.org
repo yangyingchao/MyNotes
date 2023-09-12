@@ -1,6 +1,6 @@
 :PROPERTIES:
 :ID:       190c9256-1e5a-4dff-a844-93ba39529899
-:NOTER_DOCUMENT: ../pdf/7/p46-li.pdf
+:NOTER_DOCUMENT: attachments/pdf/7/p46-li.pdf
 :END:
 #+TITLE: A Learned Query Rewrite System using Monte Carlo Tree Search
 #+AUTHOR: Yang,Ying-chao
@@ -24,7 +24,7 @@
 
 * INTRODUCTION
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/7/p46-li.pdf
+:NOTER_DOCUMENT: attachments/pdf/7/p46-li.pdf
 :NOTER_PAGE: 1
 :CUSTOM_ID: h:46536eca-7ea9-4ca8-80f5-de498e0868a9
 :END:
@@ -73,7 +73,7 @@
 
 * PRELIMINARIES
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/7/p46-li.pdf
+:NOTER_DOCUMENT: attachments/pdf/7/p46-li.pdf
 :NOTER_PAGE: 2
 :CUSTOM_ID: h:44d869de-543c-466b-850e-e8f46557dcc5
 :END:
@@ -81,7 +81,7 @@
 
 ** Query Rewrite Rules
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/7/p46-li.pdf
+:NOTER_DOCUMENT: attachments/pdf/7/p46-li.pdf
 :NOTER_PAGE: 2
 :CUSTOM_ID: h:5fd43385-0787-467c-9b88-873a9dca9406
 :END:
@@ -99,7 +99,7 @@
 
 *** Query Tree
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/7/p46-li.pdf
+:NOTER_DOCUMENT: attachments/pdf/7/p46-li.pdf
 :NOTER_PAGE: 2
 :CUSTOM_ID: h:bceebff8-90b2-4dc0-b2ff-836682b9f31d
 :END:
@@ -111,7 +111,7 @@
 
 *** Query Rewrite Rules
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/7/p46-li.pdf
+:NOTER_DOCUMENT: attachments/pdf/7/p46-li.pdf
 :NOTER_PAGE: 2
 :CUSTOM_ID: h:2052df80-43d1-414d-b812-efc69815e732
 :END:
@@ -130,7 +130,7 @@
 
 *** Rewrite Benefit of Applying A Rewrite Rule
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/7/p46-li.pdf
+:NOTER_DOCUMENT: attachments/pdf/7/p46-li.pdf
 :NOTER_PAGE: 3
 :CUSTOM_ID: h:b2950e60-7f0c-4b5d-b703-4c88b7f41e1d
 :END:
@@ -142,7 +142,7 @@ $$\Delta Cost(q^{(0,r)},q) = Cost(q) - Cost(q^{(o,r)})$$ where:
 
 *** The Rewrite Order of Applying Multiple Rewrite Rules
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/7/p46-li.pdf
+:NOTER_DOCUMENT: attachments/pdf/7/p46-li.pdf
 :NOTER_PAGE: 3
 :CUSTOM_ID: h:71790411-e9d5-4abd-bad0-43130750872d
 :END:
@@ -150,7 +150,7 @@ $$\Delta Cost(q^{(0,r)},q) = Cost(q) - Cost(q^{(o,r)})$$ where:
 
 ** Query Rewrite
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/7/p46-li.pdf
+:NOTER_DOCUMENT: attachments/pdf/7/p46-li.pdf
 :NOTER_PAGE: 3
 :CUSTOM_ID: h:a32a0924-5b47-4885-9cea-878cb01dd027
 :END:
@@ -158,7 +158,7 @@ $$\Delta Cost(q^{(0,r)},q) = Cost(q) - Cost(q^{(o,r)})$$ where:
 
 *** Query Rewrite
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/7/p46-li.pdf
+:NOTER_DOCUMENT: attachments/pdf/7/p46-li.pdf
 :NOTER_PAGE: 3
 :CUSTOM_ID: h:01c94b89-3447-42b8-8239-6d9877adab66
 :END:
@@ -181,7 +181,7 @@ $$\Delta Cost(q^{(0,r)},q) = Cost(q) - Cost(q^{(o,r)})$$ where:
 
 *** Learning Models for Databases
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/7/p46-li.pdf
+:NOTER_DOCUMENT: attachments/pdf/7/p46-li.pdf
 :NOTER_PAGE: 3
 :CUSTOM_ID: h:e60dace2-5873-411a-afb8-6eba67661c54
 :END:
@@ -189,7 +189,7 @@ $$\Delta Cost(q^{(0,r)},q) = Cost(q) - Cost(q^{(o,r)})$$ where:
 
 *** Reinforcement Learning
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/7/p46-li.pdf
+:NOTER_DOCUMENT: attachments/pdf/7/p46-li.pdf
 :NOTER_PAGE: 4
 :CUSTOM_ID: h:6c83ebc3-f01d-47f5-a983-1977da0d0ab6
 :END:
@@ -197,7 +197,7 @@ $$\Delta Cost(q^{(0,r)},q) = Cost(q) - Cost(q^{(o,r)})$$ where:
 
 * TREE SEARCH FOR QUERY REWRITE
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/7/p46-li.pdf
+:NOTER_DOCUMENT: attachments/pdf/7/p46-li.pdf
 :NOTER_PAGE: 4
 :CUSTOM_ID: h:31bb8cdf-d5e0-41fe-a908-17e696dca69a
 :END:
@@ -205,7 +205,7 @@ $$\Delta Cost(q^{(0,r)},q) = Cost(q) - Cost(q^{(o,r)})$$ where:
 
 ** Overview of Policy Tree Search
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/7/p46-li.pdf
+:NOTER_DOCUMENT: attachments/pdf/7/p46-li.pdf
 :NOTER_PAGE: 4
 :CUSTOM_ID: h:75f54fbc-fec3-421e-80be-b95c589828aa
 :END:

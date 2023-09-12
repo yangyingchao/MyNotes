@@ -11,13 +11,13 @@
 #+LANGUAGE: en
 #+EXCLUDE_TAGS: noexport
 
-#+NOTER_DOCUMENT: ../pdf/f/p2257-jahangiri.pdf
+#+NOTER_DOCUMENT: attachments/pdf/f/p2257-jahangiri.pdf
 
 
 
 * ABSTRACT
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/f/p2257-jahangiri.pdf
+:NOTER_DOCUMENT: attachments/pdf/f/p2257-jahangiri.pdf
 :NOTER_PAGE: 1
 :CUSTOM_ID: h:9e1fc2bd-a46c-4f59-826f-d16bf450d7bd
 :END:
@@ -29,7 +29,7 @@
 
 * INTRODUCTION
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/f/p2257-jahangiri.pdf
+:NOTER_DOCUMENT: attachments/pdf/f/p2257-jahangiri.pdf
 :NOTER_PAGE: 1
 :CUSTOM_ID: h:23eb29f4-1c34-4d76-80b0-6eec925e2ccd
 :END:
@@ -54,7 +54,7 @@
 
 * BACKGROUND
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/f/p2257-jahangiri.pdf
+:NOTER_DOCUMENT: attachments/pdf/f/p2257-jahangiri.pdf
 :NOTER_PAGE: 2
 :CUSTOM_ID: h:acbe6540-05c1-45da-8752-d8eee5626a9d
 :END:
@@ -62,7 +62,7 @@
 
 ** Hybrid Hash Join
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/f/p2257-jahangiri.pdf
+:NOTER_DOCUMENT: attachments/pdf/f/p2257-jahangiri.pdf
 :NOTER_PAGE: 2
 :CUSTOM_ID: h:4b1b3de2-12ce-4f80-92d2-a6e9104b0ddb
 :END:
@@ -70,7 +70,7 @@
 
 *** Grace Hash Join (GHI)
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/f/p2257-jahangiri.pdf
+:NOTER_DOCUMENT: attachments/pdf/f/p2257-jahangiri.pdf
 :NOTER_PAGE: 2
 :CUSTOM_ID: h:c9017a0c-0884-493e-9908-d8c351237edd
 :END:
@@ -86,7 +86,7 @@
 
 *** Simple Hash Join (SHJ)
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/f/p2257-jahangiri.pdf
+:NOTER_DOCUMENT: attachments/pdf/f/p2257-jahangiri.pdf
 :NOTER_PAGE: 2
 :CUSTOM_ID: h:8c63a062-7b34-4e16-a1f1-660dc4a8e8c1
 :END:
@@ -100,7 +100,7 @@
 
 *** Hybrid Hash Join (HHJ)
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/f/p2257-jahangiri.pdf
+:NOTER_DOCUMENT: attachments/pdf/f/p2257-jahangiri.pdf
 :NOTER_PAGE: 2
 :CUSTOM_ID: h:e85d3dee-7c3d-4675-8a3b-4742df84e4b0
 :END:
@@ -130,7 +130,7 @@
 
 *** Dynamic Hybrid Hash Join
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/f/p2257-jahangiri.pdf
+:NOTER_DOCUMENT: attachments/pdf/f/p2257-jahangiri.pdf
 :NOTER_PAGE: 3
 :CUSTOM_ID: h:a9e5ed71-2527-4a22-a3bc-d7ddd1a0bc0f
 :END:

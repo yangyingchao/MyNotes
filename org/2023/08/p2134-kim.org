@@ -1,6 +1,6 @@
 :PROPERTIES:
 :ID:       ab2111b0-23a4-474d-829f-668f67fc38fb
-:NOTER_DOCUMENT: ../pdf/6/p2134-kim.pdf
+:NOTER_DOCUMENT: attachments/pdf/6/p2134-kim.pdf
 :NOTER_OPEN: find-file
 :END:
 #+TITLE: ABC: Attributed Bipartite Co-clustering 双向联合集聚归因算法

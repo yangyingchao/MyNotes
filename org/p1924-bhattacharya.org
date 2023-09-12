@@ -1,6 +1,6 @@
 :PROPERTIES:
 :ID:       9e622a9f-5575-48fc-84fe-f4294a0514bd
-:NOTER_DOCUMENT: ../pdf/4/p1924-bhattacharya.pdf
+:NOTER_DOCUMENT: attachments/pdf/4/p1924-bhattacharya.pdf
 :END:
 #+TITLE: New Wine in an Old Bottle: Data-Aware Hash Functions for Bloom Filter
 #+AUTHOR: Yang Yingchao
@@ -28,7 +28,7 @@ Partitioned Bloom Filter ,
 
 * INTRODUCTION
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/4/p1924-bhattacharya.pdf
+:NOTER_DOCUMENT: attachments/pdf/4/p1924-bhattacharya.pdf
 :NOTER_PAGE: 1
 :CUSTOM_ID: h:c589c3c7-e91c-477d-8ee8-7566656fbd63
 :END:

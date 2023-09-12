@@ -1,6 +1,6 @@
 :PROPERTIES:
 :ID:       431d9c4b-e8eb-4d67-9ccf-26ad0ae3ecae
-:NOTER_DOCUMENT: ../pdf/4/p1011-jin.pdf
+:NOTER_DOCUMENT: attachments/pdf/4/p1011-jin.pdf
 :END:
 #+TITLE: Making RDBMSs Efficient on Graph Workloads Through Predefined Joins
 #+AUTHOR: Yang Yingchao
@@ -16,7 +16,7 @@
 
 * ABSTRACT
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/4/p1011-jin.pdf
+:NOTER_DOCUMENT: attachments/pdf/4/p1011-jin.pdf
 :NOTER_PAGE: 1
 :CUSTOM_ID: h:9e32e840-e079-4e4f-b2dc-96119d5f58da
 :END:

@@ -1,6 +1,6 @@
 :PROPERTIES:
 :ID:       7955fabf-0044-4324-942c-8835054fa3ac
-:NOTER_DOCUMENT: ../pdf/3/The Vertica Analytic Database- C-Store 7 Years Later (p1790_andrewlamb_vldb2012).pdf
+:NOTER_DOCUMENT: attachments/pdf/3/The Vertica Analytic Database- C-Store 7 Years Later (p1790_andrewlamb_vldb2012).pdf
 :NOTER_OPEN: find-file
 :END:
 #+TITLE: The Vertica Analytic Database- C-Store 7 Years Later
@@ -17,7 +17,7 @@
 
 * ABSTRACT
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/3/The Vertica Analytic Database- C-Store 7 Years Later (p1790_andrewlamb_vldb2012).pdf
+:NOTER_DOCUMENT: attachments/pdf/3/The Vertica Analytic Database- C-Store 7 Years Later (p1790_andrewlamb_vldb2012).pdf
 :NOTER_OPEN: find-file
 :NOTER_PAGE: 1
 :CUSTOM_ID: h:7d7533f5-6893-4cc5-bf49-528e2f05cb24
@@ -28,7 +28,7 @@
 
 * BACKGROUND
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/3/The Vertica Analytic Database- C-Store 7 Years Later (p1790_andrewlamb_vldb2012).pdf
+:NOTER_DOCUMENT: attachments/pdf/3/The Vertica Analytic Database- C-Store 7 Years Later (p1790_andrewlamb_vldb2012).pdf
 :NOTER_OPEN: find-file
 :NOTER_PAGE: 1
 :CUSTOM_ID: h:38bfadd0-2466-44b4-bcee-50563df8d649
@@ -37,7 +37,7 @@
 
 ** Design Overview
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/3/The Vertica Analytic Database- C-Store 7 Years Later (p1790_andrewlamb_vldb2012).pdf
+:NOTER_DOCUMENT: attachments/pdf/3/The Vertica Analytic Database- C-Store 7 Years Later (p1790_andrewlamb_vldb2012).pdf
 :NOTER_OPEN: find-file
 :NOTER_PAGE: 1
 :CUSTOM_ID: h:b92b62b5-cf6d-48e1-9f0d-09634656132c
@@ -46,7 +46,7 @@
 
 *** Design Goals
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/3/The Vertica Analytic Database- C-Store 7 Years Later (p1790_andrewlamb_vldb2012).pdf
+:NOTER_DOCUMENT: attachments/pdf/3/The Vertica Analytic Database- C-Store 7 Years Later (p1790_andrewlamb_vldb2012).pdf
 :NOTER_OPEN: find-file
 :NOTER_PAGE: 1
 :CUSTOM_ID: h:e3e72698-a717-47d3-a742-5f668cf4dd48
@@ -80,7 +80,7 @@
 
 * DATA MODEL
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/3/The Vertica Analytic Database- C-Store 7 Years Later (p1790_andrewlamb_vldb2012).pdf
+:NOTER_DOCUMENT: attachments/pdf/3/The Vertica Analytic Database- C-Store 7 Years Later (p1790_andrewlamb_vldb2012).pdf
 :NOTER_OPEN: find-file
 :NOTER_PAGE: 2
 :CUSTOM_ID: h:8c127add-721e-4ce9-8210-eb475565182a
@@ -89,7 +89,7 @@
 
 ** Projections
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/3/The Vertica Analytic Database- C-Store 7 Years Later (p1790_andrewlamb_vldb2012).pdf
+:NOTER_DOCUMENT: attachments/pdf/3/The Vertica Analytic Database- C-Store 7 Years Later (p1790_andrewlamb_vldb2012).pdf
 :NOTER_OPEN: find-file
 :NOTER_PAGE: 2
 :CUSTOM_ID: h:5818aee4-1caa-47bf-ae26-56ef2b0d2bc8
@@ -102,7 +102,7 @@
 
 ** Join Indexes
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/3/The Vertica Analytic Database- C-Store 7 Years Later (p1790_andrewlamb_vldb2012).pdf
+:NOTER_DOCUMENT: attachments/pdf/3/The Vertica Analytic Database- C-Store 7 Years Later (p1790_andrewlamb_vldb2012).pdf
 :NOTER_OPEN: find-file
 :NOTER_PAGE: 2
 :CUSTOM_ID: h:9e309991-d0d5-4c52-9e3b-9aa55cd040ab
@@ -113,7 +113,7 @@
 
 ** Prejoin Projections
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/3/The Vertica Analytic Database- C-Store 7 Years Later (p1790_andrewlamb_vldb2012).pdf
+:NOTER_DOCUMENT: attachments/pdf/3/The Vertica Analytic Database- C-Store 7 Years Later (p1790_andrewlamb_vldb2012).pdf
 :NOTER_OPEN: find-file
 :NOTER_PAGE: 2
 :CUSTOM_ID: h:fc16fc4d-95f3-43b2-a0df-72e301c1c280
@@ -122,7 +122,7 @@
 
 ** Encoding and Compression
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/3/The Vertica Analytic Database- C-Store 7 Years Later (p1790_andrewlamb_vldb2012).pdf
+:NOTER_DOCUMENT: attachments/pdf/3/The Vertica Analytic Database- C-Store 7 Years Later (p1790_andrewlamb_vldb2012).pdf
 :NOTER_OPEN: find-file
 :NOTER_PAGE: 3
 :CUSTOM_ID: h:b05f07d2-c047-43a0-b329-eb3859a65070
@@ -131,7 +131,7 @@
 
 ** Partitioning
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/3/The Vertica Analytic Database- C-Store 7 Years Later (p1790_andrewlamb_vldb2012).pdf
+:NOTER_DOCUMENT: attachments/pdf/3/The Vertica Analytic Database- C-Store 7 Years Later (p1790_andrewlamb_vldb2012).pdf
 :NOTER_OPEN: find-file
 :NOTER_PAGE: 3
 :CUSTOM_ID: h:e73ca29a-39ae-43a2-a12c-41ee05b754da
@@ -140,7 +140,7 @@
 
 ** Segmentation: Cluster Distribution
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/3/The Vertica Analytic Database- C-Store 7 Years Later (p1790_andrewlamb_vldb2012).pdf
+:NOTER_DOCUMENT: attachments/pdf/3/The Vertica Analytic Database- C-Store 7 Years Later (p1790_andrewlamb_vldb2012).pdf
 :NOTER_OPEN: find-file
 :NOTER_PAGE: 4
 :CUSTOM_ID: h:62e3ee39-fe90-434c-909e-1c5877396c87
@@ -149,7 +149,7 @@
 
 ** Read and Write Optimized Stores
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/3/The Vertica Analytic Database- C-Store 7 Years Later (p1790_andrewlamb_vldb2012).pdf
+:NOTER_DOCUMENT: attachments/pdf/3/The Vertica Analytic Database- C-Store 7 Years Later (p1790_andrewlamb_vldb2012).pdf
 :NOTER_OPEN: find-file
 :NOTER_PAGE: 4
 :CUSTOM_ID: h:77c7ffc8-afd0-4118-93e3-bc54a105568f
@@ -161,7 +161,7 @@
 
 *** Data Modifications and Delete Vectors
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/3/The Vertica Analytic Database- C-Store 7 Years Later (p1790_andrewlamb_vldb2012).pdf
+:NOTER_DOCUMENT: attachments/pdf/3/The Vertica Analytic Database- C-Store 7 Years Later (p1790_andrewlamb_vldb2012).pdf
 :NOTER_OPEN: find-file
 :NOTER_PAGE: 4
 :CUSTOM_ID: h:1c17ad0f-22c4-415d-8207-643132887a38
@@ -172,7 +172,7 @@
 
 * TUPLE MOVER
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/3/The Vertica Analytic Database- C-Store 7 Years Later (p1790_andrewlamb_vldb2012).pdf
+:NOTER_DOCUMENT: attachments/pdf/3/The Vertica Analytic Database- C-Store 7 Years Later (p1790_andrewlamb_vldb2012).pdf
 :NOTER_OPEN: find-file
 :NOTER_PAGE: 5
 :CUSTOM_ID: h:4e7a0195-059c-4502-ad9f-57d2ccf20a8c
@@ -181,7 +181,7 @@
 
 * QUERY EXECUTION
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/3/The Vertica Analytic Database- C-Store 7 Years Later (p1790_andrewlamb_vldb2012).pdf
+:NOTER_DOCUMENT: attachments/pdf/3/The Vertica Analytic Database- C-Store 7 Years Later (p1790_andrewlamb_vldb2012).pdf
 :NOTER_OPEN: find-file
 :NOTER_PAGE: 7
 :CUSTOM_ID: h:fd7b1b73-4e68-4442-971e-f89255025ef2
@@ -190,7 +190,7 @@
 
 ** Query Operators and Plan Format
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/3/The Vertica Analytic Database- C-Store 7 Years Later (p1790_andrewlamb_vldb2012).pdf
+:NOTER_DOCUMENT: attachments/pdf/3/The Vertica Analytic Database- C-Store 7 Years Later (p1790_andrewlamb_vldb2012).pdf
 :NOTER_OPEN: find-file
 :NOTER_PAGE: 7
 :CUSTOM_ID: h:5dc5c12e-3fc0-4c27-aef8-7ac7c097e387
@@ -199,7 +199,7 @@
 
 ** Query Optimization
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/3/The Vertica Analytic Database- C-Store 7 Years Later (p1790_andrewlamb_vldb2012).pdf
+:NOTER_DOCUMENT: attachments/pdf/3/The Vertica Analytic Database- C-Store 7 Years Later (p1790_andrewlamb_vldb2012).pdf
 :NOTER_OPEN: find-file
 :NOTER_PAGE: 9
 :CUSTOM_ID: h:110fd5c5-957a-47b8-a225-fdbcb6ac93dc

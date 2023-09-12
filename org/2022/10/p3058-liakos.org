@@ -1,6 +1,6 @@
 :PROPERTIES:
 :ID:       a92fbab7-63c1-43a9-b41b-467bd4c62510
-:NOTER_DOCUMENT: ../pdf/1/p3058-liakos.pdf
+:NOTER_DOCUMENT: attachments/pdf/1/p3058-liakos.pdf
 :END:
 #+TITLE: Chimp: Efficient Lossless Floating Point Compression for Time Series Databases
 #+AUTHOR: Yang Yingchao
@@ -17,7 +17,7 @@
 
 * ABSTRACT
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/1/p3058-liakos.pdf
+:NOTER_DOCUMENT: attachments/pdf/1/p3058-liakos.pdf
 :NOTER_PAGE: 1
 :CUSTOM_ID: h:9d71575b-ba21-4317-b723-f2c924610db6
 :END:
@@ -37,7 +37,7 @@
 
 * INTRODUCTION
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/1/p3058-liakos.pdf
+:NOTER_DOCUMENT: attachments/pdf/1/p3058-liakos.pdf
 :NOTER_PAGE: 1
 :CUSTOM_ID: h:402fb889-e9f7-4816-83ac-5edfbc857d66
 :END:
@@ -54,7 +54,7 @@
 
 * PRELIMINARIES
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/1/p3058-liakos.pdf
+:NOTER_DOCUMENT: attachments/pdf/1/p3058-liakos.pdf
 :NOTER_PAGE: 2
 :CUSTOM_ID: h:4d0e1916-a961-460c-b04b-37bf987e0d1d
 :END:
@@ -62,7 +62,7 @@
 
 ** Floating Point Time Series
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/1/p3058-liakos.pdf
+:NOTER_DOCUMENT: attachments/pdf/1/p3058-liakos.pdf
 :NOTER_PAGE: 2
 :CUSTOM_ID: h:eb874834-0cf9-4a3d-a6c2-37fe0153d2de
 :END:
@@ -90,7 +90,7 @@
 
 ** IEEE 754 Double Precision Floating Point Format
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/1/p3058-liakos.pdf
+:NOTER_DOCUMENT: attachments/pdf/1/p3058-liakos.pdf
 :NOTER_PAGE: 2
 :CUSTOM_ID: h:87f9b9e3-a90d-404a-9c99-aaa46efe6355
 :END:
@@ -115,7 +115,7 @@
 
 ** Gorilla Compression
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/1/p3058-liakos.pdf
+:NOTER_DOCUMENT: attachments/pdf/1/p3058-liakos.pdf
 :NOTER_PAGE: 3
 :CUSTOM_ID: h:b534c224-1e44-453d-8ac1-5d03f6b7e9a7
 :END:
@@ -152,7 +152,7 @@
 
 * PROPERTIES OF REAL-WORLD TIME SERIES
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/1/p3058-liakos.pdf
+:NOTER_DOCUMENT: attachments/pdf/1/p3058-liakos.pdf
 :NOTER_PAGE: 3
 :CUSTOM_ID: h:e61dbfe2-662e-4db1-8de6-33ccd572b0a1
 :END:
@@ -160,7 +160,7 @@
 
 ** Trailing Zeros
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/1/p3058-liakos.pdf
+:NOTER_DOCUMENT: attachments/pdf/1/p3058-liakos.pdf
 :NOTER_PAGE: 3
 :CUSTOM_ID: h:50b69b70-1b4b-4e2c-8c37-8d851fb920ce
 :END:
@@ -168,7 +168,7 @@
 
 ** Leading Zeros
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/1/p3058-liakos.pdf
+:NOTER_DOCUMENT: attachments/pdf/1/p3058-liakos.pdf
 :NOTER_PAGE: 4
 :CUSTOM_ID: h:06702259-3ebc-4672-b24b-d7f28c4eaedd
 :END:
@@ -176,7 +176,7 @@
 
 ** Revisiting Gorilla Compression
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/1/p3058-liakos.pdf
+:NOTER_DOCUMENT: attachments/pdf/1/p3058-liakos.pdf
 :NOTER_PAGE: 4
 :CUSTOM_ID: h:8c80901f-346f-4b1d-ba11-411436fd4516
 :END:
@@ -184,7 +184,7 @@
 
 *** Flag Bits.
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/1/p3058-liakos.pdf
+:NOTER_DOCUMENT: attachments/pdf/1/p3058-liakos.pdf
 :NOTER_PAGE: 4
 :CUSTOM_ID: h:59848c4d-b8b4-48f4-a79e-c3496fc4bfc1
 :END:
@@ -196,7 +196,7 @@
 
 *** Length of Meaningful XORed Value (Center Bits).
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/1/p3058-liakos.pdf
+:NOTER_DOCUMENT: attachments/pdf/1/p3058-liakos.pdf
 :NOTER_PAGE: 4
 :CUSTOM_ID: h:4b0ff4ff-e36d-4311-a8ae-9d885561f080
 :END:
@@ -204,7 +204,7 @@
 
 *** Previous Block Position.
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/1/p3058-liakos.pdf
+:NOTER_DOCUMENT: attachments/pdf/1/p3058-liakos.pdf
 :NOTER_PAGE: 5
 :CUSTOM_ID: h:792dd029-00aa-4f31-b158-791e6ae0029a
 :END:
@@ -212,7 +212,7 @@
 
 * OVERVIEW
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/1/p3058-liakos.pdf
+:NOTER_DOCUMENT: attachments/pdf/1/p3058-liakos.pdf
 :NOTER_PAGE: 5
 :CUSTOM_ID: h:3d2a78fa-6eed-4738-8d3d-5d4771119d8c
 :END:
@@ -220,7 +220,7 @@
 
 ** Our Chimp Algorithm
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/1/p3058-liakos.pdf
+:NOTER_DOCUMENT: attachments/pdf/1/p3058-liakos.pdf
 :NOTER_PAGE: 5
 :CUSTOM_ID: h:2ff4f7f7-de49-4982-86c5-e33535c188eb
 :END:
@@ -228,7 +228,7 @@
 
 *** Possible Flag Sequences
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/1/p3058-liakos.pdf
+:NOTER_DOCUMENT: attachments/pdf/1/p3058-liakos.pdf
 :NOTER_PAGE: 5
 :CUSTOM_ID: h:6fe58ee9-803c-4b85-821f-fd84ae589b56
 :END:
@@ -254,7 +254,7 @@
 
 ** Compression size result
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/1/p3058-liakos.pdf
+:NOTER_DOCUMENT: attachments/pdf/1/p3058-liakos.pdf
 :NOTER_PAGE: 10
 :CUSTOM_ID: h:2bd0b50a-9cc3-478d-90d2-e3a44cefe53e
 :END:
@@ -268,7 +268,7 @@
 
 ** Compression and decompression time
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/1/p3058-liakos.pdf
+:NOTER_DOCUMENT: attachments/pdf/1/p3058-liakos.pdf
 :NOTER_PAGE: 10
 :CUSTOM_ID: h:7127ad57-9105-42b2-ac2c-0cfb641b6946
 :END:

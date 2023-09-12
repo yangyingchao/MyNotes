@@ -1,6 +1,6 @@
 :PROPERTIES:
 :ID:       ddf48dae-65f4-4916-8094-dfbd5f3459d6
-:NOTER_DOCUMENT: ../pdf/c/p3346-gong.pdf
+:NOTER_DOCUMENT: attachments/pdf/c/p3346-gong.pdf
 :END:
 #+TITLE: Tair-PMem: A Fully Durable Non-Volatile Memory Database
 #+AUTHOR: Yang,Ying-chao

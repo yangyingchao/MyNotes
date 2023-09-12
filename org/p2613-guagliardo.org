@@ -1,6 +1,6 @@
 :PROPERTIES:
 :ID:       4d39339e-e815-418a-a445-6af3fdea2953
-:NOTER_DOCUMENT: ../pdf/6/p2613-guagliardo.pdf
+:NOTER_DOCUMENT: attachments/pdf/6/p2613-guagliardo.pdf
 :NOTER_OPEN: find-file
 :END:
 #+TITLE: Troubles with Nulls, Views from the Users

@@ -14,7 +14,7 @@
 #+FILETAGS: :tag1:tag2:
 
 
-#+NOTER_DOCUMENT: ../pdf/f/p2085-alkowaileet.pdf
+#+NOTER_DOCUMENT: attachments/pdf/f/p2085-alkowaileet.pdf
 
 这篇论文探讨了文档存储数据库系统的数据模型灵活性限制其在列式关系数据库中进行分析工作负载
 的表现。作者提出了几种基于Log-Structured Merge (LSM) tree事件的技术，旨在将数据存储在列
@@ -24,7 +24,7 @@
 
 * INTRODUCTION
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/f/p2085-alkowaileet.pdf
+:NOTER_DOCUMENT: attachments/pdf/f/p2085-alkowaileet.pdf
 :NOTER_OPEN: find-file
 :NOTER_PAGE: 1
 :CUSTOM_ID: h:bbb4a7c2-b4b5-4e59-8249-fb5bda5443a0
@@ -49,7 +49,7 @@
 
 * BACKGROUND
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/f/p2085-alkowaileet.pdf
+:NOTER_DOCUMENT: attachments/pdf/f/p2085-alkowaileet.pdf
 :NOTER_OPEN: find-file
 :NOTER_PAGE: 2
 :CUSTOM_ID: h:1064047d-344e-44ee-8062-5592b5fc7541
@@ -58,7 +58,7 @@
 
 ** Apache AsterixDB
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/f/p2085-alkowaileet.pdf
+:NOTER_DOCUMENT: attachments/pdf/f/p2085-alkowaileet.pdf
 :NOTER_OPEN: find-file
 :NOTER_PAGE: 2
 :CUSTOM_ID: h:7837d119-448b-4eec-ac87-912ee0df6bdf

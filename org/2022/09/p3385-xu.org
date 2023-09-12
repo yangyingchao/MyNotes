@@ -12,12 +12,12 @@
 #+LANGUAGE: en
 #+EXCLUDE_TAGS: noexport
 
-#+NOTER_DOCUMENT: ../pdf/d/p3385-xu.pdf
+#+NOTER_DOCUMENT: attachments/pdf/d/p3385-xu.pdf
 
 
 * Introduction
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/d/p3385-xu.pdf
+:NOTER_DOCUMENT: attachments/pdf/d/p3385-xu.pdf
 :NOTER_PAGE: 1
 :CUSTOM_ID: h:0a45267f-a3ae-43ad-8a8a-2a8ff4d14e35
 :END:
@@ -25,7 +25,7 @@
 
 * DESIGN OVERVIEW
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/d/p3385-xu.pdf
+:NOTER_DOCUMENT: attachments/pdf/d/p3385-xu.pdf
 :NOTER_PAGE: 2
 :CUSTOM_ID: h:81c079a8-b5c8-4073-b6dc-4390e495b9ac
 :END:
@@ -33,7 +33,7 @@
 
 ** Goals
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/d/p3385-xu.pdf
+:NOTER_DOCUMENT: attachments/pdf/d/p3385-xu.pdf
 :NOTER_PAGE: 2
 :CUSTOM_ID: h:89cbb686-47c9-439f-94af-5baf3dbdec55
 :END:
@@ -44,7 +44,7 @@
 
 ** Criteria of Design
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/d/p3385-xu.pdf
+:NOTER_DOCUMENT: attachments/pdf/d/p3385-xu.pdf
 :NOTER_PAGE: 2
 :CUSTOM_ID: h:d8875fcd-41a7-4eb3-bcdb-7f4698884d41
 :END:
@@ -52,7 +52,7 @@
 
 * 架构图
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/d/p3385-xu.pdf
+:NOTER_DOCUMENT: attachments/pdf/d/p3385-xu.pdf
 :NOTER_PAGE: 2
 :CUSTOM_ID: h:1d973c3d-dfa5-4501-806a-a3691d5f5ddb
 :END:
@@ -111,7 +111,7 @@
 
 ** SQL Engine
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/d/p3385-xu.pdf
+:NOTER_DOCUMENT: attachments/pdf/d/p3385-xu.pdf
 :NOTER_PAGE: 3
 :CUSTOM_ID: h:93134f71-c553-4bdf-85d9-b635dc2e6cfa
 :END:
@@ -127,7 +127,7 @@
 
 *** plan cache
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/d/p3385-xu.pdf
+:NOTER_DOCUMENT: attachments/pdf/d/p3385-xu.pdf
 :NOTER_PAGE: 3
 :CUSTOM_ID: h:ce19ec14-eb33-426a-a124-6aa866434e99
 :END:
@@ -138,14 +138,14 @@
 
 ** Multi-tenancy
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/d/p3385-xu.pdf
+:NOTER_DOCUMENT: attachments/pdf/d/p3385-xu.pdf
 :NOTER_PAGE: 3
 :CUSTOM_ID: h:3ff4162e-c44a-44bf-a591-06272e393a61
 :END:
 
 *** System Tenant 系统租户
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/d/p3385-xu.pdf
+:NOTER_DOCUMENT: attachments/pdf/d/p3385-xu.pdf
 :NOTER_PAGE: 3
 :CUSTOM_ID: h:1fa5cbc3-0369-4445-8702-0e6321751d4b
 :END:
@@ -158,7 +158,7 @@
 
 *** Ordinary Tenant 普通髭胡
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/d/p3385-xu.pdf
+:NOTER_DOCUMENT: attachments/pdf/d/p3385-xu.pdf
 :NOTER_PAGE: 3
 :CUSTOM_ID: h:21a3b204-d403-41d9-a8f4-5760a4505658
 :END:
@@ -166,7 +166,7 @@
 
 ** Resource Isolation.
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/d/p3385-xu.pdf
+:NOTER_DOCUMENT: attachments/pdf/d/p3385-xu.pdf
 :NOTER_PAGE: 4
 :CUSTOM_ID: h:795aebda-ad5d-423b-bbd8-18e201a3ea05
 :END:
@@ -174,7 +174,7 @@
 
 ** Features
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/d/p3385-xu.pdf
+:NOTER_DOCUMENT: attachments/pdf/d/p3385-xu.pdf
 :NOTER_PAGE: 4
 :CUSTOM_ID: h:d1d0b2ec-39d3-4860-a5e2-1fc17e06cb0a
 :END:
@@ -182,7 +182,7 @@
 
 * STORAGE ENGINE
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/d/p3385-xu.pdf
+:NOTER_DOCUMENT: attachments/pdf/d/p3385-xu.pdf
 :NOTER_PAGE: 4
 :CUSTOM_ID: h:b529b550-1b76-4517-b51e-c2ef317a50e8
 :END:
@@ -198,7 +198,7 @@
 
 ** LSM Tree-Based Architecture
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/d/p3385-xu.pdf
+:NOTER_DOCUMENT: attachments/pdf/d/p3385-xu.pdf
 :NOTER_PAGE: 4
 :CUSTOM_ID: h:2d0129de-6b8c-4123-bcae-3381d34e2426
 :END:
@@ -230,7 +230,7 @@
 
 ** Asymmetric Read and Write
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/d/p3385-xu.pdf
+:NOTER_DOCUMENT: attachments/pdf/d/p3385-xu.pdf
 :NOTER_PAGE: 5
 :CUSTOM_ID: h:3b88b7f0-2a81-46b3-a504-81ead89714dc
 :END:
@@ -249,7 +249,7 @@ OB 实现了非对称读写。
 
 ** Daily Incremental Major Compaction
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/d/p3385-xu.pdf
+:NOTER_DOCUMENT: attachments/pdf/d/p3385-xu.pdf
 :NOTER_PAGE: 5
 :CUSTOM_ID: h:fd24213c-c8e8-47e2-b267-b650ade48456
 :END:
@@ -261,7 +261,7 @@ OB 实现了非对称读写。
 
 ** Replica Type
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/d/p3385-xu.pdf
+:NOTER_DOCUMENT: attachments/pdf/d/p3385-xu.pdf
 :NOTER_PAGE: 5
 :CUSTOM_ID: h:38ef652e-1cac-4458-ab8d-c5a450387a17
 :END:
@@ -295,7 +295,7 @@ OB 实现了非对称读写。
 
 * TRANSACTION PROCESSING ENGINE
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/d/p3385-xu.pdf
+:NOTER_DOCUMENT: attachments/pdf/d/p3385-xu.pdf
 :NOTER_PAGE: 5
 :CUSTOM_ID: h:daef193b-c166-40bc-897c-1ba68e6d2e7e
 :END:
@@ -303,7 +303,7 @@ OB 实现了非对称读写。
 
 ** Partition and Paxos Group
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/d/p3385-xu.pdf
+:NOTER_DOCUMENT: attachments/pdf/d/p3385-xu.pdf
 :NOTER_PAGE: 5
 :CUSTOM_ID: h:9ddf467b-d11e-4b8e-9056-ff15b67602fe
 :END:
@@ -314,7 +314,7 @@ OB 实现了非对称读写。
 
 ** Timestamp Service
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/d/p3385-xu.pdf
+:NOTER_DOCUMENT: attachments/pdf/d/p3385-xu.pdf
 :NOTER_PAGE: 5
 :CUSTOM_ID: h:af98d321-1caf-4efe-811a-12302ffb7321
 :END:
@@ -324,7 +324,7 @@ OB 实现了非对称读写。
 
 ** Transaction Processing
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/d/p3385-xu.pdf
+:NOTER_DOCUMENT: attachments/pdf/d/p3385-xu.pdf
 :NOTER_PAGE: 6
 :CUSTOM_ID: h:3fa0c121-d1e6-41d0-94b0-aba40baa6340
 :END:
@@ -332,7 +332,7 @@ OB 实现了非对称读写。
 
 ** Isolation Level
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/d/p3385-xu.pdf
+:NOTER_DOCUMENT: attachments/pdf/d/p3385-xu.pdf
 :NOTER_PAGE: 6
 :CUSTOM_ID: h:48068368-5e2c-46d7-8973-fcd6ed207b2e
 :END:
@@ -342,7 +342,7 @@ OB 实现了非对称读写。
 
 ** Replicated Table
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/d/p3385-xu.pdf
+:NOTER_DOCUMENT: attachments/pdf/d/p3385-xu.pdf
 :NOTER_PAGE: 7
 :CUSTOM_ID: h:9c090d3d-1284-4a59-8748-5f4f41d92fd4
 :END:
@@ -358,7 +358,7 @@ OB 实现了非对称读写。
 
 * TPC-C BENCHMARK TEST
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/d/p3385-xu.pdf
+:NOTER_DOCUMENT: attachments/pdf/d/p3385-xu.pdf
 :NOTER_PAGE: 7
 :CUSTOM_ID: h:b9272e56-7a6c-4576-bb2e-07d908598d53
 :END:
@@ -366,7 +366,7 @@ OB 实现了非对称读写。
 
 * LESSONS IN BUILDING OCEANBASE
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/d/p3385-xu.pdf
+:NOTER_DOCUMENT: attachments/pdf/d/p3385-xu.pdf
 :NOTER_PAGE: 9
 :CUSTOM_ID: h:dd8ffbcb-ac77-4683-ae5b-4bdb8f828c61
 :END:
@@ -374,7 +374,7 @@ OB 实现了非对称读写。
 
 ** From NoSQL to NewSQL
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/d/p3385-xu.pdf
+:NOTER_DOCUMENT: attachments/pdf/d/p3385-xu.pdf
 :NOTER_PAGE: 10
 :CUSTOM_ID: h:bba12c9f-9272-42f1-ba0f-121f5f6a19fa
 :END:
@@ -385,7 +385,7 @@ OB 实现了非对称读写。
 
 ** Both cost and performance
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/d/p3385-xu.pdf
+:NOTER_DOCUMENT: attachments/pdf/d/p3385-xu.pdf
 :NOTER_PAGE: 10
 :CUSTOM_ID: h:a901f7ee-f75f-41b7-aa25-cafb87bf5a98
 :END:
@@ -393,7 +393,7 @@ OB 实现了非对称读写。
 
 ** Data validation
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/d/p3385-xu.pdf
+:NOTER_DOCUMENT: attachments/pdf/d/p3385-xu.pdf
 :NOTER_PAGE: 10
 :CUSTOM_ID: h:c0fcd1a9-665b-43af-b2be-8b02b1349136
 :END:
@@ -401,7 +401,7 @@ OB 实现了非对称读写。
 
 ** Partitioning vs. sharding
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/d/p3385-xu.pdf
+:NOTER_DOCUMENT: attachments/pdf/d/p3385-xu.pdf
 :NOTER_PAGE: 10
 :CUSTOM_ID: h:823cf2bc-3ef4-4e03-b67d-154e672b80ec
 :END:

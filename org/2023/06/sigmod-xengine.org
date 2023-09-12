@@ -1,6 +1,6 @@
 :PROPERTIES:
 :ID:       13dba2b2-4ff1-4ce9-b610-d845185d72de
-:NOTER_DOCUMENT: ../pdf/7/sigmod-xengine.pdf
+:NOTER_DOCUMENT: attachments/pdf/7/sigmod-xengine.pdf
 :NOTER_OPEN: find-file
 :END:
 #+TITLE: X-Engine: An optimized storage engine for TP
@@ -17,7 +17,7 @@
 
 * Abstract
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/7/sigmod-xengine.pdf
+:NOTER_DOCUMENT: attachments/pdf/7/sigmod-xengine.pdf
 :NOTER_OPEN: find-file
 :NOTER_PAGE: 1
 :CUSTOM_ID: h:2c165c11-315a-4b37-8b21-0aa7abc2c686
@@ -56,7 +56,7 @@ The fast-moving current problem. “快速移动的当前问题”。
 
 * System Overview
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/7/sigmod-xengine.pdf
+:NOTER_DOCUMENT: attachments/pdf/7/sigmod-xengine.pdf
 :NOTER_OPEN: find-file
 :NOTER_PAGE: 3
 :CUSTOM_ID: h:9146fed8-4330-42f2-8e09-1b18a38a1c6d
@@ -73,7 +73,7 @@ X-Engine 是一种基于 LSM-Tree 的存储引擎，用于处理阿里巴巴电�
 
 ** Storage layout.
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/7/sigmod-xengine.pdf
+:NOTER_DOCUMENT: attachments/pdf/7/sigmod-xengine.pdf
 :NOTER_OPEN: find-file
 :NOTER_PAGE: 3
 :CUSTOM_ID: h:51404d1c-1567-40d0-a7fe-1f2481f6c3fa

@@ -11,12 +11,12 @@
 #+LANGUAGE: en
 #+EXCLUDE_TAGS: noexport
 #+FILETAGS: :vector:engine:database:
-#+NOTER_DOCUMENT: ../pdf/8/p3548-yan.pdf
+#+NOTER_DOCUMENT: attachments/pdf/8/p3548-yan.pdf
 
 
 * ABSTRACT
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/8/p3548-yan.pdf
+:NOTER_DOCUMENT: attachments/pdf/8/p3548-yan.pdf
 :NOTER_PAGE: 1
 :CUSTOM_ID: h:5628f2fa-3be2-4312-8bb1-d8da17d2d39a
 :END:
@@ -40,7 +40,7 @@ Manu 通过放宽数据模型和一致性约束来换取上述特性：
 
 * INTRODUCTION
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/8/p3548-yan.pdf
+:NOTER_DOCUMENT: attachments/pdf/8/p3548-yan.pdf
 :NOTER_PAGE: 1
 :CUSTOM_ID: h:21580be0-85a4-4596-838b-f76c80a9b8c8
 :END:

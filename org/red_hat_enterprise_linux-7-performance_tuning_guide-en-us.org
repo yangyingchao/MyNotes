@@ -1,6 +1,6 @@
 :PROPERTIES:
 :ID:       253d78c8-71b2-469e-b0c1-cadda2a21e24
-:NOTER_DOCUMENT: ../pdf/c/red_hat_enterprise_linux-7-performance_tuning_guide-en-us.pdf
+:NOTER_DOCUMENT: attachments/pdf/c/red_hat_enterprise_linux-7-performance_tuning_guide-en-us.pdf
 :NOTER_OPEN: find-file
 :END:
 #+TITLE: Red Hat Enterprise Linux 7 Performance Tuning Guide

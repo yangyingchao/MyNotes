@@ -1,6 +1,6 @@
 :PROPERTIES:
 :ID:       bf51d107-0e28-42dc-833e-0337136e3ab8
-:NOTER_DOCUMENT: ../pdf/3/performanceOf10GbE.pdf
+:NOTER_DOCUMENT: attachments/pdf/3/performanceOf10GbE.pdf
 :END:
 #+TITLE: Performance of 10 G Ethernet Using Commodity Hardware
 #+AUTHOR: Yang Yingchao
@@ -16,7 +16,7 @@
 
 * INTRODUCTION
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/3/performanceOf10GbE.pdf
+:NOTER_DOCUMENT: attachments/pdf/3/performanceOf10GbE.pdf
 :NOTER_PAGE: 1
 :CUSTOM_ID: h:ff062e17-a590-447b-af94-db765fe35d49
 :END:
@@ -38,7 +38,7 @@ the efficiency of high-performance I/O adapters:
 
 * NETWORK PROCESSING IN THE LINUX KERNEL
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/3/performanceOf10GbE.pdf
+:NOTER_DOCUMENT: attachments/pdf/3/performanceOf10GbE.pdf
 :NOTER_PAGE: 1
 :CUSTOM_ID: h:79aa9e78-e621-4482-a37f-6c4e9faa51ed
 :END:
@@ -46,7 +46,7 @@ the efficiency of high-performance I/O adapters:
 
 ** Kernel Accounting
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/3/performanceOf10GbE.pdf
+:NOTER_DOCUMENT: attachments/pdf/3/performanceOf10GbE.pdf
 :NOTER_PAGE: 1
 :CUSTOM_ID: h:ae958029-e093-4749-8e53-86bbf3c625c0
 :END:
@@ -66,7 +66,7 @@ the efficiency of high-performance I/O adapters:
 
 ** Packet Transmission 发送
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/3/performanceOf10GbE.pdf
+:NOTER_DOCUMENT: attachments/pdf/3/performanceOf10GbE.pdf
 :NOTER_PAGE: 2
 :CUSTOM_ID: h:becafb3e-b9d7-42ce-a7f6-ef239ea75c5a
 :END:
@@ -97,7 +97,7 @@ the efficiency of high-performance I/O adapters:
 
 ** Packet Reception 接收
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/3/performanceOf10GbE.pdf
+:NOTER_DOCUMENT: attachments/pdf/3/performanceOf10GbE.pdf
 :NOTER_PAGE: 2
 :CUSTOM_ID: h:89c95fde-f17c-4f48-a103-2c4f8a22c09c
 :END:
@@ -115,7 +115,7 @@ the efficiency of high-performance I/O adapters:
 
 ** Incorrect SoftIRQ Accounting
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/3/performanceOf10GbE.pdf
+:NOTER_DOCUMENT: attachments/pdf/3/performanceOf10GbE.pdf
 :NOTER_PAGE: 3
 :CUSTOM_ID: h:9010c7b0-db9f-4169-8ec4-b8905c4dd54a
 :END:
@@ -123,7 +123,7 @@ the efficiency of high-performance I/O adapters:
 
 * TESTBED AND KERNEL CONFIGURATION
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/3/performanceOf10GbE.pdf
+:NOTER_DOCUMENT: attachments/pdf/3/performanceOf10GbE.pdf
 :NOTER_PAGE: 3
 :CUSTOM_ID: h:aaaa327c-4cf8-4784-a699-88f940bd6e60
 :END:
@@ -149,7 +149,7 @@ the efficiency of high-performance I/O adapters:
 
 * UDP TRANSMISSION
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/3/performanceOf10GbE.pdf
+:NOTER_DOCUMENT: attachments/pdf/3/performanceOf10GbE.pdf
 :NOTER_PAGE: 3
 :CUSTOM_ID: h:8168452b-6b7f-4d83-91b1-33a6df8d63fc
 :END:
@@ -165,7 +165,7 @@ the efficiency of high-performance I/O adapters:
 
 * TCP TRANSMISSION
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/3/performanceOf10GbE.pdf
+:NOTER_DOCUMENT: attachments/pdf/3/performanceOf10GbE.pdf
 :NOTER_PAGE: 5
 :CUSTOM_ID: h:3d1a9962-b03b-481c-8098-aeaaad110f71
 :END:
@@ -184,7 +184,7 @@ the efficiency of high-performance I/O adapters:
 
 * TCP TRANSMISSION WITH ZERO-COPY
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/3/performanceOf10GbE.pdf
+:NOTER_DOCUMENT: attachments/pdf/3/performanceOf10GbE.pdf
 :NOTER_PAGE: 6
 :CUSTOM_ID: h:b3dad9b5-5d55-4dbb-ad94-74e11ba80a91
 :END:
@@ -195,7 +195,7 @@ the efficiency of high-performance I/O adapters:
 
 * THE HARDWARE OFFLOAD FUNCTIONALITIES OF THE NETWORK ADAPTER
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/3/performanceOf10GbE.pdf
+:NOTER_DOCUMENT: attachments/pdf/3/performanceOf10GbE.pdf
 :NOTER_PAGE: 7
 :CUSTOM_ID: h:566096d2-c034-451a-9844-517b5b69c0f0
 :END:
@@ -235,7 +235,7 @@ the efficiency of high-performance I/O adapters:
 
 * FIBRE CHANNEL TO 10 GIGABIT ETHERNET TESTS
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/3/performanceOf10GbE.pdf
+:NOTER_DOCUMENT: attachments/pdf/3/performanceOf10GbE.pdf
 :NOTER_PAGE: 9
 :CUSTOM_ID: h:321ebff8-6056-49e5-9deb-bfc61ccb5011
 :END:
@@ -243,7 +243,7 @@ the efficiency of high-performance I/O adapters:
 
 * CONCLUSIONS
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/3/performanceOf10GbE.pdf
+:NOTER_DOCUMENT: attachments/pdf/3/performanceOf10GbE.pdf
 :NOTER_PAGE: 12
 :CUSTOM_ID: h:77721e10-4994-4b5b-97c8-6d13ef405b68
 :END:

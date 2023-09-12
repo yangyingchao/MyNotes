@@ -12,4 +12,4 @@
 #+LANGUAGE: en
 #+EXCLUDE_TAGS: noexport
 
-#+NOTER_DOCUMENT: ../pdf/a/p1439-wang.pdf
+#+NOTER_DOCUMENT: attachments/pdf/a/p1439-wang.pdf

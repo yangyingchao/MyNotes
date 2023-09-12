@@ -1,6 +1,6 @@
 :PROPERTIES:
 :ID:       b87b49f5-bae7-48fb-ab3f-b36945d86ae0
-:NOTER_DOCUMENT: ../../../pdf/d/p1835-zhao.pdf
+:NOTER_DOCUMENT: ../../attachments/pdf/d/p1835-zhao.pdf
 :NOTER_OPEN: find-file
 :END:
 #+TITLE: AB-tree: Index for Concurrent Random Sampling and Updates
@@ -17,7 +17,7 @@
 
 * ABSTRACT
 :PROPERTIES:
-:NOTER_DOCUMENT: ../../../pdf/d/p1835-zhao.pdf
+:NOTER_DOCUMENT: ../../attachments/pdf/d/p1835-zhao.pdf
 :NOTER_OPEN: find-file
 :NOTER_PAGE: 1
 :CUSTOM_ID: h:e45b6d32-a08f-4b57-93e8-82f7f09a3a3f
@@ -45,7 +45,7 @@ AB-tree，并通过广泛的实验展示了其效率和功效。
 
 * INTRODUCTION
 :PROPERTIES:
-:NOTER_DOCUMENT: ../../../pdf/d/p1835-zhao.pdf
+:NOTER_DOCUMENT: ../../attachments/pdf/d/p1835-zhao.pdf
 :NOTER_OPEN: find-file
 :NOTER_PAGE: 1
 :CUSTOM_ID: h:83dc47be-be7b-43ef-b003-64e0a4313af4

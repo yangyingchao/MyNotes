@@ -1,6 +1,6 @@
 :PROPERTIES:
 :ID:       beaedea8-a208-4832-80af-f6adae4817d3
-:NOTER_DOCUMENT: ../pdf/f/p1714-kossmann.pdf
+:NOTER_DOCUMENT: attachments/pdf/f/p1714-kossmann.pdf
 :END:
 #+TITLE: Adaptive Range Filters for Cold Data: Avoiding Trips to Siberia
 #+AUTHOR: Yang Yingchao
@@ -18,7 +18,7 @@
 
 * ABSTRACT
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/f/p1714-kossmann.pdf
+:NOTER_DOCUMENT: attachments/pdf/f/p1714-kossmann.pdf
 :NOTER_PAGE: 1
 :CUSTOM_ID: h:925d40ea-36be-4f97-92e1-5a9583172847
 :END:
@@ -31,7 +31,7 @@
 
 * INTRODUCTION
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/f/p1714-kossmann.pdf
+:NOTER_DOCUMENT: attachments/pdf/f/p1714-kossmann.pdf
 :NOTER_PAGE: 1
 :CUSTOM_ID: h:a4fb225f-a49e-4a9e-927c-a0173212264d
 :END:
@@ -39,7 +39,7 @@
 
 * APPLICATION EXAMPLE
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/f/p1714-kossmann.pdf
+:NOTER_DOCUMENT: attachments/pdf/f/p1714-kossmann.pdf
 :NOTER_PAGE: 1
 :CUSTOM_ID: h:a555d6ac-abe7-471a-872e-af21f9cfa13c
 :END:
@@ -47,7 +47,7 @@
 
 ** Project Siberia
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/f/p1714-kossmann.pdf
+:NOTER_DOCUMENT: attachments/pdf/f/p1714-kossmann.pdf
 :NOTER_PAGE: 1
 :CUSTOM_ID: h:e89b04c8-78da-49f9-ae2b-4b9de35e7442
 :END:

@@ -11,12 +11,12 @@
 #+LANGUAGE: en
 #+EXCLUDE_TAGS: noexport
 
-#+NOTER_DOCUMENT: ../pdf/0/Understanding Quantum Technologies Olivier Ezratty.pdf
+#+NOTER_DOCUMENT: attachments/pdf/0/Understanding Quantum Technologies Olivier Ezratty.pdf
 
 
 * Why quantum computing
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/0/Understanding Quantum Technologies Olivier Ezratty.pdf
+:NOTER_DOCUMENT: attachments/pdf/0/Understanding Quantum Technologies Olivier Ezratty.pdf
 :NOTER_PAGE: 21
 :CUSTOM_ID: h:a2102102-bb27-450b-a623-647e245eabae
 :END:

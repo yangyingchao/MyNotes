@@ -1,6 +1,6 @@
 :PROPERTIES:
 :ID:       ff7cedf8-1ade-4a35-9807-8380ef06dceb
-:NOTER_DOCUMENT: ../pdf/2/p752-zhu.pdf
+:NOTER_DOCUMENT: attachments/pdf/2/p752-zhu.pdf
 :NOTER_OPEN: find-file
 :END:
 #+TITLE: Cardinality Estimation in DBMS: A Comprehensive Benchmark Evaluation

@@ -12,12 +12,12 @@
 #+EXCLUDE_TAGS: noexport
 #+FILETAGS: :optimization:ai:
 
-#+NOTER_DOCUMENT: ../pdf/7/p3402-wang.pdf
+#+NOTER_DOCUMENT: attachments/pdf/7/p3402-wang.pdf
 
 
 * ABSTRACT
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/7/p3402-wang.pdf
+:NOTER_DOCUMENT: attachments/pdf/7/p3402-wang.pdf
 :NOTER_PAGE: 1
 :CUSTOM_ID: h:6b1b4a85-ca06-4a51-99d2-2f06dcb728fc
 :END:
@@ -35,7 +35,7 @@
 
 * INTRODUCTION
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/7/p3402-wang.pdf
+:NOTER_DOCUMENT: attachments/pdf/7/p3402-wang.pdf
 :NOTER_PAGE: 1
 :CUSTOM_ID: h:c5af75eb-2734-48dd-9281-7ce95ec73184
 :END:

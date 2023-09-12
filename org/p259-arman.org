@@ -12,12 +12,12 @@
 #+EXCLUDE_TAGS: noexport
 #+FILETAGS: :algrithm:sort:
 
-#+NOTER_DOCUMENT: ../pdf/c/p259-arman.pdf
+#+NOTER_DOCUMENT: attachments/pdf/c/p259-arman.pdf
 
 
 * ABSTRACT
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/c/p259-arman.pdf
+:NOTER_DOCUMENT: attachments/pdf/c/p259-arman.pdf
 :NOTER_PAGE: 1
 :CUSTOM_ID: h:30779f14-6c09-4a57-b1f2-6c8b6224a589
 :END:
@@ -36,7 +36,7 @@ Origami:
 
 * INTRODUCTION
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/c/p259-arman.pdf
+:NOTER_DOCUMENT: attachments/pdf/c/p259-arman.pdf
 :NOTER_PAGE: 1
 :CUSTOM_ID: h:b9af59de-065f-47e9-a832-feaa4e164435
 :END:
@@ -48,13 +48,13 @@ MergeSort 的优点：
 
 * PIPELINE OVERVIEW
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/c/p259-arman.pdf
+:NOTER_DOCUMENT: attachments/pdf/c/p259-arman.pdf
 :NOTER_PAGE: 1
 :CUSTOM_ID: h:926a68c8-a7d2-4920-849c-b7ecbfc1027e
 :END:
 ** notation
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/c/p259-arman.pdf
+:NOTER_DOCUMENT: attachments/pdf/c/p259-arman.pdf
 :NOTER_PAGE: 1
 :CUSTOM_ID: h:06b60011-63b4-4407-ab8d-f7118e58b203
 :END:
@@ -69,7 +69,7 @@ MergeSort 的优点：
 
 ** better cache utilization,
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/c/p259-arman.pdf
+:NOTER_DOCUMENT: attachments/pdf/c/p259-arman.pdf
 :NOTER_PAGE: 2
 :CUSTOM_ID: h:3fbe405a-7293-42f3-9b91-282093bc312a
 :END:
@@ -89,7 +89,7 @@ MergeSort 可以分解为四个阶段，标记为 =P_1 ~ P_4=
 
 *** (P1) Tiny sorters
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/c/p259-arman.pdf
+:NOTER_DOCUMENT: attachments/pdf/c/p259-arman.pdf
 :NOTER_PAGE: 2
 :CUSTOM_ID: h:db3bca44-ab63-41c6-a13a-136eef61de2e
 :END:
@@ -106,7 +106,7 @@ MergeSort 可以分解为四个阶段，标记为 =P_1 ~ P_4=
 
 *** (P2) In-cache merge
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/c/p259-arman.pdf
+:NOTER_DOCUMENT: attachments/pdf/c/p259-arman.pdf
 :NOTER_PAGE: 2
 :CUSTOM_ID: h:a9f73f60-f31b-49d2-af8d-53bba565528a
 :END:
@@ -116,7 +116,7 @@ MergeSort 可以分解为四个阶段，标记为 =P_1 ~ P_4=
 
 *** (P3) Out-of-cache independent merge
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/c/p259-arman.pdf
+:NOTER_DOCUMENT: attachments/pdf/c/p259-arman.pdf
 :NOTER_PAGE: 2
 :CUSTOM_ID: h:bf125cb3-f18b-4bf9-a01d-b0f58527be69
 :END:

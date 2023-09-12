@@ -1,6 +1,6 @@
 :PROPERTIES:
 :ID:       35a9bd9f-2a00-47c4-804e-14a8ee673c84
-:NOTER_DOCUMENT: ../pdf/a/cn.greenplum.org-Greenplum部署最佳实践-网络篇.pdf
+:NOTER_DOCUMENT: attachments/pdf/a/cn.greenplum.org-Greenplum部署最佳实践-网络篇.pdf
 :END:
 #+TITLE: Greenplum 部署最佳实践: 网络篇
 #+AUTHOR: Yang Yingchao
@@ -15,7 +15,7 @@
 
 * 使用高速硬件，降低节点间的延迟
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/a/cn.greenplum.org-Greenplum部署最佳实践-网络篇.pdf
+:NOTER_DOCUMENT: attachments/pdf/a/cn.greenplum.org-Greenplum部署最佳实践-网络篇.pdf
 :NOTER_PAGE: 3
 :CUSTOM_ID: h:84b43caf-b824-4f29-9bec-b8e1ffde6d0e
 :END:

@@ -1,6 +1,6 @@
 :PROPERTIES:
 :ID:       b507ae09-9fe2-4c47-a671-204853fcde3f
-:NOTER_DOCUMENT: ../pdf/d/The Design and Implementation of Modern Column-Oriented Database Systems (abadi-column-stores).pdf
+:NOTER_DOCUMENT: attachments/pdf/d/The Design and Implementation of Modern Column-Oriented Database Systems (abadi-column-stores).pdf
 :NOTER_OPEN: find-file
 :END:
 #+TITLE: The Design and Implementation of Modern Column-Oriented Database Systems

@@ -1,6 +1,6 @@
 :PROPERTIES:
 :ID:       23bcdcf9-061d-4e51-9b6d-286856aa313d
-:NOTER_DOCUMENT: ../pdf/0/p1658-zhao.pdf
+:NOTER_DOCUMENT: attachments/pdf/0/p1658-zhao.pdf
 :END:
 #+TITLE: QueryFormer: A Tree Transformer Model for Query Plan Representation
 #+AUTHOR: Yang Yingchao
@@ -21,7 +21,7 @@ QueryFormer:
 
 * INTRODUCTION
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/0/p1658-zhao.pdf
+:NOTER_DOCUMENT: attachments/pdf/0/p1658-zhao.pdf
 :NOTER_PAGE: 1
 :CUSTOM_ID: h:183f9122-54a5-402b-a116-7c3d46e8969d
 :END:

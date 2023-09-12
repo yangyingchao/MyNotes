@@ -1,6 +1,6 @@
 :PROPERTIES:
 :ID:       58f092a3-dd40-447f-8b92-0138f0ffff1f
-:NOTER_DOCUMENT: ../pdf/a/Towards a New File Format for Big Data - SIMD-Friendly Composable Compression (2020-AzimAfroozeh).pdf
+:NOTER_DOCUMENT: attachments/pdf/a/Towards a New File Format for Big Data - SIMD-Friendly Composable Compression (2020-AzimAfroozeh).pdf
 :NOTER_OPEN: find-file
 :END:
 #+TITLE: Towards a New File Format for Big Data - SIMD-Friendly Composable Compression
@@ -17,7 +17,7 @@
 
 * Introduction
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/a/Towards a New File Format for Big Data - SIMD-Friendly Composable Compression (2020-AzimAfroozeh).pdf
+:NOTER_DOCUMENT: attachments/pdf/a/Towards a New File Format for Big Data - SIMD-Friendly Composable Compression (2020-AzimAfroozeh).pdf
 :NOTER_OPEN: find-file
 :NOTER_PAGE: 15
 :CUSTOM_ID: h:580c0cb0-61f9-4a43-ac02-4fad348cc20a
@@ -26,7 +26,7 @@
 
 * Related Work
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/a/Towards a New File Format for Big Data - SIMD-Friendly Composable Compression (2020-AzimAfroozeh).pdf
+:NOTER_DOCUMENT: attachments/pdf/a/Towards a New File Format for Big Data - SIMD-Friendly Composable Compression (2020-AzimAfroozeh).pdf
 :NOTER_OPEN: find-file
 :NOTER_PAGE: 27
 :CUSTOM_ID: h:03a34d6a-6bc6-438c-8f2d-9edd1ffaacdf
@@ -35,7 +35,7 @@
 
 ** Storage Layouts
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/a/Towards a New File Format for Big Data - SIMD-Friendly Composable Compression (2020-AzimAfroozeh).pdf
+:NOTER_DOCUMENT: attachments/pdf/a/Towards a New File Format for Big Data - SIMD-Friendly Composable Compression (2020-AzimAfroozeh).pdf
 :NOTER_OPEN: find-file
 :NOTER_PAGE: 27
 :CUSTOM_ID: h:0f05328b-cb9e-4cd6-98de-0224bc4b0b1b
@@ -44,7 +44,7 @@
 
 *** NSM
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/a/Towards a New File Format for Big Data - SIMD-Friendly Composable Compression (2020-AzimAfroozeh).pdf
+:NOTER_DOCUMENT: attachments/pdf/a/Towards a New File Format for Big Data - SIMD-Friendly Composable Compression (2020-AzimAfroozeh).pdf
 :NOTER_OPEN: find-file
 :NOTER_PAGE: 27
 :CUSTOM_ID: h:afb0adde-6373-4a75-bcca-8531a04288a3
@@ -63,7 +63,7 @@
 
 *** DSM
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/a/Towards a New File Format for Big Data - SIMD-Friendly Composable Compression (2020-AzimAfroozeh).pdf
+:NOTER_DOCUMENT: attachments/pdf/a/Towards a New File Format for Big Data - SIMD-Friendly Composable Compression (2020-AzimAfroozeh).pdf
 :NOTER_OPEN: find-file
 :NOTER_PAGE: 27
 :CUSTOM_ID: h:1116bf3c-43b2-43d0-8f73-83bb63e639e9
@@ -76,7 +76,7 @@
 
 *** PAX
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/a/Towards a New File Format for Big Data - SIMD-Friendly Composable Compression (2020-AzimAfroozeh).pdf
+:NOTER_DOCUMENT: attachments/pdf/a/Towards a New File Format for Big Data - SIMD-Friendly Composable Compression (2020-AzimAfroozeh).pdf
 :NOTER_OPEN: find-file
 :NOTER_PAGE: 28
 :CUSTOM_ID: h:73aa13b1-86f3-42bd-8933-8b331740ac35
@@ -92,7 +92,7 @@
 
 ** Bit-(Un)Packing
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/a/Towards a New File Format for Big Data - SIMD-Friendly Composable Compression (2020-AzimAfroozeh).pdf
+:NOTER_DOCUMENT: attachments/pdf/a/Towards a New File Format for Big Data - SIMD-Friendly Composable Compression (2020-AzimAfroozeh).pdf
 :NOTER_OPEN: find-file
 :NOTER_PAGE: 29
 :CUSTOM_ID: h:ed60df52-edbb-4a50-97fc-7fdb583c275c
@@ -100,10 +100,30 @@
 
 32 位系统架构中，整数通常使用 32 位存储，尽管可能可以使用更少的位来存储它们。例如，具有
 值为 70（0b1000110）的 32 位整数可以使用 7 位而不是 32 位进行存储。一般来说，在[0，2b]范
-围内的整数可以使用 b 位编码并连接成一个单独的位字符串。这个过程被称为位填充。反向操作，即
-将位字符串转换回可由机器寻址的整数数组的操作被称为位取消填充。位取消填充可以使用五个简单
-的操作（加载、移位、与、或和存储）来提取每个整数，如图 2.3 所示。
+围内的整数可以使用 b 位编码并连接成一个单独的位字符串。这个过程被称为 =位填充=
+(bit-packing) 。反向操作，即将位字符串转换回可由机器寻址的整数数组的操作被称为 =位取消填
+充= , bit-unpacking 。位取消填充可以使用五个简单的操作（加载、移位、与、或和存储）来提取
+每个整数，如图 2.3 所示。
 
+在将 32 位数据加载到 CPU 寄存器中之后，使用右移操作将期望的位放置到寄存器的开头。此外，使用
+预定义的掩码寄存器进行按位 AND 操作（用 0 表示随机位，用 1 表示期望的位），可以将具有任意值的
+位更改为 0。这种实现效率高，因为它不涉及任何分支。
+
+
+#+CAPTION:
+#+NAME: fig:screenshot@2023-09-12_16:02:42
+#+attr_html: :width 800px
+#+attr_org: :width 800px
+[[file:images/Towards a New File Format for Big Data - SIMD-Friendly Composable Compression (2020-AzimAfroozeh)/screenshot@2023-09-12_16:02:42.png]]
+
+
+*** Vectorized Bit-Unpacking
+:PROPERTIES:
+:NOTER_DOCUMENT: attachments/pdf/a/Towards a New File Format for Big Data - SIMD-Friendly Composable Compression (2020-AzimAfroozeh).pdf
+:NOTER_OPEN: find-file
+:NOTER_PAGE: 30
+:CUSTOM_ID: h:5a388ec5-7e4f-493a-b9f5-4abac30ce812
+:END:
 
 * SIMD-Friendly Bit-(Un)Packing
 :PROPERTIES:

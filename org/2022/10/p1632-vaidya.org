@@ -1,6 +1,6 @@
 :PROPERTIES:
 :ID:       ef9a5e1a-70e9-497f-be8f-a3623cf0d208
-:NOTER_DOCUMENT: ../pdf/a/p1632-vaidya.pdf
+:NOTER_DOCUMENT: attachments/pdf/a/p1632-vaidya.pdf
 :END:
 #+TITLE: SNARF: A Learning-Enhanced Range Filter
 #+AUTHOR: Yang,Ying-chao
@@ -15,7 +15,7 @@
 
 * ABSTRACT
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/a/p1632-vaidya.pdf
+:NOTER_DOCUMENT: attachments/pdf/a/p1632-vaidya.pdf
 :NOTER_PAGE: 1
 :CUSTOM_ID: h:815ddced-2940-4ddc-a8f1-e53eeb9c4c7d
 :END:
@@ -28,7 +28,7 @@
 
 * INTRODUCTION
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/a/p1632-vaidya.pdf
+:NOTER_DOCUMENT: attachments/pdf/a/p1632-vaidya.pdf
 :NOTER_PAGE: 1
 :CUSTOM_ID: h:4d4ce086-8979-4ce0-8e14-e0771827e7ad
 :END:
@@ -51,7 +51,7 @@
 
 ** Range Filters
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/a/p1632-vaidya.pdf
+:NOTER_DOCUMENT: attachments/pdf/a/p1632-vaidya.pdf
 :NOTER_PAGE: 1
 :CUSTOM_ID: h:06c300b0-ac2c-4743-a09c-abb6ee673074
 :END:
@@ -63,7 +63,7 @@
 
 * SNARF: A LEARNED FILTER
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/a/p1632-vaidya.pdf
+:NOTER_DOCUMENT: attachments/pdf/a/p1632-vaidya.pdf
 :NOTER_PAGE: 2
 :CUSTOM_ID: h:9ad4603f-9ca9-4dd4-a11b-086b2d5967fb
 :END:
@@ -71,7 +71,7 @@
 
 ** SNARF Description
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/a/p1632-vaidya.pdf
+:NOTER_DOCUMENT: attachments/pdf/a/p1632-vaidya.pdf
 :NOTER_PAGE: 2
 :CUSTOM_ID: h:1952086c-7e65-4eee-b93d-38bb90429836
 :END:
@@ -79,7 +79,7 @@
 
 *** SNARF Construction:
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/a/p1632-vaidya.pdf
+:NOTER_DOCUMENT: attachments/pdf/a/p1632-vaidya.pdf
 :NOTER_PAGE: 2
 :CUSTOM_ID: h:372a603b-d9c3-4743-aa50-752da1e4dc32
 :END:
@@ -103,7 +103,7 @@
 
 *** SNARF Range Query:
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/a/p1632-vaidya.pdf
+:NOTER_DOCUMENT: attachments/pdf/a/p1632-vaidya.pdf
 :NOTER_PAGE: 2
 :CUSTOM_ID: h:cddfe2b4-5b71-4ebd-885f-d7c67ab06373
 :END:

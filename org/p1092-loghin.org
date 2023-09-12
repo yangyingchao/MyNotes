@@ -1,6 +1,6 @@
 :PROPERTIES:
 :ID:       39fcead0-1cf2-4872-bca9-ff2cbbe7a32e
-:NOTER_DOCUMENT: ../pdf/e/p1092-loghin.pdf
+:NOTER_DOCUMENT: attachments/pdf/e/p1092-loghin.pdf
 :END:
 #+TITLE: Hybrid Blockchain Database Systems: Design and Performance
 #+AUTHOR: Yang Yingchao
@@ -16,7 +16,7 @@
 
 * ABSTRACT
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/e/p1092-loghin.pdf
+:NOTER_DOCUMENT: attachments/pdf/e/p1092-loghin.pdf
 :NOTER_PAGE: 1
 :CUSTOM_ID: h:9f78e1f8-2b12-4076-aac1-e9e70da3d5c4
 :END:
@@ -35,7 +35,7 @@ Abbrs:
 
 * INTRODUCTION
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/e/p1092-loghin.pdf
+:NOTER_DOCUMENT: attachments/pdf/e/p1092-loghin.pdf
 :NOTER_PAGE: 1
 :CUSTOM_ID: h:9a37547d-d53e-4acb-870b-1a94f6f35306
 :END:

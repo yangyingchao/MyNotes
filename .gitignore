@@ -1,6 +1,5 @@
 /.database
-/pdf
-/pptx
+/attachments
 /.hugo_build.lock
 /static/
 /content
@@ -11,3 +10,4 @@
 /hugo/content/
 /hugo/resources/
 /hugo/public/
+/inbox

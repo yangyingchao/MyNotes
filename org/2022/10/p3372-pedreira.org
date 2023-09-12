@@ -12,11 +12,11 @@
 #+EXCLUDE_TAGS: noexport
 #+FILETAGS: :vectorization:engine:
 
-#+NOTER_DOCUMENT: ../pdf/8/p3372-pedreira.pdf
+#+NOTER_DOCUMENT: attachments/pdf/8/p3372-pedreira.pdf
 
 * ABSTRACT
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/8/p3372-pedreira.pdf
+:NOTER_DOCUMENT: attachments/pdf/8/p3372-pedreira.pdf
 :NOTER_PAGE: 1
 :CUSTOM_ID: h:2feba2b4-8c5e-43d1-a350-894f13c55f6d
 :END:
@@ -45,7 +45,7 @@ Velox:
 
 * INTRODUCTION
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/8/p3372-pedreira.pdf
+:NOTER_DOCUMENT: attachments/pdf/8/p3372-pedreira.pdf
 :NOTER_PAGE: 1
 :CUSTOM_ID: h:894af9fe-ef1a-4830-bb2d-66fa3658ed9a
 :END:
@@ -58,7 +58,7 @@ Velox:
 
 * LIBRARY OVERVIEW
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/8/p3372-pedreira.pdf
+:NOTER_DOCUMENT: attachments/pdf/8/p3372-pedreira.pdf
 :NOTER_PAGE: 2
 :CUSTOM_ID: h:45c2ace0-0c5d-4839-bd76-e8fc71c4a50e
 :END:
@@ -89,7 +89,7 @@ Velox:
 
 * USE CASES
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/8/p3372-pedreira.pdf
+:NOTER_DOCUMENT: attachments/pdf/8/p3372-pedreira.pdf
 :NOTER_PAGE: 3
 :CUSTOM_ID: h:02b95a98-47dd-4cc4-b09d-5e4961eb13ef
 :END:
@@ -97,7 +97,7 @@ Velox:
 
 * DEEP DIVE
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/8/p3372-pedreira.pdf
+:NOTER_DOCUMENT: attachments/pdf/8/p3372-pedreira.pdf
 :NOTER_PAGE: 5
 :CUSTOM_ID: h:28e04c87-3ab7-49ae-8dd2-2c9f60d16e72
 :END:
@@ -105,7 +105,7 @@ Velox:
 
 ** TODO Type System
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/8/p3372-pedreira.pdf
+:NOTER_DOCUMENT: attachments/pdf/8/p3372-pedreira.pdf
 :NOTER_PAGE: 5
 :CUSTOM_ID: h:721c90b1-0101-4889-af09-0d80b80be023
 :END:
@@ -136,7 +136,7 @@ Velox:
 
 ** Vectors
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/8/p3372-pedreira.pdf
+:NOTER_DOCUMENT: attachments/pdf/8/p3372-pedreira.pdf
 :NOTER_PAGE: 5
 :CUSTOM_ID: h:c3f011fb-9660-4857-a677-9ccd96a0a439
 :END:
@@ -164,7 +164,7 @@ Velox:
 
 *** Arrow Comparison
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/8/p3372-pedreira.pdf
+:NOTER_DOCUMENT: attachments/pdf/8/p3372-pedreira.pdf
 :NOTER_PAGE: 5
 :CUSTOM_ID: h:af0bc56f-4859-4da5-a2c1-f287f476d439
 :END:
@@ -172,7 +172,7 @@ Velox:
 
 ** Expression Eval
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/8/p3372-pedreira.pdf
+:NOTER_DOCUMENT: attachments/pdf/8/p3372-pedreira.pdf
 :NOTER_PAGE: 6
 :CUSTOM_ID: h:a55899bf-019b-484b-9fa0-6ad73151ac95
 :END:
@@ -195,7 +195,7 @@ Velox:
 
 *** Compilation
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/8/p3372-pedreira.pdf
+:NOTER_DOCUMENT: attachments/pdf/8/p3372-pedreira.pdf
 :NOTER_PAGE: 6
 :CUSTOM_ID: h:25b08418-5bdd-455b-8561-bb95feab581a
 :END:
@@ -208,7 +208,7 @@ Velox:
 
 *** Evaluation.
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/8/p3372-pedreira.pdf
+:NOTER_DOCUMENT: attachments/pdf/8/p3372-pedreira.pdf
 :NOTER_PAGE: 6
 :CUSTOM_ID: h:6bb78bba-3183-4e38-b9f9-1124608d46ca
 :END:
@@ -216,7 +216,7 @@ Velox:
 
 ** Functions
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/8/p3372-pedreira.pdf
+:NOTER_DOCUMENT: attachments/pdf/8/p3372-pedreira.pdf
 :NOTER_PAGE: 7
 :CUSTOM_ID: h:b4d3982d-525d-467a-88c2-a4ac41eabd2b
 :END:
@@ -224,7 +224,7 @@ Velox:
 
 *** Scalar Functions.
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/8/p3372-pedreira.pdf
+:NOTER_DOCUMENT: attachments/pdf/8/p3372-pedreira.pdf
 :NOTER_PAGE: 7
 :CUSTOM_ID: h:fd105474-377e-4196-8a19-1ab3e367e7af
 :END:
@@ -232,7 +232,7 @@ Velox:
 
 *** Aggregate Functions
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/8/p3372-pedreira.pdf
+:NOTER_DOCUMENT: attachments/pdf/8/p3372-pedreira.pdf
 :NOTER_PAGE: 9
 :CUSTOM_ID: h:06e0f855-5595-4139-af01-90ad7d4791f4
 :END:
@@ -240,7 +240,7 @@ Velox:
 
 ** Operators
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/8/p3372-pedreira.pdf
+:NOTER_DOCUMENT: attachments/pdf/8/p3372-pedreira.pdf
 :NOTER_PAGE: 9
 :CUSTOM_ID: h:424ea8dc-5e15-4660-be04-855440d1184e
 :END:
@@ -248,7 +248,7 @@ Velox:
 
 *** Table Scans, Filter, and Project
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/8/p3372-pedreira.pdf
+:NOTER_DOCUMENT: attachments/pdf/8/p3372-pedreira.pdf
 :NOTER_PAGE: 9
 :CUSTOM_ID: h:7d269783-7fd0-4801-8d8c-e3a5b3fe2feb
 :END:
@@ -256,7 +256,7 @@ Velox:
 
 *** Aggregate and Hash Joins.
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/8/p3372-pedreira.pdf
+:NOTER_DOCUMENT: attachments/pdf/8/p3372-pedreira.pdf
 :NOTER_PAGE: 10
 :CUSTOM_ID: h:246de1ad-ba83-49f2-ba36-143633b69b64
 :END:
@@ -264,7 +264,7 @@ Velox:
 
 ** Memory Management
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/8/p3372-pedreira.pdf
+:NOTER_DOCUMENT: attachments/pdf/8/p3372-pedreira.pdf
 :NOTER_PAGE: 10
 :CUSTOM_ID: h:ea91d67f-7e9d-4ff3-8c27-62cc34336120
 :END:
@@ -272,7 +272,7 @@ Velox:
 
 *** Caching
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/8/p3372-pedreira.pdf
+:NOTER_DOCUMENT: attachments/pdf/8/p3372-pedreira.pdf
 :NOTER_PAGE: 10
 :CUSTOM_ID: h:292ea0f6-123b-4663-99e5-786dbbafbc4b
 :END:

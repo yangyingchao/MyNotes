@@ -1,6 +1,6 @@
 :PROPERTIES:
 :ID:       5fb52119-7e75-4148-ab2c-62988695480d
-:NOTER_DOCUMENT: ../pdf/a/p1187-zhang.pdf
+:NOTER_DOCUMENT: attachments/pdf/a/p1187-zhang.pdf
 :NOTER_OPEN: find-file
 :END:
 #+TITLE: NBTree: a Lock-free PM-friendly Persistent B+-Tree for eADR-enabled PM Systems

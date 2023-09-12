@@ -193,7 +193,7 @@ SCTP stack then will send it to all live peers! There are only a few lines of
 * SCTP Interface Model
 :PROPERTIES:
 :CUSTOM_ID: h:fa817dc8-9b69-4412-8a1c-54067ac156b4
-:NOTER_DOCUMENT: ../pdf/9/masterraghu.com-92-Interface-Models.pdf
+:NOTER_DOCUMENT: attachments/pdf/9/masterraghu.com-92-Interface-Models.pdf
 :END:
 
 
@@ -201,7 +201,7 @@ https://www.masterraghu.com/subjects/np/introduction/unix_network_programming_v1
 
 ** two types of SCTP sockets
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/9/masterraghu.com-92-Interface-Models.pdf
+:NOTER_DOCUMENT: attachments/pdf/9/masterraghu.com-92-Interface-Models.pdf
 :NOTER_PAGE: 1
 :CUSTOM_ID: h:79c523c0-858f-44d3-a13a-8ffb6cd217ac
 :END:
@@ -209,7 +209,7 @@ https://www.masterraghu.com/subjects/np/introduction/unix_network_programming_v1
 
 ** The One-to-One Style
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/9/masterraghu.com-92-Interface-Models.pdf
+:NOTER_DOCUMENT: attachments/pdf/9/masterraghu.com-92-Interface-Models.pdf
 :NOTER_PAGE: 1
 :CUSTOM_ID: h:af8a22bd-336b-47ac-a22b-ba2a592aa426
 :END:
@@ -225,7 +225,7 @@ https://www.masterraghu.com/subjects/np/introduction/unix_network_programming_v1
 
 ** The One-to-Many Style
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/9/masterraghu.com-92-Interface-Models.pdf
+:NOTER_DOCUMENT: attachments/pdf/9/masterraghu.com-92-Interface-Models.pdf
 :NOTER_PAGE: 3
 :CUSTOM_ID: h:400f90d1-fb4b-4e76-ae90-8feff25e9124
 :END:

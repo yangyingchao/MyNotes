@@ -1,6 +1,6 @@
 :PROPERTIES:
 :ID:       97d9fee5-1bae-4606-b7f9-90cff2a46d4c
-:NOTER_DOCUMENT: ../pdf/5/p2161-zhang.pdf
+:NOTER_DOCUMENT: attachments/pdf/5/p2161-zhang.pdf
 :NOTER_OPEN: find-file
 :END:
 #+TITLE: SA-LSM: Optimize Data Layout for LSM-tree Based Storage using Survial Analysis
@@ -17,7 +17,7 @@
 
 * ABSTRACT
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/5/p2161-zhang.pdf
+:NOTER_DOCUMENT: attachments/pdf/5/p2161-zhang.pdf
 :NOTER_OPEN: find-file
 :NOTER_PAGE: 1
 :CUSTOM_ID: h:575da9a1-9545-4947-bccf-8d8b218005b7
@@ -37,7 +37,7 @@
 
 * INTRODUCTION
 :PROPERTIES:
-:NOTER_DOCUMENT: ../pdf/5/p2161-zhang.pdf
+:NOTER_DOCUMENT: attachments/pdf/5/p2161-zhang.pdf
 :NOTER_OPEN: find-file
 :NOTER_PAGE: 1
 :CUSTOM_ID: h:e2299604-e4d5-417f-89bf-1d6f21baf3cc
