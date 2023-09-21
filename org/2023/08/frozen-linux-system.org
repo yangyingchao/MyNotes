@@ -13,7 +13,7 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :tag1:tag2:
+#+FILETAGS: :process:linux:dead:
 
 
 * When everything else fails, talk with the Kernel using SysReq
