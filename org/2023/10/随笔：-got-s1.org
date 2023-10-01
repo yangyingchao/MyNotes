@@ -1,0 +1,25 @@
+:PROPERTIES:
+:ID:       7016b8c0-2880-42ce-a06a-7af2018a4b6e
+:END:
+#+TITLE: 随笔： GOT S1
+#+AUTHOR: Yang,Ying-chao
+#+EMAIL:  yang.yingchao@qq.com
+#+DATE:   2023-10-01
+#+OPTIONS:  ^:nil _:nil H:7 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+LANGUAGE: en
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :GOT:
+
+十一哪里也去不了，躲在家里重新刷一遍权力的游戏 （Game of Throne, GOT），今天看了第一季。很久没有写过随笔之类的了，今天顺手写下点东西，发泄感慨和牢骚。
+
+以前看剧，总是觉得离现实很远；看了再多的剧集，再多的书，都觉得脱离实际。而现在看剧，哪怕是是 GOT 这样的魔幻之作，都会深有感触。这，是两年煎熬时光带给我的、能让我更好、更深刻的感受这个世界。
+
+在 Ned 被抓之后，八爪蜘蛛瓦里斯前往探望，对其说：我在剧院中长大，从小跟随到处表演；而今在朝堂之上，仍然是在表演。其实表演的不止是他，表演的舞台也不止是在高高的朝堂。
+朝堂之上的表演更加精妙，危险： in the game of throne, you win, or you die. 普通的表演危险度相对低一些，不至于输了就挂，但是表演依旧还是存在的，而且为数不少。
+
+像我这样的、脑筋不怎么灵光、不会见人说人话、见鬼说鬼话的小人物，还是谨言慎行，尽量尝试远离是非吧 （只是这是非不见得会远离我。。。）
+
+人这一生，难免遇到点什么事，这烂人烂事有时确实是躲不开，只能是但尽人事，各凭天命了。
