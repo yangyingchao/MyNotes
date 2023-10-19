@@ -1,0 +1,34 @@
+:PROPERTIES:
+:ID:       6f7d7b7e-fb5c-462d-bb9c-36af48ee3a18
+:END:
+#+TITLE: git tips
+#+AUTHOR: Yang,Ying-chao
+#+DATE:   2023-10-19
+#+OPTIONS:  ^:nil _:nil H:7 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+LANGUAGE: en
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :clean:untracked:
+
+- To list untracked files
+
+  #+BEGIN_SRC bash
+  git ls-files --others --exclude-standard
+  #+END_SRC
+
+  If you need to pipe the output to xargs, it is wise to mind white spaces using =git ls-files -z= and =xargs -0=:
+  #+BEGIN_SRC bash
+    git ls-files -z -o --exclude-standard | xargs -0 git add
+  #+END_SRC
+
+  Nice alias for adding untracked files:
+  #+BEGIN_SRC bash
+  au = !git add $(git ls-files -o --exclude-standard)
+  #+END_SRC
+
+- Delete untracked files:
+  #+BEGIN_SRC sh -r
+    git clean -dfx
+  #+END_SRC
