@@ -46,3 +46,138 @@ echo "${a[*]}"
   1 2 3 4
   1|2|3|4
 #+END_SRC
+
+
+* How do you escape characters in heredoc?
+:PROPERTIES:
+:CUSTOM_ID: h:f4db2d27-d344-47c3-b020-b392cc7b33d6
+:END:
+:PROPERTIES:
+:CUSTOM_ID: h:a7a7d0a7-a603-42cd-a1ee-f9989ee9190d
+:NOTER_DOCUMENT: https://unix.stackexchange.com/questions/505949/expanding-only-certain-variables-inside-a-heredoc
+:NOTER_OPEN: eww
+:NOTER_PAGE: 1
+:END:
+
+** Question
+:PROPERTIES:
+:CUSTOM_ID: h:289ce225-b573-4798-89f3-4946fe49b3bb
+:END:
+
+我正在使用一个 bash 脚本，试图阻止它尝试替换 heredoc 中的变量。如何将 heredoc 设置为 A）转义变
+量名而不解析它们，或者 B）返回整个字符串而不改变它？
+
+#+BEGIN_SRC bash-ts
+cat > /etc/nginx/sites-available/default_php <<END
+server {
+    listen 80 default;
+    server_name _;
+    root /var/www/$host; <--- $host is a problem child
+}
+END
+#+END_SRC
+
+就现状而言，当我将它注入到文件中结束时，我得到的是这个：
+
+#+BEGIN_SRC conf
+server {
+    listen 80 default;
+    server_name _;
+    root /var/www/;
+}
+#+END_SRC
+
+** Answer
+:PROPERTIES:
+:CUSTOM_ID: h:8389b13e-5ee7-4338-9e6b-4726d406d481
+:END:
+
+从 bash(1) man 页:
+
+如果 word 中的任何字符被引用，那么分隔符就是对 word 进行引号移除的结果，并且 here-document 中的行不会被展开。
+
+#+BEGIN_SRC bash-ts
+cat > /etc/nginx/sites-available/default_php <<"END"
+#+END_SRC
+
+
+#+BEGIN_SRC sh -r
+a="this is a test"
+cat <<EOF
+	echo "a should be expanded: $a"
+EOF
+
+cat <<'EOF'
+	echo "a should not be expanded: $a"
+EOF
+#+END_SRC
+
+#+RESULTS:
+|   | echo "a should be expanded: this is a test" |
+|   | echo "a should not be expanded: $a"         |
+
+
+* special expansion:
+:PROPERTIES:
+:CUSTOM_ID: h:e6d62956-9ea2-45cb-805a-200499519c7c
+:END:
+
+
+#+begin_src sh
+
+cat <<-'EOF'
+### ${PARAMETER:+WORD}
+`${PARAMETER:+WORD}` 是一种 bash shell 中的参数扩展语法，它的含义如下：
+
+- 如果变量 `PARAMETER` 已经被设置并且不是空值，那么该表达式的值为 `WORD`。
+- 如果变量 `PARAMETER` 没有被设置或者是空值，那么该表达式的值为为空字符串。
+
+在这种情况下，`${PARAMETER:+WORD}` 的作用是在变量 `PARAMETER` 已经被设置并且不是空值时，返回 `WORD`；否则返回空字符串。
+
+EOF
+
+A=MMM
+echo "1: ${A:+WORD}"
+A=
+echo "2: ${A:+WORD}"
+
+
+cat <<-'EOF'
+### ${PARAMETER:-WORD}
+
+`${PARAMETER:-WORD}` 是一种 bash shell 中的参数扩展语法，它的含义如下：
+
+- 如果变量 `PARAMETER` 已经被设置并且不是空值，那么该表达式的值为变量 `PARAMETER` 的值。
+- 如果变量 `PARAMETER` 没有被设置或者是空值，那么该表达式的值为 `WORD`。
+
+在这种情况下，`${PARAMETER:-WORD}` 的作用是在变量 `PARAMETER` 未设置或者为空值时提供一个默认值 `WORD`。
+
+EOF
+
+echo "----"
+A=MMM
+echo "1: ${A:-WORD}"
+A=
+echo "2: ${A:-WORD}"
+
+
+cat <<-'EOF'
+
+### ${PARAMETER:=WORD}
+
+`${PARAMETER:=WORD}` 是一种 bash shell 中的参数扩展语法，它的含义如下：
+
+- 如果变量 `PARAMETER` 已经被设置并且不是空值，那么该表达式的值为变量 `PARAMETER` 的值。
+- 如果变量 `PARAMETER` 没有被设置或者是空值，那么该表达式的值为 `WORD`，并且同时将变量 `PARAMETER` 设置为 `WORD` 的值。
+
+在这种情况下，`${PARAMETER:=WORD}` 的作用是在变量 `PARAMETER` 未设置或者为空值时，用默认值 `WORD` 初始化该变量。
+
+EOF
+
+echo "----"
+A=MMM
+echo "1: ${A:=WORD}"
+A=
+echo "2: ${A:=WORD}"
+
+#+end_src
