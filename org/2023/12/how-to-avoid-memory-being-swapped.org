@@ -1,0 +1,84 @@
+:PROPERTIES:
+:ID:       14199e51-d55e-4a90-9f6a-452384bdd3e5
+:END:
+#+TITLE: how to avoid memory being swapped (locking memory pages)
+#+AUTHOR: Yang,Ying-chao
+#+DATE:   2023-12-16
+#+OPTIONS:  ^:nil _:nil H:7 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+LANGUAGE: en
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :memory:mlock:swap:lock:
+* mlockall()
+:PROPERTIES:
+:CUSTOM_ID: h:a69e195a-92fb-405b-9b6c-ec86c0015e47
+:END:
+
+from manpage:
+
+#+begin_src text
+
+  mlockall() and munlockall()
+      mlockall() locks all pages mapped into the address space of the  calling  process.   This  in‐
+      cludes the pages of the code, data, and stack segment, as well as shared libraries, user space
+      kernel data, shared memory, and memory-mapped files.  All mapped pages are  guaranteed  to  be
+      resident  in  RAM  when the call returns successfully; the pages are guaranteed to stay in RAM
+      until later unlocked.
+
+      The flags argument is constructed as the bitwise OR of one or more of the following constants:
+
+      MCL_CURRENT
+             Lock all pages which are currently mapped into the address space of the process.
+
+      MCL_FUTURE
+             Lock all pages which will become mapped into the address space of the  process  in  the
+             future.   These  could be, for instance, new pages required by a growing heap and stack
+             as well as new memory-mapped files or shared memory regions.
+
+      MCL_ONFAULT (since Linux 4.4)
+             Used together with MCL_CURRENT, MCL_FUTURE, or both.  Mark all current  (with  MCL_CUR‐
+             RENT)  or  future  (with  MCL_FUTURE)  mappings to lock pages when they are faulted in.
+             When used with MCL_CURRENT, all present pages are locked, but mlockall() will not fault
+             in non-present pages.  When used with MCL_FUTURE, all future mappings will be marked to
+             lock pages when they are faulted in, but they will not be populated by  the  lock  when
+             the mapping is created.  MCL_ONFAULT must be used with either MCL_CURRENT or MCL_FUTURE
+             or both.
+
+      If MCL_FUTURE has been specified, then a later  system  call  (e.g.,  mmap(2),  sbrk(2),  mal‐
+      loc(3)), may fail if it would cause the number of locked bytes to exceed the permitted maximum
+      (see below).  In the same circumstances, stack growth may likewise fail: the kernel will  deny
+      stack expansion and deliver a SIGSEGV signal to the process.
+
+  munlockall() unlocks all pages mapped into the address space of the calling process.
+
+#+end_src
+
+* how to do this after program started and program does not call =mlockall()= ?
+:PROPERTIES:
+:CUSTOM_ID: h:694a46e8-f346-48c2-a21e-a71751c8643d
+:NOTER_DOCUMENT: https://stackoverflow.com/questions/12520499/linux-how-to-lock-the-pages-of-a-process-in-memory
+:NOTER_OPEN: eww
+:NOTER_PAGE: 1
+:END:
+
+
+Make a GDB command file that contains something like this:
+
+#+begin_src sh
+  call mlockall(3)
+  detach
+#+end_src
+
+Then on the command line, find the PID of the process you want to mlock. Type:
+
+#+BEGIN_SRC sh
+gdb --pid [PID] --batch -x [command file]
+#+END_SRC
+
+If you get fancy with =pgrep= that could be:
+
+#+BEGIN_SRC sh
+gdb --pid $(pgrep sshd) --batch -x [command file]
+#+END_SRC
