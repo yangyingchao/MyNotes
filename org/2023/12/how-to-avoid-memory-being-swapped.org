@@ -10,7 +10,7 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :memory:mlock:swap:lock:
+#+FILETAGS: :memory:mlock:swap:lock:mlockall:
 * mlockall()
 :PROPERTIES:
 :CUSTOM_ID: h:a69e195a-92fb-405b-9b6c-ec86c0015e47
@@ -63,7 +63,6 @@ from manpage:
 :NOTER_PAGE: 1
 :END:
 
-
 Make a GDB command file that contains something like this:
 
 #+begin_src sh
@@ -82,3 +81,155 @@ If you get fancy with =pgrep= that could be:
 #+BEGIN_SRC sh
 gdb --pid $(pgrep sshd) --batch -x [command file]
 #+END_SRC
+
+* 内核实现
+:PROPERTIES:
+:CUSTOM_ID: h:a99f5c47-b061-4e47-a7f0-51dcf4e3b852
+:END:
+** mlockall()
+:PROPERTIES:
+:NOTER_OPEN: eww
+:NOTER_DOCUMENT: https://github.com/torvalds/linux/blob/master/mm/mlock.c#L756
+:CUSTOM_ID: h:6ff510c5-4a77-4766-b6ec-49b25660504a
+:END:
+
+#+begin_src c -r
+  SYSCALL_DEFINE1(mlockall, int, flags)
+  {
+      unsigned long lock_limit;
+      int ret;
+
+      if (!flags || (flags & ~(MCL_CURRENT | MCL_FUTURE | MCL_ONFAULT)) ||
+          flags == MCL_ONFAULT)
+          return -EINVAL;
+
+      if (!can_do_mlock())
+          return -EPERM;
+
+      lock_limit = rlimit(RLIMIT_MEMLOCK);
+      lock_limit >>= PAGE_SHIFT;
+
+      if (mmap_write_lock_killable(current->mm))
+          return -EINTR;
+
+      ret = -ENOMEM;
+      if (!(flags & MCL_CURRENT) || (current->mm->total_vm <= lock_limit) ||
+          capable(CAP_IPC_LOCK))
+          ret = apply_mlockall_flags(flags);
+      mmap_write_unlock(current->mm);
+      if (!ret && (flags & MCL_CURRENT))
+          mm_populate(0, TASK_SIZE);
+
+      return ret;
+  }
+#+end_src
+*** EPERM 的情况
+:PROPERTIES:
+:CUSTOM_ID: h:d9c66345-c146-46da-968a-1daaea8804cf
+:END:
+当可执行程序拥有 =CAP_IPC_LOCK= 时候，可以有权限执行 mlock, 否则的话，下列情况会返回 EPERM:
+1. RLIMIT_MEMLOCK 为 0 时候：
+   #+begin_src c -r
+     bool can_do_mlock(void)
+     {
+         if (rlimit(RLIMIT_MEMLOCK) != 0)
+             return true;
+         if (capable(CAP_IPC_LOCK))
+             return true;
+         return false;
+     }
+   #+end_src
+2. =MCL_CURRENT= 被设置，并且当前进程已使用的内存超过了 =RLIMIT_MEMLOCK=  .
+** 内存区域标记
+:PROPERTIES:
+:CUSTOM_ID: h:75a484c0-9716-44e8-8811-9041f9878f19
+:END:
+
+* Swap
+:PROPERTIES:
+:CUSTOM_ID: h:7ad9b325-1adc-4075-ac3b-3e92208ae6a6
+:END:
+
+** fork 时候复制 swap...
+:PROPERTIES:
+:CUSTOM_ID: h:36e44df6-8e26-4bd4-bfc8-80df31b3614b
+:END:
+
+   #+begin_src text -r
+    14.74%     0.00%  xxxxsql  [kernel.kallsyms]         [k] entry_SYSCALL_64_after_hwframe
+            |
+            ---entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               |
+               |--7.61%--__x64_sys_exit_group
+               |          do_group_exit
+               |          |
+               |           --7.61%--do_exit
+               |                     |
+               |                      --7.46%--mmput
+               |                                |
+               |                                 --7.45%--exit_mmap
+               |                                           |
+               |                                            --6.37%--unmap_vmas
+               |                                                      |
+               |                                                       --6.33%--unmap_page_range
+               |                                                                 |
+               |                                                                 |--0.98%--free_swap_and_cache
+               |                                                                 |
+               |                                                                  --0.76%--tlb_flush_mmu
+               |
+               |--3.40%--_do_fork
+               |          |
+               |           --3.38%--copy_process
+               |                     |
+               |                      --3.15%--dup_mm
+               |                                |
+               |                                 --2.42%--copy_page_range
+               |                                           |
+               |                                            --2.35%--copy_pte_range.isra.97
+               |                                                      |
+               |                                                       --0.98%--swap_duplicate
+               |                                                                 |
+               |                                                                  --0.83%--__swap_duplicate
+
+#+end_src
+
+*** =swap_duplicate=
+:PROPERTIES:
+:CUSTOM_ID: h:b1a19790-e8c8-4c2a-a0a1-13fad351664e
+:END:
+
+- 将 swap entry 的引用计数增加 1。
+- 返回 =0= : 表示成功
+- 返回 =-ENOMEM=  \\
+  如果需要 =swap_count_continuation= 但无法原子地分配，
+- 如果 =__swap_duplicate()= 因其他原因失败（ =-EINVAL= 或 =-ENOENT= ），如页表条目损坏，则返回 0，就像它成功一样。
+
+#+begin_src c -r
+
+  /*
+   ,* Increase reference count of swap entry by 1.
+   ,* Returns 0 for success, or -ENOMEM if a swap_count_continuation is required
+   ,* but could not be atomically allocated.  Returns 0, just as if it succeeded,
+   ,* if __swap_duplicate() fails for another reason (-EINVAL or -ENOENT), which
+   ,* might occur if a page table entry has got corrupted.
+   ,*/
+  int swap_duplicate(swp_entry_t entry)
+  {
+      int err = 0;
+
+      while (!err && __swap_duplicate(entry, 1) == -ENOMEM)
+          err = add_swap_count_continuation(entry, GFP_ATOMIC);
+      return err;
+  }
+
+#+end_src
+
+** 进程退出时候清理 swap 。。。
+:PROPERTIES:
+:CUSTOM_ID: h:cb155170-b5a3-421f-9f98-090780fbf82a
+:END:
+* RLIMIT_MEMLOCK
+:PROPERTIES:
+:CUSTOM_ID: h:e5964c54-29f4-42fa-af12-10ca1093f20b
+:END:

@@ -34,11 +34,11 @@ $ faillock --user username --reset
 
 默认情况下，锁定机制是每个用户一个文件，位于 /run/faillock/。删除或清空文件将解锁该用户——该目录由 root 拥有，但文件由用户拥有，因此 faillock 命令仅清空文件，因此不需要 root。
 
-模块 pam_faillock.so 可以通过文件/etc/security/faillock.conf 进行配置。锁定参数如下：
+模块 pam_faillock.so 可以通过文件 ~/etc/security/faillock.conf~ 进行配置。锁定参数如下：
 
-- unlock_time—— 锁定时间（秒为单位，默认为 10 分钟）
-- fail_interval—— 允许登录失败引起锁定的时间（以秒为单位，默认值为 15 分钟）
-- deny—— 锁定之前的登录失败次数（默认值为 3）
+- =unlock_time= —— 锁定时间（秒为单位，默认为 10 分钟）
+- =fail_interval= —— 允许登录失败引起锁定的时间（以秒为单位，默认值为 15 分钟）
+- =deny= —— 锁定之前的登录失败次数（默认值为 3）
 
 提示：锁定的主要目的是放慢暴力攻击的速度，使其变得不可行。因此，如果由于密码输错而导致锁定过于频繁，则可以放宽尝试次数以而不是减少锁定时间。
 
