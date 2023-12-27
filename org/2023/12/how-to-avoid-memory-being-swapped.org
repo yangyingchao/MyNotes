@@ -149,7 +149,218 @@ gdb --pid $(pgrep sshd) --batch -x [command file]
 :PROPERTIES:
 :CUSTOM_ID: h:7ad9b325-1adc-4075-ac3b-3e92208ae6a6
 :END:
+** Swap info
+:PROPERTIES:
+:CUSTOM_ID: h:ddbd6d4f-ac07-456e-a148-dcdeac5f975d
+:END:
 
+#+BEGIN_SRC plantuml :file images/puml-gen-l157-c793a41eed85808251bf5df00f648118.png :java -Djava.awt.headless=true  :cmdline -charset UTF-8
+  class swap_info_struct {
+      + unsigned flags
+      + short prio
+      + struct list
+      + struct avail_lists
+      + signed type
+      + unsigned max
+      + unsigned swap_map
+      + struct cluster_info
+      + struct free_clusters
+      + unsigned lowest_bit
+      + unsigned highest_bit
+      + unsigned pages
+      + unsigned inuse_pages
+      + unsigned cluster_next
+      + unsigned cluster_nr
+      + struct percpu_cluster
+      + struct curr_swap_extent
+      + struct first_swap_extent
+      + struct bdev
+      + struct swap_file
+      + unsigned old_block_size
+      + spinlock_t lock
+      + spinlock_t cont_lock
+      + struct discard_work
+      + struct discard_clusters
+  }
+
+
+  class swap_cluster_info {
+  + spinlock_t lock
+  + unsigned data
+  + unsigned flags
+  }
+
+
+  swap_info_struct *-- swap_cluster_info
+
+
+  class swap_cluster_list {
+  + struct head
+  + struct tail
+  }
+
+  swap_info_struct *-- swap_cluster_list
+
+  class swap_extent {
+  + struct list
+  + unsigned start_page
+  + unsigned nr_pages
+  + sector_t start_block
+  }
+
+
+  swap_info_struct *-- swap_extent
+
+  note left of swap_extent
+  一个交换区范围 (swap extent range) 将交换文件的
+  PAGE_SIZE 大小的页的范围映射到磁盘块的范围上。
+  交换区范围列表映射整个交换文件。
+
+  end note
+
+
+  class block_device {
+  + dev_t bd_dev
+  + int bd_openers
+  + struct bd_inode
+  + struct bd_super
+  + struct bd_mutex
+  + void bd_claiming
+  + void bd_holder
+  + int bd_holders
+  + bool bd_write_holder
+  + struct bd_holder_disks
+  + struct bd_contains
+  + unsigned bd_block_size
+  + u8 bd_partno
+  + struct bd_part
+  + unsigned bd_part_count
+  + int bd_invalidated
+  + struct bd_disk
+  + struct bd_queue
+  + struct bd_bdi
+  + struct bd_list
+  + unsigned bd_private
+  + int bd_fsfreeze_count
+  + struct bd_fsfreeze_mutex
+  }
+
+  swap_info_struct *-- block_device
+
+  class file {
+  + union f_u
+  + struct f_path
+  + struct f_inode
+  + const f_op
+  + spinlock_t f_lock
+  + enum f_write_hint
+  + atomic_long_t f_count
+  + unsigned f_flags
+  + fmode_t f_mode
+  + struct f_pos_lock
+  + loff_t f_pos
+  + struct f_owner
+  + const f_cred
+  + struct f_ra
+  + u64 f_version
+  + void f_security
+  + void private_data
+  + struct f_ep_links
+  + struct f_tfile_llink
+  + struct f_mapping
+  + errseq_t f_wb_err
+  }
+
+  swap_info_struct *-- file
+
+  class address_space {
+  + struct host
+  + struct i_pages
+  + atomic_t i_mmap_writable
+  + struct i_mmap
+  + struct i_mmap_rwsem
+  + unsigned nrpages
+  + unsigned nrexceptional
+  + unsigned writeback_index
+  + const a_ops
+  + unsigned flags
+  + spinlock_t private_lock
+  + gfp_t gfp_mask
+  + struct private_list
+  + void private_data
+  + errseq_t wb_err
+  }
+
+  file *-- address_space
+
+  class inode {
+  + umode_t i_mode
+  + unsigned i_opflags
+  + kuid_t i_uid
+  + kgid_t i_gid
+  + unsigned i_flags
+  + struct i_acl
+  + struct i_default_acl
+  + const i_op
+  + struct i_sb
+  + struct i_mapping
+  + void i_security
+  + unsigned i_ino
+  + dev_t i_rdev
+  + loff_t i_size
+  + struct i_atime
+  + void i_private
+  }
+
+  address_space *-- inode
+#+END_SRC
+#+CAPTION: swap_structure
+#+NAME: fig:swap_structure
+#+RESULTS:
+[[file:images/puml-gen-l157-c793a41eed85808251bf5df00f648118.png]]
+
+
+#+begin_src c -r
+  /*
+   ,* MAX_SWAPFILES defines the maximum number of swaptypes: things which can
+   ,* be swapped to.  The swap type and the offset into that swap type are
+   ,* encoded into pte's and into pgoff_t's in the swapcache.  Using five bits
+   ,* for the type means that the maximum number of swapcache pages is 27 bits
+   ,* on 32-bit-pgoff_t architectures.  And that assumes that the architecture packs
+   ,* the type/offset into the pte as 5/27 as well.
+  ,*/
+  /*
+   ,* MAX_SWAPFILES 定义了最大的swaptypes数量：可以被交换到的东西。交换类型和交换类型中的偏移量都被编码到
+   ,* pte和swapcache中的pgoff_t中。对于类型使用五位意味着在32位pgoff_t架构上，swapcache页面的最大数量为27
+   ,* 位。并且这假设架构也将类型/偏移量打包到pte中，比例为5/27。
+   ,*/
+
+  #define MAX_SWAPFILES                              \
+      ((1 << MAX_SWAPFILES_SHIFT) - SWP_DEVICE_NUM - \
+      SWP_MIGRATION_NUM - SWP_HWPOISON_NUM)
+
+    struct swap_info_struct *swap_info[MAX_SWAPFILES];
+#+end_src
+
+最多 =MAX_SWAPFILES= 个 swap 设备。
+
+** Locks
+:PROPERTIES:
+:CUSTOM_ID: h:1fe99bb1-aeb0-4a49-9efe-56e123310ee6
+:END:
+*** 全局锁 （粗粒度锁）
+:PROPERTIES:
+:CUSTOM_ID: h:4542388b-4a23-4f9a-afc5-7d3afbbaf6c5
+:END:
+
+#+begin_src c -r
+DEFINE_SPINLOCK(swap_lock);
+#+end_src
+
+*** 集群锁 （细粒度锁）
+:PROPERTIES:
+:CUSTOM_ID: h:aef166e9-9c66-4f62-8668-78d4e76aeaf9
+:END:
 ** fork 时候复制 swap...
 :PROPERTIES:
 :CUSTOM_ID: h:36e44df6-8e26-4bd4-bfc8-80df31b3614b
