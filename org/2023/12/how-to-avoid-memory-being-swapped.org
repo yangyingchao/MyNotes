@@ -348,7 +348,7 @@ gdb --pid $(pgrep sshd) --batch -x [command file]
 :PROPERTIES:
 :CUSTOM_ID: h:1fe99bb1-aeb0-4a49-9efe-56e123310ee6
 :END:
-*** 全局锁 （粗粒度锁）
+*** 全局锁
 :PROPERTIES:
 :CUSTOM_ID: h:4542388b-4a23-4f9a-afc5-7d3afbbaf6c5
 :END:
@@ -357,7 +357,11 @@ gdb --pid $(pgrep sshd) --batch -x [command file]
 DEFINE_SPINLOCK(swap_lock);
 #+end_src
 
-*** 集群锁 （细粒度锁）
+*** 粗粒度锁
+:PROPERTIES:
+:CUSTOM_ID: h:35cfd6f1-394c-4a8f-8883-aff2964a9ff3
+:END:
+*** 细粒度锁
 :PROPERTIES:
 :CUSTOM_ID: h:aef166e9-9c66-4f62-8668-78d4e76aeaf9
 :END:

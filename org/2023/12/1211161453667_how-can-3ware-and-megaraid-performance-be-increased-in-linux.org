@@ -1,0 +1,97 @@
+:PROPERTIES:
+:ID:       aece1685-73eb-42c9-b8bb-818031b1d383
+:NOTER_DOCUMENT: https://www.broadcom.com/support/knowledgebase/1211161453667/how-can-3ware-and-megaraid-performance-be-increased-in-linux
+:NOTER_OPEN: eww
+:END:
+#+TITLE: How can 3ware and MegaRAID performance be increased in Linux?
+#+AUTHOR: Yang,Ying-chao
+#+DATE:   2023-12-28
+#+OPTIONS:  ^:nil _:nil H:7 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+LANGUAGE: en
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+
+
+* Question
+:PROPERTIES:
+:CUSTOM_ID: h:641d66f2-5305-4f2f-a446-d78296b4a02a
+:END:
+How can LSI 3ware and LSI MegaRAID performance be increased in Linux?
+
+* Answer
+:PROPERTIES:
+:CUSTOM_ID: h:531f86fa-2a4b-45e9-9414-8ed646ddae4a
+:END:
+** For the Linux 2.6 kernel:
+:PROPERTIES:
+:CUSTOM_ID: h:73ac6463-9f36-49ae-93bf-6bcc9cbd4ddc
+:END:
+See KB article A004958 Article ID 1211161457978
+See also: Article ID 1211161479669
+
+Third party software such as SarCheck http://www.sarcheck.com can also be used.
+
+*** For Hard Disk Drives (HDDs):
+:PROPERTIES:
+:CUSTOM_ID: h:2a4fb8ae-a6a2-4515-9082-6dd5ea887aa2
+:END:
+#+begin_src sh
+echo "deadline" > /sys/block/sda/queue/scheduler  (Turn on deadline I/O scheduler)
+#+end_src
+
+*** For Solid State Drives (SSDs):
+:PROPERTIES:
+:CUSTOM_ID: h:0c40a8ae-bb4c-452b-ac20-cd7dd087a7dd
+:END:
+
+In addition to
+
+#+begin_src sh
+echo "deadline" > /sys/block/sda/queue/scheduler (Turn on deadline I/O scheduler)
+#+end_src
+
+
+these will increase performance with SSDs:
+
+#+begin_src sh
+echo "0" > /sys/block/sda/queue/rotational   (Turn off seek reordering)
+echo "975" > /sys/block/sda/queue/nr_requests  (Turn up block layer queue depth for sda to 975)
+echo "975" > /sys/block/sda/device/queue_depth (Turn up driver queue depth for sda to 975)
+#+end_src
+
+kernel OS is 2.6.18 which limits the MegaRAID controller's ability to use smp_affinity when used with motherboards with multiple processors (kernel 2.6.32 allows smp_affinity)
+
+
+
+
+** For the Linux 2.4 kernel:
+:PROPERTIES:
+:CUSTOM_ID: h:3fd1f3eb-0d39-4ee2-896c-54fe8b29d1af
+:END:
+Tuning Linux VM parameters may help to increase the read performance, depending your RAID type, application, and other factors. You can try this setting and see if it helps increase performance in your situation.
+
+The settings are: To make the change without having to reboot (change will not survive after a reboot), type the following from a command prompt:
+
+#+begin_src sh
+echo "2048" >/proc/sys/vm/min-readahead
+echo "2048" >/proc/sys/vm/max-readahead
+#+end_src
+
+To make the change permanent, modify /etc/sysctl.conf and add the following lines:
+
+#+begin_src conf
+vm.max-readahead=2048
+vm.min-readahead=2048
+#+end_src
+
+In addition, you can modify the bdflush parameter:
+
+#+begin_src sh
+sysctl -w "vm.bdflush=10 500 0 0 500 3000 0 20 0"
+#+end_src
+
+Other information on Linux system tuning is available from: http://people.redhat.com/alikins/system_tuning.html
+
+There are no other 3ware specific tuning parameters for Linux for read performance.
