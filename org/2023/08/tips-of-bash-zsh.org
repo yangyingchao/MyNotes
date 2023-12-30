@@ -181,3 +181,39 @@ A=
 echo "2: ${A:=WORD}"
 
 #+end_src
+
+* will .bash_profile be sourced when executing scripts?
+:PROPERTIES:
+:CUSTOM_ID: h:6ddc502c-c88b-4d32-9b95-10e2c0d4e77e
+:NOTER_OPEN: w3m
+:NOTER_DOCUMENT: https://www.google.com/search?q=will+.bash_profile+be+sourced+when+executing+scripts%3F&oq=will+.bash_profile++be+sourced+when+executing+scripts%3F&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIHCAEQIRigATIHCAIQIRigATIHCAMQIRigATIHCAQQIRigATIHCAUQIRigAdIBCTE3NDk3ajBqOagCALACAA&sourceid=chrome&ie=UTF-8
+:NOTER_PAGE: 1
+:END:
+
+
+#+begin_quote
+.bash_profile gets called when you login and not at restart. ~/.bash_profile is only
+sourced by bash when started in interactive login mode.
+When you log in graphically, ~/.profile will be specifically sourced by the script that
+launches gnome-session (or whichever desktop environment you're using). So
+~/.bash_profile is not sourced at all when you log in graphically.
+When you open a terminal, the terminal starts bash in (non-login) interactive mode,
+which means it will source ~/.bashrc.
+The right place for you to put these environment variables is in ~/.profile, and the
+effect should be apparent next time you log in.
+Sourcing ~/.bash_profile from ~/.bashrc is the wrong solution. It's supposed to be the
+other way around; ~/.bash_profile should source ~/.bashrc. You also need to enable crond
+service via sys v / BSD init style system.
+#+end_quote
+
+
+#+begin_quote
+当您登录时会调用.bash_profile，而在重新启动时不会调用。只有当 bash 以交互式登录模式启动
+时，才会通过.bash_profile 进行资源引用。
+当您通过图形界面登录时，~/.profile 将被启动 gnome-session（或您正在使用的其他桌面环境）
+的脚本特别调用。因此，在图形登录时根本不会调用~/.bash_profile。
+当您打开终端时，终端会以（非登录的）交互模式启动 bash，这意味着它将会引用~/.bashrc。
+您应该将这些环境变量放在~/.profile 中，下次登录时效果应该就会显现出来。
+从~/.bashrc 中引用~/.bash_profile 是错误的解决方案。正确的做法是相反的；~/.bash_profile 应
+该引用~/.bashrc。您还需要通过 sys v / BSD init 样式系统来启用 crond 服务。
+#+end_quote
