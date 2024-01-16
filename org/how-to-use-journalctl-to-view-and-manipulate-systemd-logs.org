@@ -61,6 +61,23 @@ Feb 03 21:48:52 localhost.localdomain kernel: SELinux:  83 classes, 104131 rules
 :END:
 
 
+
+
+内核消息通常可以在 dmesg 输出中找到，并且也可以从日志中检索。
+
+要仅显示这些消息，我们可以在命令中添加 =-k=或 =--dmesg= 标志：
+
+#+begin_src sh -r
+  journalctl -k
+#+end_src
+
+默认情况下，这将显示当前启动的内核消息。您可以使用先前讨论过的正常引导选择标志指定其他引导。例如，要获取五个启动前的消息，您可以键入：
+
+#+begin_src sh -r
+  journalctl -k -b -5
+#+end_src
+
+
 * Journal Filtering by Time
 :PROPERTIES:
 :NOTER_DOCUMENT: https://www.digitalocean.com/community/tutorials/how-to-use-journalctl-to-view-and-manipulate-systemd-logs
