@@ -1,0 +1,20 @@
+:PROPERTIES:
+:ID:       4ee984b6-99b0-41a7-9200-01a1f1a26a4c
+:END:
+#+TITLE: Gentoo Tips
+#+AUTHOR: Yang,Ying-chao
+#+DATE:   2024-02-20
+#+OPTIONS:  ^:nil _:nil H:7 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+LANGUAGE: en
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :tag1:tag2:
+
+* Failed to login as normal user
+:PROPERTIES:
+:CUSTOM_ID: h:7b8e2b63-d5b8-4c2a-93bf-c865d2a8223d
+:END:
+
+passwd 中，用户使用的 shell ， 必需是包含在 =/etc/shells= 里面的，否则会无法登录，哪怕密码没有问题。
