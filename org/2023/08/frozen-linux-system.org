@@ -13,7 +13,7 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :process:linux:dead:
+#+FILETAGS: :process:linux:dead:sysrq:
 
 
 * When everything else fails, talk with the Kernel using SysReq
@@ -29,7 +29,7 @@
 
 如果在内核中编译并在文件中启用，Linux 可以为您提供直接向内核发送预设请求的方式。这在整个用户堆栈死亡的情况下非常有用。它被称为 Magic SysRq 键。在大多数发行版中默认情况下编译并启用，只有 Kernel Panic 才能阻止其工作。
 
-要确认内核编译时已设置该选项，可以尝试在/ boot 中查找当前内核的配置文件。查找 CONFIG_MAGIC_SYSRQ 选项。如先前所
+要确认内核编译时已设置该选项，可以尝试在 /boot 中查找当前内核的配置文件。查找 CONFIG_MAGIC_SYSRQ 选项。如先前所
 述，它在大多数发行版中已编译并启用。要确认它已启用，请运行以下操作：
 
 sysctl kernel.sysrq
@@ -42,7 +42,7 @@ sysctl kernel.sysrq
 
 =sudo sysctl -w kernel.sysrq=value=
 
-要永久更改此值，请编辑/ etc / sysctl.conf。搜索 kernel.sysrq，并设置所需的值。
+要永久更改此值，请编辑 =/etc/sysctl.conf= 。搜索 kernel.sysrq，并设置所需的值。
 
 
 测试这个功能最简单的方法就是去试。我也建议在系统稳定时学习一组按键操作并进行测试。当你执行 SysRq 命令时，内核将尝试响应。此响应只能在虚拟控制台 1 到 6 中看到。如果焦点无法从 X 移开，您将看不到响应。这并不意味着它不起作用。
