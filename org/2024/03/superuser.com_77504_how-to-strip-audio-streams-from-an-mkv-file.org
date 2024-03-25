@@ -1,0 +1,114 @@
+:PROPERTIES:
+:ID:       6d12cd4a-2fed-45cc-938d-09d6f967a08a
+:NOTER_DOCUMENT: https://superuser.com/questions/77504/how-to-strip-audio-streams-from-an-mkv-file
+:NOTER_OPEN: eww
+:END:
+#+TITLE: video - How to strip audio streams from an MKV file? - Super User
+#+AUTHOR: Yang,Ying-chao
+#+DATE:   2024-03-27
+#+OPTIONS:  ^:nil _:nil H:7 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+LANGUAGE: en
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :tag1:tag2:
+
+
+* Q
+:PROPERTIES:
+:NOTER_DOCUMENT: https://superuser.com/questions/77504/how-to-strip-audio-streams-from-an-mkv-file
+:NOTER_OPEN: eww
+:NOTER_PAGE: 1303
+:END:
+
+
+我一直在尝试从一个 MKV（Matroska）文件中删除不需要的音频流。我这样做的原因是为了避免在 Windows Media Player 中手动选择所需的流。
+
+输入文件提供了以下的 ffmpeg 信息：
+
+#+begin_src text
+流 #0.0: 视频: mpeg4, yuv420p, 704x396 [PAR 1:1 DAR 16:9], 29.98 tbr, 1k tbn, 29.98 tbc
+流 #0.1(eng): 音频: aac，24000 Hz，5.1，s16
+流 #0.2(jpn): 音频: aac，24000 Hz，5.1，s16
+流 #0.3(eng): 字幕: 0x0000
+流 #0.4(eng): 字幕: 0x0000
+流 #0.5: 附件: 0x0000
+流 #0.6: 附件: 0x0000
+#+end_src
+
+由于我想要的流是 0，1 和 3（sub），我的 ffmpeg 命令如下：
+
+#+begin_src sh
+ffmpeg -i input.mkv -map 0:0 -map 0:1 -map 0:3 -vcodec copy -acodec libmp3lame -newsubtitle test.mkv
+#+end_src
+
+
+但是却奇怪地出现了错误：
+
+至少必须指定一个输出文件
+
+如果要删除字幕：
+
+#+begin_src sh
+ffmpeg -i input.mkv -map 0:0 -map 0:1 -vcodec copy -acodec libmp3lame test.mkv
+#+end_src
+
+
+则会出现：
+
+流映射数量必须与输出流的数量相匹配
+
+我似乎不太理解“map”选项的工作原理。有人能帮我弄清楚吗？
+
+
+* A:
+:PROPERTIES:
+:NOTER_DOCUMENT: https://superuser.com/questions/77504/how-to-strip-audio-streams-from-an-mkv-file
+:NOTER_OPEN: eww
+:NOTER_PAGE: 3224
+:END:
+
+
+如果你只想删除一个流而不重新编码，你可能希望使用 MKVtoolnix 包来完成（请参阅 videohelp.com
+的页面）。
+
+有一些图形用户界面可能会帮助你（在 videohelp 链接中查找）。我不确定确切的 mkvmerge 命令行可
+能是什么，但我认为类似这样的内容会起作用：
+
+#+begin_src text
+# 首先，获取音频轨道信息，这样我们知道要保留哪个
+mkvmerge -i input.mkv
+File 'input.mkv': container: Matroska
+Track ID 1: video (V_MPEG4/ISO/AVC)
+Track ID 2: audio (A_AAC)
+Track ID 3: audio (A_AAC)        <----------- 例如，我们保留这个
+Track ID 4: audio (A_AAC)
+mkvmerge -o output.mkv --audio-tracks 3 input.mkv
+#+end_src
+
+这样应该就可以了（很抱歉，我没有可用于测试的文件）。--audio-tracks 选项告诉 mkvmerge 仅
+将列出的音轨复制到新文件中。如果你想保留第 2 和第 3 轨道，但不要第 4 轨道，可以使
+用--audio-tracks 2,3。
+
+mkvmerge 还有很多其他选项，比如设置标题、为音频添加延迟以同步等等，所以请查看 manpage 以获
+取详细信息。
+
+* Further more
+
+
+For anyone needing to automate this, I've done this:
+#+begin_src sh -r
+  find ./ -maxdepth 1 -type f \
+       -exec mkvmerge -o ./output/"{}" \
+       --audio-tracks 2 \
+       --video-tracks 0 \
+       --subtitle-tracks 5 \
+       --default-track-flag 2 \
+       --default-track-fla g 5 \
+       --forced-display-flag 5 "{}" \;
+#+end_src
+
+This finds all files in current directory, include only audio track 2 video track 0, and
+subtitle track 5. Also makes track 5 default subtitle and forces it. Then save each file
+in ./output directoy.
