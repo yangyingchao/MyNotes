@@ -1,0 +1,150 @@
+:PROPERTIES:
+:ID:       b3eed587-fcbc-46dc-8d91-db010fb1693f
+:NOTER_DOCUMENT: https://mp.weixin.qq.com/s/dD-aPhnynOqSC3MUYLjeAA
+:NOTER_OPEN: eww
+:END:
+#+TITLE: 十年前的微信消息收发架构长啥样
+#+AUTHOR: Yang,Ying-chao
+#+DATE:   2024-03-29
+#+OPTIONS:  ^:nil _:nil H:7 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+LANGUAGE: en
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :wechat:weixin:
+
+2023 年，微信及 WeChat 的 DAU（月活用户）达到 13.4 亿，微信已经是很多人工作、生活中不可或缺的一个环节。从 2011 年 1 月
+21 日上线至今，微信已经走过了 13 个年头，其背后的技术基座与架构也发生了巨大的变化。
+
+这些变化背后，所折射的也正是中国互联网高速发展的黄金年代。腾讯云开发者社区特别策划了「十年前的技术」系列，带大家回顾那些
+明星项目背后最初的技术架构。好的架构是生长出来的，却也少不了良好的设计，愿各位读者都能从中获得启发，找到力量。
+
+
+* 背景
+微信诞生于 QQMail 团队，初始的整个微信后台架构都带着浓重的邮箱气息，消息收发
+架构作为微信最为核心的部分，同样是基于邮箱的存储转发机制演变而来。
+微信定位为即时通讯软件，对消息的收发有 2 个基本的要求：
+
+1. 消息尽可能的实时送达。
+2. 不丢消息。
+
+在邮箱的存储转发机制上做了改良后，微信的消息收发实现了以上 2 个基本要求。
+
+* 消息收发架构
+**  消息发送架构
+ 首先通过手机 A 给手机 B 发送一条微信消息来看消息发送的整体架构是怎样的, 如图 1 所示：
+
+#+DOWNLOADED: https://mmbiz.qpic.cn/mmbiz_png/VY8SELNGe962duE6jiceibdg1RaaD7KZSotib3h4LW7aRjlIzrk9Sg67zhDWPHREaYjCbW4bRZ5dZBLPgcuRItiaibQ/640?wx_fmt=png&from=appmsg @ 2024-03-29 10:00:13
+[[file:images/mp.weixin.qq.com_s_dD-aPhnynOqSC3MUYLjeAA/640.png]]
+
+
+微信消息发送在整体架构上可以分为 2 个部分：
+
+- 手机 A 发送消息到服务器（图 1 中 1，2，3 部分）
+  1. 手机 A 发送发消息请求到接入层 ConnnectSvr；
+  2. 接入层收到请求后，将请求转到逻辑层 SendSvr 进行处理；
+  3. 逻辑层处理完各种逻辑（如反垃圾，黑名单等等）之后，将消息存入存储层 MsgStore。
+
+- 服务器发送通知到手机 B（图 1 中 4，5.1，5.2，6，7 部分）
+  4. [@4] 逻辑层 SendSvr 将给手机 B 的新消息到达通知发送到通知处理服务器 PushSvr；
+  5. 5.1：PushSvr 查询手机 B 在接入层所在长连接的 ConnectSvr， 并将通知发给该 ConnectSvr；
+     5.2：PushSvr 发送一个 Push tips 给手机操作系统自建的第三方 Push 系统（如苹果的
+     ApnsPush，微软的 WPPush，黑莓的 BBPush 等）。像苹果的 IOS 系统，在 APP 退出到后台
+     10 分钟后就会释放掉该 APP 所持有的所有资源（如 CPU，网络，内存等），
+     导致之前建立的长连接通道也会一并断掉，此时通过 5.1 的方式进行通知是不可达的，
+     所以还需要依赖与苹果自身的 apns 通道来达到实时通知的目的；
+  6. 接入层 ConnnectSvr 通过手机 B 建立的长连接通道将新消息达到通知发送给手机 B；
+  7. 第三方 Push 服务器通过自建的 Push 通过发送 Push tips 到手机 B。
+
+** 消息接收架构
+
+手机 B 在收到新消息到达通知后进行消息收取的整体架构如图 2 所示：
+
+#+NAME: fig:640?wx_fmt=png&from=appmsg
+#+DOWNLOADED: https://mmbiz.qpic.cn/mmbiz_png/VY8SELNGe962duE6jiceibdg1RaaD7KZSo6ib7dIQVUkPpN3ro88KLUbsia9rUIde8yxOfn9lcNskMo3C2XkY3YWEQ/640?wx_fmt=png&from=appmsg @ 2024-03-29 10:11:26
+[[file:images/mp.weixin.qq.com_s_dD-aPhnynOqSC3MUYLjeAA/640.png]]
+
+
+消息收取的流程主要分为 3 个步骤：
+
+1. 手机 B 发起收取消息的请求到接入层服务器 ConnnectSvr；
+2. 接入层服务器 ConnnectSvr 接到请求后转给逻辑层服务器 ReceiveSvr 进行处理；
+3. ReceiveSvr 从存储层 MsgStore 中获取到需要下发的消息。
+
+
+** 小结
+:PROPERTIES:
+:NOTER_DOCUMENT: https://mp.weixin.qq.com/s/dD-aPhnynOqSC3MUYLjeAA
+:NOTER_OPEN: eww
+:NOTER_PAGE: 1381
+:END:
+以上消息收发架构可以保证手机 A 在发出消息 100ms 级别内让手机 B 收取到该条消息。当然 对于退出后台的苹果 IOS 用户，在苹果的
+apns 服务器正常的情况下，也可以保证在秒级别内通知到手机 B 点开 APP 进入前台来收取消息。
+
+
+* 消息防丢失机制
+:PROPERTIES:
+:NOTER_DOCUMENT: https://mp.weixin.qq.com/s/dD-aPhnynOqSC3MUYLjeAA
+:NOTER_OPEN: eww
+:NOTER_PAGE: 1521
+:END:
+
+消息收发架构保证了消息收发双方能够及时收发消息，但该架构不能保证消息在传输过程中不发生丢弃。当然为了达到任意一条消息都不
+丢的状态，最简单的方案是手机端对收到的每条消息都给服务器进行一次 ack 确认，但该方案在手机端和服务器之间的交互过多，并且也
+会遇到在弱网络情况下 ack 丢失等问题。为了完美的做到消息不丢，微信消息系统对消息收发引入了 sequence 机制。
+
+** sequence 机制
+
+1. 每个用户都有 42 亿的 sequence 空间（从 1 到 UINT_MAX），从小到大连续分配；
+2. 每个用户的每条消息都需要分配一个 sequence；
+3. 服务器存储有每个用户已经分配到的最大 sequence；
+4. 手机端存储有已收取消息的最大 sequence。
+
+** 消息收取 sequnece 确认机制
+
+当服务器和手机端都拥有了一个 sequence 之后，服务器和手机端之间就可以根据两者 sequence 的差异来收取消息，同时保证手机端未
+收取下去的消息最终能够收取下去。具体流程如图 3 表示：
+
+#+CAPTION:
+#+NAME: fig:640?wx_fmt=png&from=appmsg
+#+DOWNLOADED: https://mmbiz.qpic.cn/mmbiz_png/VY8SELNGe962duE6jiceibdg1RaaD7KZSoiayyGj4EmoibQ6OcwXGoxb2TMzJJ6e1ictoyb5P9icKzicsRjTLBG3TP15g/640?wx_fmt=png&from=appmsg @ 2024-03-29 10:23:58
+[[file:images/mp.weixin.qq.com_s_dD-aPhnynOqSC3MUYLjeAA/640.png]]
+
+
+1. 根据服务器和手机端之间 sequence 的差异，可以很轻松的实现增量下发手机端未收取下去的消息。
+2. 对于在弱网络环境差的情况，丢包情况发生概率是比较高的，此时经常会出现服务器的回包不能到达手机端的现象。由于手机端只会在
+   确切的收取到消息后才会更新本地的 sequence，所以即使服务器的回包丢了，手机端等待超时后重新拿旧的 sequence 上服务器收取
+   消息，同样是可以正确的收取未下发的消息。
+3. 由于手机端存储的 sequence 是确认收到消息的最大 sequence，所以对于手机端每次到服务器来收取消息也可以认为是对上一次收取
+   消息的确认。一个帐号在多个手机端轮流登录的情况下，只要服务器存储手机端已确认的 sequence，那就可以简单的实现已确认下发
+   的消息不会重复下发，不同手机端之间轮流登录不会收到其他手机端已经收取到的消息。
+
+*
+如图 4 所示，假如手机 A 拿 Seq_cli = 100 上服务器收取消息，此时服务器的 Seq_svr =  150，那手机 A 可以将 sequence 为[101 -
+150]的消息收取下去，同时手机 A 会将本地的 Seq_cli 置为 150。
+*
+如图 5 所示，手机 A 在下一次再次上来服务器收取消息，此时 Seq_cli = 150，服务器的 Seq_svr = 200，那手机 A 可以将 sequence 为
+[151 - 200]的消息收取下去。
+*
+如图 6 所示，假如原手机 A 用户换到手机 B 登录，并使用 Seq_cli = 120 上服务器收取消息，由于服务器已经确认 sequence <= 150 的
+消息已经被手机收取下去了，故不会再返回 sequence 为[121 - 150]的消息给手机 B，而是将 sequence 为[151 - 200]的消息下发给手
+机 B。
+这里虽然 sequence 为[151 - 200]的消息有可能是被手机 A 和手机 B 都收取到，但由于手机 A 在收到 sequence 为[151 - 200]的消息
+时并没有给服务器进行确认或者这些消息手机 A 压根就没有收取到，所以为了防止消息丢失，sequence 为[151 - 200]的消息也是需要下
+发给手机 B 的。
+
+● 04
+
+总结
+
+以上简单的描述了微信消息收发的架构，该架构实现了即时通讯软件对消息收发所需的两个基本要求：
+
+1. 消息尽可能的实时送达 。
+
+2. 不丢消息。
+
+以上，是 2014 年微信古早时期的消息收发架构的基本介绍，时过境迁，微信的消息收发架构已经发生了巨大的变化，但我们还是可以从
+中看到技术演变的价值与力量。
+
+程序员最大的成就与幸福，或许就是自己的代码跑在千万人的设备上，默默支撑着海量的需求。
