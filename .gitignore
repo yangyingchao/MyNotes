@@ -12,3 +12,7 @@
 /hugo/public/
 /inbox
 /org/private/
+*.aux
+*.out
+/org/*/*/*.pdf
+/org/*/*/*.tex
