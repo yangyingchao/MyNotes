@@ -1,0 +1,27 @@
+:PROPERTIES:
+:ID:       45677100-71bf-4402-8ed9-ca25f5dfd4c2
+:NOTER_DOCUMENT: https://gist.github.com/alesk/3826552
+:NOTER_OPEN: eww
+:END:
+#+TITLE: Emacs org mode hints -- convert between csv & org table
+#+AUTHOR: Yang,Ying-chao
+#+DATE:   2024-04-07
+#+OPTIONS:  ^:nil _:nil H:7 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+LANGUAGE: en
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :org:csv:table:
+
+- 将 CSV 转换为 org 表格 \\
+  将文本导入文件，标记文本，然后按下 =C-c |= 。它会将该区域转换为表格。
+
+- 要导出 \\
+  请使用 M-x org-table-export。
+
+
+
+参考资料：
+
+1. http://stackoverflow.com/questions/1241581/emacs-import-a-csv-into-org-mode
