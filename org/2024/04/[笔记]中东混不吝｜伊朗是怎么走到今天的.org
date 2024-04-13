@@ -1,0 +1,46 @@
+#+TITLE:  [笔记]中东混不吝｜伊朗是怎么走到今天的
+#+AUTHOR: Yang Yingchao
+#+DATE:   2024-04-16
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+LANGUAGE: en
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :tag1:tag2:note:ireader:
+
+
+
+#+BEGIN_QUOTE
+所谓伊斯兰化是一个不可逆转的过程。这种完全封闭自成一体，依靠屠杀和生殖进行扩张的宗教，但凡成势，基本无法根除。
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+但凡破落户的不肖子孙，往往对于祖上的荣光都特别重视，张口就是上下几千年。
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+不要西方、不要东方，只要伊斯兰”的口号响彻伊朗，和文明世界全面对立的神权模式从此开启。
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+，“不要西方、不要东方，只要伊斯兰”的口号响彻伊朗，和文明世界全面对立的神权模式从此开启。
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+这种全然不顾国家实际利益得失，只靠宗教意识形态来决定大政方针的态度，看似儿戏一般，实则是原教旨的必然。他安身立命的东西，就是树立各种各样的敌人，鼓动仇恨，或者说仇恨就是他最根本的利益所在。这一点，我们怕也是深有体会的。
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+人民是创造历史的主体不假，但人民的选择却不一定是正确的。在群体性的癫狂之中，人民更多的是一个个随波逐流的水滴，不懂方向，也难辨是非，极易受到霍梅尼之类的打着诱人的信仰旗号的革命灵修蛊惑，欣然接受他们画出来的人人均贫富的大饼。这样的人民，不吃一点亏，恐怕真的对不起他们。
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+川建国
+#+END_QUOTE

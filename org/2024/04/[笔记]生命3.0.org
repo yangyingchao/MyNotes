@@ -1,0 +1,121 @@
+#+TITLE:  [笔记]生命3.0
+#+AUTHOR: Yang Yingchao
+#+DATE:   2024-04-16
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+LANGUAGE: en
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :tag1:tag2:note:ireader:
+
+
+
+#+BEGIN_QUOTE
+它是一个能保持自身复杂性并能进行复制的过程。复制的对象并不是由原子组成的物质，而是能阐明原子是如何排列的信息，这种信息由比特组成。
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+我们可以将生命看作一种自我复制的信息处理系统，它的信息软件既决定了它的行为，又决定了其硬件的蓝图。
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+生命 1.0 是说：生命的硬件和软件都是靠进化得来的，而不是靠设计。不过，
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+生命 1.0 是说：生命的硬件和软件都是靠进化得来的，而不是靠设计。
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+属于“生命 2.0”：生命的硬件是进化而来，但软件在很大程度上却是依靠设计的。
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+突触存储着我们所有的知识和技能，大约相当于 100TB 的信息，而我们的 DNA 却只存储了大约 1GB 的信息，还不如一部电影的容量大呢。因此，
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+突触存储着我们所有的知识和技能，大约相当于 100TB 的信息，而我们的 DNA 却只存储了大约 1GB 的信息，还不如一部电影的容量大呢。
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+生命 3.0 是自己命运的主人，最终能完全脱离进化的束缚。
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+我们可以根据生命设计自身的能力，把生命的发展分成三个阶段： ◦　生命 1.0（生物阶段）：靠进化获得硬件和软件； ◦　生命 2.0（文化阶段）：靠进化获得硬件，但大部分软件是由自己设计的； ◦　生命 3.0（科技阶段）：自己设计硬件和软件。
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+巴黎的一家咖啡馆第一次遇到了人工智能先驱斯图尔特·罗素（Stuart Russell），他是典型的英国绅士，彬彬有礼。而且，他能言善辩，思维缜密，语调温和，眼中闪烁着
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+这是历史上头一遭，我们或许能发明出足够强大的科技，可以将那些灾害永久性地清除出去；又或者，它也可能将人类推向末日。
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+尤其是那些目标与我们的目标不一致的智能。
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+：尤其是那些目标与我们的目标不一致的智能。
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+人工智能有益运动支持者最担忧的并不是机器人，而是智能本身：尤其是那些目标与我们的目标不一致的智能。
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+智能这样的无形之物可以体现在有形的物质形式之上。
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+计算是由一个记忆状态向另一个记忆状态转变的过程。
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+计算和信息一样，是独立于物质层面而存在的：计算就像拥有自己的生命一样，与它采取什么样的物质形态无关。
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+美国每年因交通事故丧生的人数达 32 000 人；假如无人驾驶汽车将死亡人数减半，汽车厂商很可能并不会收到 16 000 封感谢信，而是 16 000 起官司。
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+现在有很多人都没有意识到自己的创造潜力，因为，为了谋生，他们需要投入时间和精力到创造性不那么高的活动上。
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+意识（consciousness）是最了不起的。我认为，意识正是宇宙的意义之来源。星系之所以美丽，是因为我们的目光触及它们，并在主观上体验到它们的存在。
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+不过，我们必须记住，如今掌权的并不是我们的基因，而是我们的感觉。这意味着人类的行为并不一定有利于种族延续。
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+真理与美是相通的，我们可以把我们的宇宙视为一件艺术品。
+#+END_QUOTE

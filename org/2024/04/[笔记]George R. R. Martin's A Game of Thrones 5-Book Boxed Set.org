@@ -1,0 +1,1357 @@
+#+TITLE:  [笔记]George R. R. Martin's A Game of Thrones 5 Book Boxed Set
+#+AUTHOR: Yang Yingchao
+#+DATE:   2024-04-16
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+LANGUAGE: en
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :tag1:tag2:note:ireader:
+
+
+
+#+BEGIN_QUOTE
+perilous close to fear. Will shared his unease. He had been
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+haunted forest
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+It is hard to take orders from a man you laughed at in your cups,
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+Frost-fallen leaves whispered past them, and Royce’s destrier moved restlessly.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+Frost-fallen leaves whispered past them, and Royce’s destrier moved restlessly.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+flurry of snow now and then, but surely no cold fierce
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+ridge. He stood there beside the sentinel, longsword
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+sap, and he was lost among the needles. Fear filled
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+clung more tightly to his perch. His face pressed hard
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+old hand
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+fair skin, red-brown hair, and blue eyes of the Tullys of Riverrun
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“Can a man still be brave if he’s afraid?” “That is the only time a man can be brave,” his father told him.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+If you would take a man’s life, you owe it to him to look into his eyes and hear his final words. And if you cannot bear to do that, then perhaps the man does not deserve to die.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+A ruler who hides behind paid executioners soon forgets what death is.”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+to his lord father for rescue, but got only a frown
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+mallet and an iron chisel. His bedrobe was
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+women.” Whores. The girl took that disappointment too well for his liking. “If m’lord would prefer a boy, I can have one waiting in his bed.” M’lord would prefer his wife. M’lord would prefer a girl named Tysha. “Only if he knows where whores go.” The girl’s mouth tightened. She despises me, he realized, but no more than I despise myself. That he had fucked many a woman who loathed the very sight of him, Tyrion Lannister had no doubt, but the others had at least the grace to feign affection. A little honest loathing might be refreshing, like a tart wine after too much sweet. “I believe I have changed my mind,” he told her. “Wait for me abed. Naked, if you please, I’ll be a deal too drunk to fumble at your clothing. Keep your mouth shut and your thighs open and the two of us should get on splendidly.” He gave her a leer, hoping for a taste of fear, but all she gave him was revulsion. No one fears a dwarf. Even Lord Tywin had not been afraid, though Tyrion had held a crossbow in his hands. “Do you moan when you are being fucked?” he asked the bedwarmer. “If it please m’lord.” “It might please m’lord to strangle you. That’s how I served my last whore. Do you think your master would object? Surely not. He has a hundred more like you, but no one else like me.” This time, when he grinned, he got the fear he wanted. Illyrio was reclining on a padded couch, gobbling hot peppers and pearl onions from a wooden bowl. His brow was dotted with beads of sweat, his pig’s eyes shining above his fat cheeks. Jewels danced when he moved his hands; onyx and opal,
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+quails in honey, a saddle of lamb, goose
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+erotic taste, she knew. Even so … “
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+amber of Ghiscari. It was a blunt, brutal,
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“Myriad delights.” And huge thick walls. Tyrion
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+stench alone is enough to kill a man.”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+strangle slowly, with their guts slapping
+#+END_QUOTE
+
+
+
+#+BEGIN_QUOTE
+garden, bright and airy, where tall redwoods spread dappled shadows across tinkling streams, birds sang from hidden nests, and the air was spicy with the scent of flowers. The gods of Winterfell kept a different sort of wood. It was a dark, primal place, three acres of old forest untouched for ten thousand years as the gloomy castle rose around it. It smelled of moist earth and decay
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+They had found him still holding her body, silent with grief.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+Some old wounds never truly heal, and bleed again at the slightest word.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+Half of them don’t dare tell me the truth, and the other half can’t find it.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“Never forget what you are, for surely the world will not. Make it your strength. Then it can never be your weakness. Armor yourself in it, and it will never be used to hurt you.”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“All dwarfs are bastards in their father’s eyes.”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+He is a sweet boy, quick to laugh, easy to love
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+halls slanted up and down so that you couldn’t even
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+Death is so terribly final, while life is full of possibilities.”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“Different roads sometimes lead to the same castle.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+A man could not always be where he belonged, though.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+The Lannisters never declined, graciously or otherwise. The Lannisters took what was offered.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+My brother later killed that very same king, as it turns out, but life is full of these little ironies.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+My mind is my weapon. My brother has his sword, King Robert has his warhammer, and I have my mind … and a mind needs books as a sword needs a whetstone, if it is to keep its edge.”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+an animal takes after its master.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+He was always clever, even as a boy, but it is one thing to be clever and another to be wise.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+Jon knew that if it fell, the world fell with it.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+Let them see that their words can cut you, and you’ll never be free of the mockery. If they want to give you a name, take it, make it your own.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+Let them see that their words can cut you, and you’ll never be free of the mockery. If they want to give you a name, take it, make it your own. Then they can’t hurt you with it anymore.”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“Do you Starks have nought but snow between your ears?”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+to drop that in the river and forget that it was ever forged.” Ned regarded him coldly. “Lord Baelish, I am a Stark of
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“If a man paints a target on his chest, he should expect that sooner or later someone will loose an arrow at him.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+When the snows fall and the white winds blow, the lone wolf dies, but the pack survives
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+When the snows fall and the white winds blow, the lone wolf dies, but the pack survives. Summer is the time for squabbles. In winter, we must protect one another, keep each other warm, share our strengths.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+to Septa Mordane and asked for her
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+He had a neck and shoulders like a bull, and coarse black hair covered his arms and chest so thickly that there was none left for his head.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+太损了，作者
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+fear? Fear is for the winter, my little lord, when the snows fall a hundred feet deep and the ice wind comes howling out of the north. Fear is for the long night, when the sun hides its face for years at a time, and little children are born and live and die all in darkness while the direwolves grow gaunt and hungry, and the white walkers move through the woods.”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+Minds are like swords, I do fear. The old ones go to rust
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“Dark wings, dark words,”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“You are slow to learn, Lord Eddard. Distrusting me was the wisest thing you’ve done since you climbed down off your horse
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“You are slow to learn, Lord Eddard. Distrusting me was the wisest thing you’ve done since you climbed down off your horse.”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+The world was full of cravens who pretended to be heroes; it took a queer sort of courage to admit to cowardice as Samwell Tarly had.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+A Lannister always paid his debts.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+All halls lead somewhere. Where there is a way in, there is a way out. Fear cuts deeper than swords.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+The man who passes the sentence should swing the sword. Look her in the eyes before you kill her. See her tears, hear her last words. You owe her that much at least.”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“Love is sweet, dearest Ned, but it cannot change a man’s nature.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+Never show them you’re afraid,
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+Some illiterates held writing in disdain; others seemed to have a superstitious reverence for the written word, as if it were some sort of magic.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+the years leech at a man’s memories, even those he has vowed never to forget.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+Catelyn wondered how large a waterfall her own tears would make when she died.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+A king should never sit easy,
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+He never trusted what a man told him from his knees. “All of you, up.”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+He never trusted what a man told him from his knees.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+Beric Dondarrion was handsome enough, but he was awfully old, almost twenty-two;
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+我擦
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+trying to remember was like trying to catch the rain with her fingers.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+If it came to that, the life of some child I did not know, against Robb and Sansa and Arya and Bran and Rickon, what would I do? Even
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+If it came to that, the life of some child I did not know, against Robb and Sansa and Arya and Bran and Rickon, what would I do?
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+thought, If it came to that, the life of some child I did not know, against Robb and Sansa and Arya and Bran and Rickon, what would I do?
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+If it came to that, the life of some child I did not know, against Robb and Sansa and Arya and Bran and Rickon, what would I do?
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+不提 jon
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“When you play the game of thrones, you win or you die. There is no middle ground.”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+a length of dragonbone and Valyrian steel, as sharp as the difference between right and wrong, between true and false, between life and death.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“You wear your honor like a suit of armor, Stark. You think it keeps you safe, but all it does is weigh you down and make it hard for you to move.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“Hear my words, and bear witness to my vow,” they recited, their voices filling the twilit grove. “Night gathers, and now my watch begins. It shall not end until my death. I shall take no wife, hold no lands, father no children. I shall wear no crowns and win no glory. I shall live and die at my post. I am the sword in the darkness. I am the watcher on the walls. I am the fire that burns against the cold, the light that brings the dawn, the horn that wakes the sleepers, the shield that guards the realms of men. I pledge my life and honor to the Night’s Watch, for this night and all the nights to come.”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+The man who fears losing has already lost.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+Never do what they expect,
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“Fear cuts deeper than swords,”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+They fed their dead servants on the flesh of human children
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+The things we love destroy us every time,
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+There was ale and cheese on the table. Catelyn filled a horn,
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“No sword is strong until it’s been tempered,”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+It was not wine that killed the king. It was your mercy.”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“The High Septon once told me that as we sin, so do we suffer. If that’s true, Lord Eddard, tell me … why is it always the innocents who suffer most, when you high lords play your game of thrones
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“The High Septon once told me that as we sin, so do we suffer. If that’s true, Lord Eddard, tell me … why is it always the innocents who suffer most, when you high lords play your game of thrones?
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+Yet in his nightmare he faced it again … and this time the burning corpse wore Lord Eddard’s features. It was his father’s skin that burst and blackened, his father’s eyes that ran liquid down his cheeks like jellied tears.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“A craven can be as brave as any man, when there is nothing to fear.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+A green boy, Tyrion remembered, more like to be brave than wise.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“It will come when it comes,”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+Her brother Rhaegar had died for the woman he loved.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+来安娜
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“The things we love destroy us every time, lad.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+have no place, Jon wanted to say, I’m a bastard, I have no rights, no name, no mother, and now not even a father.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+The first star was a comet, burning red. Bloodred; fire red; the dragon’s tail.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+Dragonstone was grim beyond a doubt, a lonely citadel in the wet waste surrounded by storm and salt, with the smoking shadow of the mountain at its back.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“The night is dark and full of terrors.”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+but it was Jon Snow she thought of most. She wished somehow they could come to the Wall before Winterfell, so Jon might muss up her hair and call her “little sister.” She’d tell him, “I missed you,” and he’d say it too at the very same moment, the way they always used to say things together.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“Courage and folly are cousins,
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+Eddard Stark was plotting with Renly and he’d written to Lord Stannis, offering him the throne. We might have lost all. Even so, it was a close thing. If Sansa hadn’t come to me and told me all her father’s plans
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“Joff wanted someone to blame for Robert’s death. Varys suggested Ser Barristan.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+Schemes are like fruit, they require a certain ripening.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“There’s no shame in fear, my father told me, what matters is how we face
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“There’s no shame in fear, my father told me, what matters is how we face it.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+Some men are like swords, made for fighting. Hang them up and they go to rust.”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“Robert was the true steel. Stannis is pure iron, black and hard and strong, yes, but brittle, the way iron gets. He’ll break before he bends. And Renly, that one, he’s copper, bright and shiny, pretty to look at but not worth all that much at the end of the day.”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+My first rule of war, Cat—never give the enemy his wish.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“So power is a mummer’s trick?” “A shadow on the wall,” Varys murmured, “yet shadows can kill. And ofttimes a very small man can cast a very large shadow.”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“Time was, a man in black was feasted from Dorne to Winterfell, and even high lords called it an honor to shelter him under their roofs,” he said bitterly. “Now cravens like you want hard coin for a bite of wormy apple.” He spat.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+for the night is dark and full of terrors.”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“In ancient books of Asshai it is written that there will come a day after a long summer when the stars bleed and the cold breath of darkness falls heavy on the world. In this dread hour a warrior shall draw from the fire a burning sword. And that sword shall be Lightbringer, the Red Sword of Heroes, and he who clasps it shall be Azor Ahai come again, and the darkness shall flee before him.”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“What is dead may never die,”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“What is dead may never die,” his uncle echoed, “but rises again, harder and stronger. Stand.”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“A woman may inherit only if there is no male heir in the direct line,”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+down her back. The cream-colored dragon
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+The Unburnt, they called her, and Mother of Dragons. Her word was their law.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“When you tear out a man’s tongue, you are not proving him a liar, you’re only telling the world that you fear what he might say.”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+And the best lies contain within them nuggets of truth, enough to give a listener pause.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“Men see what they expect to see,” Varys
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“Men see what they expect to see,”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“A good lord comforts and protects the weak and helpless,”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+A hound will die for you, but never lie to you. And he’ll look you straight in the face.”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+lantern bugs
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+chanting for food. Joff had unleashed a storm
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“The finest knight I ever saw was Ser Arthur Dayne, who fought with a blade called Dawn, forged from the heart of a fallen star. They called him the Sword of the Morning, and he would have killed me but for Howland Reed.”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+You never ate at his board, nor slept by his fire. He never gave you guest-right, so you’re not bound to him.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+Horn of Winter
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+showered Dany with promises from the moment
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+tears. I want to make my kingdom beautiful, to fill it with fat men and pretty maids and laughing children. I want my people to smile when they see me ride by, the way Viserys said they smiled for my father.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+But,疯王真的受人爱戴吗？
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+The years pass in their hundreds and their thousands, and what does any man see of life but a few summers, a few winters? We look at mountains and call them eternal, and so they seem … but in the course of time, mountains rise and fall, rivers change their courses, stars fall from the sky, and great cities sink beneath the sea. Even gods die, we think. Everything changes.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+Dragonstone, but I find you here instead.” “You are frank, Lady Stark. Very well, I’ll answer you frankly. To take the city, I need the power of these southron lords I see across the field. My brother has them. I must needs take them from him.” “Men give their allegiance where they will, my lord. These lords swore fealty to Robert and House Baratheon. If you and your brother were to put aside your quarrel—” “I have no quarrel with Renly, should he prove
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“Sorcery is the sauce fools spoon over failure to hide the flavor of their own incompetence.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+God is one, Septon Osmynd had taught her when she was a girl, with seven aspects, as the sept is a single building, with seven walls.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“That stripling … wretched boy … not speak that name to me, your duty
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“To go north, you must journey south. To reach the west, you must go east. To go forward you must go back, and to touch the light you must pass beneath the shadow.”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+Nothing knits a broken realm together so quick as an invading army on its soil.”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“A good act does not wash out the bad, nor a bad act the good. Each should have its own reward.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+this Storm’s End is an old place. There are spells woven into the stones. Dark walls that no shadow can pass—ancient, forgotten, yet still in place.”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+There are no shadows in the dark. Shadows are the servants of light, the children of fire. The brightest flame casts the darkest shadows.”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+The warhorn he had given to Sam. On closer examination the horn had proved cracked, and even after he had cleaned all the dirt out, Jon had been unable to get any sound from it.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“By all the gods of sea and air, and even him of fire, I swear it.”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+In a throne above them sat a dead man with the head of a wolf. He wore an iron crown and held a leg of lamb in one hand as a king might hold a scepter, and his eyes followed Dany with mute appeal.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+血色婚礼
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“Aegon,” he said to a woman nursing a newborn babe in a great wooden bed. “What better name for a king?” “Will you make a song for him?” the woman asked. “He has a song,” the man replied. “He is the prince that was promised, and his is the song of ice and fire.” He
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+three fires must you light … one for life and one for death and one to love …
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+three mounts must you ride … one to bed and one to dread and one to love … The
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+three treasons will you know … once for blood and once for gold and once for love …
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+A tall lord with copper skin and silver-gold hair stood beneath the banner of a fiery stallion, a burning city behind him. Rubies flew like drops of blood from the chest of a dying prince, and he sank to his knees in the water and with his last breath murmured a woman’s name. …
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+her left, any door, but there was nothing, only
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+trebuchets stood side by side in the market square,
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+magic had begun to go out of the world the day the last dragon died.”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+To lead men you must know them, Jon
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+To lead men you must know them,
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+A day will come when you think yourself safe and happy, and suddenly your joy will turn to ashes in your mouth, and you’ll know the debt is paid.”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+people often claim to hunger for truth, but seldom like the taste when it’s served up.”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+would sooner face any number of swords than sit helpless like this, pretending to enjoy the company of this flock of frightened hens.”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“I would sooner face any number of swords than sit helpless like this, pretending to enjoy the company of this flock of frightened hens.”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+her people and her dragons in her absence,
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+Dany found her thoughts returning to the Palace of Dust once more, as the tongue returns to a space left by a missing tooth.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“His is the song of ice and fire, my brother said.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+My brother said the babe was the prince that was promised and told her to name him Aegon.”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“When the snows fall and the white winds blow, the lone wolf dies, but the pack survives,” he said. “But there is no pack,” she whispered to the weirwood. Bran and Rickon were dead, the Lannisters had Sansa, Jon had gone to the Wall. “I’m not even me now, I’m Nan.” “You are Arya of Winterfell, daughter of the north. You told me you could be strong. You have the wolf blood in you.” “The wolf blood.” Arya remembered now. “I’ll be as strong as Robb. I said I would.” She took a deep breath, then lifted the broomstick in both hands and brought
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“When the snows fall and the white winds blow, the lone wolf dies, but the pack survives,”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“Lovelier than you know, sweet child. It’s magic, you see. It’s justice you hold. It’s vengeance for your father.”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+毒药。
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+No one heard. No one came. Alone in the dark, he fell
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+This was where they came when the warmth had seeped out of their bodies; this was the dark hall of the dead, where the living feared to tread.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+fourteen was a good number, enough to do what needed doing but not so many that they couldn’t keep the secret.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“Some battles are won with swords and spears, others with quills and ravens.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+Every lord has need of a beast from time to time … a lesson you seem to have learned, judging from Ser Bronn and those clansmen of yours.”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+You are an ill-made, devious, disobedient, spiteful little creature full of envy, lust, and low cunning. Men’s laws give you the right to bear my name and display my colors, since I cannot prove that you are not mine.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+荆棘女王
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+Queen of Thorns,
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+Should you ever have a son, Sansa, beat him frequently so he learns to mind you.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+Should you ever have a son, Sansa, beat him frequently so he learns to mind you. I only had the one boy and I hardly beat him at all, so now he pays more heed to Butterbumps than he does to me. A
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+Should you ever have a son, Sansa, beat him frequently so he learns to mind you. I only had the one boy and I hardly beat him at all, so now he pays more heed to Butterbumps than he does to me.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+in battle discipline beats numbers nine times of every ten,
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+in battle discipline beats numbers nine times of every ten,
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+One voice may speak you false, but in many there is always truth to be found.”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“It seems to me that a queen who trusts no one is as foolish as a queen who trusts everyone.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+The greenseers were more than that. They were wargs as well, as you are, and the greatest of them could wear the skins of any beast that flies or swims or crawls, and could look through the eyes of the weirwoods as well, and see the truth that lies beneath the world.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“Dare I ask how many swords come with your bride, Robb?” “Fifty. A dozen knights.” His voice was glum, as well it might be. When the marriage contract had been made at the Twins, old Lord Walder Frey had sent Robb off with a thousand mounted knights and near three thousand foot.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+Old Nan used to tell stories about knights and their ladies who would sleep in a single bed with a blade between them for honor’s sake, but he thought this must be the first time where a direwolf took the place of the sword.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+broken branches. Then up a gentle slope and
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“I dreamt I saw a shadow with a burning heart butchering a golden stag,
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+The gods give each of us our little gifts and talents, and it is meant for us to use them,
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+Old stories are like old friends, she used to say. You have to visit them from time to time.”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+When the red star bleeds and the darkness gathers, Azor Ahai shall be born again amidst smoke and salt to wake dragons out of stone.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+There is a tool for every task, and a task for every tool.”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+You don’t build a wall seven hundred feet high to keep savages in skins from stealing women. The Wall was made to guard the realms of men … and not against other men, which is all the wildlings are
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+Sweat beaded his brow. He could only hope he did not look as feeble as he felt. Lord Bolton’s little smile paid another visit to his lips. “You speak boldly for a man who needs help to break his bread. My guards are all around us, I remind you.” “All around us, and half a league away.” Jaime glanced down the vast length of the hall.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+They ate the land bare as they passed, like locusts in sandals.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+third appeared in the window of the roundtower,
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+when your enemies defy you, you must serve them steel and fire. When they go to their knees, however, you must help them back to their feet.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+when your enemies defy you, you must serve them steel and fire. When they go to their knees, however, you must help them back to their feet. Elsewise no man will ever bend the knee to you
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+any man who must say ‘I am the king’ is no true king at all.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+The best way to learn a thing was to do
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+The best way to learn a thing was to do it,
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+There are old sellswords and bold sellswords, but no old bold sellswords.”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“He has a song,” the man replied. “He is the prince that was promised, and his is the song of ice and fire.”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+Always keep your foes confused. If they are never certain who you are or what you want, they cannot know what you are like to do next.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+Always keep your foes confused. If they are never certain who you are or what you want, they cannot know what you are like to do next. Sometimes the best way to baffle them is to make moves that have no purpose, or even seem to work against you.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+twin did she show her wounds. She will look to me
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“I learned from the White Bull and Barristan the Bold,” Jaime snapped. “I learned from Ser Arthur Dayne, the Sword of the Morning, who could have slain all five of you with his left hand while he was taking a piss with the right. I learned from Prince Lewyn of Dorne and Ser Oswell Whent and Ser Jonothor Darry, good men every one.”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+It tasted of oak and fruit and hot summer nights, the flavors blossoming in her mouth like flowers opening to the sun.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+Nothing discourages unwanted questions as much as a flow of pious bleating.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+Everyone wants something, Alayne. And when you know what a man wants you know who he is, and how to move him.”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“I love the juice but I loathe the sticky fingers,” he complained, wiping his hands. “Clean hands, Sansa. Whatever you do, make certain your hands are clean.”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“I was born. I lived. I am guilty of being a dwarf, I confess it. And no matter how many times my good father forgave me, I have persisted in my infamy.”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+Oberyn avoided him easily. “You raped her. You
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+madness and greatness are two sides of the same coin.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+madness and greatness are two sides of the same coin. Every time a new Targaryen is born, he said, the gods toss the coin in the air and the world holds its breath to see how it will land.”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+It’s not the walls that make a lord, it’s the man.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“For hands of gold are always cold, but a woman’s hands are warm,”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+Tyrion slid a hand under his father’s chain, and twisted. The links tightened, digging into her neck. “For hands of gold are always cold, but a woman’s hands are warm,”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+Tyrion slid a hand under his father’s chain, and twisted. The links tightened, digging into her neck. “For hands of gold are always cold, but a woman’s hands are warm,” he said. He gave cold hands another twist as the warm ones beat away his tears. Afterward he found Lord Tywin’s dagger on the bedside table and shoved it through his belt.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+Tyrion slid a hand under his father’s chain, and twisted. The links tightened, digging into her neck. “For hands of gold are always cold, but a woman’s hands are warm,” he said. He gave cold hands another twist as the warm ones beat away his tears.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+Tyrion slid a hand under his father’s chain, and twisted. The links tightened, digging into her neck. “For hands of gold are always cold, but a woman’s hands are warm,” he said. He gave cold hands another twist as the warm ones beat away his tears.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“On Dragonstone, where I had my seat, there is much of this obsidian to be seen in the old tunnels beneath the mountain,” the king told Sam.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+The Lord Commander of the Night’s Watch is a lord, first and foremost. He must be able to treat with other lords … and with kings as well. He must be a man worthy of respect.” Ser Denys leaned forward. “We are the sons
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+The Lord Commander of the Night’s Watch is a lord, first and foremost. He must be able to treat with other lords … and with kings as well. He must be a man worthy of respect.” Ser
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+The Lord Commander of the Night’s Watch is a lord, first and foremost. He must be able to treat with other lords … and with kings as well. He must be a man worthy of respect.”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“Lord Tywin favors Slynt,” said Bowen Marsh,
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“The day you make them all is the day you stop improving.” Alleras unstrung his longbow and eased it
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“The day you make them all is the day you stop improving.”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+An age of wonder and terror will soon be upon us, an age for gods and heroes.”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+Silence is a prince’s friend, the captain had heard him tell his daughter once. Words are like arrows,
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+Silence is a prince’s friend, the captain had heard him tell his daughter once. Words are like arrows, Arianne. Once loosed, you cannot call them back.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+Words are like arrows, Arianne. Once loosed, you cannot call them back.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+tankards from below, and voices drifting up the steps.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+you could sometimes fall right into them, as if each page was a hole into another world.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+sober.” “If you ask the Citadel for
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“Knowledge is a weapon, Jon. Arm yourself well before you ride forth to battle.”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+smattering of the Common Tongue from nights
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+gleaming ebony. In their center was a carved moon
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+bony face, hollow cheeks, and dark eyes that looked
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+Kingsguard rode before them, white knights on white
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+worse.” Lady Olenna gave Cersei a toothless
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+craved audience. “Send him in,” the queen commanded.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+somber clothes and solemn faces, but Jaime suspected
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+admiral lost his heart to her, though he was married to
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+scalp and a stiff red mustache. When
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+slyly and stroking his beard as he whispered in
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+mustard in a big stone jar, from Oldtown.” The thought
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+dissimilar as his ten towers. The
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+If I do not go, I will spend the rest of my life wondering what might have happened if I had.”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+If I do not go, I will spend the rest of my life wondering what might have happened if I had.” “If you do go, the rest of your life may be too short for wondering.”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+wince. “Asha, my two tall sons fed the crabs of
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“When a dog goes bad, the fault lies with his master,”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+brass, “I feel as though I have a second mother
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+surged upward. Green flames leapt into the sky
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+crisped. The pungent smell of his sauces brought
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+spurned him. “The Kingmaker wrought grave harm,”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+blisters on your hands and bruises on your arms
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+crabs had gathered to pay them homage. “Too
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“I am growing very fond of Lady Taena. She
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+She does not lack for wits, but she has no judgment, and no patience.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+Even the Grey King’s great throne
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+just before they tell a lie, as if to hide their deceit.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+Men see what they expect to see,
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“In the game of thrones, even the humblest pieces can have wills of their own. Sometimes they refuse to make the moves you’ve planned for them.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“That was the one.” Her face grew somber.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+streaked by the sun, and a lean and comely body,
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+fickle bitches, loyal only to themselves.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+saffron that I’m tasting?” Saffron was worth more
+#+END_QUOTE

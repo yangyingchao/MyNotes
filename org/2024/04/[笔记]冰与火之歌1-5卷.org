@@ -1,0 +1,102 @@
+#+TITLE:  [笔记]冰与火之歌1-5卷
+#+AUTHOR: Yang Yingchao
+#+DATE:   2024-04-16
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+LANGUAGE: en
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :tag1:tag2:note:ireader:
+
+#+BEGIN_QUOTE
+他们的面容，对奈德来说，曾如自己的脸庞一般熟悉，但岁月仿如水蛭，渐渐吸走了人们的记忆，即使是他一度发誓绝不忘记的部分也不例
+外。在梦里他们只剩幻影，宛如灰色的幽灵，骑在浓雾聚成的马上。
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+长夜将至，我从今开始守望，至死方休。我将不娶妻，不封地，不生子。
+我将不戴宝冠，不争荣宠。我将尽忠职守，生死于斯。
+我是黑暗中的利剑，长城上的守卫，抵御寒冷的烈焰，破晓时分的光线，唤醒眠者的号角，守护王国的坚盾。
+我将生命与荣耀献给守夜人，今夜如此，夜夜皆然
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+结霜的落叶在他们耳边低语飘零，罗伊斯的战马局促不安。
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“人在恐惧的时候还能勇敢吗？” “人惟有恐惧的时候方能勇敢。”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“殊途不见得不能同归，
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+但凡事毕竟不可能尽如人意。
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+它就是我的武器。老哥有他的宝剑，劳勃国王有他的战锤，我则有我的脑袋瓜……不过人若要保持思路清晰锐利，就得多读书，就好像宝剑需要磨刀石一样。”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+希望他们带上弓箭，因为你们只配当靶子。”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+是“错误的春天”，他又回到了十八岁，陪着琼
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“当一个人无所畏惧时，即便懦夫也能展现不输于人的勇气。
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+长夏之后，星辰泣血，冰冷的黑暗将笼罩世界，在这个恐怖的时刻，将有一位战士自烈火中拔出燃烧之剑，那把剑是‘光明使者’，英雄之红剑，持有该剑者便是亚梭尔•亚亥转世，而他将驱离黑暗。”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+最好的谎言里面往往会隐藏少许事实，足以令听者生疑。
+#+END_QUOTE
+
+#+BEGIN_QUOTE
+冰墙的裂缝开出一朵碧蓝的玫瑰，散发出无比甜美的气息……
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“行吗?我得说，您的脸色糟透了。或许是灯光的缘故。”他戴着手铐脚镣，并互相连接，使得
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+这是尸骨已寒后的安息殿堂，这是属于死者的黑暗大厅，这是仇视生人的恐怖之地。
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“有的胜利靠宝剑和长矛赢取，有的胜利则要靠纸笔和乌鸦。
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+纪律严明，十战九胜，
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+临阵脱逃者其实最容易遭到攻击，”艾德公爵曾教诲琼恩，“好比受伤的动物，激起对方杀戮的欲望。”
+#+END_QUOTE

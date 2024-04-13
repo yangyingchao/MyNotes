@@ -1,0 +1,31 @@
+#+TITLE:  [笔记]奇葩进化论
+#+AUTHOR: Yang Yingchao
+#+DATE:   2024-04-16
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+LANGUAGE: en
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :tag1:tag2:note:ireader:
+
+
+
+#+BEGIN_QUOTE
+无论是基于情意还是恨意，我们都不能忘记一个事实，那就是食人行为绝非人类日常饮食行为的一部分，没有任何人类群体将人肉作为正常的食物，以上所举的罕见案例也都属于象征性仪式或文化旧习。
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+DNA 具有自我复制的能力，
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+虽然生物体内有完整的机制可以矫正或防止失误出现，
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+Checksum 吗。。。
+#+END_QUOTE

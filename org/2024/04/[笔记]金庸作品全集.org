@@ -1,0 +1,26 @@
+#+TITLE:  [笔记]金庸作品全集
+#+AUTHOR: Yang Yingchao
+#+DATE:   2024-04-16
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+LANGUAGE: en
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :tag1:tag2:note:ireader:
+
+
+
+#+BEGIN_QUOTE
+现代电影和电视的编剧人最爱“加添蛇足”，非此不足以示其陋，总认为原作有所不足，再加蛇足方为完全，不明艺术中“空白”的道理。近代中国影视殊少佳作，固不足异。）《
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+宁作太平犬，莫为乱世
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+宁作太平犬，莫为乱世人。
+#+END_QUOTE

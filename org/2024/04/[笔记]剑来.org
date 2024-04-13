@@ -1,0 +1,31 @@
+#+TITLE:  [笔记]剑来
+#+AUTHOR: Yang Yingchao
+#+DATE:   2024-04-16
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+LANGUAGE: en
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :tag1:tag2:note:ireader:
+
+
+
+#+BEGIN_QUOTE
+只要走在正确的道路上，你悟性再差，只要够勤奋坚韧，每天终究是在进步。走在错误的方向上，你越聪明越努力，只会做越多错越多。
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+该省之省，一文铜钱，即是家族根本。该花则花，一掷千金，根本无需眨眼。
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+窗外的阳光溜进了屋子，像一群不爱说笑的稚童，累了后，然后它们便懒洋洋趴在桌上，地上，少年的肩头。
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+读书一事，不可求全，贪多嚼不烂，以精读为上，细嚼慢咽，真正把一本经典的精妙，全部吃进肚子里，将那些美好的意象、真知灼见的道理、隐匿于句章之间的精气神，一一化为己用，这才叫读书，否则只是翻书，翻过千万卷，撑死也是个两脚书柜。
+#+END_QUOTE

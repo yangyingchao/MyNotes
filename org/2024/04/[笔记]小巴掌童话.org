@@ -1,0 +1,26 @@
+#+TITLE:  [笔记]小巴掌童话
+#+AUTHOR: Yang Yingchao
+#+DATE:   2024-04-16
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+LANGUAGE: en
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :tag1:tag2:note:ireader:
+
+
+
+#+BEGIN_QUOTE
+白兔耷拉着一只耳朵说：“我知道，你会很慷慨地招待我的。”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+的微笑。呵，多美的蓝色的微笑。 此时，太阳
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+扛拖把的小刺猬 小熊有个
+#+END_QUOTE

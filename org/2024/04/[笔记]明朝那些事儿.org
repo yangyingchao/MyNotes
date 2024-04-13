@@ -1,0 +1,76 @@
+#+TITLE:  [笔记]明朝那些事儿
+#+AUTHOR: Yang Yingchao
+#+DATE:   2024-04-16
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+LANGUAGE: en
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :tag1:tag2:note:ireader:
+
+
+
+#+BEGIN_QUOTE
+长期的困难生活，最能磨炼一个人的意志。有很多人在遇到困难后，只能怨天尤人，得过且过，而另外一些人虽然也不得不在困难面前低头，但他们的心从未屈服，他们不断地努力，相信一定能够取得最后的胜利。
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“天道好还，中国有必伸之理；人心效顺，匹夫无不报之
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+“天道好还，中国有必伸之理；人心效顺，匹夫无不报之仇。
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+绝对不要做你的敌人希望你做的事情，原因很简单，因为敌人希望你这样做。 ——拿破仑
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+性格决定命运。
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+当你感到畏惧和痛苦，支撑不下去的时候，你应该同时意识到，决定你命运的时候到了。 因为畏惧并不是消极的，事实上，它是一个人真正强大的开始，也是成为英雄的起点。 不懂得畏惧的人不知道什么是困难，也无法战胜困难。 只有懂得畏惧的人，才能唤起自己的力量。
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+只有懂得畏惧的人，才有勇气去战胜畏惧。 懂得畏惧的可怕，还能超越它、征服它的人，就是英雄。 这就是我所认为真正的英雄——畏惧并战胜畏惧的人。 关键只在于那畏惧的一刻，你是选择战胜它，还是躲避它。
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+只有懂得畏惧的人，才有勇气去战胜畏惧。 懂得畏惧的可怕，还能超越它、征服它的人，就是英雄。 这就是我所认为真正的英雄——畏惧并战胜畏惧的人。 关键只在于那畏惧的一刻，你是选择战胜它，还是躲避它。 人生的分界线就在这里，跨过了这一步就是英雄，退回这一步就是懦夫
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+王安石之所以失败，是因为他自以为聪明；而张居正之所以成功，是因为他自以为愚蠢。
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+因为在中国历史上，共同创业的人大都逃不过“四同”的结局：同舟共济——同床异梦——同室操戈——同归于尽。
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+在这场惨烈的战役中，李如松领悟了极其重要的两点秘诀： 一、要让对方绝望，必先给他希望，此所谓围师必缺。 二、要攻破城池，最好的攻击点，不是最弱的位置，而是对方想象不到的地方。
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+批判应试教育的人曾说，今日之高考，即是古代之进士科举，罪大恶极。 我觉得这句话是不恰当的，因为客观地讲，高考上榜的人，换到明代，最多就是秀才，举人可以想想，进士可以做梦。
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+就是先解决内部矛盾，再解决外部矛盾。
+#+END_QUOTE

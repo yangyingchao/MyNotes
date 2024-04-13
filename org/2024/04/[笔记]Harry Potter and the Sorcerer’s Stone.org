@@ -1,0 +1,41 @@
+#+TITLE:  [笔记]Harry Potter and the Sorcerer’s Stone
+#+AUTHOR: Yang Yingchao
+#+DATE:   2024-04-16
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+LANGUAGE: en
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :tag1:tag2:note:ireader:
+
+
+
+#+BEGIN_QUOTE
+gossiped away happily as she wrestled a screaming Dudley
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+tantrum and throwing his cereal at the walls. “Little
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+tyke,” chortled Mr. Dursley as he left the house. He got
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+that’s why he’s gone.” Dumbledore nodded glumly.
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+scissors and cut his hair so short he was almost bald
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+puff balls). The harder she tried to pull it over his
+#+END_QUOTE

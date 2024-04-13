@@ -1,0 +1,16 @@
+#+TITLE:  [笔记]二大爷｜瓦哈比的幽灵：沙特记者失踪案后的危险国度
+#+AUTHOR: Yang Yingchao
+#+DATE:   2024-04-16
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+LANGUAGE: en
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :tag1:tag2:note:ireader:
+
+
+
+#+BEGIN_QUOTE
+它没有宪法，甚至也没有成体系的世俗法律，一切都以瓦哈比派的教法为准。执行教法靠的是一种特别的、权力极大的警察：宗教警察。
+#+END_QUOTE

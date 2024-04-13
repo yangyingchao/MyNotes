@@ -1,0 +1,56 @@
+#+TITLE:  [笔记]三国演义
+#+AUTHOR: Yang Yingchao
+#+DATE:   2024-04-16
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+LANGUAGE: en
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :tag1:tag2:note:ireader:
+
+
+
+#+BEGIN_QUOTE
+众，我兵寡，明公宜作速招军应敌。”刘焉然其说，随即出榜招募义兵。 榜文行到涿县，引出涿县中一个英雄。那人不甚好读书；性宽和，寡言语，喜怒不形于色；素有大志，专好结交天下豪杰；生得身长七尺五寸，两耳垂肩，双手过膝，目能自顾其耳，面如冠玉，唇若涂脂；中山靖王刘胜之后，汉景帝阁下玄孙，姓刘名备，字玄德。昔刘胜之子刘贞，汉武时封涿鹿亭侯，后坐酎金失侯，因此遗这一枝在涿县。玄德祖刘雄，父刘弘。弘曾举孝廉，亦尝作吏，早丧。玄德幼孤，事母至孝；家贫，贩屦织席为业。家住本县楼桑村。其家之
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+那人不甚好读书；性宽和，寡言语，喜怒不形于色；素有大志，专好结交天下豪杰；生得身长七尺五寸，两耳垂肩，双手过膝，目能自顾其耳，面如冠玉，唇若涂脂；中山靖王刘胜之后，汉景帝阁下玄孙，姓刘名备，字玄德。昔刘胜之子刘贞，汉武时封涿鹿亭侯，后坐酎金失侯，因此遗这一枝在涿县。
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+刘备之简介
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+那人不甚好读书；性宽和，寡言语，喜怒不形于色；素有大志，专好结交天下豪杰；生得身长七尺五寸，两耳垂肩，双手过膝，目能自顾其耳，面如冠玉，唇若涂脂；中山靖王刘胜之后，汉景帝阁下玄孙，姓刘名备，字玄德。昔刘胜之子刘贞，汉武时封涿鹿亭侯，后坐酎金失侯，因此遗这一枝在涿县。
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+髯长二尺；面如
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+髯长二尺
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+肉泥。宫中火焰冲天。张
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+肉泥。宫中火焰冲天。张让
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+肉泥。宫中火焰冲天。张让、段珪、曹节、侯览将太后及太子并陈留王劫去内省，从后道走北宫。时卢植弃官未去，见宫中事变，擐甲持戈，立于阁下。遥见段珪拥逼何后过来，植大呼曰：“段珪逆贼，安敢劫太后！”段珪回身便走。太后
+#+END_QUOTE

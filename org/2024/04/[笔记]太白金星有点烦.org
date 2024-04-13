@@ -1,0 +1,51 @@
+#+TITLE:  [笔记]太白金星有点烦
+#+AUTHOR: Yang Yingchao
+#+DATE:   2024-04-16
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+LANGUAGE: en
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :tag1:tag2:note:ireader:
+
+
+
+#+BEGIN_QUOTE
+“将帅必起于卒伍，宰相必起于州部
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+合着你是帮我解决了一个本不存在的困难，送了一个本来不需要的人情……怪不得满天神佛个个清净无为、不昧
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+合着你是帮我解决了一个本不存在的困难，送了一个本来不需要的人情……
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+这是真正的高手，让你吃个哑巴亏，还得受着人情
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+天予不取，反受其咎，时至不行，反受其殃！”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+其实是所谓“拆屋卸窗”之计。先提出一个不合理的要求，待对方被逼到要爆炸，再退一步抛出真正的请求，对方便会如释重负，忙不迭地答应下来。
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+李长庚曾经历过类似谈话。他知道最麻烦的状况，不是你笨嘴拙舌，而是你根本不知道对方的真实目的。人家东一拂尘西一禅杖，问得云山雾罩，你只能被动应答，不知哪句就会落入彀中
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+他在启明殿干得最多最熟的活是协调，协调这事儿不怕你提的要求奇葩，就怕不知你要什么。只要掌握了各方的真实诉求，东哄哄，西劝劝，怎么都能妥协出一个多方都能接受的结果
+#+END_QUOTE

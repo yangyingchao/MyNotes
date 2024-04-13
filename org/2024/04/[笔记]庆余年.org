@@ -1,0 +1,51 @@
+#+TITLE:  [笔记]庆余年
+#+AUTHOR: Yang Yingchao
+#+DATE:   2024-04-16
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+LANGUAGE: en
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :tag1:tag2:note:ireader:
+
+
+
+#+BEGIN_QUOTE
+因为故事发生在庆国，而那位病人很奢侈地拥有了多出来的一截生命，所以取名为：庆余年——很有乡土气息的名字，
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+人的生命如果只有一次的话，那总是需要去看些不同的风景，遇到不同的人，这样才能让不能重来的游戏玩的尽兴
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+生命对于每个人只有一次，这仅有的一次生命应当怎样度过呢？当我们回首往事的时候，不因虚度年华而悔恨，也不因碌碌无为而羞耻。在我临死的时候我可以骄傲的说：我已经做了所有自己想做的事情，就算没有成功，但我毕竟努力过。”
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+范闲的性情温柔之中带着几丝厉杀，但更多的却是蔫儿坏，知道自己不生气，对方才会更生气，所以更加温柔说道：“我来探望自己的未婚妻，于
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+范闲的性情温柔之中带着几丝厉杀，但更多的却是蔫儿坏，知道自己不生气，对方才会更生气，
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+能保护我们每一个人的，只有自己的力量。没妈的孩子像根草，小草也得往石头缝外面跑，别理会什么阳光雨露，自己把根扎得深些，把茎整得结实些，这才是正道。
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+铅笔在雪白的纸面上滑行着，就像是美人的脚尖在平滑的冰面上起舞，偶尔刮起几丝冰屑雪痕。
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+明家看似风光，其实还不是他们眼中一只会下蛋的老母鸡，如果老母鸡不下蛋了，那些本来支持咱们的人物，只怕会比钦差大人更想宰了咱们，最后吃一顿香喷喷的鸡肉。”
+#+END_QUOTE
