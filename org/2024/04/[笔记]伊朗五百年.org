@@ -1,0 +1,38 @@
+:PROPERTIES:
+:ID:       928cabf7-a18c-4d55-b0fd-9f35a051a2f8
+:END:
+#+TITLE: [笔记]伊朗五百年
+#+AUTHOR: Yang,Ying-chao
+#+DATE:   2024-04-27
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+LANGUAGE: en
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :yilangwubain:note:ireader:
+
+
+** 前言
+
+# note_md5: 32c0d39815f730df553bde2b249a7a78
+#+BEGIN_QUOTE
+历史学家们总是这样告诫读者：历史总是有许多随机的扭曲和转折，很少循着一个有序的设定。
+#+END_QUOTE
+
+
+# note_md5: 59fdd1da0c0d6f1ed6dd2244498a30c4
+#+BEGIN_QUOTE
+多年以后，蓦然回首，对这段历史的最好总结也许正如诗人芙茹弗·法洛克扎德（Forough Farrokhzad）所说的那样：“在回忆的花园中一
+次悲伤的漫步。”
+#+END_QUOTE
+
+
+
+** 绪论
+
+# note_md5: 0457fa3c4da6ce632ebddb4514f145f1
+#+BEGIN_QUOTE
+希腊人把波斯人称为“野蛮人”（barbaros）。这个词最初的意思是指“异族人”，更具体地说，是指喃喃自语、不知所云的人。这大概是因
+为希腊人不懂伊朗语，无论是古波斯语还是阿拉姆语（Aramaic）。
+#+END_QUOTE
