@@ -1,0 +1,16 @@
+:PROPERTIES:
+:ID:       9aaa0083-1517-4347-8650-fe6e37845f18
+:NOTER_DOCUMENT: attachments/org-fold-core.el
+:NOTER_OPEN: find-file
+:END:
+#+TITLE: org-fold-core
+#+AUTHOR: Yang,Ying-chao
+#+DATE:   2024-05-13
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+LANGUAGE: en
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :tag1:tag2:
+

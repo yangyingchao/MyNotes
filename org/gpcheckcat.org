@@ -21,17 +21,17 @@ GP 提供了 [[https://github.com/greenplum-db/gpdb/blob/master/gpMgmt/bin/gpche
 
 #+CAPTION: gpcheckcat
 #+NAME: tbl-data-table
-| 检查项                  | 描述                                                                       | Utility 模式 | 复合查询 | 错误等级   |
-|------------------------+---------------------------------------------------------------------------+-------------+--------+----------|
-| /                      | <>                                                                        | <>          | <>     | <>       |
-| pg_class               | Check pg_class entry that does not have any correspond pg_attribute entry | Y           | N      | NOREPAIR |
-| namespace              | Check for schemas with a missing schema definition                        | Y           | N      | NOREPAIR |
-| unique_index_violation | Check for violated unique indexes                                         | N           | Y      | NOREPAIR |
-| duplicate              | Check for duplicate entries                                               | N           | Y      |          |
-| missing_extraneous     | Cross consistency check for missing or extraneous entries                 | N           | Y      |          |
-| inconsistent           | Cross consistency check for coordinator segment inconsistency             | N           |        |          |
-| foreign_key            | Check foreign keys                                                        | N           |        |          |
-|                        |                                                                           |             |        |          |
+| 检查项                  | 描述                                                                      | Utility 模式 | 复合查询 | 错误等级  |
+|------------------------+---------------------------------------------------------------------------+--------------+---------+----------|
+| /                      | <>                                                                        | <>           | <>      | <>       |
+| pg_class               | Check pg_class entry that does not have any correspond pg_attribute entry | Y            | N       | NOREPAIR |
+| namespace              | Check for schemas with a missing schema definition                        | Y            | N       | NOREPAIR |
+| unique_index_violation | Check for violated unique indexes                                         | N            | Y       | NOREPAIR |
+| duplicate              | Check for duplicate entries                                               | N            | Y       |          |
+| missing_extraneous     | Cross consistency check for missing or extraneous entries                 | N            | Y       |          |
+| inconsistent           | Cross consistency check for coordinator segment inconsistency             | N            |         |          |
+| foreign_key            | Check foreign keys                                                        | N            |         |          |
+|                        |                                                                           |              |         |          |
 
 Note:
 - Utility 模式： 对应 SQL 是否执行在 utility 模式下 \\
