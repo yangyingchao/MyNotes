@@ -1,0 +1,177 @@
+:PROPERTIES:
+:ID:       68f4573e-dd5b-4723-bd26-07f3647f3e22
+:NOTER_DOCUMENT: https://omid.dev/2024/06/19/advanced-shell-scripting-techniques-automating-complex-tasks-with-bash/
+:NOTER_OPEN: eww
+:END:
+#+TITLE: Advanced Shell Scripting Techniques: Automating Complex Tasks with Bash
+#+AUTHOR: Yang Yingchao
+#+DATE:   2024-09-13
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+LANGUAGE: en
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :bash:tip:
+
+
+* 脚本优化
+
+优化对于确保脚本高效运行至关重要，特别是在处理大型数据集或密集任务时。以下是一些优化 Bash 脚本的关键技巧。
+
+** 使用内置命令
+
+尽可能利用内置的 Shell 命令，而不是外部可执行文件。内置命令执行更快，因为它们不需要加载外部进程。例如，在条件语
+句中使用 =[[ ]]= 而不是 =[ ]= 或 =test= 。
+
+#+begin_src sh
+# 低效的写法
+if [ "$var" -eq 1 ]; then
+    echo "等于 1"
+fi
+# 高效的写法
+if [[ "$var" -eq 1 ]]; then
+    echo "等于 1"
+fi
+#+end_src
+
+
+** 减少子 shell 使用
+
+子 shell 在性能方面可能很昂贵。尽量避免它们，可以使用内置命令或参数扩展。
+
+#+begin_src sh
+ # 低效的写法
+ output=$(cat file.txt)
+ # 高效的写法
+ output=$(<file.txt)
+#+end_src
+
+** 使用数组处理大量数据#
+
+处理大量数据时，数组可能比多个变量更高效且更易管理。
+
+#+begin_src sh
+    # 低效的写法
+    item1="苹果"
+    item2="香蕉"
+    item3="樱桃"
+
+    # 高效的写法
+    items=("苹果" "香蕉" "樱桃")
+    for item in "${items[@]}"; do
+        echo "$item"
+   done
+#+end_src
+
+
+** Enable Noclobber#
+
+为防止意外覆写文件，请使用 =noclobber= 选项。这在生成临时文件的脚本中尤为有用。
+
+#+begin_src sh
+set -o noclobber
+#+end_src
+
+
+- =noclobber= 选项可用于避免使用重定向输出时覆盖现有文件（/请参阅内置命令::）。'>|'重定向操作符可用于覆
+  盖 =noclobber= 。
+
+
+** 使用函数#
+
+函数允许您封装和重用代码，使脚本更加清晰，减少冗余。
+
+#+begin_src sh
+ function greet() {
+     local name=$1
+     echo "Hello, $name"
+ }
+
+ greet "Alice"
+ greet "Bob"
+#+end_src
+
+
+
+** 高效的文件操作#
+
+在进行文件操作时，请使用高效的技术以最小化资源使用。
+
+#+begin_src sh
+ # 低效的方式
+ while read -r line; do
+     echo "$line"
+ done < file.txt
+ # 高效的方式
+ while IFS= read -r line; do
+     echo "$line"
+ done < file.txt
+#+end_src
+
+
+** 并行处理#
+
+对于可以并行执行的任务，考虑使用并行处理来加速脚本。像 xargs 和 GNU parallel 这样的工具非常有用。
+
+ #+begin_src sh
+  # 使用 xargs 进行并行处理
+   cat urls.txt | xargs -n 1 -P 4 curl -O
+#+end_src
+
+
+* 错误处理#
+
+健壮的错误处理对于创建可靠且易维护的脚本至关重要。以下是一些增强 Bash 脚本错误处理的技巧。
+
+** 当发生错误时立即退出#
+
+使用 set -e 确保如果任何命令失败，脚本会立即退出，防止出现级联错误。
+
+ #+begin_src sh
+  set -e
+#+end_src
+
+
+** 自定义错误消息#
+
+实现自定义错误消息以在出现问题时提供更多上下文信息。
+
+ #+begin_src sh
+  command1 || { echo "command1 failed"; exit 1; }
+#+end_src
+
+** 捕获信号#
+
+使用 trap 命令来捕获和优雅地处理信号和错误。
+
+#+begin_src sh
+  trap 'echo "Error occurred"; cleanup; exit 1' ERR
+
+  function cleanup() {
+      # 清理代码
+  }
+#+end_src
+
+
+** 验证输入#
+
+始终验证用户的输入和脚本参数，以防止意外行为。
+#+begin_src sh
+  if [[ -z "$1" ]]; then
+      echo "用法: $0 <参数>"
+      exit 1
+  fi
+#+end_src
+
+
+** 记录日志#
+
+实现日志记录以跟踪脚本执行并诊断问题。
+
+#+begin_src sh
+ logfile="script.log"
+ exec > >(tee -i $logfile)
+ exec 2>&1
+ echo "脚本已启动"
+#+end_src

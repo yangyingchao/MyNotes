@@ -1,0 +1,10 @@
+{
+  "connections": [
+    {
+      "name": "sqlite3-project",
+      "adapter": "sqlite3",
+      "filename": "/home/yyc/.config/klip/klip.db",
+      "projectPaths": ["/home/yyc/.config/klip/"]
+    }
+  ]
+}
