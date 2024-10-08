@@ -1,0 +1,34 @@
+:PROPERTIES:
+:ID:       bf7a25bf-bc72-4b49-a940-5cb705e4a338
+:END:
+#+TITLE: [笔记]并未远去的背影-王彬彬
+#+AUTHOR: Yang Yingchao
+#+DATE:   2024-10-09
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+LANGUAGE: en
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :bingweiyuanq:note:ireader:
+
+- 3638-3640, 标注, 2023 年 6 月 29 日星期四 下午 12:51:25
+  # note_md5: 6ac3982e639f58eb85023038292c49e8
+  #+BEGIN_QUOTE
+  有了这样一群醉心于新文学的师生，大学里就多了一份灵气，少了一份俗气；多了一份热情，少了一份冷漠；多了一份温馨，
+  少了一份寒意；多了一份无用之用，少了一份急功近利……正是在这个意义上，可以说现代文学也养育着现代大学，也施惠于现
+  代大学。
+  #+END_QUOTE
+
+- 5624-5625, 标注, 2023 年 6 月 29 日星期四 下午 10:14:50
+  # note_md5: 35a783fc80d729706ed9d3830c428933
+  #+BEGIN_QUOTE
+  凡是受到压抑的东西，总要到处为自己寻找迂回曲折的出路。
+  #+END_QUOTE
+
+- 4459-4461, 标注, 2023 年 7 月 2 日星期日 下午 3:20:12
+  # note_md5: afc1d6a7a72509586ef948693c8a71d6
+  #+BEGIN_QUOTE
+  很少人能想及，即使蒋氏自己也可能未曾料及，自‘九·一八事件’至卢沟桥抗战的五年九个余月的时间，也是他一生对祖国最
+  有贡献的一段时间。其贡献的方式不是战胜取攻，而是忍辱负重。但是此中情形至今尚少为人洞悉
+  #+END_QUOTE

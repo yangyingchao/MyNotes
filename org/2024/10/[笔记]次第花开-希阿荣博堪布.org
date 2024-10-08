@@ -1,0 +1,38 @@
+:PROPERTIES:
+:ID:       bcb198cd-1861-4a61-89db-436b83c9b4f0
+:END:
+#+TITLE: [笔记]次第花开-希阿荣博堪布
+#+AUTHOR: Yang Yingchao
+#+DATE:   2024-10-09
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+LANGUAGE: en
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :cidihuakai:note:ireader:
+
+- 77-78, 标注, 2022 年 7 月 2 日星期六 上午 9:35:26
+  # note_md5: c57ad88cce3b085c7bc4c83509edf88b
+  #+BEGIN_QUOTE
+  事物之所以无我，是因为它随缘生灭，缘起则生，缘灭则灭，这便是因果。
+  #+END_QUOTE
+
+- 104-105, 标注, 2022 年 7 月 2 日星期六 上午 9:39:58
+  # note_md5: 1d0d07af723d93fa502e974dfe824854
+  #+BEGIN_QUOTE
+  人生充满烦恼，但如果能以烦恼为契机去勘悟世间万象的本质，从烦恼入手去实现止息烦恼的最终目的，那么这样一个充满烦
+  恼的人生就是我们解脱的最好机缘。
+  #+END_QUOTE
+
+- 113-114, 标注, 2022 年 7 月 2 日星期六 上午 9:56:45
+  # note_md5: de960527b38b3f979f1e50a8b37b20fd
+  #+BEGIN_QUOTE
+  当身处逆境时，不妨有意识地训练自己以更加现实的态度去面对生活的考验，看看从逆境中能得到什么于己有益的东西
+  #+END_QUOTE
+
+- 159-160, 标注, 2022 年 7 月 2 日星期六 下午 4:00:57
+  # note_md5: fca6cc56d9a0346aa15f7530d0729cbe
+  #+BEGIN_QUOTE
+  “问题若有办法解决，就不必担心；若没办法解决，担心也没有用。
+  #+END_QUOTE

@@ -1,0 +1,33 @@
+:PROPERTIES:
+:ID:       e6d4f3f2-6919-4506-a376-5dc832c13abd
+:END:
+#+TITLE: [笔记]食南之徒-马伯庸
+#+AUTHOR: Yang Yingchao
+#+DATE:   2024-10-09
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+LANGUAGE: en
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :shinanzhitu:note:ireader:
+
+- 1671-1671, 标注, 2024 年 8 月 2 日星期五 下午 9:04:37
+  # note_md5: dcefcc7db458ed8e912e08e97c2038d2
+  #+BEGIN_QUOTE
+  君子喻于义，小人喻于利。
+  #+END_QUOTE
+
+- 1677-1680, 标注, 2024 年 8 月 2 日星期五 下午 9:05:44
+  # note_md5: 3b101f4f1f6ea9b131fee3d32b4fd5d7
+  #+BEGIN_QUOTE
+  岭南的雨水绵密而黏稠，像无数条藤蔓自铅云上端倒垂下，搅动着江水。整个江面泛起密密麻麻的小泡，仿佛一釜正“咕嘟咕
+  嘟“熬煮的稻米羹。三伏的暑气非但没被雨水浇散，反而更加闷蒸起来，令舟上的乘客油然生出一种“造化为厨，天地为釜”的
+  错觉，至于自己，只是被日月煎熬的小小一粒米罢了。
+  #+END_QUOTE
+
+- 3415-3415, 标注, 2024 年 8 月 3 日星期六 下午 4:54:53
+  # note_md5: 601db340e11fb73b30fdce768d3dc730
+  #+BEGIN_QUOTE
+  嘉所言，可不光是致祭的问题。南越王
+  #+END_QUOTE

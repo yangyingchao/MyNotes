@@ -1,0 +1,70 @@
+:PROPERTIES:
+:ID:       66418f2b-0bcb-4d2c-87c5-6b4f6a074929
+:END:
+#+TITLE: [笔记]人世间-N/A
+#+AUTHOR: Yang Yingchao
+#+DATE:   2024-10-09
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+LANGUAGE: en
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :renshijian:note:ireader:
+
+- 382-455, 标注, unknown
+  # note_md5: 2d4fb73d2bbf902d1570c9ee22313880
+  #+BEGIN_QUOTE
+  小人哪儿没有啊？哪儿都有，街道也不例外。寻常看不见，偶尔露峥嵘。一露峥嵘，好人就不得太平了。
+  #+END_QUOTE
+
+- 457-670, 标注, unknown
+  # note_md5: ab17115157bf59a645b56b1f63e759ba
+  #+BEGIN_QUOTE
+  估计是鸟儿将几粒喇叭花的种子带到那儿的，它的花开得挺别致，下边的花尽是白色，中间部分的花是蓝色。秉义更想要紫色
+  的花，偏偏那 紫色的花开在最高处，高到了秉义伸手够不到的地方。这让它缠绕的那棵白桦树如同穿上了一件旗袍，一件绣
+  满了白、蓝、紫三色花朵的绿 绸布做成的旗袍，使人联想到穿旗袍的高挑美人儿。白桦树的树干，似裸露着的白皙修长的腿，
+  最上边的紫色的喇叭花形成了华丽旗袍的高领
+  #+END_QUOTE
+
+- 672-831, 标注, unknown
+  # note_md5: 7bf28f78f11421690ed5e70388c3699a
+  #+BEGIN_QUOTE
+  他挑开炉盖，凝视着信纸化成的灰烬。它们如同黑色蝴蝶，有的边缘向上翻卷，似要飞将起来；有的边缘朝下拥抱炭火，如同
+  在用黑的翼为 红的花遮风挡雨。又仿佛看上去像一个人，像一个披着黑斗篷叫吕川的人，蹲在炉膛里经受着火烧的痛苦，然
+  而心甘情愿，尝试裹紧斗篷护 住身体却不能够。
+  #+END_QUOTE
+
+- 833-899, 标注, unknown
+  # note_md5: df32ee48a37628f1d7046764bf38b115
+  #+BEGIN_QUOTE
+  一晃多少年的“晃”字虽属民间口头语，但把那种如变脸般快的无奈感传达得淋漓尽致。
+  #+END_QUOTE
+
+- 901-1013, 标注, unknown
+  # note_md5: 0a9dbc047de4ee94ada768002a85fac9
+  #+BEGIN_QUOTE
+  性格怎样和人心怎样往往是两回事。性格像皮肤，大太阳下晒久了谁都黑了，关在屋里一年半载的谁都会变得白了点儿。皮肤
+  黑了白了，只 要心没变，还是一颗好人心，那就还是先前那个好人
+  #+END_QUOTE
+
+- 1015-1151, 标注, unknown
+  # note_md5: 4c4f5da85840c63e5ea285971792e21e
+  #+BEGIN_QUOTE
+  啥叫出息？啥叫没出息？咱们老百姓人家的女儿，将来是好人，走正道，我认为就是出息了。咱们女儿善良，知仁义，对人对
+  事有正义感， 只要这三点在她身上不变，其他方面任性一点儿就随她吧。别管教太严，把个原本挺好的孩子管出问题来。
+  #+END_QUOTE
+
+- 1153-1321, 标注, unknown
+  # note_md5: bf64399b260a20be657a88c978670a7f
+  #+BEGIN_QUOTE
+  有人说往前看总比连说这种话的人都没有强吧？” 　　“你信那种话吗？” 　　“干吗不信呢？不信又能怎么样呢？如果不信不
+  是就根本没希望了？所以信比不信好！信就是像我这样，该快活就快活。不信就会像你这 样，明明并没走到绝路上，却老是
+  想明天眼前必是绝路了，结果该快活的时候也不肯快活了。
+  #+END_QUOTE
+
+- 1323-1397, 标注, unknown
+  # note_md5: 516a41e664cd72d6b1938a7b8a66229a
+  #+BEGIN_QUOTE
+  我父亲总是这么教我急事当前，人心纷乱，要留心见人所未见，留心听人所未听，才能先于别人发现真相。
+  #+END_QUOTE

@@ -1,0 +1,65 @@
+:PROPERTIES:
+:ID:       b46e60bc-5a57-45a3-8ebd-eb61ce4c0d06
+:END:
+#+TITLE: [笔记]庆余年-SoBooKs.cc 猫腻
+#+AUTHOR: Yang Yingchao
+#+DATE:   2024-10-09
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+LANGUAGE: en
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :qingyunian:note:ireader:
+
+- 24-25, 标注, 2019 年 12 月 25 日星期三 上午 9:49:35
+  # note_md5: 7911db08818f1e7fcc280ec4e3eefcb3
+  #+BEGIN_QUOTE
+  因为故事发生在庆国，而那位病人很奢侈地拥有了多出来的一截生命，所以取名为：庆余年——很有乡土气息的名字，
+  #+END_QUOTE
+
+- 1382-1383, 标注, 2019 年 12 月 25 日星期三 下午 10:04:14
+  # note_md5: 4ced7368c78c281634f33ad2cfe69e83
+  #+BEGIN_QUOTE
+  人的生命如果只有一次的话，那总是需要去看些不同的风景，遇到不同的人，这样才能让不能重来的游戏玩的尽兴
+  #+END_QUOTE
+
+- 3631-3633, 标注, 2019 年 12 月 26 日星期四 下午 9:23:04
+  # note_md5: a184143ffa089e071e2a0abc4ff15345
+  #+BEGIN_QUOTE
+  生命对于每个人只有一次，这仅有的一次生命应当怎样度过呢？当我们回首往事的时候，不因虚度年华而悔恨，也不因碌碌无
+  为而羞耻。在我临死的时候我可以骄傲的说：我已经做了所有自己想做的事情，就算没有成功，但我毕竟努力过。”
+  #+END_QUOTE
+
+- 7621-7622, 标注, 2019 年 12 月 29 日星期日 上午 6:52:39
+  # note_md5: ab61396cb6aa1668460715400f5305d0
+  #+BEGIN_QUOTE
+  范闲的性情温柔之中带着几丝厉杀，但更多的却是蔫儿坏，知道自己不生气，对方才会更生气，所以更加温柔说道：“我来探
+  望自己的未婚妻，于
+  #+END_QUOTE
+
+- 7621-7622, 标注, 2019 年 12 月 29 日星期日 上午 6:52:47
+  # note_md5: 1a1b132eaa0052666054b3aedf896ed0
+  #+BEGIN_QUOTE
+  范闲的性情温柔之中带着几丝厉杀，但更多的却是蔫儿坏，知道自己不生气，对方才会更生气，
+  #+END_QUOTE
+
+- 8907-8909, 标注, 2019 年 12 月 29 日星期日 下午 8:10:27
+  # note_md5: b9cbb221720cca97362ce3d313b55c85
+  #+BEGIN_QUOTE
+  能保护我们每一个人的，只有自己的力量。没妈的孩子像根草，小草也得往石头缝外面跑，别理会什么阳光雨露，自己把根扎
+  得深些，把茎整得结实些，这才是正道。
+  #+END_QUOTE
+
+- 27535-27536, 标注, 2020 年 1 月 12 日星期日 下午 5:19:00
+  # note_md5: 75a6b4ee0efea123ecb20fb834596a36
+  #+BEGIN_QUOTE
+  铅笔在雪白的纸面上滑行着，就像是美人的脚尖在平滑的冰面上起舞，偶尔刮起几丝冰屑雪痕。
+  #+END_QUOTE
+
+- 34078-34079, 标注, 2020 年 1 月 18 日星期六 下午 10:24:27
+  # note_md5: 334eafbfc1b7898b789013fc9e11140d
+  #+BEGIN_QUOTE
+  明家看似风光，其实还不是他们眼中一只会下蛋的老母鸡，如果老母鸡不下蛋了，那些本来支持咱们的人物，只怕会比钦差大
+  人更想宰了咱们，最后吃一顿香喷喷的鸡肉。”
+  #+END_QUOTE

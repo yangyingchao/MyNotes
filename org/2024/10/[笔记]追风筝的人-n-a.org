@@ -1,0 +1,35 @@
+:PROPERTIES:
+:ID:       c77baa9c-d649-412a-a3a0-0864e3800adc
+:END:
+#+TITLE: [笔记]追风筝的人-N/A
+#+AUTHOR: Yang Yingchao
+#+DATE:   2024-10-09
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+LANGUAGE: en
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :zhuifengzhen:note:ireader:
+
+- 455-597, 标注, unknown
+  # note_md5: 99feec0e920bdd18d6b214971538b159
+  #+BEGIN_QUOTE
+  我想告诉他们，在喀布尔，我们折断树枝，拿它当信用卡。哈桑和我会拿着那根木头到面包店去。店主用刀在木头上刻痕，划
+  下一道，表 示他从火焰升腾的烤炉取给我们一个馕饼。每到月底，爸爸按照树枝上的刻痕付钱给他。就是这样。没有问题，
+  不用身份证
+  #+END_QUOTE
+
+- 610-756, 标注, unknown
+  # note_md5: 263400165abb6b96ce5b56bc35be504c
+  #+BEGIN_QUOTE
+  我在美国长大，阿米尔。如果说美国让我学到什么东西，那就是，认输简直就像在女童军{GirlScouts，美国女童军是世界上
+  最大的专门 服务于女孩的组织，成员多为成年义工，旨在帮助女孩提高使她们终身受益的素质}的柠檬水罐里面撒尿一样不可
+  原谅。
+  #+END_QUOTE
+
+- 769-848, 标注, unknown
+  # note_md5: 2ba0b82781fd2e256c29d013ef4b80a0
+  #+BEGIN_QUOTE
+  生活总会继续。他们不关心开始或结束、成功或失败、危在旦夕或柳暗花明，只顾像游牧部落那样风尘仆仆地缓慢前进
+  #+END_QUOTE

@@ -1,0 +1,31 @@
+:PROPERTIES:
+:ID:       b10dee06-d99d-4bb5-82b7-cc7f26f3728b
+:END:
+#+TITLE: 开启一个杂物间
+#+AUTHOR: Yang Yingchao
+#+DATE:   2024-10-08
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+LANGUAGE: en
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :tag1:tag2:
+
+
+几年以前，开过一个公众号，但是一直没有在上面写过任何东西，然后过了一段时间，被冻结了。这几天想着找个地方记录点东
+西，就又把它给找了回来。
+
+用这个公众号记录点什么呢？主要是读书笔记和徒步记录，以及徒步中顺手收集的杂物吧。技术方面的东西，单独
+记录到了别的地方，感兴趣的请移步 https://yangyingchao.github.io/ 。
+
+下面这个照片，是此次从宣化宝石谷捡到的小玛瑙蛋，有时间把他们逐个打磨出来，看看最终会得到什么东西。
+
+
+
+#+CAPTION: 六颗小玛瑙蛋子
+#+attr_org: :width 800px
+#+attr_html: :width 800px
+#+attr_latex: :float nil
+#+NAME:._images_IMG_20241008_205928
+[[./images/IMG_20241008_205928.jpg]]

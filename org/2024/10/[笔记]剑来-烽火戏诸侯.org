@@ -1,0 +1,39 @@
+:PROPERTIES:
+:ID:       230d9c30-76b4-4063-a006-fc6acb8d2d06
+:END:
+#+TITLE: [笔记]剑来-烽火戏诸侯
+#+AUTHOR: Yang Yingchao
+#+DATE:   2024-10-09
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+LANGUAGE: en
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :jianlai:note:ireader:
+
+- 4260-4261, 标注, 2020 年 10 月 24 日星期六 下午 1:42:42
+  # note_md5: b4092c9671fafa31645db3cbeca36c91
+  #+BEGIN_QUOTE
+  只要走在正确的道路上，你悟性再差，只要够勤奋坚韧，每天终究是在进步。走在错误的方向上，你越聪明越努力，只会做越
+  多错越多。
+  #+END_QUOTE
+
+- 34624-34624, 标注, 2020 年 11 月 13 日星期五 下午 9:13:21
+  # note_md5: 9faf58990b05b7a9ae7dca7c71614daf
+  #+BEGIN_QUOTE
+  该省之省，一文铜钱，即是家族根本。该花则花，一掷千金，根本无需眨眼。
+  #+END_QUOTE
+
+- 39306-39307, 标注, 2020 年 11 月 15 日星期日 下午 2:02:16
+  # note_md5: e17c933b4234fdce64c7db34a225e074
+  #+BEGIN_QUOTE
+  窗外的阳光溜进了屋子，像一群不爱说笑的稚童，累了后，然后它们便懒洋洋趴在桌上，地上，少年的肩头。
+  #+END_QUOTE
+
+- 42902-42905, 标注, 2020 年 11 月 16 日星期一 下午 8:00:21
+  # note_md5: cdf20fec141578ed37edb2a90f2747fd
+  #+BEGIN_QUOTE
+  读书一事，不可求全，贪多嚼不烂，以精读为上，细嚼慢咽，真正把一本经典的精妙，全部吃进肚子里，将那些美好的意象、
+  真知灼见的道理、隐匿于句章之间的精气神，一一化为己用，这才叫读书，否则只是翻书，翻过千万卷，撑死也是个两脚书柜。
+  #+END_QUOTE

@@ -1,0 +1,70 @@
+:PROPERTIES:
+:ID:       dda71610-7744-4aa6-bae6-3287f0a7ba0a
+:END:
+#+TITLE: [笔记]成都七中老师开课致辞-kindle@eub-inc.com
+#+AUTHOR: Yang Yingchao
+#+DATE:   2024-10-09
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+LANGUAGE: en
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :chengduqizho:note:ireader:
+
+- 35-35, 标注, 2020 年 2 月 12 日星期三 上午 7:41:24
+  # note_md5: 5832164378376a674fcf18c15575e5de
+  #+BEGIN_QUOTE
+  “时代的一粒灰，落在个人头上，就是一座山。”
+  #+END_QUOTE
+
+- 35-36, 标注, 2020 年 2 月 12 日星期三 上午 7:41:44
+  # note_md5: c8662cfb176a294494be12377300bacf
+  #+BEGIN_QUOTE
+  “时代的一粒灰，落在个人头上，就是一座山。”对现在还挣扎在痛苦中的人们，谈生活太奢侈了，有些时候，光是活着，就已
+  经拼尽全力
+  #+END_QUOTE
+
+- 38-40, 标注, 2020 年 2 月 12 日星期三 上午 7:42:28
+  # note_md5: c189eba3ca3f3626c266a1e208c75152
+  #+BEGIN_QUOTE
+  多年以后，春天来了又去，当阳光铺洒在草地，当我们自由地呼吸空气，当我们开心的欢聚，我们必须记得起若干年前，雪曾
+  落在这片土地。死亡，是一个人的悲剧，遗忘是一个民族的悲剧。
+  #+END_QUOTE
+
+- 43-46, 标注, 2020 年 2 月 12 日星期三 上午 7:43:08
+  # note_md5: a07ebdf8fbbff1ed701576774847d0bc
+  #+BEGIN_QUOTE
+  墨写的谎言掩盖不住血写的事实。“有的人， 为了守住不会带到棺材里去的利益与权柄，在他们还活着的时候， 就因为贪婪
+  而吞食了自己的心肝。当他们开始习惯性撒谎的时候， 也在将自己的亲友与同胞推向深渊”。
+  #+END_QUOTE
+
+- 46-47, 标注, 2020 年 2 月 12 日星期三 上午 7:43:34
+  # note_md5: f457d7f153f63a0e06832afce5fd1948
+  #+BEGIN_QUOTE
+  历史不会因为无视而消失，责任也不能因为回避而逃脱。
+  #+END_QUOTE
+
+- 50-50, 标注, 2020 年 2 月 12 日星期三 上午 7:43:48
+  # note_md5: a7459fca4856f82ef399843e8e4fef20
+  #+BEGIN_QUOTE
+  说真话的人，我们应该为他们竖碑，要有名有姓，拒绝一切匿名的纪念
+  #+END_QUOTE
+
+- 54-55, 标注, 2020 年 2 月 12 日星期三 上午 7:44:56
+  # note_md5: 79823f48e9f5c98f41079311a3d087ae
+  #+BEGIN_QUOTE
+  灾难面前，最容易看清人性；一场瘟疫，撕下了谁出将入相的遮羞布？又有哪些媚骨在哗众取宠中捡拾着人血馒头？
+  #+END_QUOTE
+
+- 58-58, 标注, 2020 年 2 月 12 日星期三 上午 7:45:39
+  # note_md5: 15a17981affa744070044038029411c6
+  #+BEGIN_QUOTE
+  灾难面前，也最容易看到人类内心深处的光芒。
+  #+END_QUOTE
+
+- 66-67, 标注, 2020 年 2 月 12 日星期三 上午 7:46:08
+  # note_md5: 2eb851e9ca622e8901beed7e57ae72d4
+  #+BEGIN_QUOTE
+  这些真实的一切，应该让孩子们知道。一张安静的书桌来之不易，不能只安放没有思想的大脑。
+  #+END_QUOTE

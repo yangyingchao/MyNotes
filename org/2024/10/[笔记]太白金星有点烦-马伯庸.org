@@ -1,0 +1,64 @@
+:PROPERTIES:
+:ID:       71ba122f-33a3-4ff8-86f0-be39c2801f83
+:END:
+#+TITLE: [笔记]太白金星有点烦-马伯庸
+#+AUTHOR: Yang Yingchao
+#+DATE:   2024-10-09
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+LANGUAGE: en
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :taibaijinxin:note:ireader:
+
+- 29-30, 标注, 2023 年 7 月 3 日星期一 下午 12:55:35
+  # note_md5: ceff39235d6cfbbb708d631ebc262c49
+  #+BEGIN_QUOTE
+  “将帅必起于卒伍，宰相必起于州部
+  #+END_QUOTE
+
+- 214-215, 标注, 2023 年 7 月 3 日星期一 下午 10:39:03
+  # note_md5: 4fb689ac3c6dee80d72621c1de311296
+  #+BEGIN_QUOTE
+  合着你是帮我解决了一个本不存在的困难，送了一个本来不需要的人情……怪不得满天神佛个个清净无为、不昧
+  #+END_QUOTE
+
+- 214-214, 标注, 2023 年 7 月 3 日星期一 下午 10:39:10
+  # note_md5: 5ebc6bfbc471aa3f2e69e3047142dec6
+  #+BEGIN_QUOTE
+  合着你是帮我解决了一个本不存在的困难，送了一个本来不需要的人情……
+  #+END_QUOTE
+
+- 250-250, 标注, 2023 年 7 月 3 日星期一 下午 10:42:22
+  # note_md5: 6620498cd994ea82aa714fae9d16594b
+  #+BEGIN_QUOTE
+  这是真正的高手，让你吃个哑巴亏，还得受着人情
+  #+END_QUOTE
+
+- 347-347, 标注, 2023 年 7 月 4 日星期二 上午 6:54:30
+  # note_md5: 82e6ba29a0429a89de4d97390b7df8ca
+  #+BEGIN_QUOTE
+  天予不取，反受其咎，时至不行，反受其殃！”
+  #+END_QUOTE
+
+- 929-930, 标注, 2023 年 8 月 5 日星期六 下午 11:02:37
+  # note_md5: 2479b916f4a75520a823be7966182a0f
+  #+BEGIN_QUOTE
+  其实是所谓“拆屋卸窗”之计。先提出一个不合理的要求，待对方被逼到要爆炸，再退一步抛出真正的请求，对方便会如释重负，
+  忙不迭地答应下来。
+  #+END_QUOTE
+
+- 1124-1126, 标注, 2023 年 8 月 5 日星期六 下午 11:17:40
+  # note_md5: 5c678d2e706dceb0575fab9c6d60ecf1
+  #+BEGIN_QUOTE
+  李长庚曾经历过类似谈话。他知道最麻烦的状况，不是你笨嘴拙舌，而是你根本不知道对方的真实目的。人家东一拂尘西一禅
+  杖，问得云山雾罩，你只能被动应答，不知哪句就会落入彀中
+  #+END_QUOTE
+
+- 2225-2227, 标注, 2023 年 8 月 6 日星期日 下午 10:03:46
+  # note_md5: 0b8820dd8d414d0d4acd74cd17666cc3
+  #+BEGIN_QUOTE
+  他在启明殿干得最多最熟的活是协调，协调这事儿不怕你提的要求奇葩，就怕不知你要什么。只要掌握了各方的真实诉求，东
+  哄哄，西劝劝，怎么都能妥协出一个多方都能接受的结果
+  #+END_QUOTE

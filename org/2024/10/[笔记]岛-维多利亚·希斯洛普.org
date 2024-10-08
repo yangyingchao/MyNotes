@@ -1,0 +1,31 @@
+:PROPERTIES:
+:ID:       a026c1fc-3ada-4036-adfa-0889b73aae5c
+:END:
+#+TITLE: [笔记]岛-维多利亚·希斯洛普
+#+AUTHOR: Yang Yingchao
+#+DATE:   2024-10-09
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+LANGUAGE: en
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :dao:note:ireader:
+
+- 129-129, 标注, 2022 年 7 月 2 日星期六 下午 5:11:22
+  # note_md5: 3043b66b5f45185caf2799b73ec738af
+  #+BEGIN_QUOTE
+  阿丽克西斯永远是他们的女儿，不过不会永远是她记忆中的那个孩子。
+  #+END_QUOTE
+
+- 1041-1042, 标注, 2022 年 7 月 3 日星期日 下午 5:09:44
+  # note_md5: a08b6aff8982cc1c84268f0e27344308
+  #+BEGIN_QUOTE
+  迪米特里听到许多成年人的谈话，察觉到大人们就同一件事翻来覆去地谈个不休，像狗啃着早就没有肉的骨头一样
+  #+END_QUOTE
+
+- 1570-1571, 标注, 2022 年 7 月 3 日星期日 下午 8:15:46
+  # note_md5: 690afdea30ce9d08af978faef2aea102
+  #+BEGIN_QUOTE
+  每天更多故事从四下里传来，就像蒲公英种子飘散在空中。
+  #+END_QUOTE

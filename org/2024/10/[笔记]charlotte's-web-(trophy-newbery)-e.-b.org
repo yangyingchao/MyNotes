@@ -1,0 +1,16 @@
+#+TITLE:  [笔记]charlotte's web (trophy newbery) e. b
+#+AUTHOR: Yang Yingchao
+#+DATE:   2024-10-09
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+LANGUAGE: en
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :Charlotte's_:note:ireader:
+
+- 630-630, 标注, 2024 年 10 月 1 日星期二 下午 10:15:12
+  # note_md5: 25e8b8b301f04db56e236f782525959b
+  #+BEGIN_QUOTE
+  Never hurry and never worry!
+  #+END_QUOTE

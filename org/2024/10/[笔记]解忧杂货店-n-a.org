@@ -1,0 +1,46 @@
+:PROPERTIES:
+:ID:       3b63637b-8289-4cf5-a032-98fc2a4359fb
+:END:
+#+TITLE: [笔记]解忧杂货店-N/A
+#+AUTHOR: Yang Yingchao
+#+DATE:   2024-10-09
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+LANGUAGE: en
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :jieyouzahuod:note:ireader:
+
+- 464-694, 标注, unknown
+  # note_md5: 589d158bc1cb06b95f0b229f2dad3f74
+  #+BEGIN_QUOTE
+  不管是骚扰还是恶作剧，写这些信给浪矢杂货店的人，和普通的咨询者在本质上是一样的。他们都是内心破了个洞，重要的东
+  西正从那个 破洞逐渐流失。证据就是，这样的人也一定会来拿回信，他会来查看牛奶箱。因为他很想知道，浪矢爷爷会怎样
+  回复自己的信。你想想看， 就算是瞎编的烦恼，要一口气想出三十个也不简单。既然费了那么多心思，怎么可能不想知道答
+  案？所以我不但要写回信，而且要好好思 考后再写。人的心声是绝对不能无视的。”
+  #+END_QUOTE
+
+- 696-769, 标注, unknown
+  # note_md5: 6ce991d720455a010e6b32e50bc6bee5
+  #+BEGIN_QUOTE
+  虽然至今为止的道路绝非一片坦途，但想到正因为活着才有机会感受到痛楚，我就成功克服了种种困难。
+  #+END_QUOTE
+
+- 787-859, 标注, unknown
+  # note_md5: d12717a075e1851c8975f623385981b8
+  #+BEGIN_QUOTE
+  除了积极向上的旅行，家人应该尽可能在一起。因为反感、厌倦等理由而离开，不是家人应有的姿态。
+  #+END_QUOTE
+
+- 861-936, 标注, unknown
+  # note_md5: 9b56e7543f769476e4f1a90c66e9c165
+  #+BEGIN_QUOTE
+  也许距离问题全部解决需要很长的时间，也许中间会经历很多苦难，但正因为这样，全家人才更有必要在一起
+  #+END_QUOTE
+
+- 938-989, 标注, unknown
+  # note_md5: 7924ce2ceba40e21eae3cfa40261563e
+  #+BEGIN_QUOTE
+  无论现在多么不开心，你要相信，明天会比今天更好。
+  #+END_QUOTE

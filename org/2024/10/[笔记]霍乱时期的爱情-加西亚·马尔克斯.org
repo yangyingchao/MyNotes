@@ -1,0 +1,29 @@
+#+TITLE:  [笔记]霍乱时期的爱情 加西亚·马尔克斯
+#+AUTHOR: Yang Yingchao
+#+DATE:   2024-10-09
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+LANGUAGE: en
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :huoluanshiqi:note:ireader:
+
+- 11-12, 标注, 2024 年 10 月 9 日星期三 上午 7:41:40
+  # note_md5: 9a05cdfecc67f0b637650fe86591baa0
+  #+BEGIN_QUOTE
+  不可避免，苦杏仁的气味总是让他想起爱情受阻后的命运。
+  #+END_QUOTE
+
+- 107-109, 标注, 2024 年 10 月 9 日星期三 上午 8:00:44
+  # note_md5: 13e6fd7603c2d6b776a70ba360fd0edb
+  #+BEGIN_QUOTE
+  睡梦中，他听见女仆们在枝繁叶茂的芒果树下唱歌，听着街上的叫卖声，以及海湾里燃油机和马达发出的轰鸣声—炎热的下午，
+  它们排出的废气在整座房中弥漫，就像一个被判腐烂而死的天使在扑腾翅膀。
+  #+END_QUOTE
+
+- 119-120, 标注, 2024 年 10 月 9 日星期三 上午 8:02:30
+  # note_md5: fed16cf184ae35ae86b06000e7003bd5
+  #+BEGIN_QUOTE
+  所谓的宿命论人道主义者：“每个人都是自己死亡的主宰者，时间一到，我们唯一能做的就是帮助他们没有恐惧和痛苦地死去。”
+  #+END_QUOTE

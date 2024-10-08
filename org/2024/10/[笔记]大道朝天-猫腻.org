@@ -1,0 +1,61 @@
+:PROPERTIES:
+:ID:       740bb83a-6592-44da-a2ad-9069793690e3
+:END:
+#+TITLE: [笔记]大道朝天-猫腻
+#+AUTHOR: Yang Yingchao
+#+DATE:   2024-10-09
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+LANGUAGE: en
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :dadaochaotia:note:ireader:
+
+- 14344-14345, 标注, 2019 年 9 月 14 日星期六 上午 9:44:16
+  # note_md5: 41eabb88b338ca467dc4a0e563a8a714
+  #+BEGIN_QUOTE
+  越简单的机关设计越可靠，而越珍贵的事物被毁掉越会被重视
+  #+END_QUOTE
+
+- 15253-15254, 标注, 2019 年 9 月 14 日星期六 下午 2:04:34
+  # note_md5: db2788f34c854f6edf0b97b9a241fe6d
+  #+BEGIN_QUOTE
+  太阳就在那里，你怎么遮掩，也总会被人看到，如果你不喜欢被人看着，那么你要做的事情就是让自己更明亮，亮瞎他们的眼。”
+  #+END_QUOTE
+
+- 18609-18609, 标注, 2019 年 9 月 14 日星期六 下午 8:47:52
+  # note_md5: 3ec5a8e4063bbb5a8de85ca66a914397
+  #+BEGIN_QUOTE
+  有所得便是欢喜。
+  #+END_QUOTE
+
+- 20999-20999, 标注, 2019 年 9 月 15 日星期日 下午 4:43:33
+  # note_md5: 7e40bb806805880ffd85a14ed531079d
+  #+BEGIN_QUOTE
+  他身上的衣服更是夸张，便是五彩斑斓都不能形容，仿佛把世间所有颜色都涂在了上边。
+  #+END_QUOTE
+
+- 31809-31810, 标注, 2019 年 9 月 22 日星期日 下午 5:10:13
+  # note_md5: 7fb3bbb04a91325eb598397b4a37b22c
+  #+BEGIN_QUOTE
+  如果境界高便意味着厉害，那修行界又怎么会有如此多无聊的战斗，见面的时候报报境界便好了。
+  #+END_QUOTE
+
+- 45009-45009, 标注, 2019 年 10 月 2 日星期三 下午 9:36:00
+  # note_md5: 7ebc6e0650f79cd008ecd1b2c98566c2
+  #+BEGIN_QUOTE
+  我们是父母的孩子，是孩子的父母，是伴侣的伴侣，是酒友
+  #+END_QUOTE
+
+- 45009-45010, 标注, 2019 年 10 月 2 日星期三 下午 9:36:09
+  # note_md5: 124229e2cb0bf2a18e24d0a046661439
+  #+BEGIN_QUOTE
+  我们是父母的孩子，是孩子的父母，是伴侣的伴侣，是酒友的酒友，是赌伴的赌伴，是世界眼里的我们。
+  #+END_QUOTE
+
+- 54436-54436, 标注, 2019 年 10 月 7 日星期一 上午 10:26:11
+  # note_md5: f1b569b7e751cc35aceaa5fdafd37e36
+  #+BEGIN_QUOTE
+  因为正义的胜利千篇一律，有趣的灵魂必死无疑。
+  #+END_QUOTE

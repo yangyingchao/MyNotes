@@ -1,0 +1,45 @@
+:PROPERTIES:
+:ID:       a2fa805f-63a3-41cc-91ad-3ae123ce47b7
+:END:
+#+TITLE: [笔记]国家的常识-[美]迈克尔·罗斯金
+#+AUTHOR: Yang Yingchao
+#+DATE:   2024-10-09
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+LANGUAGE: en
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :guojiadechan:note:ireader:
+
+- 1175-1177, 标注, 2021 年 2 月 3 日星期三 下午 10:16:10
+  # note_md5: 8a87728635f2e522be45e67e2fab06d5
+  #+BEGIN_QUOTE
+  没有一个国家的工业化道路是平坦的；它是一个过程，特征是低工资、恶劣的工作环境，以及并通常是政治压迫。工业化完成
+  得越早，一个国家就越有可能更加和平与稳定。我们必须找出一个国家当前所处的发展阶段。在一个正经历着工业化的国家，
+  我们可以预期到该国有欧洲早期存在的那种紧张关系
+  #+END_QUOTE
+
+- 1629-1630, 标注, 2021 年 2 月 4 日星期四 下午 10:29:16
+  # note_md5: ecffda167659d23c62e318eb9beb3e89
+  #+BEGIN_QUOTE
+  大宪章意味着国王要与贵族保持平衡，防止出现专制统治或无政府状态。这是欧洲大陆的并发症，大陆国家要么
+  #+END_QUOTE
+
+- 1629-1629, 标注, 2021 年 2 月 4 日星期四 下午 10:29:23
+  # note_md5: 046b24cc40b68ee06ecc9cf6a13c38e0
+  #+BEGIN_QUOTE
+  大宪章意味着国王要与贵族保持平衡，防止出现专制统治或无政府状态。
+  #+END_QUOTE
+
+- 1746-1746, 标注, 2021 年 2 月 5 日星期五 下午 10:17:06
+  # note_md5: 8a07e9c94cd23b743a1956c93f981cfd
+  #+BEGIN_QUOTE
+  权力倾向于腐败；绝对权力导致绝对腐败。
+  #+END_QUOTE
+
+- 1786-1787, 标注, 2021 年 2 月 28 日星期日 下午 9:08:11
+  # note_md5: 1fc2f6864e4749f0b474c01db7630c3e
+  #+BEGIN_QUOTE
+  ”进步不是来源于抛弃旧有的东西，而是来自于逐渐地改变需要改变的部分，同时保存整个结构，保持形式，但是要改革内容。
+  #+END_QUOTE

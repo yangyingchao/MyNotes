@@ -1,0 +1,1588 @@
+:PROPERTIES:
+:ID:       880b4f85-b0f0-4cb8-a921-3f1a69d46c76
+:END:
+#+TITLE: [笔记]George R. R. Martin's A Game of Thrones 5-Book Boxed Set-George R.R. Martin
+#+AUTHOR: Yang Yingchao
+#+DATE:   2024-10-09
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+LANGUAGE: en
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :George_R._R.:note:ireader:
+
+- 416-419, 标注, 2019 年 3 月 10 日星期日 下午 8:57:40
+  # note_md5: b13a0e271547590082fd59a4f4581f66
+  #+BEGIN_QUOTE
+  garden, bright and airy, where tall redwoods spread dappled shadows across tinkling streams, birds sang from
+  hidden nests, and the air was spicy with the scent of flowers. The gods of Winterfell kept a different sort of
+  wood. It was a dark, primal place, three acres of old forest untouched for ten thousand years as the gloomy
+  castle rose around it. It smelled of moist earth and decay
+  #+END_QUOTE
+
+- 769-769, 标注, 2019 年 3 月 11 日星期一 下午 10:01:07
+  # note_md5: 87830900e04af7bb09fc66839c94f267
+  #+BEGIN_QUOTE
+  They had found him still holding her body, silent with grief.
+  #+END_QUOTE
+
+- 791-792, 标注, 2019 年 3 月 11 日星期一 下午 10:44:22
+  # note_md5: df2951ca3c1231bacfd88b77fccac415
+  #+BEGIN_QUOTE
+  Some old wounds never truly heal, and bleed again at the slightest word.
+  #+END_QUOTE
+
+- 828-829, 标注, 2019 年 3 月 11 日星期一 下午 10:58:18
+  # note_md5: 28ad9f7c14921d3ca6d44832a36b75da
+  #+BEGIN_QUOTE
+  Half of them don’t dare tell me the truth, and the other half can’t find it.
+  #+END_QUOTE
+
+- 997-998, 标注, 2019 年 3 月 12 日星期二 下午 1:53:12
+  # note_md5: 6cfa21fd217f74b5f5d4eef6c1094601
+  #+BEGIN_QUOTE
+  “Never forget what you are, for surely the world will not. Make it your strength. Then it can never be your
+  weakness. Armor yourself in it, and it will never be used to hurt you.”
+  #+END_QUOTE
+
+- 1000-1000, 标注, 2019 年 3 月 12 日星期二 下午 8:27:00
+  # note_md5: e3c937d4dd1512fa647b25dd3e29da14
+  #+BEGIN_QUOTE
+  “All dwarfs are bastards in their father’s eyes.”
+  #+END_QUOTE
+
+- 1121-1122, 标注, 2019 年 3 月 12 日星期二 下午 9:35:22
+  # note_md5: 7f30d45495b56b543fd4f825b4c31626
+  #+BEGIN_QUOTE
+  He is a sweet boy, quick to laugh, easy to love
+  #+END_QUOTE
+
+- 1350-1350, 标注, 2019 年 3 月 13 日星期三 下午 7:44:19
+  # note_md5: d6141dced6e114bb64c285b1be2adffd
+  #+BEGIN_QUOTE
+  halls slanted up and down so that you couldn’t even
+  #+END_QUOTE
+
+- 1563-1564, 标注, 2019 年 3 月 13 日星期三 下午 10:01:48
+  # note_md5: bd58b20e679132217e585e2fd9384dad
+  #+BEGIN_QUOTE
+  Death is so terribly final, while life is full of possibilities.”
+  #+END_QUOTE
+
+- 1664-1665, 标注, 2019 年 3 月 13 日星期三 下午 10:31:08
+  # note_md5: c58dd6944a41d5e10e71047ee4ad0821
+  #+BEGIN_QUOTE
+  “Different roads sometimes lead to the same castle.
+  #+END_QUOTE
+
+- 1986-1987, 标注, 2019 年 3 月 14 日星期四 下午 11:22:14
+  # note_md5: f205a16edcb308af1e4feab820f3d7cc
+  #+BEGIN_QUOTE
+  A man could not always be where he belonged, though.
+  #+END_QUOTE
+
+- 2029-2030, 标注, 2019 年 3 月 15 日星期五 上午 7:14:58
+  # note_md5: bcda8c578760e0107623ef6f99ac475d
+  #+BEGIN_QUOTE
+  The Lannisters never declined, graciously or otherwise. The Lannisters took what was offered.
+  #+END_QUOTE
+
+- 2077-2078, 标注, 2019 年 3 月 15 日星期五 上午 7:58:13
+  # note_md5: 70589842ff1c27085aa4131570258f07
+  #+BEGIN_QUOTE
+  My brother later killed that very same king, as it turns out, but life is full of these little ironies.
+  #+END_QUOTE
+
+- 2080-2082, 标注, 2019 年 3 月 15 日星期五 上午 7:59:05
+  # note_md5: 41fe05095f39f9c4b8e6c88fc56fdc1c
+  #+BEGIN_QUOTE
+  My mind is my weapon. My brother has his sword, King Robert has his warhammer, and I have my mind … and a mind
+  needs books as a sword needs a whetstone, if it is to keep its edge.”
+  #+END_QUOTE
+
+- 2404-2404, 标注, 2019 年 3 月 16 日星期六 上午 7:49:24
+  # note_md5: 551695a78c08aed6893deeeba6f4f0ff
+  #+BEGIN_QUOTE
+  an animal takes after its master.
+  #+END_QUOTE
+
+- 2809-2809, 标注, 2019 年 3 月 16 日星期六 下午 2:51:00
+  # note_md5: 1ac67bd5f1366ba977e1b0db26585173
+  #+BEGIN_QUOTE
+  He was always clever, even as a boy, but it is one thing to be clever and another to be wise.
+  #+END_QUOTE
+
+- 3095-3095, 标注, 2019 年 3 月 16 日星期六 下午 7:03:48
+  # note_md5: c231ee23695cfe7fc3ee056f4597331b
+  #+BEGIN_QUOTE
+  Jon knew that if it fell, the world fell with it.
+  #+END_QUOTE
+
+- 3111-3112, 标注, 2019 年 3 月 16 日星期六 下午 7:07:42
+  # note_md5: 575580a72c5aecbbe62d6bf1a2e9814b
+  #+BEGIN_QUOTE
+  Let them see that their words can cut you, and you’ll never be free of the mockery. If they want to give you a
+  name, take it, make it your own.
+  #+END_QUOTE
+
+- 3111-3113, 标注, 2019 年 3 月 16 日星期六 下午 7:07:52
+  # note_md5: 22c0a186e79c8b96ab0deac61d1c043d
+  #+BEGIN_QUOTE
+  Let them see that their words can cut you, and you’ll never be free of the mockery. If they want to give you a
+  name, take it, make it your own. Then they can’t hurt you with it anymore.”
+  #+END_QUOTE
+
+- 3342-3343, 标注, 2019 年 3 月 16 日星期六 下午 9:15:49
+  # note_md5: 044ac21ae72375fc13b3b0727d52f2dc
+  #+BEGIN_QUOTE
+  “Do you Starks have nought but snow between your ears?”
+  #+END_QUOTE
+
+- 3356-3357, 标注, 2019 年 3 月 16 日星期六 下午 9:21:45
+  # note_md5: e2d5a826b6e17b0b4ed289c2a6addd07
+  #+BEGIN_QUOTE
+  to drop that in the river and forget that it was ever forged.” Ned regarded him coldly. “Lord Baelish, I am a
+  Stark of
+  #+END_QUOTE
+
+- 3429-3430, 标注, 2019 年 3 月 17 日星期日 上午 3:55:36
+  # note_md5: ce35e3fe98303d8580510e77bce29d1e
+  #+BEGIN_QUOTE
+  “If a man paints a target on his chest, he should expect that sooner or later someone will loose an arrow at
+  him.
+  #+END_QUOTE
+
+- 3742-3742, 标注, 2019 年 3 月 17 日星期日 下午 4:36:46
+  # note_md5: dab8c8433451dabffe7a5b502ee636c6
+  #+BEGIN_QUOTE
+  When the snows fall and the white winds blow, the lone wolf dies, but the pack survives
+  #+END_QUOTE
+
+- 3742-3743, 标注, 2019 年 3 月 17 日星期日 下午 4:37:14
+  # note_md5: dd8d1685aaf78a7c376a258e340b993e
+  #+BEGIN_QUOTE
+  When the snows fall and the white winds blow, the lone wolf dies, but the pack survives. Summer is the time
+  for squabbles. In winter, we must protect one another, keep each other warm, share our strengths.
+  #+END_QUOTE
+
+- 3758-3758, 标注, 2019 年 3 月 17 日星期日 下午 4:42:09
+  # note_md5: 59e99e58626a90673909b3d9a31e7d7a
+  #+BEGIN_QUOTE
+  to Septa Mordane and asked for her
+  #+END_QUOTE
+
+- 3808-3809, 标注, 2019 年 3 月 17 日星期日 下午 4:55:34
+  # note_md5: 4f50c47d266154da787dbd5d9bb3e0fd
+  #+BEGIN_QUOTE
+  He had a neck and shoulders like a bull, and coarse black hair covered his arms and chest so thickly that
+  there was none left for his head.
+  #+END_QUOTE
+
+- 3809-3809, 笔记, 2019 年 3 月 17 日星期日 下午 4:55:50
+  # note_md5: fbbfaea66042e7159dc819efa2b7d289
+  #+BEGIN_QUOTE
+  太损了，作者
+  #+END_QUOTE
+
+- 4021-4023, 标注, 2019 年 3 月 17 日星期日 下午 7:19:48
+  # note_md5: 906d97369ed059cd7d15504c58c2ca3d
+  #+BEGIN_QUOTE
+  fear? Fear is for the winter, my little lord, when the snows fall a hundred feet deep and the ice wind comes
+  howling out of the north. Fear is for the long night, when the sun hides its face for years at a time, and
+  little children are born and live and die all in darkness while the direwolves grow gaunt and hungry, and the
+  white walkers move through the woods.”
+  #+END_QUOTE
+
+- 4199-4200, 标注, 2019 年 3 月 18 日星期一 上午 7:56:33
+  # note_md5: a44bf60e9065c1238a1f6519e8be33ca
+  #+BEGIN_QUOTE
+  Minds are like swords, I do fear. The old ones go to rust
+  #+END_QUOTE
+
+- 4261-4261, 标注, 2019 年 3 月 18 日星期一 下午 7:43:42
+  # note_md5: a46c0b83efdef191806694e6e6c962e9
+  #+BEGIN_QUOTE
+  “Dark wings, dark words,”
+  #+END_QUOTE
+
+- 4330-4331, 标注, 2019 年 3 月 18 日星期一 下午 8:04:11
+  # note_md5: af135fbddbd6e63ec25926873fc56a66
+  #+BEGIN_QUOTE
+  “You are slow to learn, Lord Eddard. Distrusting me was the wisest thing you’ve done since you climbed down
+  off your horse
+  #+END_QUOTE
+
+- 4330-4331, 标注, 2019 年 3 月 18 日星期一 下午 8:04:16
+  # note_md5: e5371ee9f66eb2ebfb91f4d94b05c547
+  #+BEGIN_QUOTE
+  “You are slow to learn, Lord Eddard. Distrusting me was the wisest thing you’ve done since you climbed down
+  off your horse.”
+  #+END_QUOTE
+
+- 4427-4428, 标注, 2019 年 3 月 18 日星期一 下午 9:47:00
+  # note_md5: 953586a1464142a1fb3734b3deed02b4
+  #+BEGIN_QUOTE
+  The world was full of cravens who pretended to be heroes; it took a queer sort of courage to admit to
+  cowardice as Samwell Tarly had.
+  #+END_QUOTE
+
+- 5516-5517, 标注, 2019 年 3 月 21 日星期四 下午 9:31:35
+  # note_md5: 2ac96d4c2d40985afe4748618b887a48
+  #+BEGIN_QUOTE
+  A Lannister always paid his debts.
+  #+END_QUOTE
+
+- 5741-5742, 标注, 2019 年 3 月 22 日星期五 下午 9:44:17
+  # note_md5: 06a2c0c200e5c1b7e10646222da553c2
+  #+BEGIN_QUOTE
+  All halls lead somewhere. Where there is a way in, there is a way out. Fear cuts deeper than swords.
+  #+END_QUOTE
+
+- 5935-5936, 标注, 2019 年 3 月 23 日星期六 上午 8:20:50
+  # note_md5: a8deb8b45edac9ed415511331f02b6c9
+  #+BEGIN_QUOTE
+  The man who passes the sentence should swing the sword. Look her in the eyes before you kill her. See her
+  tears, hear her last words. You owe her that much at least.”
+  #+END_QUOTE
+
+- 6365-6365, 标注, 2019 年 3 月 23 日星期六 下午 8:32:07
+  # note_md5: acf65ca210a33a6a1b74d6ff5fdf9e36
+  #+BEGIN_QUOTE
+  “Love is sweet, dearest Ned, but it cannot change a man’s nature.
+  #+END_QUOTE
+
+- 6967-6967, 标注, 2019 年 3 月 24 日星期日 下午 5:24:44
+  # note_md5: 7094cd8fa9b197a884b149abd38ccf6b
+  #+BEGIN_QUOTE
+  Never show them you’re afraid,
+  #+END_QUOTE
+
+- 6995-6996, 标注, 2019 年 3 月 24 日星期日 下午 7:15:50
+  # note_md5: cf6c83f0c6d55967f30ecfc333352076
+  #+BEGIN_QUOTE
+  Some illiterates held writing in disdain; others seemed to have a superstitious reverence for the written
+  word, as if it were some sort of magic.
+  #+END_QUOTE
+
+- 7095-7095, 标注, 2019 年 3 月 24 日星期日 下午 7:41:56
+  # note_md5: ccb4115d764a50de90d783442835cfe9
+  #+BEGIN_QUOTE
+  the years leech at a man’s memories, even those he has vowed never to forget.
+  #+END_QUOTE
+
+- 7224-7225, 标注, 2019 年 3 月 24 日星期日 下午 9:09:41
+  # note_md5: 139a5c1394b9ef9c549cdd925b2165c0
+  #+BEGIN_QUOTE
+  Catelyn wondered how large a waterfall her own tears would make when she died.
+  #+END_QUOTE
+
+- 7741-7741, 标注, 2019 年 3 月 26 日星期二 下午 9:38:09
+  # note_md5: 3eba7bb9c0437483ebd723fd7c92ec2d
+  #+BEGIN_QUOTE
+  A king should never sit easy,
+  #+END_QUOTE
+
+- 7757-7758, 标注, 2019 年 3 月 26 日星期二 下午 9:43:12
+  # note_md5: 1b2b4cda5ae0e88ed3f187d5d2f49b72
+  #+BEGIN_QUOTE
+  He never trusted what a man told him from his knees. “All of you, up.”
+  #+END_QUOTE
+
+- 7757-7758, 标注, 2019 年 3 月 26 日星期二 下午 9:43:17
+  # note_md5: f2c3078db93af2fa4079a650be3cf0b6
+  #+BEGIN_QUOTE
+  He never trusted what a man told him from his knees.
+  #+END_QUOTE
+
+- 7924-7924, 标注, 2019 年 3 月 27 日星期三 上午 8:24:45
+  # note_md5: e18124499545d53e8796e34ffd460f38
+  #+BEGIN_QUOTE
+  Beric Dondarrion was handsome enough, but he was awfully old, almost twenty-two;
+  #+END_QUOTE
+
+- 7924-7924, 笔记, 2019 年 3 月 27 日星期三 上午 8:24:54
+  # note_md5: b81420d91bae049515112f758af09704
+  #+BEGIN_QUOTE
+  我擦
+  #+END_QUOTE
+
+- 7984-7985, 标注, 2019 年 3 月 27 日星期三 上午 8:52:10
+  # note_md5: 8d412fdb533e2cbfe19f104dd2629b9b
+  #+BEGIN_QUOTE
+  trying to remember was like trying to catch the rain with her fingers.
+  #+END_QUOTE
+
+- 8143-8144, 标注, 2019 年 3 月 27 日星期三 下午 2:38:22
+  # note_md5: 0efbb4fb407784e6f6644a0d628e54d2
+  #+BEGIN_QUOTE
+  If it came to that, the life of some child I did not know, against Robb and Sansa and Arya and Bran and
+  Rickon, what would I do? Even
+  #+END_QUOTE
+
+- 8143-8144, 标注, 2019 年 3 月 27 日星期三 下午 2:38:49
+  # note_md5: 075b25cf68f3db8b7a9ce6667b4f2466
+  #+BEGIN_QUOTE
+  If it came to that, the life of some child I did not know, against Robb and Sansa and Arya and Bran and
+  Rickon, what would I do?
+  #+END_QUOTE
+
+- 8143-8144, 标注, 2019 年 3 月 27 日星期三 下午 2:44:46
+  # note_md5: 12e97d97c13402c77bd4bd7d6b024fed
+  #+BEGIN_QUOTE
+  thought, If it came to that, the life of some child I did not know, against Robb and Sansa and Arya and Bran
+  and Rickon, what would I do?
+  #+END_QUOTE
+
+- 8144-8144, 笔记, 2019 年 3 月 27 日星期三 下午 2:45:09
+  # note_md5: d67766e1c1ab153c60ff062ebf8c3b84
+  #+BEGIN_QUOTE
+  不提 jon
+  #+END_QUOTE
+
+- 8185-8185, 标注, 2019 年 3 月 27 日星期三 下午 2:58:57
+  # note_md5: 35bcee9a676827382c3344a858678648
+  #+BEGIN_QUOTE
+  “When you play the game of thrones, you win or you die. There is no middle ground.”
+  #+END_QUOTE
+
+- 8598-8599, 标注, 2019 年 3 月 27 日星期三 下午 9:02:26
+  # note_md5: d3fa185e2697dfc51898545d88d0c19a
+  #+BEGIN_QUOTE
+  a length of dragonbone and Valyrian steel, as sharp as the difference between right and wrong, between true
+  and false, between life and death.
+  #+END_QUOTE
+
+- 8616-8617, 标注, 2019 年 3 月 27 日星期三 下午 9:18:37
+  # note_md5: e62efa37e19382590446001ecf1b654d
+  #+BEGIN_QUOTE
+  “You wear your honor like a suit of armor, Stark. You think it keeps you safe, but all it does is weigh you
+  down and make it hard for you to move.
+  #+END_QUOTE
+
+- 8748-8752, 标注, 2019 年 3 月 28 日星期四 上午 7:51:36
+  # note_md5: 8b2a002438f834c9a340cdab4034f19f
+  #+BEGIN_QUOTE
+  “Hear my words, and bear witness to my vow,” they recited, their voices filling the twilit grove. “Night
+  gathers, and now my watch begins. It shall not end until my death. I shall take no wife, hold no lands, father
+  no children. I shall wear no crowns and win no glory. I shall live and die at my post. I am the sword in the
+  darkness. I am the watcher on the walls. I am the fire that burns against the cold, the light that brings the
+  dawn, the horn that wakes the sleepers, the shield that guards the realms of men. I pledge my life and honor
+  to the Night’s Watch, for this night and all the nights to come.”
+  #+END_QUOTE
+
+- 8961-8961, 标注, 2019 年 3 月 28 日星期四 下午 10:37:22
+  # note_md5: 0a84bd7483a0c1302b70954b80b9e43d
+  #+BEGIN_QUOTE
+  The man who fears losing has already lost.
+  #+END_QUOTE
+
+- 8964-8964, 标注, 2019 年 3 月 28 日星期四 下午 10:37:59
+  # note_md5: eba98dbd94e833fc2c0659ada4f91bf4
+  #+BEGIN_QUOTE
+  Never do what they expect,
+  #+END_QUOTE
+
+- 8979-8979, 标注, 2019 年 3 月 28 日星期四 下午 10:42:56
+  # note_md5: a0b66b24ab7e33171d1194add6bceed0
+  #+BEGIN_QUOTE
+  “Fear cuts deeper than swords,”
+  #+END_QUOTE
+
+- 9369-9369, 标注, 2019 年 3 月 30 日星期六 下午 7:14:32
+  # note_md5: 8613bdb7b7772a20dfd247bf3fc46870
+  #+BEGIN_QUOTE
+  They fed their dead servants on the flesh of human children
+  #+END_QUOTE
+
+- 9416-9416, 标注, 2019 年 3 月 30 日星期六 下午 7:24:34
+  # note_md5: ee282de727ce827d355e74ee41da95fa
+  #+BEGIN_QUOTE
+  The things we love destroy us every time,
+  #+END_QUOTE
+
+- 10055-10056, 标注, 2019 年 3 月 31 日星期日 下午 6:33:02
+  # note_md5: f5b2b92c025df19702ee22d17d36b573
+  #+BEGIN_QUOTE
+  There was ale and cheese on the table. Catelyn filled a horn,
+  #+END_QUOTE
+
+- 10276-10277, 标注, 2019 年 4 月 1 日星期一 下午 10:47:52
+  # note_md5: 42bfeebe7ec2a531d0f1aeb3b3a825e3
+  #+BEGIN_QUOTE
+  “No sword is strong until it’s been tempered,”
+  #+END_QUOTE
+
+- 10611-10611, 标注, 2019 年 4 月 4 日星期四 下午 10:11:10
+  # note_md5: 73e2b06c8e992df4b625439fee4d1543
+  #+BEGIN_QUOTE
+  It was not wine that killed the king. It was your mercy.”
+  #+END_QUOTE
+
+- 10656-10657, 标注, 2019 年 4 月 4 日星期四 下午 10:25:37
+  # note_md5: 0978885a846b6e41cad56ee738f66a67
+  #+BEGIN_QUOTE
+  “The High Septon once told me that as we sin, so do we suffer. If that’s true, Lord Eddard, tell me … why is
+  it always the innocents who suffer most, when you high lords play your game of thrones
+  #+END_QUOTE
+
+- 10656-10657, 标注, 2019 年 4 月 4 日星期四 下午 10:25:48
+  # note_md5: 04dd9f6359d23ce18aeeb9f2dddf885e
+  #+BEGIN_QUOTE
+  “The High Septon once told me that as we sin, so do we suffer. If that’s true, Lord Eddard, tell me … why is
+  it always the innocents who suffer most, when you high lords play your game of thrones?
+  #+END_QUOTE
+
+- 10983-10984, 标注, 2019 年 4 月 6 日星期六 上午 7:38:41
+  # note_md5: b14af21bcbff44e0b20b756a6fa73005
+  #+BEGIN_QUOTE
+  Yet in his nightmare he faced it again … and this time the burning corpse wore Lord Eddard’s features. It was
+  his father’s skin that burst and blackened, his father’s eyes that ran liquid down his cheeks like jellied
+  tears.
+  #+END_QUOTE
+
+- 11105-11105, 标注, 2019 年 4 月 6 日星期六 下午 1:11:42
+  # note_md5: cfdbd7f1b968b19bbbe482212fb71c96
+  #+BEGIN_QUOTE
+  “A craven can be as brave as any man, when there is nothing to fear.
+  #+END_QUOTE
+
+- 11623-11624, 标注, 2019 年 4 月 7 日星期日 上午 10:45:05
+  # note_md5: e7a991ca506e2156a56842e478047534
+  #+BEGIN_QUOTE
+  A green boy, Tyrion remembered, more like to be brave than wise.
+  #+END_QUOTE
+
+- 11633-11633, 标注, 2019 年 4 月 7 日星期日 上午 10:53:20
+  # note_md5: d546781718e88d9a43783f190fcf2048
+  #+BEGIN_QUOTE
+  “It will come when it comes,”
+  #+END_QUOTE
+
+- 11914-11914, 标注, 2019 年 4 月 7 日星期日 下午 5:19:29
+  # note_md5: e2fc979d4053dd82a93e3fbcc96cf591
+  #+BEGIN_QUOTE
+  Her brother Rhaegar had died for the woman he loved.
+  #+END_QUOTE
+
+- 11914-11914, 笔记, 2019 年 4 月 7 日星期日 下午 5:19:49
+  # note_md5: a63dbb107716653bd991906f92ad4fb5
+  #+BEGIN_QUOTE
+  来安娜
+  #+END_QUOTE
+
+- 13116-13116, 标注, 2019 年 4 月 13 日星期六 下午 5:02:34
+  # note_md5: 2772cc6af8a11efdb53e6f170116bfad
+  #+BEGIN_QUOTE
+  “The things we love destroy us every time, lad.
+  #+END_QUOTE
+
+- 13147-13148, 标注, 2019 年 4 月 13 日星期六 下午 5:08:16
+  # note_md5: 61e1597bfdab5d96d76b12dfb07b6a81
+  #+BEGIN_QUOTE
+  have no place, Jon wanted to say, I’m a bastard, I have no rights, no name, no mother, and now not even a
+  father.
+  #+END_QUOTE
+
+- 13491-13492, 标注, 2019 年 4 月 13 日星期六 下午 9:51:04
+  # note_md5: e36409665bbff64b2163a299a775a07f
+  #+BEGIN_QUOTE
+  The first star was a comet, burning red. Bloodred; fire red; the dragon’s tail.
+  #+END_QUOTE
+
+- 13879-13880, 标注, 2019 年 4 月 14 日星期日 下午 4:59:52
+  # note_md5: 945e42905177bfb2ab1769de046da53c
+  #+BEGIN_QUOTE
+  Dragonstone was grim beyond a doubt, a lonely citadel in the wet waste surrounded by storm and salt, with the
+  smoking shadow of the mountain at its back.
+  #+END_QUOTE
+
+- 14206-14206, 标注, 2019 年 4 月 15 日星期一 下午 10:52:41
+  # note_md5: 582ec095154a06cc0a9b06b36908b0bd
+  #+BEGIN_QUOTE
+  “The night is dark and full of terrors.”
+  #+END_QUOTE
+
+- 14395-14397, 标注, 2019 年 4 月 16 日星期二 下午 10:25:32
+  # note_md5: 6caab21692683e5e4cde859a96ea8772
+  #+BEGIN_QUOTE
+  but it was Jon Snow she thought of most. She wished somehow they could come to the Wall before Winterfell, so
+  Jon might muss up her hair and call her “little sister.” She’d tell him, “I missed you,” and he’d say it too
+  at the very same moment, the way they always used to say things together.
+  #+END_QUOTE
+
+- 14684-14685, 标注, 2019 年 4 月 18 日星期四 下午 12:37:37
+  # note_md5: 6efc0a458d3ff7857d3f675248bd729b
+  #+BEGIN_QUOTE
+  “Courage and folly are cousins,
+  #+END_QUOTE
+
+- 14724-14725, 标注, 2019 年 4 月 18 日星期四 下午 12:53:41
+  # note_md5: 4637cf296bbb21b22116f6de4610db99
+  #+BEGIN_QUOTE
+  Eddard Stark was plotting with Renly and he’d written to Lord Stannis, offering him the throne. We might have
+  lost all. Even so, it was a close thing. If Sansa hadn’t come to me and told me all her father’s plans
+  #+END_QUOTE
+
+- 14730-14731, 标注, 2019 年 4 月 18 日星期四 下午 12:54:26
+  # note_md5: 5081586fdd6dda5d4765e973315a157a
+  #+BEGIN_QUOTE
+  “Joff wanted someone to blame for Robert’s death. Varys suggested Ser Barristan.
+  #+END_QUOTE
+
+- 14773-14773, 标注, 2019 年 4 月 18 日星期四 下午 1:08:10
+  # note_md5: d743f2ab91b0d8b7c7eb271b743c26b5
+  #+BEGIN_QUOTE
+  Schemes are like fruit, they require a certain ripening.
+  #+END_QUOTE
+
+- 15307-15308, 标注, 2019 年 4 月 19 日星期五 下午 9:30:25
+  # note_md5: d66d021d255c3695c8be3ebeeeb9844c
+  #+BEGIN_QUOTE
+  “There’s no shame in fear, my father told me, what matters is how we face
+  #+END_QUOTE
+
+- 15307-15308, 标注, 2019 年 4 月 19 日星期五 下午 9:30:34
+  # note_md5: 488deb96f1a95fd2ed73368a0b008d73
+  #+BEGIN_QUOTE
+  “There’s no shame in fear, my father told me, what matters is how we face it.
+  #+END_QUOTE
+
+- 15352-15353, 标注, 2019 年 4 月 20 日星期六 下午 2:28:38
+  # note_md5: 9bed807be581430f4c15c9979d60cd6a
+  #+BEGIN_QUOTE
+  Some men are like swords, made for fighting. Hang them up and they go to rust.”
+  #+END_QUOTE
+
+- 15354-15356, 标注, 2019 年 4 月 20 日星期六 下午 2:30:58
+  # note_md5: 9b1211dea4f65579d8bc55a19b119333
+  #+BEGIN_QUOTE
+  “Robert was the true steel. Stannis is pure iron, black and hard and strong, yes, but brittle, the way iron
+  gets. He’ll break before he bends. And Renly, that one, he’s copper, bright and shiny, pretty to look at but
+  not worth all that much at the end of the day.”
+  #+END_QUOTE
+
+- 15679-15679, 标注, 2019 年 4 月 20 日星期六 下午 9:23:46
+  # note_md5: 1391376f80204766b5c58858fdd58521
+  #+BEGIN_QUOTE
+  My first rule of war, Cat—never give the enemy his wish.
+  #+END_QUOTE
+
+- 15879-15880, 标注, 2019 年 4 月 21 日星期日 上午 7:26:36
+  # note_md5: a8fd6ffccf471a31ac1a150fac30b176
+  #+BEGIN_QUOTE
+  “So power is a mummer’s trick?” “A shadow on the wall,” Varys murmured, “yet shadows can kill. And ofttimes a
+  very small man can cast a very large shadow.”
+  #+END_QUOTE
+
+- 15979-15981, 标注, 2019 年 4 月 21 日星期日 上午 9:56:46
+  # note_md5: 83f0b15e4b8633c4f9ad72dcaaa90a3c
+  #+BEGIN_QUOTE
+  “Time was, a man in black was feasted from Dorne to Winterfell, and even high lords called it an honor to
+  shelter him under their roofs,” he said bitterly. “Now cravens like you want hard coin for a bite of wormy
+  apple.” He spat.
+  #+END_QUOTE
+
+- 16085-16085, 标注, 2019 年 4 月 21 日星期日 上午 10:47:22
+  # note_md5: d36936e85306db1652bd81504314beb2
+  #+BEGIN_QUOTE
+  for the night is dark and full of terrors.”
+  #+END_QUOTE
+
+- 16122-16125, 标注, 2019 年 4 月 21 日星期日 下午 12:15:44
+  # note_md5: 0c3c186f5e5b72ac7b7d6eed3672f65a
+  #+BEGIN_QUOTE
+  “In ancient books of Asshai it is written that there will come a day after a long summer when the stars bleed
+  and the cold breath of darkness falls heavy on the world. In this dread hour a warrior shall draw from the
+  fire a burning sword. And that sword shall be Lightbringer, the Red Sword of Heroes, and he who clasps it
+  shall be Azor Ahai come again, and the darkness shall flee before him.”
+  #+END_QUOTE
+
+- 16538-16538, 标注, 2019 年 4 月 24 日星期三 下午 6:04:32
+  # note_md5: f2d3ea7d6a58ac14fb77d0894f848a68
+  #+BEGIN_QUOTE
+  “What is dead may never die,”
+  #+END_QUOTE
+
+- 16538-16539, 标注, 2019 年 4 月 24 日星期三 下午 6:05:34
+  # note_md5: 3c7e4ef11dde38c2b53af377cf3b897d
+  #+BEGIN_QUOTE
+  “What is dead may never die,” his uncle echoed, “but rises again, harder and stronger. Stand.”
+  #+END_QUOTE
+
+- 16564-16565, 标注, 2019 年 4 月 24 日星期三 下午 6:42:02
+  # note_md5: edc8cabcc3fd3b6f48e34f9a98a157ed
+  #+BEGIN_QUOTE
+  “A woman may inherit only if there is no male heir in the direct line,”
+  #+END_QUOTE
+
+- 16747-16747, 标注, 2019 年 4 月 24 日星期三 下午 11:07:22
+  # note_md5: 0f3337e36f25e1f3842bfa75f15ed84e
+  #+BEGIN_QUOTE
+  down her back. The cream-colored dragon
+  #+END_QUOTE
+
+- 16750-16750, 标注, 2019 年 4 月 25 日星期四 下午 8:10:09
+  # note_md5: 823c2fd338836d79402c1a46526154ab
+  #+BEGIN_QUOTE
+  The Unburnt, they called her, and Mother of Dragons. Her word was their law.
+  #+END_QUOTE
+
+- 17357-17358, 标注, 2019 年 4 月 27 日星期六 下午 4:52:50
+  # note_md5: 7f720cde75913e584d79b45edc0cc7fa
+  #+BEGIN_QUOTE
+  “When you tear out a man’s tongue, you are not proving him a liar, you’re only telling the world that you fear
+  what he might say.”
+  #+END_QUOTE
+
+- 17380-17381, 标注, 2019 年 4 月 27 日星期六 下午 5:01:15
+  # note_md5: b58d3c1716c846f022a1a7a94a3359d4
+  #+BEGIN_QUOTE
+  And the best lies contain within them nuggets of truth, enough to give a listener pause.
+  #+END_QUOTE
+
+- 17539-17540, 标注, 2019 年 4 月 28 日星期日 下午 10:40:53
+  # note_md5: b1e7eb540afcc4865a2cb9dd4e5a1145
+  #+BEGIN_QUOTE
+  “Men see what they expect to see,” Varys
+  #+END_QUOTE
+
+- 17539-17540, 标注, 2019 年 4 月 28 日星期日 下午 10:41:09
+  # note_md5: 63d41539d14452a47d29d8f22a8a19aa
+  #+BEGIN_QUOTE
+  “Men see what they expect to see,”
+  #+END_QUOTE
+
+- 17633-17633, 标注, 2019 年 4 月 29 日星期一 上午 9:31:44
+  # note_md5: 776da74521c40c80f37152e9d4f6c40d
+  #+BEGIN_QUOTE
+  “A good lord comforts and protects the weak and helpless,”
+  #+END_QUOTE
+
+- 18281-18282, 标注, 2019 年 5 月 4 日星期六 下午 9:56:51
+  # note_md5: d0bdeb6d1f589c97fc8e074abb7d1b92
+  #+BEGIN_QUOTE
+  A hound will die for you, but never lie to you. And he’ll look you straight in the face.”
+  #+END_QUOTE
+
+- 18470-18470, 标注, 2019 年 5 月 5 日星期日 下午 8:37:14
+  # note_md5: 890fc102fd0d73f8b79249e1d5dc1e6b
+  #+BEGIN_QUOTE
+  lantern bugs
+  #+END_QUOTE
+
+- 18656-18656, 标注, 2019 年 5 月 6 日星期一 下午 8:15:29
+  # note_md5: c89613fe3adcb591515cb1f7f3e339c7
+  #+BEGIN_QUOTE
+  chanting for food. Joff had unleashed a storm
+  #+END_QUOTE
+
+- 18954-18956, 标注, 2019 年 5 月 8 日星期三 下午 7:03:45
+  # note_md5: 55a53e539ff942adb9b31217475eb060
+  #+BEGIN_QUOTE
+  “The finest knight I ever saw was Ser Arthur Dayne, who fought with a blade called Dawn, forged from the heart
+  of a fallen star. They called him the Sword of the Morning, and he would have killed me but for Howland Reed.”
+  #+END_QUOTE
+
+- 19541-19541, 标注, 2019 年 5 月 11 日星期六 下午 2:53:37
+  # note_md5: 52e8dcb828df22a7fc0df79b98cb59a7
+  #+BEGIN_QUOTE
+  You never ate at his board, nor slept by his fire. He never gave you guest-right, so you’re not bound to him.
+  #+END_QUOTE
+
+- 19646-19646, 标注, 2019 年 5 月 11 日星期六 下午 4:44:01
+  # note_md5: 857d48be8b640724e49750d1a57f92f7
+  #+BEGIN_QUOTE
+  Horn of Winter
+  #+END_QUOTE
+
+- 20426-20426, 标注, 2019 年 5 月 13 日星期一 下午 8:30:14
+  # note_md5: 1a00a8b0d16f0479a577f90fda0f9f96
+  #+BEGIN_QUOTE
+  showered Dany with promises from the moment
+  #+END_QUOTE
+
+- 20447-20449, 标注, 2019 年 5 月 13 日星期一 下午 9:16:37
+  # note_md5: c0a534d62f412ad2cb7932587bb2e422
+  #+BEGIN_QUOTE
+  tears. I want to make my kingdom beautiful, to fill it with fat men and pretty maids and laughing children. I
+  want my people to smile when they see me ride by, the way Viserys said they smiled for my father.
+  #+END_QUOTE
+
+- 20449-20449, 笔记, 2019 年 5 月 13 日星期一 下午 9:17:54
+  # note_md5: 9f16edf06a217091853ee48c97979fa2
+  #+BEGIN_QUOTE
+  But,疯王真的受人爱戴吗？
+  #+END_QUOTE
+
+- 20664-20666, 标注, 2019 年 5 月 14 日星期二 下午 9:50:55
+  # note_md5: bd50a40aa5bbc7e4da6a0c70562221ff
+  #+BEGIN_QUOTE
+  The years pass in their hundreds and their thousands, and what does any man see of life but a few summers, a
+  few winters? We look at mountains and call them eternal, and so they seem … but in the course of time,
+  mountains rise and fall, rivers change their courses, stars fall from the sky, and great cities sink beneath
+  the sea. Even gods die, we think. Everything changes.
+  #+END_QUOTE
+
+- 21122-21126, 标注, 2019 年 5 月 17 日星期五 下午 9:46:55
+  # note_md5: 2f0f6909242a406d81e75899ad14d4b0
+  #+BEGIN_QUOTE
+  Dragonstone, but I find you here instead.” “You are frank, Lady Stark. Very well, I’ll answer you frankly. To
+  take the city, I need the power of these southron lords I see across the field. My brother has them. I must
+  needs take them from him.” “Men give their allegiance where they will, my lord. These lords swore fealty to
+  Robert and House Baratheon. If you and your brother were to put aside your quarrel—” “I have no quarrel with
+  Renly, should he prove
+  #+END_QUOTE
+
+- 21420-21421, 标注, 2019 年 5 月 19 日星期日 上午 9:47:57
+  # note_md5: 91b4de01db872e3e440c8ed1a359fc47
+  #+BEGIN_QUOTE
+  “Sorcery is the sauce fools spoon over failure to hide the flavor of their own incompetence.
+  #+END_QUOTE
+
+- 21459-21460, 标注, 2019 年 5 月 19 日星期日 上午 9:55:14
+  # note_md5: 79c94f843494d83a24defacc85210b42
+  #+BEGIN_QUOTE
+  God is one, Septon Osmynd had taught her when she was a girl, with seven aspects, as the sept is a single
+  building, with seven walls.
+  #+END_QUOTE
+
+- 22602-22603, 标注, 2019 年 5 月 22 日星期三 下午 10:50:10
+  # note_md5: 0d7cc1b5499724b9648a454dda2266c7
+  #+BEGIN_QUOTE
+  “That stripling … wretched boy … not speak that name to me, your duty
+  #+END_QUOTE
+
+- 22781-22782, 标注, 2019 年 5 月 23 日星期四 下午 7:42:04
+  # note_md5: 000cff8f32a824d757c02ad8ddc9d17a
+  #+BEGIN_QUOTE
+  “To go north, you must journey south. To reach the west, you must go east. To go forward you must go back, and
+  to touch the light you must pass beneath the shadow.”
+  #+END_QUOTE
+
+- 22829-22830, 标注, 2019 年 5 月 23 日星期四 下午 8:02:42
+  # note_md5: 0c68408d911c855c6806b15247c60a8e
+  #+BEGIN_QUOTE
+  Nothing knits a broken realm together so quick as an invading army on its soil.”
+  #+END_QUOTE
+
+- 23233-23234, 标注, 2019 年 5 月 25 日星期六 下午 4:52:36
+  # note_md5: 798b66e6acfbf57fa8455430011c474b
+  #+BEGIN_QUOTE
+  “A good act does not wash out the bad, nor a bad act the good. Each should have its own reward.
+  #+END_QUOTE
+
+- 23391-23392, 标注, 2019 年 5 月 25 日星期六 下午 8:31:30
+  # note_md5: 2cb26d7e4599de36fdae80c93e456fd6
+  #+BEGIN_QUOTE
+  this Storm’s End is an old place. There are spells woven into the stones. Dark walls that no shadow can
+  pass—ancient, forgotten, yet still in place.”
+  #+END_QUOTE
+
+- 23393-23394, 标注, 2019 年 5 月 25 日星期六 下午 8:34:47
+  # note_md5: 5c9499b426bbe8e4f39dd667eeb17bf9
+  #+BEGIN_QUOTE
+  There are no shadows in the dark. Shadows are the servants of light, the children of fire. The brightest flame
+  casts the darkest shadows.”
+  #+END_QUOTE
+
+- 23506-23507, 标注, 2019 年 5 月 26 日星期日 下午 7:44:37
+  # note_md5: 8bd70df2490aaca923870e1c932f458c
+  #+BEGIN_QUOTE
+  The warhorn he had given to Sam. On closer examination the horn had proved cracked, and even after he had
+  cleaned all the dirt out, Jon had been unable to get any sound from it.
+  #+END_QUOTE
+
+- 24345-24345, 标注, 2019 年 5 月 30 日星期四 下午 1:33:45
+  # note_md5: 7b085c3261b3162e90f1929468d20e83
+  #+BEGIN_QUOTE
+  “By all the gods of sea and air, and even him of fire, I swear it.”
+  #+END_QUOTE
+
+- 24580-24581, 标注, 2019 年 5 月 31 日星期五 下午 8:43:50
+  # note_md5: 1277c28394178e7152890c56fc6246fe
+  #+BEGIN_QUOTE
+  In a throne above them sat a dead man with the head of a wolf. He wore an iron crown and held a leg of lamb in
+  one hand as a king might hold a scepter, and his eyes followed Dany with mute appeal.
+  #+END_QUOTE
+
+- 24581-24581, 笔记, 2019 年 5 月 31 日星期五 下午 8:44:13
+  # note_md5: 01c8246f96e8a01b210b554abe742e3a
+  #+BEGIN_QUOTE
+  血色婚礼
+  #+END_QUOTE
+
+- 24597-24600, 标注, 2019 年 5 月 31 日星期五 下午 9:04:25
+  # note_md5: 2a128cca1892cdac38beb5a28be9cf71
+  #+BEGIN_QUOTE
+  “Aegon,” he said to a woman nursing a newborn babe in a great wooden bed. “What better name for a king?” “Will
+  you make a song for him?” the woman asked. “He has a song,” the man replied. “He is the prince that was
+  promised, and his is the song of ice and fire.” He
+  #+END_QUOTE
+
+- 24668-24668, 标注, 2019 年 5 月 31 日星期五 下午 9:40:14
+  # note_md5: 4b616310afadf2d9688ea8acd19afd50
+  #+BEGIN_QUOTE
+  three fires must you light … one for life and one for death and one to love …
+  #+END_QUOTE
+
+- 24669-24670, 标注, 2019 年 5 月 31 日星期五 下午 9:41:14
+  # note_md5: 44d64b36f3ec4cda675dac0cb1f9cc35
+  #+BEGIN_QUOTE
+  three mounts must you ride … one to bed and one to dread and one to love … The
+  #+END_QUOTE
+
+- 24671-24672, 标注, 2019 年 5 月 31 日星期五 下午 9:41:49
+  # note_md5: 778189ad8fea8e44755aa5c53f187508
+  #+BEGIN_QUOTE
+  three treasons will you know … once for blood and once for gold and once for love …
+  #+END_QUOTE
+
+- 24676-24678, 标注, 2019 年 5 月 31 日星期五 下午 9:44:31
+  # note_md5: 1b88bfc3f22b618a69400af52139020f
+  #+BEGIN_QUOTE
+  A tall lord with copper skin and silver-gold hair stood beneath the banner of a fiery stallion, a burning city
+  behind him. Rubies flew like drops of blood from the chest of a dying prince, and he sank to his knees in the
+  water and with his last breath murmured a woman’s name. …
+  #+END_QUOTE
+
+- 24703-24703, 标注, 2019 年 6 月 1 日星期六 上午 7:49:34
+  # note_md5: 2a1a7ec319bea1a36b60001d10550754
+  #+BEGIN_QUOTE
+  her left, any door, but there was nothing, only
+  #+END_QUOTE
+
+- 24775-24776, 标注, 2019 年 6 月 1 日星期六 下午 2:54:49
+  # note_md5: d51bb8ba7b22ba231d5b4f39bea73b80
+  #+BEGIN_QUOTE
+  trebuchets stood side by side in the market square,
+  #+END_QUOTE
+
+- 24849-24850, 标注, 2019 年 6 月 1 日星期六 下午 4:20:45
+  # note_md5: 2b4e7ee4cd55e47294dbc1f996877bc9
+  #+BEGIN_QUOTE
+  magic had begun to go out of the world the day the last dragon died.”
+  #+END_QUOTE
+
+- 25571-25571, 标注, 2019 年 6 月 4 日星期二 下午 7:54:19
+  # note_md5: 88146d7c39e7a603c80e22bfd5d56a36
+  #+BEGIN_QUOTE
+  To lead men you must know them, Jon
+  #+END_QUOTE
+
+- 25571-25571, 标注, 2019 年 6 月 4 日星期二 下午 7:54:25
+  # note_md5: 7b456c7c2d1620a074c75b8d77ec5cde
+  #+BEGIN_QUOTE
+  To lead men you must know them,
+  #+END_QUOTE
+
+- 25805-25806, 标注, 2019 年 6 月 5 日星期三 上午 7:08:52
+  # note_md5: 8eebaf14dbcc8af336b17560f9adc195
+  #+BEGIN_QUOTE
+  A day will come when you think yourself safe and happy, and suddenly your joy will turn to ashes in your
+  mouth, and you’ll know the debt is paid.”
+  #+END_QUOTE
+
+- 25987-25987, 标注, 2019 年 6 月 6 日星期四 下午 6:49:46
+  # note_md5: 0b662859df970e59c7ebc328aa9fb15f
+  #+BEGIN_QUOTE
+  people often claim to hunger for truth, but seldom like the taste when it’s served up.”
+  #+END_QUOTE
+
+- 26792-26793, 标注, 2019 年 6 月 8 日星期六 下午 7:51:54
+  # note_md5: fa162249095e9641bf4b73a856738458
+  #+BEGIN_QUOTE
+  would sooner face any number of swords than sit helpless like this, pretending to enjoy the company of this
+  flock of frightened hens.”
+  #+END_QUOTE
+
+- 26792-26793, 标注, 2019 年 6 月 8 日星期六 下午 7:52:05
+  # note_md5: 49c3c27ffb067e6dfd7dee8fb3f3ac02
+  #+BEGIN_QUOTE
+  “I would sooner face any number of swords than sit helpless like this, pretending to enjoy the company of this
+  flock of frightened hens.”
+  #+END_QUOTE
+
+- 27159-27159, 标注, 2019 年 6 月 9 日星期日 下午 4:34:30
+  # note_md5: ca8e07ec526c6b86bdfec5c41eac2287
+  #+BEGIN_QUOTE
+  her people and her dragons in her absence,
+  #+END_QUOTE
+
+- 27221-27222, 标注, 2019 年 6 月 9 日星期日 下午 5:05:43
+  # note_md5: 8d1abe91c150bbd85ff577ca24d0d07b
+  #+BEGIN_QUOTE
+  Dany found her thoughts returning to the Palace of Dust once more, as the tongue returns to a space left by a
+  missing tooth.
+  #+END_QUOTE
+
+- 27234-27234, 标注, 2019 年 6 月 9 日星期日 下午 5:08:06
+  # note_md5: 623ba50b5da07c13ab6975900093e985
+  #+BEGIN_QUOTE
+  “His is the song of ice and fire, my brother said.
+  #+END_QUOTE
+
+- 27237-27238, 标注, 2019 年 6 月 9 日星期日 下午 5:09:40
+  # note_md5: a51ec6601695b11b0e7770e11073508c
+  #+BEGIN_QUOTE
+  My brother said the babe was the prince that was promised and told her to name him Aegon.”
+  #+END_QUOTE
+
+- 27591-27596, 标注, 2019 年 6 月 10 日星期一 上午 8:14:53
+  # note_md5: 237169cf4dfaa22c46d1979b09f8a3ff
+  #+BEGIN_QUOTE
+  “When the snows fall and the white winds blow, the lone wolf dies, but the pack survives,” he said. “But there
+  is no pack,” she whispered to the weirwood. Bran and Rickon were dead, the Lannisters had Sansa, Jon had gone
+  to the Wall. “I’m not even me now, I’m Nan.” “You are Arya of Winterfell, daughter of the north. You told me
+  you could be strong. You have the wolf blood in you.” “The wolf blood.” Arya remembered now. “I’ll be as
+  strong as Robb. I said I would.” She took a deep breath, then lifted the broomstick in both hands and brought
+  #+END_QUOTE
+
+- 27591-27591, 标注, 2019 年 6 月 10 日星期一 上午 8:15:02
+  # note_md5: f10f0f6d2f0415e8b16d44d6ba4ee5ee
+  #+BEGIN_QUOTE
+  “When the snows fall and the white winds blow, the lone wolf dies, but the pack survives,”
+  #+END_QUOTE
+
+- 27848-27849, 标注, 2019 年 6 月 11 日星期二 下午 1:17:29
+  # note_md5: 69cdfb4a162725e4ab52fd215977c366
+  #+BEGIN_QUOTE
+  “Lovelier than you know, sweet child. It’s magic, you see. It’s justice you hold. It’s vengeance for your
+  father.”
+  #+END_QUOTE
+
+- 27849-27849, 笔记, 2019 年 6 月 11 日星期二 下午 1:17:41
+  # note_md5: e76b65e95879e0c2e378ce87510416cb
+  #+BEGIN_QUOTE
+  毒药。
+  #+END_QUOTE
+
+- 28111-28112, 标注, 2019 年 6 月 11 日星期二 下午 9:21:57
+  # note_md5: 949b27cb56224296aa766196e20ec45b
+  #+BEGIN_QUOTE
+  No one heard. No one came. Alone in the dark, he fell
+  #+END_QUOTE
+
+- 28516-28517, 标注, 2019 年 6 月 12 日星期三 下午 9:00:38
+  # note_md5: 510f21dd6598fe1dd2bf3fd864f3278d
+  #+BEGIN_QUOTE
+  This was where they came when the warmth had seeped out of their bodies; this was the dark hall of the dead,
+  where the living feared to tread.
+  #+END_QUOTE
+
+- 29433-29434, 标注, 2019 年 6 月 13 日星期四 下午 8:14:09
+  # note_md5: adc38d58bd7e301fe0be1668c424a2bf
+  #+BEGIN_QUOTE
+  fourteen was a good number, enough to do what needed doing but not so many that they couldn’t keep the secret.
+  #+END_QUOTE
+
+- 30413-30413, 标注, 2019 年 6 月 15 日星期六 下午 6:33:27
+  # note_md5: 31e52b082c9a212e6058087be3fad424
+  #+BEGIN_QUOTE
+  “Some battles are won with swords and spears, others with quills and ravens.
+  #+END_QUOTE
+
+- 30458-30460, 标注, 2019 年 6 月 15 日星期六 下午 6:35:11
+  # note_md5: d75e8b11d5217ef2023a8eff0794a8fc
+  #+BEGIN_QUOTE
+  Every lord has need of a beast from time to time … a lesson you seem to have learned, judging from Ser Bronn
+  and those clansmen of yours.”
+  #+END_QUOTE
+
+- 30474-30475, 标注, 2019 年 6 月 15 日星期六 下午 6:43:45
+  # note_md5: b28d0f7e6ff3bce94b157fd0d68e600b
+  #+BEGIN_QUOTE
+  You are an ill-made, devious, disobedient, spiteful little creature full of envy, lust, and low cunning. Men’s
+  laws give you the right to bear my name and display my colors, since I cannot prove that you are not mine.
+  #+END_QUOTE
+
+- 30659-30659, 笔记, 2019 年 6 月 15 日星期六 下午 7:46:14
+  # note_md5: fd25c4a842e1857a37be6e2a4f96677f
+  #+BEGIN_QUOTE
+  荆棘女王
+  #+END_QUOTE
+
+- 30659-30660, 标注, 2019 年 6 月 15 日星期六 下午 7:46:14
+  # note_md5: b65c94e3cfb60908a3d8cadc576676ce
+  #+BEGIN_QUOTE
+  Queen of Thorns,
+  #+END_QUOTE
+
+- 30780-30781, 标注, 2019 年 6 月 15 日星期六 下午 8:51:30
+  # note_md5: b5a8ffd5e1de9a92ee3fb2b8273fadbb
+  #+BEGIN_QUOTE
+  Should you ever have a son, Sansa, beat him frequently so he learns to mind you.
+  #+END_QUOTE
+
+- 30780-30781, 标注, 2019 年 6 月 15 日星期六 下午 8:51:49
+  # note_md5: 3bf3be7686e3ea1e364545ced2907492
+  #+BEGIN_QUOTE
+  Should you ever have a son, Sansa, beat him frequently so he learns to mind you. I only had the one boy and I
+  hardly beat him at all, so now he pays more heed to Butterbumps than he does to me. A
+  #+END_QUOTE
+
+- 30780-30781, 标注, 2019 年 6 月 15 日星期六 下午 8:51:59
+  # note_md5: 6afa3eed996c5520656de4e494e3bc09
+  #+BEGIN_QUOTE
+  Should you ever have a son, Sansa, beat him frequently so he learns to mind you. I only had the one boy and I
+  hardly beat him at all, so now he pays more heed to Butterbumps than he does to me.
+  #+END_QUOTE
+
+- 30967-30968, 标注, 2019 年 6 月 16 日星期日 上午 8:37:54
+  # note_md5: 150245d09d094587ae40c5db53aa7916
+  #+BEGIN_QUOTE
+  in battle discipline beats numbers nine times of every ten,
+  #+END_QUOTE
+
+- 31262-31262, 标注, 2019 年 6 月 16 日星期日 下午 2:20:59
+  # note_md5: 8cdfc0fe0c4995e4e1f3942cac867267
+  #+BEGIN_QUOTE
+  One voice may speak you false, but in many there is always truth to be found.”
+  #+END_QUOTE
+
+- 31344-31345, 标注, 2019 年 6 月 16 日星期日 下午 2:35:42
+  # note_md5: c9962564229cd102c812d31820a553f6
+  #+BEGIN_QUOTE
+  “It seems to me that a queen who trusts no one is as foolish as a queen who trusts everyone.
+  #+END_QUOTE
+
+- 31592-31594, 标注, 2019 年 6 月 16 日星期日 下午 3:35:53
+  # note_md5: 87bcbdb46d34be64193c0064243d7799
+  #+BEGIN_QUOTE
+  The greenseers were more than that. They were wargs as well, as you are, and the greatest of them could wear
+  the skins of any beast that flies or swims or crawls, and could look through the eyes of the weirwoods as
+  well, and see the truth that lies beneath the world.
+  #+END_QUOTE
+
+- 32713-32716, 标注, 2019 年 6 月 17 日星期一 下午 8:42:06
+  # note_md5: 617a14b6d0bec6e8c7d8f601baf33d37
+  #+BEGIN_QUOTE
+  “Dare I ask how many swords come with your bride, Robb?” “Fifty. A dozen knights.” His voice was glum, as well
+  it might be. When the marriage contract had been made at the Twins, old Lord Walder Frey had sent Robb off
+  with a thousand mounted knights and near three thousand foot.
+  #+END_QUOTE
+
+- 32905-32907, 标注, 2019 年 6 月 18 日星期二 上午 7:23:29
+  # note_md5: 33f054a0fcc00aa1773721fb3547523c
+  #+BEGIN_QUOTE
+  Old Nan used to tell stories about knights and their ladies who would sleep in a single bed with a blade
+  between them for honor’s sake, but he thought this must be the first time where a direwolf took the place of
+  the sword.
+  #+END_QUOTE
+
+- 33382-33382, 标注, 2019 年 6 月 18 日星期二 下午 1:07:19
+  # note_md5: 7d1f864d78b1adc68271a0c56ceb9bfc
+  #+BEGIN_QUOTE
+  broken branches. Then up a gentle slope and
+  #+END_QUOTE
+
+- 34552-34553, 标注, 2019 年 6 月 19 日星期三 下午 10:17:25
+  # note_md5: f77e69eee314b92ca739cec22bc220df
+  #+BEGIN_QUOTE
+  “I dreamt I saw a shadow with a burning heart butchering a golden stag,
+  #+END_QUOTE
+
+- 34603-34604, 标注, 2019 年 6 月 19 日星期三 下午 11:08:12
+  # note_md5: 4e73088e18038629a8bae59f0d3fdaf7
+  #+BEGIN_QUOTE
+  The gods give each of us our little gifts and talents, and it is meant for us to use them,
+  #+END_QUOTE
+
+- 35159-35160, 标注, 2019 年 6 月 21 日星期五 下午 8:31:08
+  # note_md5: 65626d2b5a01fefbb15d6ab126d4ba14
+  #+BEGIN_QUOTE
+  Old stories are like old friends, she used to say. You have to visit them from time to time.”
+  #+END_QUOTE
+
+- 35358-35359, 标注, 2019 年 6 月 22 日星期六 上午 9:09:00
+  # note_md5: 584bfa346cc954f1f45a3d50fd589d89
+  #+BEGIN_QUOTE
+  When the red star bleeds and the darkness gathers, Azor Ahai shall be born again amidst smoke and salt to wake
+  dragons out of stone.
+  #+END_QUOTE
+
+- 36880-36881, 标注, 2019 年 6 月 24 日星期一 上午 7:29:49
+  # note_md5: 6cb3d62840daaadfd7708865d13f0592
+  #+BEGIN_QUOTE
+  There is a tool for every task, and a task for every tool.”
+  #+END_QUOTE
+
+- 37062-37064, 标注, 2019 年 6 月 24 日星期一 下午 9:50:47
+  # note_md5: 9f8e485375ec8bd4011a74760ea21f92
+  #+BEGIN_QUOTE
+  You don’t build a wall seven hundred feet high to keep savages in skins from stealing women. The Wall was made
+  to guard the realms of men … and not against other men, which is all the wildlings are
+  #+END_QUOTE
+
+- 38139-38142, 标注, 2019 年 6 月 26 日星期三 上午 8:06:59
+  # note_md5: b02cd4c524355f4e943494411b253677
+  #+BEGIN_QUOTE
+  Sweat beaded his brow. He could only hope he did not look as feeble as he felt. Lord Bolton’s little smile
+  paid another visit to his lips. “You speak boldly for a man who needs help to break his bread. My guards are
+  all around us, I remind you.” “All around us, and half a league away.” Jaime glanced down the vast length of
+  the hall.
+  #+END_QUOTE
+
+- 39170-39170, 标注, 2019 年 6 月 28 日星期五 下午 1:06:31
+  # note_md5: 2b3eb7b7ec3838feb30a370f84f4f43c
+  #+BEGIN_QUOTE
+  They ate the land bare as they passed, like locusts in sandals.
+  #+END_QUOTE
+
+- 40495-40496, 标注, 2019 年 6 月 30 日星期日 下午 8:49:53
+  # note_md5: 4f546e7601e6558baf78251e77b6a877
+  #+BEGIN_QUOTE
+  third appeared in the window of the roundtower,
+  #+END_QUOTE
+
+- 41554-41555, 标注, 2019 年 7 月 3 日星期三 下午 10:20:24
+  # note_md5: 009a799af10e877e2fd5b90e35c8cef3
+  #+BEGIN_QUOTE
+  when your enemies defy you, you must serve them steel and fire. When they go to their knees, however, you must
+  help them back to their feet.
+  #+END_QUOTE
+
+- 41554-41555, 标注, 2019 年 7 月 3 日星期三 下午 10:20:33
+  # note_md5: 9b3893518432d7fd4fb2255a24ccfad8
+  #+BEGIN_QUOTE
+  when your enemies defy you, you must serve them steel and fire. When they go to their knees, however, you must
+  help them back to their feet. Elsewise no man will ever bend the knee to you
+  #+END_QUOTE
+
+- 41556-41556, 标注, 2019 年 7 月 3 日星期三 下午 10:20:53
+  # note_md5: e8ef6b6a966dca0b9aa2f272268c5665
+  #+BEGIN_QUOTE
+  any man who must say ‘I am the king’ is no true king at all.
+  #+END_QUOTE
+
+- 41895-41895, 标注, 2019 年 7 月 6 日星期六 下午 1:51:56
+  # note_md5: 6094e92237e0681f0de3dc8e273c4c05
+  #+BEGIN_QUOTE
+  The best way to learn a thing was to do
+  #+END_QUOTE
+
+- 41895-41895, 标注, 2019 年 7 月 6 日星期六 下午 1:52:09
+  # note_md5: 19b49b548b8f1362708fae7270066814
+  #+BEGIN_QUOTE
+  The best way to learn a thing was to do it,
+  #+END_QUOTE
+
+- 42679-42679, 标注, 2019 年 7 月 7 日星期日 下午 1:49:38
+  # note_md5: 94c07d42e83b179a8ae059be93956f9f
+  #+BEGIN_QUOTE
+  There are old sellswords and bold sellswords, but no old bold sellswords.”
+  #+END_QUOTE
+
+- 24599-24600, 标注, 2019 年 7 月 7 日星期日 下午 2:35:59
+  # note_md5: 827440bdfdc9156ea5498597ada92964
+  #+BEGIN_QUOTE
+  “He has a song,” the man replied. “He is the prince that was promised, and his is the song of ice and fire.”
+  #+END_QUOTE
+
+- 43669-43670, 标注, 2019 年 7 月 8 日星期一 下午 10:13:20
+  # note_md5: 71a183afd5b727bb9a372be340feebf7
+  #+BEGIN_QUOTE
+  Always keep your foes confused. If they are never certain who you are or what you want, they cannot know what
+  you are like to do next.
+  #+END_QUOTE
+
+- 43669-43671, 标注, 2019 年 7 月 8 日星期一 下午 10:13:58
+  # note_md5: 5c26920f66d2078a05c4a7521d5dd570
+  #+BEGIN_QUOTE
+  Always keep your foes confused. If they are never certain who you are or what you want, they cannot know what
+  you are like to do next. Sometimes the best way to baffle them is to make moves that have no purpose, or even
+  seem to work against you.
+  #+END_QUOTE
+
+- 43692-43692, 标注, 2019 年 7 月 9 日星期二 下午 1:18:27
+  # note_md5: 3a16704e9073f0eb8b9a812d07367814
+  #+BEGIN_QUOTE
+  twin did she show her wounds. She will look to me
+  #+END_QUOTE
+
+- 45044-45046, 标注, 2019 年 7 月 13 日星期六 下午 1:29:48
+  # note_md5: 34ed93bb85ab90260a46f6fadb175048
+  #+BEGIN_QUOTE
+  “I learned from the White Bull and Barristan the Bold,” Jaime snapped. “I learned from Ser Arthur Dayne, the
+  Sword of the Morning, who could have slain all five of you with his left hand while he was taking a piss with
+  the right. I learned from Prince Lewyn of Dorne and Ser Oswell Whent and Ser Jonothor Darry, good men every
+  one.”
+  #+END_QUOTE
+
+- 45184-45185, 标注, 2019 年 7 月 13 日星期六 下午 2:10:24
+  # note_md5: 79af48161ae97fd8146ba1447115d1cc
+  #+BEGIN_QUOTE
+  It tasted of oak and fruit and hot summer nights, the flavors blossoming in her mouth like flowers opening to
+  the sun.
+  #+END_QUOTE
+
+- 45207-45207, 标注, 2019 年 7 月 13 日星期六 下午 2:15:06
+  # note_md5: c711a8393fb2250297d84344b55b7028
+  #+BEGIN_QUOTE
+  Nothing discourages unwanted questions as much as a flow of pious bleating.
+  #+END_QUOTE
+
+- 45222-45223, 标注, 2019 年 7 月 13 日星期六 下午 2:18:50
+  # note_md5: e524965928821717ea4cca0054afce89
+  #+BEGIN_QUOTE
+  Everyone wants something, Alayne. And when you know what a man wants you know who he is, and how to move him.”
+  #+END_QUOTE
+
+- 45249-45250, 标注, 2019 年 7 月 13 日星期六 下午 2:25:18
+  # note_md5: 650a8b810cb4ea27a1eea11e1d298983
+  #+BEGIN_QUOTE
+  “I love the juice but I loathe the sticky fingers,” he complained, wiping his hands. “Clean hands,
+  Sansa. Whatever you do, make certain your hands are clean.”
+  #+END_QUOTE
+
+- 45719-45721, 标注, 2019 年 7 月 13 日星期六 下午 6:01:26
+  # note_md5: 5d1a52599d71220d8bd8a3f1acff756b
+  #+BEGIN_QUOTE
+  “I was born. I lived. I am guilty of being a dwarf, I confess it. And no matter how many times my good father
+  forgave me, I have persisted in my infamy.”
+  #+END_QUOTE
+
+- 45866-45866, 标注, 2019 年 7 月 13 日星期六 下午 8:24:39
+  # note_md5: e0499c57df8949ccd72b054c286ce57d
+  #+BEGIN_QUOTE
+  Oberyn avoided him easily. “You raped her. You
+  #+END_QUOTE
+
+- 46131-46132, 标注, 2019 年 7 月 14 日星期日 下午 4:46:25
+  # note_md5: a73e8330889d762d15302688c3d065a6
+  #+BEGIN_QUOTE
+  madness and greatness are two sides of the same coin.
+  #+END_QUOTE
+
+- 46131-46133, 标注, 2019 年 7 月 14 日星期日 下午 4:46:41
+  # note_md5: f313a9ae658fbffe26808fde437859d3
+  #+BEGIN_QUOTE
+  madness and greatness are two sides of the same coin. Every time a new Targaryen is born, he said, the gods
+  toss the coin in the air and the world holds its breath to see how it will land.”
+  #+END_QUOTE
+
+- 47343-47343, 标注, 2019 年 7 月 16 日星期二 上午 6:37:50
+  # note_md5: fdc4552aa62cf5cb63dff81508934a81
+  #+BEGIN_QUOTE
+  It’s not the walls that make a lord, it’s the man.
+  #+END_QUOTE
+
+- 47560-47561, 标注, 2019 年 7 月 16 日星期二 上午 8:24:12
+  # note_md5: 575b3a9ec8f828f3eb092884215a624e
+  #+BEGIN_QUOTE
+  “For hands of gold are always cold, but a woman’s hands are warm,”
+  #+END_QUOTE
+
+- 47560-47561, 标注, 2019 年 7 月 16 日星期二 上午 8:24:16
+  # note_md5: 168859315fef0fd8076cc7411fe0dfac
+  #+BEGIN_QUOTE
+  Tyrion slid a hand under his father’s chain, and twisted. The links tightened, digging into her neck. “For
+  hands of gold are always cold, but a woman’s hands are warm,”
+  #+END_QUOTE
+
+- 47560-47562, 标注, 2019 年 7 月 16 日星期二 上午 8:24:28
+  # note_md5: 7124066f59fd1dce160c5bdf2d6d7dde
+  #+BEGIN_QUOTE
+  Tyrion slid a hand under his father’s chain, and twisted. The links tightened, digging into her neck. “For
+  hands of gold are always cold, but a woman’s hands are warm,” he said. He gave cold hands another twist as the
+  warm ones beat away his tears. Afterward he found Lord Tywin’s dagger on the bedside table and shoved it
+  through his belt.
+  #+END_QUOTE
+
+- 47560-47561, 标注, 2019 年 7 月 16 日星期二 上午 8:24:43
+  # note_md5: d165826fce62a7e713237ad9742371a0
+  #+BEGIN_QUOTE
+  Tyrion slid a hand under his father’s chain, and twisted. The links tightened, digging into her neck. “For
+  hands of gold are always cold, but a woman’s hands are warm,” he said. He gave cold hands another twist as the
+  warm ones beat away his tears.
+  #+END_QUOTE
+
+- 47690-47691, 标注, 2019 年 7 月 16 日星期二 上午 9:29:14
+  # note_md5: 1f5b2b058ecd82e47ec1b0db9f09c967
+  #+BEGIN_QUOTE
+  “On Dragonstone, where I had my seat, there is much of this obsidian to be seen in the old tunnels beneath the
+  mountain,” the king told Sam.
+  #+END_QUOTE
+
+- 47784-47786, 标注, 2019 年 7 月 16 日星期二 上午 9:47:56
+  # note_md5: 79ee7900039cab5822a7d2d7fb188500
+  #+BEGIN_QUOTE
+  The Lord Commander of the Night’s Watch is a lord, first and foremost. He must be able to treat with other
+  lords … and with kings as well. He must be a man worthy of respect.” Ser Denys leaned forward. “We are the
+  sons
+  #+END_QUOTE
+
+- 47784-47785, 标注, 2019 年 7 月 16 日星期二 上午 9:48:02
+  # note_md5: 2c8cfe2af426234a7c5851ebff20df6c
+  #+BEGIN_QUOTE
+  The Lord Commander of the Night’s Watch is a lord, first and foremost. He must be able to treat with other
+  lords … and with kings as well. He must be a man worthy of respect.” Ser
+  #+END_QUOTE
+
+- 47784-47785, 标注, 2019 年 7 月 16 日星期二 上午 9:48:06
+  # note_md5: 098155ca5c6ef6488e1f645651683f7f
+  #+BEGIN_QUOTE
+  The Lord Commander of the Night’s Watch is a lord, first and foremost. He must be able to treat with other
+  lords … and with kings as well. He must be a man worthy of respect.”
+  #+END_QUOTE
+
+- 47864-47864, 标注, 2019 年 7 月 16 日星期二 上午 10:16:17
+  # note_md5: 3248cd502135fa3b8fd58a3fd0d04e65
+  #+BEGIN_QUOTE
+  “Lord Tywin favors Slynt,” said Bowen Marsh,
+  #+END_QUOTE
+
+- 49595-49596, 标注, 2019 年 7 月 17 日星期三 下午 6:35:53
+  # note_md5: 70aa1e11def683b5b5b0b48d610b9dda
+  #+BEGIN_QUOTE
+  “The day you make them all is the day you stop improving.” Alleras unstrung his longbow and eased it
+  #+END_QUOTE
+
+- 49595-49596, 标注, 2019 年 7 月 17 日星期三 下午 6:35:59
+  # note_md5: b016d04ba55eef4fc581a96e6183ba91
+  #+BEGIN_QUOTE
+  “The day you make them all is the day you stop improving.”
+  #+END_QUOTE
+
+- 49684-49685, 标注, 2019 年 7 月 17 日星期三 下午 9:03:31
+  # note_md5: d9317e8583699739ebf156fb7c919809
+  #+BEGIN_QUOTE
+  An age of wonder and terror will soon be upon us, an age for gods and heroes.”
+  #+END_QUOTE
+
+- 50102-50102, 标注, 2019 年 7 月 18 日星期四 下午 9:03:55
+  # note_md5: e20c09a7e77f85b8f2f22f7865887ebf
+  #+BEGIN_QUOTE
+  Silence is a prince’s friend, the captain had heard him tell his daughter once. Words are like arrows,
+  #+END_QUOTE
+
+- 50102-50103, 标注, 2019 年 7 月 18 日星期四 下午 9:04:07
+  # note_md5: dbf3c80951bc62e9312afa7b90005afc
+  #+BEGIN_QUOTE
+  Silence is a prince’s friend, the captain had heard him tell his daughter once. Words are like arrows,
+  Arianne. Once loosed, you cannot call them back.
+  #+END_QUOTE
+
+- 50102-50103, 标注, 2019 年 7 月 18 日星期四 下午 9:04:13
+  # note_md5: 649ee167b6afa1b700216a2f5695599b
+  #+BEGIN_QUOTE
+  Words are like arrows, Arianne. Once loosed, you cannot call them back.
+  #+END_QUOTE
+
+- 50848-50848, 标注, 2019 年 7 月 20 日星期六 下午 2:10:38
+  # note_md5: c842b9221437d5ca5b84f94d4c2f561d
+  #+BEGIN_QUOTE
+  tankards from below, and voices drifting up the steps.
+  #+END_QUOTE
+
+- 50884-50884, 标注, 2019 年 7 月 20 日星期六 下午 2:24:19
+  # note_md5: c5d686e1d9d04ce23605561927f60905
+  #+BEGIN_QUOTE
+  you could sometimes fall right into them, as if each page was a hole into another world.
+  #+END_QUOTE
+
+- 51100-51101, 标注, 2019 年 7 月 20 日星期六 下午 4:11:58
+  # note_md5: 18a949b0cbc04b2198eb2359a148ec07
+  #+BEGIN_QUOTE
+  sober.” “If you ask the Citadel for
+  #+END_QUOTE
+
+- 51159-51159, 标注, 2019 年 7 月 20 日星期六 下午 4:43:37
+  # note_md5: 47b2bd7944d18533c6b2a99ce2ad9d4f
+  #+BEGIN_QUOTE
+  “Knowledge is a weapon, Jon. Arm yourself well before you ride forth to battle.”
+  #+END_QUOTE
+
+- 51213-51213, 标注, 2019 年 7 月 20 日星期六 下午 5:13:27
+  # note_md5: 44554b9cf568c9e08767be2453ee7ef3
+  #+BEGIN_QUOTE
+  smattering of the Common Tongue from nights
+  #+END_QUOTE
+
+- 51343-51344, 标注, 2019 年 7 月 20 日星期六 下午 9:55:18
+  # note_md5: d7a9b8dffe690ec874065f10ab882c9f
+  #+BEGIN_QUOTE
+  gleaming ebony. In their center was a carved moon
+  #+END_QUOTE
+
+- 51375-51375, 标注, 2019 年 7 月 20 日星期六 下午 10:04:32
+  # note_md5: af3d5716346766c07bdc1ff972457dc6
+  #+BEGIN_QUOTE
+  bony face, hollow cheeks, and dark eyes that looked
+  #+END_QUOTE
+
+- 51423-51423, 标注, 2019 年 7 月 21 日星期日 上午 8:23:35
+  # note_md5: 62087933e52b384e88ce4241e2803bb1
+  #+BEGIN_QUOTE
+  Kingsguard rode before them, white knights on white
+  #+END_QUOTE
+
+- 51575-51576, 标注, 2019 年 7 月 21 日星期日 下午 3:12:05
+  # note_md5: a8d73961b1a42e6773f0e67d1605555c
+  #+BEGIN_QUOTE
+  worse.” Lady Olenna gave Cersei a toothless
+  #+END_QUOTE
+
+- 51609-51610, 标注, 2019 年 7 月 21 日星期日 下午 4:06:59
+  # note_md5: e34fa2a410c315166859dc3d31067109
+  #+BEGIN_QUOTE
+  craved audience. “Send him in,” the queen commanded.
+  #+END_QUOTE
+
+- 51806-51806, 标注, 2019 年 7 月 21 日星期日 下午 5:11:37
+  # note_md5: 29800034d40ca66c63aee1bc218c8ec9
+  #+BEGIN_QUOTE
+  somber clothes and solemn faces, but Jaime suspected
+  #+END_QUOTE
+
+- 51834-51835, 标注, 2019 年 7 月 21 日星期日 下午 5:34:50
+  # note_md5: 596f310aad7cff8a1fcd1a46a2319c5e
+  #+BEGIN_QUOTE
+  admiral lost his heart to her, though he was married to
+  #+END_QUOTE
+
+- 52094-52095, 标注, 2019 年 7 月 22 日星期一 下午 6:52:12
+  # note_md5: 54c16fc5ad320eb21abdfe1088d8b53d
+  #+BEGIN_QUOTE
+  scalp and a stiff red mustache. When
+  #+END_QUOTE
+
+- 52382-52382, 标注, 2019 年 7 月 23 日星期二 下午 3:23:22
+  # note_md5: a76299ff36bc98c02621d0b24875b9e6
+  #+BEGIN_QUOTE
+  slyly and stroking his beard as he whispered in
+  #+END_QUOTE
+
+- 52642-52642, 标注, 2019 年 7 月 24 日星期三 上午 6:53:51
+  # note_md5: 1077fa60de3d58ee77d3b904df8c8eb1
+  #+BEGIN_QUOTE
+  mustard in a big stone jar, from Oldtown.” The thought
+  #+END_QUOTE
+
+- 52654-52654, 标注, 2019 年 7 月 24 日星期三 上午 6:58:22
+  # note_md5: 3e004ab9f79e41ed3c5d649088419fbf
+  #+BEGIN_QUOTE
+  dissimilar as his ten towers. The
+  #+END_QUOTE
+
+- 52765-52766, 标注, 2019 年 7 月 24 日星期三 下午 1:31:39
+  # note_md5: 163de8ac1d1e726265bb265d89b6f97e
+  #+BEGIN_QUOTE
+  If I do not go, I will spend the rest of my life wondering what might have happened if I had.”
+  #+END_QUOTE
+
+- 52765-52767, 标注, 2019 年 7 月 24 日星期三 下午 1:32:23
+  # note_md5: 87b12383ad50afa9d9ea70ff87950261
+  #+BEGIN_QUOTE
+  If I do not go, I will spend the rest of my life wondering what might have happened if I had.” “If you do go,
+  the rest of your life may be too short for wondering.”
+  #+END_QUOTE
+
+- 52768-52769, 标注, 2019 年 7 月 24 日星期三 下午 1:32:52
+  # note_md5: fb9eee3929725b69067d31c5bc805565
+  #+BEGIN_QUOTE
+  wince. “Asha, my two tall sons fed the crabs of
+  #+END_QUOTE
+
+- 52965-52965, 标注, 2019 年 7 月 25 日星期四 下午 10:02:55
+  # note_md5: 6f433430f488973537d87549dd9f1db2
+  #+BEGIN_QUOTE
+  “When a dog goes bad, the fault lies with his master,”
+  #+END_QUOTE
+
+- 52981-52982, 标注, 2019 年 7 月 25 日星期四 下午 10:06:01
+  # note_md5: 972a993c1a92f22b3a135b9c569dc127
+  #+BEGIN_QUOTE
+  brass, “I feel as though I have a second mother
+  #+END_QUOTE
+
+- 53102-53102, 标注, 2019 年 7 月 26 日星期五 下午 10:38:58
+  # note_md5: e46f8cd540283da41f508a629eec3f11
+  #+BEGIN_QUOTE
+  surged upward. Green flames leapt into the sky
+  #+END_QUOTE
+
+- 53141-53142, 标注, 2019 年 7 月 27 日星期六 下午 6:23:14
+  # note_md5: cb31356eb0dec8ee5878eea76b0412a6
+  #+BEGIN_QUOTE
+  crisped. The pungent smell of his sauces brought
+  #+END_QUOTE
+
+- 53311-53311, 标注, 2019 年 7 月 27 日星期六 下午 11:12:52
+  # note_md5: 19d29ec9d0312cb8b7caac3c45005976
+  #+BEGIN_QUOTE
+  spurned him. “The Kingmaker wrought grave harm,”
+  #+END_QUOTE
+
+- 53424-53425, 标注, 2019 年 7 月 28 日星期日 下午 5:00:51
+  # note_md5: 2bab95ad160ed942f2cf055464799b4b
+  #+BEGIN_QUOTE
+  blisters on your hands and bruises on your arms
+  #+END_QUOTE
+
+- 53875-53875, 标注, 2019 年 8 月 4 日星期日 下午 7:31:49
+  # note_md5: 7bb020d258f2e271c48327128508c274
+  #+BEGIN_QUOTE
+  crabs had gathered to pay them homage. “Too
+  #+END_QUOTE
+
+- 54068-54068, 标注, 2019 年 8 月 10 日星期六 下午 3:51:23
+  # note_md5: 3a886d98ca174c224630ba158d3c954e
+  #+BEGIN_QUOTE
+  “I am growing very fond of Lady Taena. She
+  #+END_QUOTE
+
+- 54102-54102, 标注, 2019 年 8 月 10 日星期六 下午 4:00:16
+  # note_md5: 417d4c43a7a0cd5271d41a6b0c930d06
+  #+BEGIN_QUOTE
+  She does not lack for wits, but she has no judgment, and no patience.
+  #+END_QUOTE
+
+- 54767-54767, 标注, 2019 年 8 月 14 日星期三 下午 5:49:59
+  # note_md5: 13b4810249812b1d6ea6fd10b3af0914
+  #+BEGIN_QUOTE
+  Even the Grey King’s great throne
+  #+END_QUOTE
+
+- 55855-55856, 标注, 2019 年 8 月 31 日星期六 下午 9:51:21
+  # note_md5: 61ce64622d9f1ae527cec929e0de3adc
+  #+BEGIN_QUOTE
+  just before they tell a lie, as if to hide their deceit.
+  #+END_QUOTE
+
+- 56083-56083, 标注, 2019 年 9 月 1 日星期日 下午 11:01:41
+  # note_md5: a3792132309248822624253c264262b8
+  #+BEGIN_QUOTE
+  Men see what they expect to see,
+  #+END_QUOTE
+
+- 56104-56105, 标注, 2019 年 9 月 2 日星期一 下午 9:45:50
+  # note_md5: 07a6676f9e9152cf0f1fd1ea67b2e5a1
+  #+BEGIN_QUOTE
+  “In the game of thrones, even the humblest pieces can have wills of their own. Sometimes they refuse to make
+  the moves you’ve planned for them.
+  #+END_QUOTE
+
+- 56591-56592, 标注, 2019 年 11 月 8 日星期五 下午 10:01:15
+  # note_md5: 009dbec38a86bc532fd6f9852e812784
+  #+BEGIN_QUOTE
+  “That was the one.” Her face grew somber.
+  #+END_QUOTE
+
+- 65881-65881, 标注, 2020年12月19日星期六 上午8:47:54
+  # note_md5: a6d8b48630f3fa36ec1b5637750ba15d
+  #+BEGIN_QUOTE
+  streaked by the sun, and a lean and comely body,
+  #+END_QUOTE
+
+- 66744-66745, 标注, 2020年12月20日星期日 下午5:14:21
+  # note_md5: e255b41f2c9e268a983b67aa5b52b479
+  #+BEGIN_QUOTE
+  fickle bitches, loyal only to themselves.
+  #+END_QUOTE
+
+- 66805-66806, 标注, 2020年12月20日星期日 下午8:48:29
+  # note_md5: 376af525ea2bdc62b64ce5a8ce3f32c4
+  #+BEGIN_QUOTE
+  saffron that I’m tasting?” Saffron was worth more
+  #+END_QUOTE

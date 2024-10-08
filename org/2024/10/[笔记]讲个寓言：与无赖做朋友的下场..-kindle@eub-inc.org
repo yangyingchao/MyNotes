@@ -1,0 +1,42 @@
+:PROPERTIES:
+:ID:       e53b106f-9d59-4d0b-9d26-44dad4ac00ce
+:END:
+#+TITLE: [笔记]讲个寓言：与无赖做朋友的下场..-kindle@eub-inc.com
+#+AUTHOR: Yang Yingchao
+#+DATE:   2024-10-09
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+LANGUAGE: en
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :tag1:tag2:
+
+- 26-28, 标注, 2019 年 6 月 23 日星期日 下午 2:28:38
+  # note_md5: 9884bfdadd76c7ddc2a8764afb7658a4
+  #+BEGIN_QUOTE
+  人生在世不能独来独往，有几个朋友是平常事，虽然朋友多了路好走，但是大千世界人心如面是复杂多样的，有些人是不可以
+  深交的；我们交往一个人，要根据他的为人处事来判断是否可以深交，那些正直善良有道德修养的人可以做好朋友的，要远离
+  那些流氓无赖，如果一旦交错了朋友，引狼入室会造成不必要的损失。
+  #+END_QUOTE
+
+- 30-32, 标注, 2019 年 6 月 23 日星期日 下午 2:28:50
+  # note_md5: ecf70aed4c8303d15b15714b8f684306
+  #+BEGIN_QUOTE
+  物以类聚，人以群分。一个人人品如何，做人怎样，可以通过他的人际关系、通过他交的朋友知道大概，如果他总是喜欢与
+  （世上公认的）无赖交朋友，同情（世上公认的）恶霸，那他本身就有问题。 所以，圈子很重要，关系格局和档次。
+  #+END_QUOTE
+
+- 38-41, 标注, 2019 年 6 月 23 日星期日 下午 2:29:06
+  # note_md5: e31ecd9ff91c8a2390a86936ee4c9e73
+  #+BEGIN_QUOTE
+  人生—世最大最难最重要的—项工程就是自我突破和改变的工程，突破和改变最最重要的就是脑袋里的想法，常言道:开颅容易
+  开窍难啦！其实认真一想，一个人所有的问题都是他的想法造成的，要想改变命运，首先就得改变想法，要想改变想法首先就
+  得改变环境和朋友圈子。
+  #+END_QUOTE
+
+- 41-41, 标注, 2019 年 6 月 23 日星期日 下午 2:29:12
+  # note_md5: 42bc1d304e878d1ed8d05dd18ab29f58
+  #+BEGIN_QUOTE
+  生活圈子决定你的命运，接近什么样的人就会走什么样的路。
+  #+END_QUOTE

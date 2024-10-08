@@ -1,0 +1,20 @@
+:PROPERTIES:
+:ID:       4676f42a-4be4-490a-9b56-113a77b871e4
+:END:
+#+TITLE: [笔记]《九星毒奶》-Unknown
+#+AUTHOR: Yang Yingchao
+#+DATE:   2024-10-09
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+LANGUAGE: en
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :tag1:tag2:
+
+- 17737-17739, 标注, 2020 年 9 月 7 日星期一 下午 10:18:09
+  # note_md5: 90748c4f290ade21cd8abaca0b6deba4
+  #+BEGIN_QUOTE
+  那句什么“我变秃了、也变强了”，简直是天大的笑话，这是对所有日夜操劳的小喽啰们最大的欺骗。 事实证明，你只能变秃，
+  很难变强。
+  #+END_QUOTE

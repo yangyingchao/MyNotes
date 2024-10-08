@@ -1,0 +1,26 @@
+:PROPERTIES:
+:ID:       4416c318-0f05-4b3f-b89e-cbff4e4c7264
+:END:
+#+TITLE: [笔记]白夜行-东野圭吾
+#+AUTHOR: Yang Yingchao
+#+DATE:   2024-10-09
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+LANGUAGE: en
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :baiyexing:note:ireader:
+
+- 7220-7222, 标注, 2024 年 9 月 13 日星期五 下午 10:41:32
+  # note_md5: d4990d096b68eb8ae300c830fa7c831f
+  #+BEGIN_QUOTE
+  我的天空里没有太阳，总是黑夜，但并不暗，因为有东西代替了太阳。虽然没有太阳那么明亮，但对我来说已经足够。凭借着
+  这份光，我便能把黑夜当成白天。你明白吧？我从来就没有太阳，所以不怕失去。”
+  #+END_QUOTE
+
+- 3795-3795, 标注, 2024 年 9 月 13 日星期五 下午 11:07:38
+  # note_md5: b8f784a367ea6ede3b5f0035ca615a21
+  #+BEGIN_QUOTE
+  我的人生就像在白夜里走路。”
+  #+END_QUOTE

@@ -1,0 +1,110 @@
+:PROPERTIES:
+:ID:       eb75e2b5-ff2f-4b20-8cff-6009332fff7d
+:END:
+#+TITLE: [笔记]多余的话-N/A
+#+AUTHOR: Yang Yingchao
+#+DATE:   2024-10-09
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+LANGUAGE: en
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :duoyudehua:note:ireader:
+
+- 499-547, 标注, unknown
+  # note_md5: ae965d1c2309f6e3e54aab39a9f7227f
+  #+BEGIN_QUOTE
+  知我者， 谓我心忧； 不知我者，谓我何求。
+  #+END_QUOTE
+
+- 606-690, 标注, unknown
+  # note_md5: 1064c327d165a5818cd9df35ecc75cca
+  #+BEGIN_QUOTE
+  一只羸弱的马拖着几千斤的辎重车，走上了险峻的山坡，一步步的往上爬，要往后退是不可能，要再往前去是实在不 能胜任
+  了。
+  #+END_QUOTE
+
+- 737-831, 标注, unknown
+  # note_md5: fc7623efea5d41b115930607efe5c889
+  #+BEGIN_QUOTE
+  欲罢不能的疲劳使我永久感觉一种无可形容的重厌[压]。精神上政治上的倦怠，使我渴望“甜密[蜜]的”休息，以致于 脑筋麻
+  木停止一切种种思想
+  #+END_QUOTE
+
+- 878-988, 标注, unknown
+  # note_md5: f0d0440dafc50dbd17be24ef2d416abd
+  #+BEGIN_QUOTE
+  我愿意到随便一个小市镇上去当一个教员，并不是为着发展什么教育，只不过求得一口饱饭罢了，在余的时候，读读 自己所
+  爱读的书，文艺、小说、诗词、歌曲之类，这不是很逍遥的吗？
+  #+END_QUOTE
+
+- 1047-1136, 标注, unknown
+  # note_md5: 34b91ce7b38f6b2eacf9e9f4e19aec04
+  #+BEGIN_QUOTE
+  我很小的时候，就不知怎样有一个古怪的想头。为什么每一个读书人都要去“治国平天下”呢？各人找一种学问或是文 艺研究
+  一下不好吗？
+  #+END_QUOTE
+
+- 1197-1276, 标注, unknown
+  # note_md5: b6b5390f47af45fadf3b151e892db0f6
+  #+BEGIN_QUOTE
+  武汉分共以后，我们接着就决定贺叶的南昌暴动和两湖、广东的秋收暴动（一九二七年），到十一月又决定广州暴动。
+  #+END_QUOTE
+
+- 1321-1461, 标注, unknown
+  # note_md5: 7891261e62914ebfea406b9fb675fd2a
+  #+BEGIN_QUOTE
+  暴动，官话不是叫起义么？ <<chapter_3.html_zybooknote_summary>>因为当时整个路线错误，所以不管主观上怎样了解盲动
+  主义现象的不好， 费力于枝枝节节的纠正，客观上却在领导着盲动主义的发展。
+  #+END_QUOTE
+
+- 1518-1584, 标注, unknown
+  # note_md5: d3f46b00f433f40ae88f648fb2eec1d8
+  #+BEGIN_QUOTE
+  真正的懦怯不在这里。首先是差不多完全没有自信力，每一个见解都是动摇的，站不稳的
+  #+END_QUOTE
+
+- 1631-1839, 标注, unknown
+  # note_md5: f4bd1fab605e883c500eec0ebcd137b9
+  #+BEGIN_QUOTE
+  其实最理想的世界是大家不要争论，“和和气气的过日子”。我有许多标本的“弱者的道德”------忍耐、躲避、讲和气， 希望
+  大家安静些、仁慈些等等。固然从[少]年时候起，我就憎恶贪污、卑鄙......以至一切恶浊的社会现象，但是我 从来没有想
+  做侠客。我只愿意自己不做那些罪恶，有可能呢，去劝劝他们不要再那样做；没有可能呢，让他们去罢， 他们也有他们的不
+  得已的苦衷罢？
+  #+END_QUOTE
+
+- 1894-2063, 标注, unknown
+  # note_md5: 5136170a4231aeb088e8057c28fdb799
+  #+BEGIN_QUOTE
+  你们去算账罢，你们在斗争中勇猛精进着，我可以羡慕你们，祝贺你们，但是已经不能够跟随你们了。我不觉得可惜， 同样
+  我也不觉得后悔，虽然我枉费了一生心力在我所不感兴味的政治上。过去的已经过去了，懊悔徒然增加现在的烦 恼。应当清
+  洗出队伍的，终究应当清洗出去，而且愈好[快]愈好，更用不着可惜。
+  #+END_QUOTE
+
+- 2110-2187, 标注, unknown
+  # note_md5: 810b7d6ae3ec2588b38433e5f250de4c
+  #+BEGIN_QUOTE
+  如果不幸而我没有机会告诉你们我的最坦白最真实的态度而骤然死了，那你们也许还把我当做一个共产主义的烈士
+  #+END_QUOTE
+
+- 2234-2427, 标注, unknown
+  # note_md5: 75bb5bbe38df5e8ee403093e25d53482
+  #+BEGIN_QUOTE
+  到苏区听到这个消息，真叫我不寒而栗，以叛徒而冒充烈士，实在太那个了。因此，虽然我现在已经囚在监狱里，虽 然我现
+  在很容易装腔做[作]势慷慨激昂而死，可是我不敢这样做。历史是不能够，也不应当欺骗的。我骗着我一个人 的身后不要紧，
+  叫革命同志误认叛徒为烈士却是大大不应该的。所以虽然反正是一死，同样是结束我的生命，而我决 不愿意冒充烈士而死
+  #+END_QUOTE
+
+- 2474-2583, 标注, unknown
+  # note_md5: b3667ad0297ad8331ad9e5574d19e7a5
+  #+BEGIN_QUOTE
+  我的脱离队伍，不简单的因为我要结束我的革命，结束这一出滑稽剧，也不简单的因为我的痼疾和衰惫，而是因为我 始终不
+  能够克服自己的绅士意识，我终究不能成为无产阶级的战士。
+  #+END_QUOTE
+
+- 2630-2700, 标注, unknown
+  # note_md5: defbb6e45437a6f337d1bb2a0211b47d
+  #+BEGIN_QUOTE
+  别人的痛快，就是对于被揭穿的也很痛快，尤其是自己能够揭穿。现在我丢掉了最后一层假面具。
+  #+END_QUOTE
