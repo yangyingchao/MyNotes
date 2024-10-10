@@ -7,7 +7,7 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :tag1:tag2:
+#+FILETAGS: :ireader:daguimo:fenbushi:cunchu:
 
 - 564-565, 标注, 2018 年 8 月 11 日星期六 下午 8:56:08
   # note_md5: ddff7fb62c5d97c0c3ad74211d0c073d
@@ -37,8 +37,51 @@
 刻的日志回放点之后的 REDO 日志。
   #+END_QUOTE
 
-- 875-879, 标注, 2018 年 8 月 12 日星期日 下午 6:43:11
-  # note_md5: 354c02e6d3e8373ae9d0c484e0083c5a
+- 746-822, 标注, unknown
+  # note_md5: 614b87819661ae9246e5c6fe6a963c8c
+  #+BEGIN_QUOTE
+  NoSQL 系统带来了很多新的理念，比如良好的可扩展性，弱化数据库的设计范式，弱化一致性要求，在一
+  #+END_QUOTE
+
+- 824-897, 标注, unknown
+  # note_md5: eb9f47299b313a5853190a5425e230a4
+  #+BEGIN_QUOTE
+  NoSQL 系统带来了很多新的理念，比如良好的可扩展性，弱化数据库的设计范式，弱化一致性要求
+  #+END_QUOTE
+
+- 899-1082, 标注, unknown
+  # note_md5: 05ff0bd50b03d2e4d7fb6b483e37b295
+  #+BEGIN_QUOTE
+  需要将内存中的数据定期转储（Dump）到磁盘，这种技术称为 checkpoint（检查点）技术。系统定期将内存中的操作以某种
+  易于加载的形式（checkpoint 文件）转储到磁盘中，并记录 checkpoint 时刻的日志回放点，以后故障恢复只需要回放
+  checkpoint 时刻的日志回放点之后的 REDO 日
+  #+END_QUOTE
+
+- 1084-1237, 标注, unknown
+  # note_md5: aa60debf05b016d57a64429562f2932b
+  #+BEGIN_QUOTE
+  需要将内存中的数据定期转储（Dump）到磁盘，这种技术称为 checkpoint（检查点）技术。系统定期将内存中的操作以某种
+  易于加载的形式（checkpoint 文件）转储到磁盘中，并记录 checkpoint 时刻的日志回放点，以后故障恢复只需要回放
+  #+END_QUOTE
+
+- 1239-1436, 标注, unknown
+  # note_md5: c18ff5ece6e67f2684559b6c5a07e6f2
+  #+BEGIN_QUOTE
+  需要将内存中的数据定期转储（Dump）到磁盘，这种技术称为 checkpoint（检查点）技术。系统定期将内存中的操作以某种
+  易于加载的形式（checkpoint 文件）转储到磁盘中，并记录 checkpoint 时刻的日志回放点，以后故障恢复只需要回放
+  checkpoint 时刻的日志回放点之后的 REDO 日志。 由于将内存数据转储到磁
+  #+END_QUOTE
+
+- 1438-1623, 标注, unknown
+  # note_md5: 7e8927d4ea6d5781b6ebc991aa76fa18
+  #+BEGIN_QUOTE
+  需要将内存中的数据定期转储（Dump）到磁盘，这种技术称为 checkpoint（检查点）技术。系统定期将内存中的操作以某种
+  易于加载的形式（checkpoint 文件）转储到磁盘中，并记录 checkpoint 时刻的日志回放点，以后故障恢复只需要回放
+  checkpoint 时刻的日志回放点之后的 REDO 日志。
+  #+END_QUOTE
+
+- 1625-1867, 标注, unknown
+  # note_md5: a94033ebf72f2c088a5e7837def6dea7
   #+BEGIN_QUOTE
   存储系统在选择压缩算法时需要考虑压缩比和效率。读操作需要先读取磁盘中的内容再解压缩，写操作需要先压缩再将压缩结
   果写入到磁盘，整个操作的延时包括压缩/解压缩和磁盘读写的延迟，压缩比越大，磁盘读写的数据量越小，而压缩/解压缩的
@@ -46,7 +89,21 @@
   牲一定的压缩比换取算法执行速度的大幅提升，从而获得更好的折衷。
   #+END_QUOTE
 
-- 982-984, 标注, 2018 年 8 月 12 日星期日 下午 7:23:27
+- 1869-1981, 标注, unknown
+  # note_md5: 1eb991801ef0ee8084e4981d674f40e4
+  #+BEGIN_QUOTE
+  设计容错系统的一个基本原则是：网络永远是不可靠的，任何一个消息只有收到对方的回复后才可以认为发送成功，系统设计
+  时总是假设网络将会出现异常并采取相应的处理措施。 （3）磁盘
+  #+END_QUOTE
+
+- 1983-2066, 标注, unknown
+  # note_md5: a86dc61b710754bf5e0c631c618e3a78
+  #+BEGIN_QUOTE
+  设计容错系统的一个基本原则是：网络永远是不可靠的，任何一个消息只有收到对方的回复后才可以认为发送成功，系统设计
+  时
+  #+END_QUOTE
+
+- 2068-2174, 标注, unknown
   # note_md5: 922c357b02089dc765fb9a44e6295318
   #+BEGIN_QUOTE
   设计容错系统的一个基本原则是：网络永远是不可靠的，任何一个消息只有收到对方的回复后才可以认为发送成功，系统设计
@@ -129,7 +186,23 @@
   池
   #+END_QUOTE
 
-- 3039-3040, 标注, 2018年8月22日星期三 下午7:51:06
+- 3363-3533, 标注, unknown
+  # note_md5: 8ce6d751d89b089c54be967a01fa7e08
+  #+BEGIN_QUOTE
+  整个系统设计时完全摒弃了随机写，除了操作日志总是顺序追加写入到普通 SAS 盘上，剩下的写请求都是对响应时间要求不
+  是很高的批量顺序写，SSD 盘可以轻松应对，而大量查询请求的随机读，则发挥了 SSD 良好的随机读的特性。摒弃随机写，
+  采用批量的顺序写，也使得固态盘的使用寿命不再成为问题，
+  #+END_QUOTE
+
+- 3535-3684, 标注, unknown
+  # note_md5: be8734ec83509d5f6342af60207658d0
+  #+BEGIN_QUOTE
+  内存管理是 C++高性能服务器的核心问题。一些通用的内存管理库，比如 Google TCMalloc，在内存申请/释放速度、小内存
+  管理、锁开销等方面都已经做得相当卓越了，然而，我们并没有采用。这是因为，通用内存管理库在性能上毕竟不如专用的内
+  存池
+  #+END_QUOTE
+
+- 3686-3754, 标注, unknown
   # note_md5: 475dc0d0e75f86bafd97c95f3629ff85
   #+BEGIN_QUOTE
   释放内存时，如果没有超出线程缓存的内存块个数限制，则将内存块还给线程局部的空闲链表
