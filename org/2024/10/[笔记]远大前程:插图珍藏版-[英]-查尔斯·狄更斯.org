@@ -1,0 +1,21 @@
+:PROPERTIES:
+:ID:       2faac5e7-8401-40f5-b0c2-349de6f1b4b0
+:END:
+#+TITLE: [笔记]远大前程:插图珍藏版-[英] 查尔斯·狄更斯
+#+AUTHOR: Yang,Ying-chao
+#+DATE:   2024-10-19
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+LANGUAGE: en
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :yuandaqianch:note:ireader:
+
+- 354-357, 标注, 2024 年 10 月 17 日星期四 上午 8:01:10
+  # note_md5: c9815b7b67281922003e9e229cc93b11
+  #+BEGIN_QUOTE
+  早上下了霜，潮湿得厉害。早起就看见我那小窗户外边蒙着一层水汽，仿佛有个妖魔整夜在那里哭个没停，把我的窗户当作了
+  擦眼泪的手绢。走出门，只见光秃秃的篱笆上和稀疏的小草上也全是一片水汽，看上去真像粗丝络的蜘蛛网，网丝儿从这根树
+  枝挂到那根树枝，从这棵小草挂到那棵小草。家家篱栅上，大门上，都罩着一团黏糊糊的湿气。
+  #+END_QUOTE
