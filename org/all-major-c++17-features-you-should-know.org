@@ -1,5 +1,6 @@
 :PROPERTIES:
 :ID:       b4922594-861b-4ed8-b9b8-d4c436a0c0c0
+:NOTER_OPEN: browse-url
 :END:
 #+TITLE: All Major C++17 Features You Should Know
 #+AUTHOR: Yang,Ying-chao
