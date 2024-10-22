@@ -16,7 +16,7 @@
 
 Greenplum 是一款广泛应用的开源 MPP 数据库的产品，兼容 PostgreSQL 生态，被广泛应用与大数据的存储与分析。
 
-Resource Group 是Greenplum 的一种资源管理方式。 Resource Group 由GP5 开始被支持，相比于早期的 Resource Queue 的
+Resource Group 是 Greenplum 的一种资源管理方式。 Resource Group 由 GP5 开始被支持，相比于早期的 Resource Queue 的
 资源管理方式，具有支持更细粒度的资源管理、 支持组内资源共享等优点。本文会介绍 Resource Group 的使用方式，从源码
 角度分析它的实现，以及介绍一些使用中遇到的高频问题。
 
@@ -33,11 +33,11 @@ SQL 语句的方式进行配置。 Resource Group 支持进行三种类型的资
 超级用户可以通过 SQL 在数据库内定义多个资源组，并设置每个资源组的资源限制。在一个数据库中，每个资源组可以关联一
 个或多个数据库用户，而每个数据库用户只能归属于单个资源组。资源组支持的资源限制配置如下：
 
-| CONCURRENCY         | 资源组中允许的最大并发事务数，包括活动和空闲事务。               |
-| CPU_RATE_LIMIT      | 此资源组可用的  CPU  资源百分比。                            |
+| CONCURRENCY         | 资源组中允许的最大并发事务数，包括活动和空闲事务。              |
+| CPU_RATE_LIMIT      | 此资源组可用的  CPU  资源百分比。                           |
 | CPUSET              | 为该资源组保留的 CPU 核心数。                               |
 | MEMORY_LIMIT        | 该资源组可用的内存资源百分比。                               |
-| MEMORY_SHARED_QUOTA | 提交到该资源组的事务之间共享的内存资源百分比。                  |
+| MEMORY_SHARED_QUOTA | 提交到该资源组的事务之间共享的内存资源百分比。                 |
 | MEMORY_SPILL_RATIO  | 内存密集型事务的内存使用阈值。当事务达到此阈值时，它将溢出到磁盘。 |
 
 
@@ -61,17 +61,17 @@ SQL 语句的方式进行配置。 Resource Group 支持进行三种类型的资
   );
 #+END_SRC
 
-除了 Resource Group ，GP 早期还支持 Resource Queue 的资源管理方式， Resource Queue 通过指定MEMORY_LIMIT 、
+除了 Resource Group ，GP 早期还支持 Resource Queue 的资源管理方式， Resource Queue 通过指定 MEMORY_LIMIT 、
 ACTIVE_STATEMENTS 、PRIORITY 、MAX_COST 字段，配置对于各个资源队列的内存、 CPU 、并发限制， Resource Group 相对
 Resource queue 存在以下优势：
 
 | 特性                 | Resource       Groups | Resource Queues |
-| CPU 管理             | 细粒度（Cgroup）        | 基于粗粒度的优先级 |
+| CPU 管理             | 细粒度（Cgroup）       | 基于粗粒度的优先级 |
 | 内存限制              | 细粒度                 | 粗粒度           |
-| 并发控制              | 事务级别                | 语句级别          |
-| 管理 DDL Utility 语句 | 是                     | 否               |
-| segment 级别监控      | 是                     | 否               |
-| 组内内存共享          | 是                     | 否               |
+| 并发控制              | 事务级别               | 语句级别         |
+| 管理 DDL Utility 语句 | 是                    | 否              |
+| segment 级别监控      | 是                    | 否              |
+| 组内内存共享           | 是                    | 否              |
 
 Resource Group 通过 Master 上的并发锁实现对并发的限制，通过 cgroup 实现对 cpu 的限制，支持对内存基于 vmtracker
 和 cgroup 进行两种方式的限制。
@@ -88,7 +88,7 @@ Resource Group 通过 Master 上的并发锁实现对并发的限制，通过 cg
 
  使用 =CREATE RESOURCE GROUP= 命令创建新资源组。
 
- 为角色创建资源组时，必须提供 CPU_RATE_LIMIT 或CPUSET 和MEMORY_LIMIT 限制值。这些限制标识要分配给此资源组的数据
+ 为角色创建资源组时，必须提供 CPU_RATE_LIMIT 或 CPUSET 和 MEMORY_LIMIT 限制值。这些限制标识要分配给此资源组的数据
  库资源的百分比。例如，要创建名为 rgroup1 的资源组，其 CPU 限制为 20 ，内存限制为 25 ：
 
  #+BEGIN_SRC sql -r
@@ -103,7 +103,7 @@ CPU 限制为 20 由 rgroup1 分配到的每个角色共享。同样，内存限
 
 使用以下资源限制创建默认资源组 admin_group 和 default_group ：
 
-| 限制类型              | admin_group | default_group |
+| 限制类型             | admin_group | default_group |
 | CONCURRENCY         |          10 |            20 |
 | CPU_RATE_LIMIT      |          10 |            30 |
 | CPUSET              |          -1 |            -1 |
@@ -120,11 +120,11 @@ CPU 限制为 20 由 rgroup1 分配到的每个角色共享。同样，内存限
 :CUSTOM_ID: h:70a522e2-3bb5-48ac-85cb-397ab7c54842
 :END:
 
-Greenplum 资源组可用于分配给一个或多个角色（用户）。使用 CREATE ROLE 或 ALTER ROLE 命令的RESOURCE GROUP 子句将资
+Greenplum 资源组可用于分配给一个或多个角色（用户）。使用 CREATE ROLE 或 ALTER ROLE 命令的 RESOURCE GROUP 子句将资
 源组分配给数据库角色。如果未为角色指定资源组，则会为角色分配角色功能的默认组。 SUPERUSER 角色分配了 admin_group
 ，非管理员角色分配了名为 default_group 的组。
 
-使用 ALTER ROLE 或CREATE ROLE 命令将资源组分配给角色。例如：
+使用 ALTER ROLE 或 CREATE ROLE 命令将资源组分配给角色。例如：
 
 
 #+BEGIN_SRC sql -r
@@ -153,7 +153,7 @@ ALTER RESOURCE GROUP exec SET MEMORY_LIMIT 25;
 ALTER RESOURCE GROUP rgroup1 SET CPUSET '2,4';
 #+END_SRC
 
-注意 : 用户无法将 admin_group 的CONCURRENCY 值设置或更改为 0 。
+注意 : 用户无法将 admin_group 的 CONCURRENCY 值设置或更改为 0 。
 
 ** 删除资源组
 :PROPERTIES:
@@ -218,16 +218,16 @@ SELECT pg_cancel_backend(31905);
 以下是资源组相关的监控项的含义：
 
 | rsgname                 | 资源组名                            |
-| groupid                 | 资源组 oid                         |
-| cpu                     | 当前资源组的 cpu 利用率              |
+| groupid                 | 资源组 oid                          |
+| cpu                     | 当前资源组的 cpu 利用率               |
 | memory_used             | 当前资源组实际使用的内存总量           |
-| memory_available        | 当前资源组可用的内存总量              |
+| memory_available        | 当前资源组可用的内存总量               |
 | memory_quota_used       | 当前资源组固定份额部分实际使用的内存总量 |
-| memory_quota_available  | 当前资源组固定份额部分可用的内存总量    |
+| memory_quota_available  | 当前资源组固定份额部分可用的内存总量     |
 | memory_quota_granted    | 当前资源组固定份额部分的总体分配量      |
-| memory_shared_used      | 当前资源组共享部分实际使用的内存总量    |
+| memory_shared_used      | 当前资源组共享部分实际使用的内存总量     |
 | memory_shared_available | 当前资源组共享部分可用的内存总量        |
-| memory_shared_granted   | 当前资源组共享部分的总体分配量         |
+| memory_shared_granted   | 当前资源组共享部分的总体分配量          |
 
  正常情况下，各个资源组监控项有以下关系：
 
@@ -613,8 +613,8 @@ segment 节点。 Master 节点收到各个节点出来的结果之后，会进�
 
 而在各个节点真实计算的时候，对于内存消耗的计算，会返回实时统计的内存统计结果。
 
-而对于 cpu 的计算，会在一开始先调用 ResGroupOps_GetCpuUsage 计算一次 cpu 使用量，通过读取磁盘上cgroup 对应节点的
-cpu 统计结果。然后 sleep 300000 us ，重新调用 ResGroupOps_GetCpuUsage 再计算一次cpu 使用量，通过两次结果的差值返
+而对于 cpu 的计算，会在一开始先调用 ResGroupOps_GetCpuUsage 计算一次 cpu 使用量，通过读取磁盘上 cgroup 对应节点的
+cpu 统计结果。然后 sleep 300000 us ，重新调用 ResGroupOps_GetCpuUsage 再计算一次 cpu 使用量，通过两次结果的差值返
 回 cpu 的统计结果。
 
 #+BEGIN_SRC c

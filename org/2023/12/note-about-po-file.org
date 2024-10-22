@@ -15,7 +15,6 @@
 #+EXCLUDE_TAGS: noexport
 #+FILETAGS: :nls:po:
 
-
 * Concepts
 :PROPERTIES:
 :CUSTOM_ID: h:7cc071ca-9356-4d53-94ff-f0819cc97b5e

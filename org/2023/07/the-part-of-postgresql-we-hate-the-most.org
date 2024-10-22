@@ -15,7 +15,7 @@
 #+FILETAGS: :pg:index:hot:mvcc:
 
 
-* What is Multi-Version Concurrency Control?
+* 什么是多版本并发控制？
 :PROPERTIES:
 :NOTER_DOCUMENT: https://ottertune.com/blog/the-part-of-postgresql-we-hate-the-most/
 :NOTER_OPEN: eww
@@ -26,7 +26,10 @@
 - 在 DBMS 中，MVCC 的目标是在可能的情况下允许多个查询同时读取和写入数据库而不相互干扰。
 - MVCC 的基本思想是，DBMS 永远不会覆盖现有行。
   + 对于每个（逻辑）行，DBMS 维护多个（物理）版本。
-  + 当应用程序执行查询时，DBMS 根据某个版本排序（例如创建时间戳），确定要检索哪个版本以满足请求。这种方法的好处是，多个查询可以读取旧版本的行，而不会被更新它的其他查询阻塞。查询在数据库快照上观察到它开始查询事务时的状态（快照隔离）。
+  + 当应用程序执行查询时，DBMS 根据某个版本排序（例如创建时间戳），确定要检索哪个版本以满足请求。
+
+
+这种方法的好处是，多个查询可以读取旧版本的行，而不会被更新它的其他查询阻塞。查询在数据库快照上观察到它开始查询事务时的状态（快照隔离）。
 
 - 这种方法消除了对显式记录锁的需求，该锁会阻止读者在写入程序修改同一项时访问数据。
 
@@ -40,7 +43,7 @@
 对于 PostgreSQL 来说，在上世纪 80 年代决定处理第一个问题的方式导致了我们今天仍然需要解决的其他两个问题。
 
 
-* PostgreSQL’s Multi-Version Concurrency Control
+*  PostgreSQL 的多版本并发控制
 :PROPERTIES:
 :NOTER_DOCUMENT: https://ottertune.com/blog/the-part-of-postgresql-we-hate-the-most/
 :NOTER_OPEN: eww
@@ -56,7 +59,7 @@ PostgreSQL 的多版本并发控制（MVCC）方案的核心思想似乎很简�
 但正如我们现在所描述的，这种方法在系统的其他部分有一些非平凡的影响。
 
 
-** Multi-Versioned Storage
+** 多版本存储
 :PROPERTIES:
 :NOTER_DOCUMENT: https://ottertune.com/blog/the-part-of-postgresql-we-hate-the-most/
 :NOTER_OPEN: eww
@@ -64,19 +67,11 @@ PostgreSQL 的多版本并发控制（MVCC）方案的核心思想似乎很简�
 :CUSTOM_ID: h:65745514-9b1d-4b7c-96f9-71c9c8467a81
 :END:
 
-PostgreSQL stores all row versions in a table in the same storage space. To update an existing tuple, the DBMS first
-acquires an empty slot from the table for the new row version. It then copies the row content of the current version to
-the new version, and applies the modifications to the row in the newly allocated version slot. You can see this process
-in the example below when an application executes an update query on the movies database to change the release year of
-“Shaolin and Wu Tang” from 1985 to 1983:
+postgresql 将所有的行版本存储在同一存储空间的表中。要更新现有的元组，数据库管理系统首先从表中获得一个空槽用于新
+的行版本。然后，将当前版本的行内容复制到新版本，并将修改应用到新分配的版本槽中的行。
 
-
-postgresql 将所有的行版本存储在同一存储空间的表中。
-要更新现有的元组，数据库管理系统首先从表中获得一个空槽用于新的行版本。
-然后，将当前版本的行内容复制到新版本，并将修改应用到新分配的版本槽中的行。
 当应用程序对电影数据库执行更新查询来将《少林与武当》的发行年份从 1985 年更改为 1983 年时，
 可以在下面的示例中看到这个过程：
-
 
 #+CAPTION:
 #+NAME: fig:ottertune-mvcc-example1
@@ -85,8 +80,11 @@ postgresql 将所有的行版本存储在同一存储空间的表中。
 #+attr_org: :width 800px
 [[file:images/the-part-of-postgresql-we-hate-the-most/ottertune-mvcc-example1.svg]]
 
+  当一个 UPDATE 查询改变表中的一个元组时，PostgreSQL 会复制该元组的原始版本，然后将更改应用于新版本。
+  在这个例子中，表页面 #1 中没有更多空间，因此 PostgreSQL 在表页面 #2 中创建新版本。
 
-*** N2O vs O2N
+
+*** N2O (new to old, 新到旧) vs O2N （old to new, 就到新）
 :PROPERTIES:
 :CUSTOM_ID: h:1da8f3bd-c7db-4cbe-98fb-def1c82ff13a
 :END:
@@ -106,10 +104,10 @@ MVCC DBMS 通过创建一个单链表来实现版本链。版本链只向一个�
  O2N 方法避免了 DBMS 每次修改元组时更新索引指向较新版本的需要。
  然而，在查询处理过程中，DBMS 可能需要更长时间来找到最新版本，可能需要遍历长的版本链。
 
- 大多数 DBMS，包括 Oracle 和 MySQL，实现了 N2O。但是 PostgreSQL 在使用 O2N 方面独树一帜（除了 Microsoft 的 In-Memory OLTP 引擎用于 SQL Server）。
+ 大多数 DBMS，包括 Oracle 和 MySQL，实现了 N2O。
+ 但是 PostgreSQL 在使用 O2N 方面独树一帜（除了 Microsoft 的 In-Memory OLTP 引擎用于 SQL Server）。
 
-
-*** how PostgreSQL determines what to record
+*** PostgreSQL 如何确定记录哪些内容
 :PROPERTIES:
 :NOTER_DOCUMENT: https://ottertune.com/blog/the-part-of-postgresql-we-hate-the-most/
 :NOTER_OPEN: eww
@@ -117,9 +115,9 @@ MVCC DBMS 通过创建一个单链表来实现版本链。版本链只向一个�
 :CUSTOM_ID: h:09b5c4f6-6837-4fc0-b190-dbfc0fc22417
 :END:
 
-下一个问题是 PostgreSQL 如何确定要记录哪些版本指针。PostgreSQL 中每行的标头包含了下一个
-版本的元组 id 字段（ =t_tcid= ）（如果它是最新版本，则是自己的元组 id）。因此，如下一个
-例子所示，当一个查询请求最新版本的行时，数据库管理系统遍历索引，定位到最旧的版本，然后跟
+下一个问题是 PostgreSQL 如何确定要记录哪些版本指针。
+PostgreSQL 中每行的标头包含了下一个版本的元组 id 字段（ =t_tcid= ）（如果它是最新版本，则是自己的元组 id）。
+因此，如下一个例子所示，当一个查询请求最新版本的行时，数据库管理系统遍历索引，定位到最旧的版本，然后跟
 随指针直到找到所需的版本。
 
 
@@ -135,10 +133,10 @@ PostgreSQL 开发人员很早就意识到其 MVCC 方案存在两个问题。
 - 首先，每次更新时都要创建一个完整元组的新副本是昂贵的。
 - 其次，为了找到最新版本（大多数查询都需要的）而遍历整个版本链是浪费的。
 
-为了避免遍历整个版本链，PostgreSQL 为每个数据行的物理版本在表的索引中添加一个条目。这意味着如果一个逻
-辑行有五个物理版本，那么在索引中将会有（至多）五个该元组的条目！在下面的示例中，我们可以看到
-=idx_name= 索引包含了分别位于不同页面上的每个“Shaolin 和 Wu Tang”行的条目。这使得可以直接访问元组的最
-新版本，而无需遍历长的版本链。
+为了避免遍历整个版本链，PostgreSQL 为每个数据行的物理版本在表的索引中添加一个条目。
+这意味着如果一个逻辑行有五个物理版本，那么在索引中将会有（至多）五个该元组的条目！
+在下面的示例中，我们可以看到=idx_name= 索引包含了分别位于不同页面上的每个 “Shaolin and Wu Tang”行的条目。
+这使得可以直接访问元组的最新版本，而无需遍历长的版本链。
 
 
 #+CAPTION:
@@ -149,10 +147,11 @@ PostgreSQL 开发人员很早就意识到其 MVCC 方案存在两个问题。
 [[file:images/the-part-of-postgresql-we-hate-the-most/ottertune-mvcc-example4.svg]]
 
 PostgreSQL 尝试通过在相同的磁盘页（块）中创建新的副本来避免安装多个索引条目，并将相关版本存储在多个页
-面上，以减少磁盘 I/O。这种优化被称为堆唯一元组（ *HOT* ）更新。如果更新不修改表的索引引用的任何列，并
-且新版本存储在与旧版本相同的数据页上（如果该页有空间），DBMS 会使用 HOT 方法。现在在我们的例子中，更新
-后索引仍然指向旧版本，并且查询通过遍历版本链来检索最新版本。在正常操作期间，PostgreSQL 通过删除旧版本
-来优化此过程，以修剪版本链。
+面上，以减少磁盘 I/O。
+这种优化被称为堆唯一元组（ *HOT* ）更新。如果更新不修改表的索引引用的任何列，
+并且新版本存储在与旧版本相同的数据页上（如果该页有空间），DBMS 会使用 HOT 方法。现在在我们的例子中，
+更新后索引仍然指向旧版本，并且查询通过遍历版本链来检索最新版本。
+在正常操作期间，PostgreSQL 通过删除旧版本来优化此过程，以修剪版本链。
 
 
 ** Version Vacuum
@@ -181,7 +180,7 @@ PostgreSQL 还提供了在表级别配置自动净化的灵活性，以便为特
 动触发净化，以优化数据库性能。
 
 
-* Why PostgreSQL’s MVCC is the Worst
+* 为什么 PostgreSQL 的 MVCC 是最糟糕的
 :PROPERTIES:
 :NOTER_DOCUMENT: https://ottertune.com/blog/the-part-of-postgresql-we-hate-the-most/
 :NOTER_OPEN: eww
@@ -260,6 +259,15 @@ PostgreSQL 从 movies 表中删除了 40GB 的无效元组，它仍然保留了 
 [[file:images/the-part-of-postgresql-we-hate-the-most/ottertune-mvcc-vacuum.svg]]
 
 
+- VACUUM \\
+  使用 PostgreSQL 的常规 VACUUM 操作，数据库管理系统仅仅从每个表页面中移除已死元组，并重新组织页面以将所有存活元组放在页面的末尾。
+
+
+- VACUUM FULL \\
+  使用 VACUUM FULL 时，PostgreSQL 会从每个页面中移除已死元组，将剩余的存活元组合并并压缩到一个新的页面（表页面#3），
+  然后删除不需要的页面（表页面#1 / #2）。
+
+
 ** Problem #3: Secondary Index Maintenance
 :PROPERTIES:
 :NOTER_DOCUMENT: https://ottertune.com/blog/the-part-of-postgresql-we-hate-the-most/
@@ -268,9 +276,9 @@ PostgreSQL 从 movies 表中删除了 40GB 的无效元组，它仍然保留了 
 :CUSTOM_ID: h:c1e21598-c3d4-4311-8008-f6fc9af9a5e3
 :END:
 
-对元组的单个更新需要 PostgreSQL 更新该表的所有索引。更新所有索引是必要的，因为 PostgreSQL 在主索引和次
-要索引中都使用版本的确切物理位置。除非 DBMS 将新版本存储在与先前版本相同的页面上（HOT 更新），否则系统
-将为每个更新执行此操作。
+对元组的单个更新需要 PostgreSQL 更新该表的所有索引。
+更新所有索引是必要的，因为 PostgreSQL 在主索引和次要索引中都使用版本的确切物理位置。
+除非 DBMS 将新版本存储在与先前版本相同的页面上（HOT 更新），否则系统将为每个更新执行此操作。
 
 回到我们的 UPDATE 查询示例，PostgreSQL 通过将原始版本复制到一个新页面中来创建一个新版本，就像之前一样。
 但它还在表的主键索引（movies_pkey）和两个次要索引（idx_director，idx_name）中插入指向新版本的条目。
@@ -282,6 +290,10 @@ PostgreSQL 从 movies 表中删除了 40GB 的无效元组，它仍然保留了 
 #+attr_html: :width 800px
 #+attr_org: :width 800px
 [[file:images/the-part-of-postgresql-we-hate-the-most/ottertune-mvcc-example5.svg]]
+
+
+PostgreSQL 索引维护操作的示例，涉及非 HOT 更新。
+数据库管理系统在表页#2 中创建元组的新版本，然后在所有表的索引中插入指向该版本的新条目。
 
 PostgreSQL 每次更新需要修改表的所有索引，这对性能有几个影响。
 
