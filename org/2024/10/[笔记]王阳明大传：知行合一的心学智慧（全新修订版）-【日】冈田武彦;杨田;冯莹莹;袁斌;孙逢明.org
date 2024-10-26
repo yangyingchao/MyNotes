@@ -1,0 +1,28 @@
+:PROPERTIES:
+:ID:       d7b4f82d-c5f3-4e9f-8d9f-0a767256a1e3
+:END:
+#+TITLE: [笔记]王阳明大传：知行合一的心学智慧（全新修订版）-【日】冈田武彦;杨田;冯莹莹;袁斌;孙逢明
+#+AUTHOR: Yang,Ying-chao
+#+DATE:   2024-10-26
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+LANGUAGE: en
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :tag1:tag2:
+
+- 458-461, 标注, 2024 年 10 月 26 日星期六 下午 2:52:10
+  # note_md5: 79915be7408e867231c5f423dca7b190
+  #+BEGIN_QUOTE
+  阳明思想中最出彩的“体认”，其实是一种情感。西方哲学重理性，东方哲学重情感。如果我们把哲学思想比喻成一棵大树，那
+  么阳明的东方哲学就可以被看作是对根的培养，而西方哲学则是对枝枝叶叶的探求。学问有本末之分，阳明哲学乃“培根之学”，
+  西方哲学乃“枝叶探求之学”，何为本，何为末，各位读者要切记。
+  #+END_QUOTE
+
+- 669-671, 标注, 2024 年 10 月 26 日星期六 下午 3:04:00
+  # note_md5: 8470a0106d18de643455d7c25973ec88
+  #+BEGIN_QUOTE
+  宋代，严格来说，中国真正的文艺复兴始于王阳明。王阳明创立“良知”说，认为自我和圣人一样，生而伟大，存而无异，这种
+  强调自我的主张正是文艺复兴开始的标志。
+  #+END_QUOTE
