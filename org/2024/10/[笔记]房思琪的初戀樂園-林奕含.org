@@ -1,0 +1,50 @@
+:PROPERTIES:
+:ID:       26edec33-46e9-431d-bae2-8ef2cd63ac8d
+:END:
+#+TITLE: [笔记]房思琪的初戀樂園-林奕含
+#+AUTHOR: Yang Yingchao
+#+DATE:   2024-10-31
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+LANGUAGE: en
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :fangsiqidech:note:ireader:
+
+- 58-59, 标注, 2024 年 10 月 26 日星期六 下午 8:48:23
+  # note_md5: 6aecbcd1a30e56e4bc9a72abe0ef7c31
+  #+BEGIN_QUOTE
+  大人聚会总是吃一些难得而无聊的食物。海参躺在白瓷大盘里就像一条屎在阿娜擦得发光的马桶底。
+  #+END_QUOTE
+
+- 159-160, 标注, 2024 年 10 月 26 日星期六 下午 10:27:11
+  # note_md5: 7f8ea0c8a8875cb465b23ac9a0d2b684
+  #+BEGIN_QUOTE
+  出学校大门的时候看到瘦高的身影，逆着黑头车的车头灯，大伞在风中癫痫，车灯在雨中伸出两道光之触手，触手里有雨之蚊
+  蚋狂欢。
+  #+END_QUOTE
+
+- 172-172, 标注, 2024 年 10 月 26 日星期六 下午 10:33:57
+  # note_md5: e9fc2f3fc90759561098c867c9519e05
+  #+BEGIN_QUOTE
+  杜斯妥也夫斯基。
+  #+END_QUOTE
+
+- 192-194, 标注, 2024 年 10 月 26 日星期六 下午 10:38:25
+  # note_md5: 6feea5864bb91407b935db3f5c802f68
+  #+BEGIN_QUOTE
+  怡婷很悲愤，她知道的比世界上任何一个小孩都来得多，但是她永远不能得知一个自知貌美的女子走在路上低眉敛首的心情。
+  #+END_QUOTE
+
+- 413-413, 标注, 2024 年 10 月 27 日星期日 上午 8:02:06
+  # note_md5: fa8c415323d643851ea2ae89939a8f50
+  #+BEGIN_QUOTE
+  方求白时嫌雪
+  #+END_QUOTE
+
+- 503-504, 标注, 2024 年 10 月 27 日星期日 上午 8:20:24
+  # note_md5: 5c4fde7ef4f9cbdf6f9437f3446db30a
+  #+BEGIN_QUOTE
+  眼泪流下来，就像是伊纹脸上拉开了拉链，让她们看见金玉里的败絮。
+  #+END_QUOTE
