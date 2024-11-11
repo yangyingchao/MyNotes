@@ -1,0 +1,67 @@
+:PROPERTIES:
+:ID:       0d5daabb-5b13-42bf-9eae-110fe9721f21
+:END:
+#+TITLE: [笔记]雪花写作法:10步写出一篇好小说-[美]兰迪·英格曼森;王海颖
+#+AUTHOR: Yang Yingchao
+#+DATE:   2024-11-11
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+LANGUAGE: en
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :xuehuaxiezuo:note:ireader:
+
+- 45-47, 标注, 2024 年 11 月 10 日星期日 下午 8:07:39
+  # note_md5: bec2e6aba31d572d6d2dca41d8f8ac0e
+  #+BEGIN_QUOTE
+  小说家所说的大纲指的是内容梗概，也就是由若干主要情节构成的故事概要。 她得知一个严谨、讲究的作者往往要写上五遍
+  甚至十遍大纲，不断打磨，不断推敲，直至打造出无懈可击的最终版。
+  #+END_QUOTE
+
+- 152-153, 标注, 2024 年 11 月 10 日星期日 下午 8:15:25
+  # note_md5: d72e23e883ffc4db7d19bea1370a6885
+  #+BEGIN_QUOTE
+  对一个小说家而言，‘情绪化’可是个好东西，因为你要出售的唯一一件商品就是你自己的情绪体验。”
+  #+END_QUOTE
+
+- 174-176, 标注, 2024 年 11 月 10 日星期日 下午 8:17:47
+  # note_md5: bf093988d05a0fa28610511ea7b62cde
+  #+BEGIN_QUOTE
+  “现代化商业需要的是规模经济，”小猪先生娓娓道来，“为了获取尽可能高的利润，你需要用尽可能低的成本运送最大数量的
+  商品。这就意味着你必须打造针对最小公倍数的产品。
+  #+END_QUOTE
+
+- 193-195, 标注, 2024 年 11 月 10 日星期日 下午 8:19:13
+  # note_md5: 8b6c4bfdfb877588ac8d1492407ad708
+  #+BEGIN_QUOTE
+  所以当你写小说的时候，你并不是要写给全世界人看，你得选择你的目标读者群，把目标群限定在一个尽可能小的范围内。你
+  就是要写一个取悦你目标读者群的故事，不必考虑其他人爱不爱看。”
+  #+END_QUOTE
+
+- 480-482, 标注, 2024 年 11 月 10 日星期日 下午 8:44:28
+  # note_md5: 1dc11b563cdfaaed2f267079a398f994
+  #+BEGIN_QUOTE
+  你的读者需要这三样东西：刺激、决定、新方向，而且他们希望这些都能呈现在一张时间表上，也就是说你得安排好灾难的出
+  场时间。如果你把整个故事想象成一场橄榄球赛，那么在比赛第一小节结束、中场以及第三节结束时都需要插入一次灾难性事
+  件。”
+  #+END_QUOTE
+
+- 519-519, 标注, 2024 年 11 月 10 日星期日 下午 8:46:30
+  # note_md5: dc97c11fd3d59b49cfe86fa90b16a6dd
+  #+BEGIN_QUOTE
+  雪花写作法的第二步——故事结构的作用。
+  #+END_QUOTE
+
+- 571-572, 标注, 2024 年 11 月 10 日星期日 下午 8:49:23
+  # note_md5: c9f5efe61e34990b32d3e7073076a4cc
+  #+BEGIN_QUOTE
+  我们刚才学的叫做三幕式结构。雪花写作法的第二步就是给你的小说设计三幕式结构，
+  #+END_QUOTE
+
+- 800-801, 标注, 2024 年 11 月 10 日星期日 下午 10:23:56
+  # note_md5: fc749287756d3fd0b9c80a3acef4f012
+  #+BEGIN_QUOTE
+  现在只要把段落里的每句话扩写成一个独立的段落就行了。换言之，你们已经有了五句现成的句子，接下来的任务就是把它们
+  扩展成一页纸上的五个段落。
+  #+END_QUOTE

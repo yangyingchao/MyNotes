@@ -1,0 +1,19 @@
+:PROPERTIES:
+:ID:       8ba09a4c-82d6-46f6-b5a6-3c7b79b2ed6d
+:END:
+#+TITLE: [笔记]菲利普·迪克作品集-菲利普•迪克
+#+AUTHOR: Yang Yingchao
+#+DATE:   2024-11-11
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+LANGUAGE: en
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :feilipu_dike:note:ireader:
+
+- 558-559, 标注, 2024 年 11 月 11 日星期一 上午 8:07:12
+  # note_md5: dcbd85285d91955b8a6af69cf77a0a08
+  #+BEGIN_QUOTE
+  他太理想主义了，所以感到痛苦。向生活索取太多。永远向前，焦虑不安，怨天尤人。
+  #+END_QUOTE
