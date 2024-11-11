@@ -1,0 +1,15 @@
+:PROPERTIES:
+:ID:       d94aaa03-06c7-4239-bd32-c027663f6345
+:NOTER_DOCUMENT: https://postgr.es/p/6J3
+:NOTER_OPEN: eww
+:END:
+#+TITLE: Implementing Time Travel In PostgreSQL
+#+AUTHOR: Yang Yingchao
+#+DATE:   2024-12-11
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+LANGUAGE: en
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :pg:time:travel:
