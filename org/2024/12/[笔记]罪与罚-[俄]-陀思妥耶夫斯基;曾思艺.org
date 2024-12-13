@@ -1,0 +1,25 @@
+:PROPERTIES:
+:ID:       903c2ba8-636f-4aaf-8efd-f37bc8f92fd4
+:END:
+#+TITLE: [笔记]罪与罚-[俄] 陀思妥耶夫斯基;曾思艺
+#+AUTHOR: Yang,Ying-chao
+#+DATE:   2024-12-13
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+LANGUAGE: en
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :zuiyufa:note:ireader:
+
+- 32-32, 标注, 2024 年 11 月 30 日星期六 下午 2:02:42
+  # note_md5: b75be53038503489f83f44f511bc802c
+  #+BEGIN_QUOTE
+  紧张状态，仿佛患了多疑症。他常常冥思苦想，离群索居，
+  #+END_QUOTE
+
+- 452-453, 标注, 2024 年 12 月 1 日星期日 下午 10:25:43
+  # note_md5: 6c90e6da99edcab615813fff03acf5d1
+  #+BEGIN_QUOTE
+  马尔梅拉多夫被揪着头发拖着走，大声喊叫。这在他们是一种快乐的时候，他们笑得异常开心。
+  #+END_QUOTE

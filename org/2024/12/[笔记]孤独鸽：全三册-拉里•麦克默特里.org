@@ -1,0 +1,26 @@
+:PROPERTIES:
+:ID:       53476cdf-3485-4767-9859-60d766b7c6f5
+:END:
+#+TITLE: [笔记]孤独鸽：全三册-拉里•麦克默特里
+#+AUTHOR: Yang,Ying-chao
+#+DATE:   2024-12-13
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+LANGUAGE: en
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :tag1:tag2:
+
+- 10-12, 标注, 2024 年 12 月 1 日星期日 下午 10:27:24
+  # note_md5: 6f65d2ec48eb32ea08e97844faecc69d
+  #+BEGIN_QUOTE
+  整个美国都沉睡在这荒野之路的尽头，我们的过去没有完全消逝，依然活在我们心中。我们的祖辈外表野蛮，内心文明。我们
+  生活在他们建设的文明中，内心却仍有荒蛮。他们曾梦想的世界，我们正在经历；他们曾经历的世界，我们在梦想。
+  #+END_QUOTE
+
+- 369-369, 标注, 2024 年 12 月 2 日星期一 下午 6:38:38
+  # note_md5: f67fbf471844a4940cd0739319324642
+  #+BEGIN_QUOTE
+  科曼切人再来光顾的话，理所当然地还会利用这个老渡口，
+  #+END_QUOTE
