@@ -1,0 +1,32 @@
+:PROPERTIES:
+:ID:       be2a691e-830c-49db-9d89-d486b8b526b9
+:END:
+#+TITLE: [笔记]毛泽东选集-毛泽东
+#+AUTHOR: Yang,Ying-chao
+#+DATE:   2024-12-31
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+LANGUAGE: en
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :maozedongxua:note:ireader:
+
+- 218-218, 标注, 2024 年 12 月 14 日星期六 上午 9:23:03
+  # note_md5: 02fea9c0e5cb977dbd3c8503520729a0
+  #+BEGIN_QUOTE
+  荒时暴月，向亲友乞哀告怜，借得几斗几升，敷衍三日五日，债务丛集，如牛负重。
+  #+END_QUOTE
+
+- 424-425, 标注, 2024 年 12 月 14 日星期六 下午 2:26:12
+  # note_md5: f01cafeb69712a48f345e3ae2bad9c00
+  #+BEGIN_QUOTE
+  革命不是请客吃饭，不是做文章，不是绘画绣花，不能那样雅致，那样从容不迫，文质彬彬，那样温良恭俭让。
+  #+END_QUOTE
+
+- 424-426, 标注, 2024 年 12 月 14 日星期六 下午 2:26:20
+  # note_md5: a8312a6353e0034979d1533a58255661
+  #+BEGIN_QUOTE
+  革命不是请客吃饭，不是做文章，不是绘画绣花，不能那样雅致，那样从容不迫，文质彬彬，那样温良恭俭让。革命是暴动，
+  是一个阶级推翻一个阶级的暴烈的行动。
+  #+END_QUOTE

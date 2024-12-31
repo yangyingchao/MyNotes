@@ -14,3 +14,9 @@
   #+BEGIN_QUOTE
   Never hurry and never worry!
   #+END_QUOTE
+
+- 1653-1653, 标注, 2024 年 12 月 28 日星期六 下午 11:11:17
+  # note_md5: 6199c8113e150e5947ab17c215d19378
+  #+BEGIN_QUOTE
+  Charlotte died
+  #+END_QUOTE
