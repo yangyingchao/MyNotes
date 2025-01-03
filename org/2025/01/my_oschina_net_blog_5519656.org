@@ -1,7 +1,7 @@
 :PROPERTIES:
 :ID:       7299eb09-55b4-4e4c-b211-d702fa057fed
 :NOTER_DOCUMENT: https://my.oschina.net/u/5658056/blog/5519656
-:NOTER_OPEN: w3m
+:NOTER_OPEN: eww
 :END:
 #+TITLE: StarRocks 技术内幕：查询原理浅析
 #+AUTHOR: Yang,Ying-chao

@@ -21,7 +21,7 @@ GP 提供了 [[https://github.com/greenplum-db/gpdb/blob/master/gpMgmt/bin/gpche
 
 #+CAPTION: gpcheckcat
 #+NAME: tbl-data-table
-| 检查项                  | 描述                                                                      | Utility 模式 | 复合查询 | 错误等级  |
+| 检查项                 | 描述                                                                      | Utility 模式 | 复合查询 | 错误等级  |
 |------------------------+---------------------------------------------------------------------------+--------------+---------+----------|
 | /                      | <>                                                                        | <>           | <>      | <>       |
 | pg_class               | Check pg_class entry that does not have any correspond pg_attribute entry | Y            | N       | NOREPAIR |
