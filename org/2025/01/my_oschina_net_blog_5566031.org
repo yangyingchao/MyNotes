@@ -3,7 +3,7 @@
 :NOTER_DOCUMENT: https://segmentfault.com/a/1190000042326071
 :NOTER_OPEN: eww
 :END:
-#+TITLE: StarRocks 技术内幕 | 基于全局字典的极速字符串查询 - StarRocks的个人空间 - OSCHINA - 中文开源技术交流社区
+#+TITLE: StarRocks 技术内幕 | 基于全局字典的极速字符串查询
 #+AUTHOR: Yang,Ying-chao
 #+DATE:   2025-01-03
 #+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
@@ -12,7 +12,7 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :tag1:tag2:
+#+FILETAGS: :starrocks:string:global:low cardinality:
 
 =作者：冯浩桉，StarRocks 核心研发工程师，StarRocks Committer=
 
