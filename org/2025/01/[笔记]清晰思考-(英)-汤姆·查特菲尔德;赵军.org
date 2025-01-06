@@ -1,0 +1,67 @@
+:PROPERTIES:
+:ID:       d9c7b02f-93eb-4530-b71b-36e06f5f8c5b
+:END:
+#+TITLE: [笔记]清晰思考-(英) 汤姆·查特菲尔德;赵军
+#+AUTHOR: Yang,Ying-chao
+#+DATE:   2025-01-06
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+LANGUAGE: en
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :qingxisikao:note:ireader:
+
+- 198-199, 标注, 2025 年 1 月 4 日星期六 下午 9:45:57
+  # note_md5: 205bbe1a6452976d386444c7d2b8680f
+  #+BEGIN_QUOTE
+  最重要的是，要不断问自己，在复杂的情况面前，坚持严谨意味着什么，并把诚实的怀疑作为你学习的核心。
+  #+END_QUOTE
+
+- 242-243, 标注, 2025 年 1 月 5 日星期日 下午 9:25:45
+  # note_md5: e90f4920ff2a3e8bba40be8d2f94b461
+  #+BEGIN_QUOTE
+  人类的理解总是既暂时又迟缓。许多现在看来很明显的事情，在当时却并不明显，因为我们在回顾过去时所体验到的清晰，完
+  全不同于围绕着当下生活的不确定性的阴霾。
+  #+END_QUOTE
+
+- 246-248, 标注, 2025 年 1 月 5 日星期日 下午 9:29:35
+  # note_md5: af7b3a45d024acb0b63d396a5c585da1
+  #+BEGIN_QUOTE
+  如果我们希望提高理解的有效性和准确性，就需要进行终身实践和审视。换句话说，为了提升思考能力，我们必须花时间来对
+  思考本身进行思考：这个过程被称为元认知。
+  #+END_QUOTE
+
+- 311-311, 标注, 2025 年 1 月 5 日星期日 下午 10:54:39
+  # note_md5: 1391e040a3ef49c79a2012c0cafcfd91
+  #+BEGIN_QUOTE
+  认知失调现象，即面对
+  #+END_QUOTE
+
+- 311-312, 标注, 2025 年 1 月 5 日星期日 下午 10:54:43
+  # note_md5: bbdde0e49a87a8942d5bc10907927100
+  #+BEGIN_QUOTE
+  认知失调现象，即面对相互矛盾的证据时，人们会基于个人认知做出决定。
+  #+END_QUOTE
+
+- 312-316, 标注, 2025 年 1 月 5 日星期日 下午 10:55:30
+  # note_md5: 7ddd238fcf09b6d4f4a1e80b67151832
+  #+BEGIN_QUOTE
+  同理心和专注能帮助我们领会到这些差异的本质。然而，尤其是在面临压力和不确定性的时候，几乎所有人都倾向于看重自己
+  的观点，而不是观点本身的价值。心理学家称之为可得性偏差，它所描述的东西非常浅显，以至于其重要性很容易被忽视。除
+  非我们多留心我们的知识和经验的局限性，否则我们的思维往往会被最容易和最清晰地出现在脑海中的东西所支配，不管它多
+  么不具代表性。
+  #+END_QUOTE
+
+- 338-340, 标注, 2025 年 1 月 5 日星期日 下午 10:57:06
+  # note_md5: af8eb47bcdefa62790693fd22ab72d06
+  #+BEGIN_QUOTE
+  讲一个有意义的故事意味着激励你的听众……让他们得出与你相同的结论，并自己决定相信你所说的，做你希望他们做的事情。
+  比起你的结论，人们更看重自己的结论。他们只会相信对他们个人来说已经成为事实的故事。”（
+  #+END_QUOTE
+
+- 412-413, 标注, 2025 年 1 月 6 日星期一 上午 7:54:34
+  # note_md5: 995bafcb44f2ae92a81c507a86f1567d
+  #+BEGIN_QUOTE
+  尽可能坦诚地面对自己的局限性。不要养成不懂装懂的坏习惯。
+  #+END_QUOTE

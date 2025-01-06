@@ -1,0 +1,26 @@
+:PROPERTIES:
+:ID:       08844a97-3162-482b-9732-876c50cbd92e
+:END:
+#+TITLE: [笔记]传习录（中华经典名著全本全注全译/三全本）-王阳明;陆永胜
+#+AUTHOR: Yang,Ying-chao
+#+DATE:   2025-01-06
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+LANGUAGE: en
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :tag1:tag2:
+
+- 431-431, 标注, 2025 年 1 月 5 日星期日 下午 6:43:37
+  # note_md5: 295af282428f4ddcde86747b9c8a9b5d
+  #+BEGIN_QUOTE
+  见其牝牡骊黄而弃其所谓千里者，
+  #+END_QUOTE
+
+- 431-432, 标注, 2025 年 1 月 5 日星期日 下午 6:43:47
+  # note_md5: 11bd3e61f4cc50a9272293a62c3a702c
+  #+BEGIN_QUOTE
+  见其牝牡骊黄而弃其所谓千里者，意为：只见到马的雌雄黑黄而见不到其能驰骋千里的特质。比喻只看到事物的外表而看不到
+  其本质。典出《淮南子·道应训》。
+  #+END_QUOTE

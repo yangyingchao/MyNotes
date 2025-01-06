@@ -20,3 +20,15 @@
   #+BEGIN_QUOTE
   Charlotte died
   #+END_QUOTE
+
+- 1661-1661, 标注, 2025 年 1 月 1 日星期三 下午 10:29:46
+  # note_md5: fb8d98be1265dd88bac522e1b2182140
+  #+BEGIN_QUOTE
+  congratulations
+  #+END_QUOTE
+
+- 1661-1661, 笔记, 2025 年 1 月 1 日星期三 下午 10:30:11
+  # note_md5: 9a2e9c47742395f88d78cfc9f4484c35
+  #+BEGIN_QUOTE
+  2025.1.1
+  #+END_QUOTE
