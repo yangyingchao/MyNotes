@@ -33,11 +33,11 @@ SQL 语句的方式进行配置。 Resource Group 支持进行三种类型的资
 超级用户可以通过 SQL 在数据库内定义多个资源组，并设置每个资源组的资源限制。在一个数据库中，每个资源组可以关联一
 个或多个数据库用户，而每个数据库用户只能归属于单个资源组。资源组支持的资源限制配置如下：
 
-| CONCURRENCY         | 资源组中允许的最大并发事务数，包括活动和空闲事务。               |
-| CPU_RATE_LIMIT      | 此资源组可用的  CPU  资源百分比。                             |
-| CPUSET              | 为该资源组保留的 CPU 核心数。                                 |
-| MEMORY_LIMIT        | 该资源组可用的内存资源百分比。                                |
-| MEMORY_SHARED_QUOTA | 提交到该资源组的事务之间共享的内存资源百分比。                  |
+| CONCURRENCY         | 资源组中允许的最大并发事务数，包括活动和空闲事务。              |
+| CPU_RATE_LIMIT      | 此资源组可用的  CPU  资源百分比。                           |
+| CPUSET              | 为该资源组保留的 CPU 核心数。                               |
+| MEMORY_LIMIT        | 该资源组可用的内存资源百分比。                               |
+| MEMORY_SHARED_QUOTA | 提交到该资源组的事务之间共享的内存资源百分比。                 |
 | MEMORY_SPILL_RATIO  | 内存密集型事务的内存使用阈值。当事务达到此阈值时，它将溢出到磁盘。 |
 
 
@@ -65,13 +65,13 @@ SQL 语句的方式进行配置。 Resource Group 支持进行三种类型的资
 ACTIVE_STATEMENTS 、PRIORITY 、MAX_COST 字段，配置对于各个资源队列的内存、 CPU 、并发限制， Resource Group 相对
 Resource queue 存在以下优势：
 
-| 特性                 | Resource       Groups | Resource Queues  |
+| 特性                 | Resource       Groups | Resource Queues |
 | CPU 管理             | 细粒度（Cgroup）       | 基于粗粒度的优先级 |
-| 内存限制              | 细粒度                | 粗粒度           |
-| 并发控制              | 事务级别               | 语句级别          |
-| 管理 DDL Utility 语句 | 是                    | 否               |
-| segment 级别监控      | 是                    | 否               |
-| 组内内存共享          | 是                    | 否               |
+| 内存限制              | 细粒度                 | 粗粒度           |
+| 并发控制              | 事务级别               | 语句级别         |
+| 管理 DDL Utility 语句 | 是                    | 否              |
+| segment 级别监控      | 是                    | 否              |
+| 组内内存共享           | 是                    | 否              |
 
 Resource Group 通过 Master 上的并发锁实现对并发的限制，通过 cgroup 实现对 cpu 的限制，支持对内存基于 vmtracker
 和 cgroup 进行两种方式的限制。
@@ -217,17 +217,17 @@ SELECT pg_cancel_backend(31905);
 
 以下是资源组相关的监控项的含义：
 
-| rsgname                 | 资源组名                             |
+| rsgname                 | 资源组名                            |
 | groupid                 | 资源组 oid                          |
 | cpu                     | 当前资源组的 cpu 利用率               |
 | memory_used             | 当前资源组实际使用的内存总量           |
 | memory_available        | 当前资源组可用的内存总量               |
 | memory_quota_used       | 当前资源组固定份额部分实际使用的内存总量 |
-| memory_quota_available  | 当前资源组固定份额部分可用的内存总量    |
+| memory_quota_available  | 当前资源组固定份额部分可用的内存总量     |
 | memory_quota_granted    | 当前资源组固定份额部分的总体分配量      |
-| memory_shared_used      | 当前资源组共享部分实际使用的内存总量    |
+| memory_shared_used      | 当前资源组共享部分实际使用的内存总量     |
 | memory_shared_available | 当前资源组共享部分可用的内存总量        |
-| memory_shared_granted   | 当前资源组共享部分的总体分配量         |
+| memory_shared_granted   | 当前资源组共享部分的总体分配量          |
 
  正常情况下，各个资源组监控项有以下关系：
 

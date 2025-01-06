@@ -11,7 +11,7 @@
 #+TAGS:     noexport(n)
 #+LANGUAGE: en
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :gpdb:configuration:
+#+FILETAGS: :gpdb:configuration:network:
 
 
 

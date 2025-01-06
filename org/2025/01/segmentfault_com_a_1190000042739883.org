@@ -32,7 +32,7 @@ Join 背景，Join 逻辑优化，Join Reorder，分布式 Join 规划。
 #+DOWNLOADED: https://segmentfault.com/img/remote/1460000042739885 @ 2025-01-03 10:30:56
 #+attr_html: :width 800px
 #+attr_org: :width 800px
-[[file:images/1460000042739885]]
+[[file:images/1460000042739885.png]]
 ​
 
 上图列举了常见的 Join 类型：
@@ -56,7 +56,7 @@ Join 的执行效率通常分成两部分来优化，一是提高单机上 Join 
 #+DOWNLOADED: https://segmentfault.com/img/remote/1460000042739886 @ 2025-01-03 10:30:56
 #+attr_html: :width 800px
 #+attr_org: :width 800px
-[[file:images/1460000042739886]]
+[[file:images/1460000042739886.png]]
 ​
 
 如上图所示，不同 Join 的实现方式在不同场景下效率不同，如 Sort-Merge Join 在 Join 有序数据时，效率可能远高于 Hash Join，但
