@@ -1,0 +1,104 @@
+:PROPERTIES:
+:ID:       e627e153-ef17-427a-8eb1-897312e32c7f
+:END:
+#+TITLE: [笔记]大奉打更人-卖报小郎君
+#+AUTHOR: Yang,Ying-chao
+#+DATE:   2025-01-22
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+LANGUAGE: en
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :dafengdageng:note:ireader:
+
+- 5976-5976, 标注, 2025 年 1 月 21 日星期二 上午 7:19:26
+  # note_md5: 40843825b06e4fc97b607a1c33e448a9
+  # note_md5: 390173ae460ed8774240c7e6ad2431ba
+  # note_md5: 35fc9475348fa558999b86c28d080eaa
+  # note_md5: cef8602b5da91e86aad21f04622ba7fd
+  # note_md5: 4b5d721d566a6dc1ccc47ff13f007ab6
+  # note_md5: bdcb80af0b063faf1149cb46118553b5
+  #+BEGIN_QUOTE
+  人性多变，光暗交织，不能因为见到过黑暗，就愤世妒俗，厌弃光明。
+  #+END_QUOTE
+
+- 11115-11116, 标注, 2025 年 1 月 24 日星期五 上午 6:42:27
+  # note_md5: 855019bba3e1e099fe9ea7766b04c878
+  #+BEGIN_QUOTE
+  太阳还挂在西边天空，倔强的把云彩染成自己的形状和颜色。
+  #+END_QUOTE
+
+- 14652-14653, 标注, 2025 年 1 月 25 日星期六 下午 1:25:07
+  # note_md5: b6e5f99558e432175172bb9eb431932f
+  #+BEGIN_QUOTE
+  免费的才是最贵的，因为取代交易的东西是感情。等彼此之间的交情越来越深厚，白嫖这个东西就出现了….不，朋友之间怎么
+  能叫白嫖，是互相帮助。
+  #+END_QUOTE
+
+- 19944-19944, 标注, 2025 年 1 月 27 日星期一 上午 7:22:44
+  # note_md5: abff615944426c352522c697a2767dc3
+  #+BEGIN_QUOTE
+  这个人说的话，一个标点符号都不能信。
+  #+END_QUOTE
+
+- 24018-24018, 标注, 2025 年 1 月 27 日星期一 下午 10:11:56
+  # note_md5: bbca639658bca6b8bda0b95e79b60013
+  # note_md5: 87f66975c8830ec8367a1f5ece07d2b3
+  #+BEGIN_QUOTE
+  上帝把智慧洒满人间时，这位公主虽然和铃音一样，机智的打了把伞
+  #+END_QUOTE
+
+- 43693-43694, 标注, 2025 年 2 月 4 日星期二 下午 7:07:54
+  # note_md5: e0fd64ca6803779d3d3d395881ab9760
+  # note_md5: 279294a572930b645e14f2b8d2571ba0
+  # note_md5: 6865f73e1d5155595ef1479490c32322
+  #+BEGIN_QUOTE
+  在官场摸爬滚打，要三思：思危、思退、思变。
+
+  “做事之前，要考虑这件事带来的后果，明白其中利害，再去权衡做或不做。 “如果滚滚大势不可阻挡，就要思退，避其锋芒。
+  只有避退了，安全了，你才能想，该怎么改变局势。
+  #+END_QUOTE
+
+- 43946-43946, 标注, 2025 年 2 月 4 日星期二 下午 9:40:44
+  # note_md5: 3cbdde2c52a41992f63a589835466945
+  #+BEGIN_QUOTE
+  人类的悲欢并不相同，他们只觉得你吵闹。
+  #+END_QUOTE
+
+- 44022-44023, 标注, 2025 年 2 月 4 日星期二 下午 9:47:11
+  # note_md5: befb3b1bd0208cf26deed9bc58a01b8c
+  #+BEGIN_QUOTE
+  没什么大不了，你读书太少，多读写史书，便知此为常事。越是血腥不公之事，越是寥寥几笔。
+  #+END_QUOTE
+
+- 48481-48482, 标注, 2025 年 2 月 5 日星期三 下午 11:19:13
+  # note_md5: 53749808cbc90c323c839fb272d0b4e8
+  #+BEGIN_QUOTE
+  有约不来过夜半，闲敲棋子落灯花
+  #+END_QUOTE
+
+- 48482-48483, 标注, 2025 年 2 月 5 日星期三 下午 11:19:32
+  # note_md5: 485d0ab0a3049ef61bf9bd5e863d6ff3
+  #+BEGIN_QUOTE
+  圆月高挂，清冷的月辉被纱窗挡在屋外，尖细的虫鸣此起彼伏，彰显着夜的静谧。
+  #+END_QUOTE
+
+- 50143-50145, 标注, 2025 年 2 月 6 日星期四 上午 11:58:48
+  # note_md5: a992e0d2c860c79e3ad17493f9c2733c
+  #+BEGIN_QUOTE
+  听人说过，真正深切的悲伤不是爆发性的大哭一场，而是打开冰箱的那半盒牛奶、那窗台上随风微曳的绿箩、那折叠在床上的
+  绒被，还有那安静的下午洗衣机传来的阵阵喧哗。
+  #+END_QUOTE
+
+- 52188-52189, 标注, 2025 年 2 月 7 日星期五 上午 7:23:32
+  # note_md5: 35f6d79266d3bdeb1e1076b93ba0e092
+  #+BEGIN_QUOTE
+  这世间，有人追求长生，有人追求荣华富贵，有人追求武道登顶。 “而我所追求的，是那个年少时，树影下，拈花微笑的姑娘。”
+  #+END_QUOTE
+
+- 56789-56790, 标注, 2025 年 2 月 9 日星期日 下午 11:15:17
+  # note_md5: e8e6603a00324be10105713da72bb175
+  #+BEGIN_QUOTE
+  拉拢一批人，打压一批人，循环渐进。过程中，需要给敌人反扑和发泄的机会，一点点消磨对方的锐气和斗志。
+  #+END_QUOTE

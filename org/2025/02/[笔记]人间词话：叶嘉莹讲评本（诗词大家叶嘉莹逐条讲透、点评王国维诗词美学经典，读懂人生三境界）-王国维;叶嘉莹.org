@@ -1,0 +1,39 @@
+:PROPERTIES:
+:ID:       f9f7eae3-d3a8-4954-b0d1-26fb42fa6818
+:END:
+#+TITLE: [笔记]人间词话：叶嘉莹讲评本（诗词大家叶嘉莹逐条讲透、点评王国维诗词美学经典，读懂人生三境界）-王国维;叶嘉莹
+#+AUTHOR: Yang,Ying-chao
+#+DATE:   2025-02-07
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+LANGUAGE: en
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :tag1:tag2:
+
+- 1043-1046, 标注, 2025 年 1 月 23 日星期四 下午 8:36:06
+  # note_md5: 3abc3ef4f877e5484f51a278a527dcdf
+  #+BEGIN_QUOTE
+  叔本华认为每个人都跳不出意欲的圈子，不过每个人目光的广狭和远近都不相同。一般人为庸俗浅薄的东西所吸引，而成大事
+  业的人则意欲远大。所以，一个人要追求更高远的理想，就一定要先打碎眼前五光十色的繁华世界，经过一个“昨夜西风凋碧
+  树”的阶段，才能有“独上高楼，望尽天涯路”的目光。
+  #+END_QUOTE
+
+- 1056-1059, 标注, 2025 年 1 月 23 日星期四 下午 9:00:34
+  # note_md5: c21459f7bfe3ad0c5499514004ce0d7e
+  #+BEGIN_QUOTE
+  真的这样来解释这些词，“恐晏、欧诸公所不许也。” “昨夜
+  #+END_QUOTE
+
+- 1484-1484, 标注, 2025 年 2 月 1 日星期六 上午 10:18:50
+  # note_md5: a40033eb56aa79736135bea7017df02f
+  #+BEGIN_QUOTE
+  别。
+  #+END_QUOTE
+
+- 1738-1738, 标注, 2025 年 2 月 7 日星期五 下午 8:30:12
+  # note_md5: d37c4fa4cd9b066d8e216d5e1dba4e5a
+  #+BEGIN_QUOTE
+  动罗箑清商，
+  #+END_QUOTE
