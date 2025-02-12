@@ -14,12 +14,24 @@
 #+EXCLUDE_TAGS: noexport
 #+FILETAGS: :tag1:tag2:
 
+
 * 什么是 STRIDE 威胁建模
 
 计算机发明后不久，人们就发现需要为这些信息系统处理威胁。早在 1994 年，NSA 和 DARPA 就提出攻击树、威胁树等概念。
 1999 年微软内部发表了《The threats to out products》的文章，为定义 Windows 全系列产品面临的安全威胁正式提出了
 STRIDE。随着 2002 年比尔.盖茨著名的《可信任计算备忘》发布，微软承诺改善软件产品的安全性，随即正式在 SDL（安全开
 发生命周期）中采用了威胁建模。
+
+
+#+NAME: tabladedatos
+#+CAPTION: My table caption
+#+LABEL: tbl:tabladedatos
+| Columna 1 | Columna 2 | Columna 3 |
+|-----------+-----------+-----------|
+| Fila 1    | Valor 1   | Valor 2   |
+| Fila 2    | Valor 3   | Valor 4   |
+
+This is a reference to Table [[tbl:tabladedatos]] .
 
 研发团队的安全例行活动中，对于一些拥有重要数据资产、安全事件影响力大的系统除了要进行常规的渗透测试、黑白盒代码扫
 描以外，更应该系统定期开展威胁建模活动并对业务赋能。所以对于研发团队来说，引入先进的安全技术设计能力，构建全方位、
@@ -52,25 +64,21 @@ STRIDE 威胁建模方法贯穿于整体风险分析流程，将安全需求分�
 计，也可用于后续安全开发环节，整体流程如图 [[fig:STRIDE-Activity-Main]] 所示。
 
 
-#+attr_org: :width 800px
-#+attr_html: :width 800px
-#+attr_latex: :float nil
-#+NAME:._images_k8s-dataflows
-[[./images/k8s-dataflows.jpeg]]
-#+CAPTION: Stride 活动图
 #+DOWNLOADED: https://tonydeng.github.io/images/blog/stride/STRIDE-Activity-Main.png
 #+attr_html: :width 800px
 #+attr_org: :width 800px
-#+NAME: fig:STRIDE-Activity-Main
+#+CAPTION: Stride 活动图
+#+NAME: postImpressions2
+#+LABEL: fig:STRIDE-Activity-Main
 [[file:images/STRIDE-Activity-Main.png]]
 
 
 在威胁建模过程中起主导作用的是软件设计者、开发人员和测试人员。威胁建模的对象并不一定是一个完整的软件。根据需求的不同，建
 模对象可以是整个应用、安全和隐私相关的功能、跨信任边界的功能等等。
 
-#+CAPTION:
-#+NAME: fig:STRIDE-Entity-Main
 #+DOWNLOADED: https://tonydeng.github.io/images/blog/stride/STRIDE-Entity-Main.png
+#+CAPTION: 主活动图
+#+NAME: fig:STRIDE-Entity-Main
 [[file:images/STRIDE-Entity-Main.png]]
 
 
