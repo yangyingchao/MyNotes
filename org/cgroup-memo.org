@@ -10,7 +10,6 @@
 #+TAGS:     noexport(n)
 #+LANGUAGE: en
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :tag1:tag2:
 
 * Threads (Tasks (threads) versus processes)
 :PROPERTIES:

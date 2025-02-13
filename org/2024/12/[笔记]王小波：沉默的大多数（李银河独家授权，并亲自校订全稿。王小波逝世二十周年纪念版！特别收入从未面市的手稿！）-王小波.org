@@ -10,7 +10,6 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :tag1:tag2:
 
 - 92-93, 标注, 2024 年 12 月 13 日星期五 下午 4:28:51
   # note_md5: bfcff0af10893eafc6ef91cf46ff4c09

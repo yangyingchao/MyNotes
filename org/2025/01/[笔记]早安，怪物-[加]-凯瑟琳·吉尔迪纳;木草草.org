@@ -10,7 +10,6 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :tag1:tag2:
 
 - 41-41, 标注, 2025 年 1 月 15 日星期三 上午 7:26:45
   # note_md5: 8e53fa893e7052fc9f420e0356784fe4

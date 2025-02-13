@@ -10,7 +10,6 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :tag1:tag2:
 
 
 几年以前，开过一个公众号，但是一直没有在上面写过任何东西，然后过了一段时间，被冻结了。这几天想着找个地方记录点东

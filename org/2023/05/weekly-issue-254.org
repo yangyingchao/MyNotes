@@ -12,7 +12,6 @@
 #+TAGS:     noexport(n)
 #+LANGUAGE: en
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :tag1:tag2:
 
 
 大家可能听说过"水桶原理"：水桶的容量由最短的那块木板决定。

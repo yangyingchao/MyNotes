@@ -13,7 +13,6 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :tag1:tag2:
 
 
 本文介绍了一种称为 ABC（Attributed Bipartite Co-clustering 双向联合集聚归因算法）的问题，

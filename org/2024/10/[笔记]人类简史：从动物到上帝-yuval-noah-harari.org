@@ -7,7 +7,6 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :tag1:tag2:
 
 - 130-131, 标注, 2018 年 7 月 14 日星期六 下午 10:19:10
   # note_md5: 48db4796a7fdfafb5068329845d7a4e1

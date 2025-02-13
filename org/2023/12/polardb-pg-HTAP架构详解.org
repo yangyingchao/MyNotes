@@ -11,7 +11,6 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :tag1:tag2:
 
 PolarDB PostgreSQL 版读写分离后，由于底层是存储池，理论上 IO 吞吐是无限大的。而大查询只
 能在单个计算节点上执行，单个计算节点的 CPU/MEM/IO 是有限的，因此单个计算节点无法发挥出存

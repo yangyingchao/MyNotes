@@ -12,7 +12,6 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :tag1:tag2:
 
 
 [[http://catkang.github.io/2019/01/16/crash-recovery.html][《数据库故障恢复机制的前世今生》]]一文中介绍过，由于磁盘的的顺序访问性能远好于随机访问，数据库设计中通常都会采

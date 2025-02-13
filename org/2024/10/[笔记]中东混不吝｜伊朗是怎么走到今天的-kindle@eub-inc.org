@@ -10,7 +10,6 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :tag1:tag2:
 
 - 97-98, 标注, 2019 年 5 月 31 日星期五 上午 8:59:32
   # note_md5: a648020120d32fa27abf90a1993328c0

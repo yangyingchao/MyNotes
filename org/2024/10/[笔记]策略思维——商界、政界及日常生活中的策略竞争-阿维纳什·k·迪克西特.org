@@ -10,7 +10,6 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :tag1:tag2:
 
 - 114-115, 标注, 2020 年 7 月 2 日星期四 下午 1:15:47
   # note_md5: 3a9b9cbd08f5ee646a8c1066216911bc
