@@ -29,6 +29,8 @@ params:
       url: index.xml
     - name: Email
       url: 'mailto:yang.yingchao@qq.com'
+  comments: true
+
 
 menu:
   main:
@@ -51,3 +53,6 @@ menu:
     - name: Contact me
       weight: 5
       url: contact/
+services:
+  disqus:
+    shortname: disqus_yH1vi2Slvj
