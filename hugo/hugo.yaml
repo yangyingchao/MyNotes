@@ -1,58 +1,299 @@
 baseURL: 'https://yangyingchao.github.io'
 languageCode: zh-cn
+languageName: Chinese
 defaultContentLanguage: zh-cn
-title: MyNotes
+title: 杂货铺
 preserveTaxonomyNames: true
 enableRobotsTXT: true
 enableEmoji: true
-theme: PaperMod
+theme: LoveIt
 enableGitInfo: false
 hasCJKLanguage: true
-paginate: 20
-disqusShortname: ''
 copyright: ''
-noClasses: false
 
 markup:
   highlight:
-    style: pygments
-
-params:
-  homeInfoParams:
-    Title: MyNotes
-    Content: |
-      杂七杂八的，随手记录。
-  socialIcons:
-    - name: github
-      url: 'https://github.com/yangyingchao/MyNotes'
-    - name: RsS
-      url: index.xml
-    - name: Email
-      url: 'mailto:yang.yingchao@qq.com'
-  comments: true
-
+    style: solarized-dark
+    anchorLineNos: false
+    codeFences:  true
+    guessSyntax:  true
+    lineAnchors:  ''
+    lineNoStart:  1
+    lineNos:  true
+    lineNumbersInTable: true
+    noHl:  false
+    tabWidth:  4
+    noClasses: false
+  goldmark:
+    extensions:
+      definitionList: true
+      footnote: true
+      linkify: true
+      strikethrough: true
+      table: true
+      taskList: true
+      typographer: true
+    renderer:
+      unsafe: true
+  tableOfContents:
+    startLevel: 2
+    endLevel: 6
 
 menu:
   main:
-    - name: Home
-      weight: 1
-      identifier: home
-      url: /
-    - name: Archives
-      weight: 2
-      identifier: archives
+    - weight: 1
+      identifier: posts
+      pre: ''
+      post: ''
+      name: 所有文章
       url: /posts/
-    - name: Tags
-      weight: 3
+      title: ''
+    - weight: 2
       identifier: tags
+      pre: ''
+      post: ''
+      name: 标签
       url: /tags/
-    - name: Categories
-      weight: 4
+      title: ''
+    - weight: 3
       identifier: categories
+      pre: ''
+      post: ''
+      name: 分类
       url: /categories/
-    - name: Contact me
-      weight: 5
-      url: contact/
-services:
-  disqus:
-    shortname: disqus_yH1vi2Slvj
+      title: ''
+    - weight: 6
+      identifier: github
+      pre: <i class='fab fa-github fa-fw' aria-hidden='true'></i>
+      post: ''
+      name: ""
+      url: 'https://github.com/yangyingchao/MyNotes'
+      title: GitHub
+
+ignoreErrors:
+  - error-remote-getjson
+  - error-missing-instagram-accesstoken
+
+pagination:
+  disableAliases: false
+  pagerSize: 20
+  path: page
+
+params:
+  ShowCodeCopyButtons: true
+  defaultTheme: auto
+  gitRepo: 'https://github.com/yangyingchao/MyNotes'
+  fingerprint: ''
+  dateFormat: '2006-01-02'
+  title: 老杨的杂货铺
+  description: 杂七杂八的，随手记录。
+
+  images:
+    - /logo.png
+  author:
+    name: yc
+    email: ''
+    link: ''
+
+  header:
+    desktopMode: normal
+    mobileMode: auto
+    title:
+      logo: ''
+      name: 老杨的杂货铺
+      pre: <i class="fa-solid fa-house-chimney"></i>
+      post: ''
+      typeit: false
+
+  footer:
+    enable: true
+    custom: ''
+    hugo: false
+    copyright: false
+    author: false
+    # since: 2019
+    icp: ''
+    license: >-
+      <a rel="license external nofollow noopener noreffer"
+      href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC
+      BY-NC 4.0</a>
+  section:
+    paginate: 20
+    dateFormat: 01-02
+    rss: 10
+  list:
+    paginate: 20
+    dateFormat: 01-02
+    rss: 10
+  app:
+    title: LoveIt
+    noFavicon: false
+    svgFavicon: ''
+    themeColor: '#ffffff'
+    iconColor: '#5bbad5'
+    tileColor: '#da532c'
+  search:
+    enable: true
+    type: algolia
+    contentLength: 4000
+    placeholder: ''
+    maxResultLength: 10
+    snippetLength: 30
+    highlightTag: em
+    absoluteURL: false
+    algolia:
+      index: index.zh-cn
+      appID: # PASDMWALPK
+      searchKey: # b42948e51daaa93df92381c8e2ac0f93
+  home:
+    rss: 10
+    profile:
+      enable: true
+      gravatarEmail: ''
+      avatarURL: /images/avatar.jpg
+      title: ''
+      subtitle: '杂七杂八的，随手记录。'
+      typeit: false
+      social: true
+      disclaimer: ''
+
+  social:
+    GitHub: yangyingchao
+    Douban: 161045917
+    Email: yang.yingchao@qq.com
+    RSS: true
+  page:
+    hiddenFromHomePage: false
+    hiddenFromSearch: false
+    twemoji: false
+    lightgallery: false
+    ruby: true
+    fraction: true
+    fontawesome: true
+    linkToMarkdown: true
+    rssFullText: false
+    toc:
+      enable: true
+      keepStatic: false
+      auto: true
+    code:
+      copy: true
+      maxShownLines: 50
+    math:
+      enable: false
+      inlineLeftDelimiter: ''
+      inlineRightDelimiter: ''
+      blockLeftDelimiter: ''
+      blockRightDelimiter: ''
+      copyTex: true
+      mhchem: true
+    mapbox:
+      accessToken: >-
+        pk.eyJ1IjoiZGlsbG9uenEiLCJhIjoiY2s2czd2M2x3MDA0NjNmcGxmcjVrZmc2cyJ9.aSjv2BNuZUfARvxRYjSVZQ
+      lightStyle: 'mapbox://styles/mapbox/light-v10?optimize=true'
+      darkStyle: 'mapbox://styles/mapbox/dark-v10?optimize=true'
+      navigation: true
+      geolocate: true
+      scale: true
+      fullscreen: true
+    share:
+      enable: false
+    comment:
+      enable: true
+      giscus:
+        enable: true
+        repo: 'yangyingchao/giscus'
+        repoId: ''
+        category: Announcements
+        categoryId: 'R_kgDON6NYZA'
+        lang: 'zh-CN'
+        mapping: pathname
+        reactionsEnabled: '1'
+        emitMetadata: '0'
+        inputPosition: bottom
+        lazyLoading: false
+        lightTheme: light
+        darkTheme: dark
+    library:
+      css: {}
+      js: {}
+    seo:
+      images: []
+      publisher:
+        name: xxxx
+        logoUrl: /images/avatar.png
+  typeit:
+    speed: 100
+    cursorSpeed: 1000
+    cursorChar: '|'
+    duration: -1
+  verification:
+    google: ''
+    bing: ''
+    yandex: ''
+    pinterest: ''
+    baidu: ''
+  seo:
+    image: /images/Apple-Devices-Preview.png
+    thumbnailUrl: /images/screenshot.png
+  analytics:
+    enable: false
+    google:
+      id: ''
+      anonymizeIP: true
+    fathom:
+      id: ''
+      server: ''
+    plausible:
+      dataDomain: ''
+    yandexMetrica:
+      id: ''
+  cookieconsent:
+    enable: false
+    content:
+      message: ''
+      dismiss: ''
+      link: ''
+  cdn:
+    data: jsdelivr.yml
+  compatibility:
+    polyfill: false
+    objectFit: false
+
+sitemap:
+  changefreq: weekly
+  filename: sitemap.xml
+  priority: 0.5
+permalinks:
+  posts: ':filename'
+privacy:
+  googleAnalytics: {}
+  twitter:
+    enableDNT: true
+  youtube:
+    privacyEnhanced: true
+mediaTypes:
+  text/plain:
+    suffixes:
+      - md
+outputFormats:
+  MarkDown:
+    mediaType: text/plain
+    isPlainText: true
+    isHTML: false
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+  page:
+    - HTML
+    - MarkDown
+  section:
+    - HTML
+    - RSS
+  taxonomy:
+    - HTML
+    - RSS
+  taxonomyTerm:
+    - HTML

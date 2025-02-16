@@ -188,6 +188,6 @@ pg_log 一般是记录数据库的状态信息，例如：错误信息、慢查�
 
 log_filename 参数说明如下：
 
-| 参数值                | 说明                                     |
-| postgresql_%a_%H.log | 选择该值，日志保留 7 天。                   |
+| 参数值               | 说明                                       |
+| postgresql_%a_%H.log | 选择该值，日志保留 7 天。                    |
 | postgresql_%d_%H.log | 选择该值，日志保留 30 天，系统默认保留 30 天。 |

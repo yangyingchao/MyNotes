@@ -35,6 +35,7 @@
 	   :nonrecursive t))
 
 (require 'ox-hugo)
+(push "webp" org-hugo-external-file-extensions-allowed-for-copying)
 
 (defun yc/org-hugo--build-toc-a (content)
   "Append my markers.
@@ -45,12 +46,27 @@ These markers are used to identify original source of this note."
       (goto-char (point-min))
       (if (re-search-forward (rx bol ":NOTER_DOCUMENT:" (* space) (group (+ nonl)) eol) nil t)
           (let ((orig (match-string 1)))
-            (format "\n\n本文为摘录，原文为： %s\n" orig))
+            (format "\n\n本文为摘录(或转载)，侵删，原文为： %s\n" orig))
         ""))))
 
-(advice-add #'org-hugo--build-toc :filter-return #'yc/org-hugo--build-toc-a)
 
-(defun tnote/export-org-file-to-md (file)
+(defun yc/org-html-paragraph-a (args)
+    "Join consecutive Chinese lines into a single long line without unwanted space."
+    (let ((reg-han "[[:multibyte:]]"))
+      (setf (nth 1 args)
+            (replace-regexp-in-string
+              (concat
+                "\\(" reg-han
+                "\\) *
+ *\\("
+                reg-han "\\)")
+              "\\1\\2" (nth 1 args)))
+      args))
+
+(advice-add #'org-hugo--build-toc :filter-return #'yc/org-hugo--build-toc-a)
+(advice-add #'org-hugo-paragraph :filter-args #'yc/org-html-paragraph-a)
+
+(defun yc/export-org-file-to-md (file)
   "Export single FILE to markdown."
   (message "Checking file %s" file)
   (if (and (file-exists-p file)
@@ -59,7 +75,8 @@ These markers are used to identify original source of this note."
             (with-current-buffer (find-file-noselect file)
         (message "    Processing file: %s" file)
         (condition-case var
-            (org-hugo-export-wim-to-md t)
+            (let ((org-export-with-author nil))
+              (org-hugo-export-wim-to-md t))
           (error (message "ERROR: %s" var)))
         (message "    .... done"))
     (message "    Skipping file: %s" file)))
@@ -71,7 +88,7 @@ To perform a full export of all org files in the directory DIR to
 markdown format, use this command. It should be called when a
 full export is required, typically for the first time.."
   (message "DIR: %s" dir)
-  (mapc #'tnote/export-org-file-to-md (directory-files-recursively dir "\\`[^.#].*\\.org\\'")))
+  (mapc #'yc/export-org-file-to-md (directory-files-recursively dir "\\`[^.#].*\\.org\\'")))
 
 (defun batch-export-HEAD-files-to-md ()
   "Export the files in the HEAD branch to markdown format.

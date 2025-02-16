@@ -99,6 +99,7 @@ In this example, we have used C4 Container level with the following entities:
    @enduml
 #+END_SRC
 #+CAPTION: stride model
+#+attr_html: :width 800px
 #+NAME: fig:stride_model
 [[file:images/stride-model-0ef-716b3fe4.png]]
 
