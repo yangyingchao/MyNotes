@@ -8,6 +8,7 @@
 #+STARTUP:  align nodlcheck oddeven lognotestate
 #+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
 #+LANGUAGE: en
+#+FILETAGS:#+FILETAGS: :note:ireader:#+FILETAGS: :note:ireader:#+FILETAGS: :note:ireader: :note:ireader:
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
 
@@ -35,4 +36,16 @@
   # note_md5: d37c4fa4cd9b066d8e216d5e1dba4e5a
   #+BEGIN_QUOTE
   动罗箑清商，
+  #+END_QUOTE
+
+- 2121-2122, 标注, 2025年2月16日星期日 下午12:22:47
+  # note_md5: a029d37121f15cad1c6408404e53f6a0
+  #+BEGIN_QUOTE
+  雁：即小羊与大雁，为古代卿大夫相见时赠送的礼品。后泛指应酬礼品。 替：衰败，衰落。
+  #+END_QUOTE
+
+- 2121-2121, 标注, 2025年2月16日星期日 下午12:22:56
+  # note_md5: 225fd02ef3cfccad5a5c40d74d106135
+  #+BEGIN_QUOTE
+  羔雁：即小羊与大雁，为古代卿大夫相见时赠送的礼品。后泛指应酬礼品。
   #+END_QUOTE

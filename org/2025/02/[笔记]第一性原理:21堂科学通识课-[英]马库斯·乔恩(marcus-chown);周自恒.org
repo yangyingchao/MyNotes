@@ -10,7 +10,7 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :diyixingyuan:note:ireader:
+#+FILETAGS:#+FILETAGS: :diyixingyuan:note:ireader:#+FILETAGS: :diyixingyuan:note:ireader:#+FILETAGS: :diyixingyuan:note:ireader:#+FILETAGS: :diyixingyuan:note:ireader:#+FILETAGS: :diyixingyuan:note:ireader:#+FILETAGS: :diyixingyuan:note:ireader:#+FILETAGS: :diyixingyuan:note:ireader:#+FILETAGS: :diyixingyuan:note:ireader: :diyixingyuan:note:ireader:
 
 - 31-32, 标注, 2025 年 1 月 23 日星期四 上午 8:10:22
   # note_md5: ac893761e066a2e928b47ed454a107e4

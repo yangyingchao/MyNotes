@@ -10,7 +10,7 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :dafengdageng:note:ireader:
+#+FILETAGS:#+FILETAGS: :dafengdageng:note:ireader:#+FILETAGS: :dafengdageng:note:ireader:#+FILETAGS: :dafengdageng:note:ireader:#+FILETAGS: :dafengdageng:note:ireader:#+FILETAGS: :dafengdageng:note:ireader:#+FILETAGS: :dafengdageng:note:ireader:#+FILETAGS: :dafengdageng:note:ireader:#+FILETAGS: :dafengdageng:note:ireader:#+FILETAGS: :dafengdageng:note:ireader:#+FILETAGS: :dafengdageng:note:ireader:#+FILETAGS: :dafengdageng:note:ireader:#+FILETAGS: :dafengdageng:note:ireader:#+FILETAGS: :dafengdageng:note:ireader:#+FILETAGS: :dafengdageng:note:ireader:#+FILETAGS: :dafengdageng:note:ireader: :dafengdageng:note:ireader:
 
 - 5976-5976, 标注, 2025 年 1 月 21 日星期二 上午 7:19:26
   # note_md5: 40843825b06e4fc97b607a1c33e448a9
@@ -108,4 +108,10 @@
   #+BEGIN_QUOTE
   “贪官无所谓，能做事就行。袖手空谈的清官才误国误民，即能做事，又刚正不阿的官太少，治理国家，不能指望这些凤毛麟
   角。
+  #+END_QUOTE
+
+- 65290-65291, 标注, 2025年2月13日星期四 下午12:23:00
+  # note_md5: 80e5a255e945449ee1686da670512ebb
+  #+BEGIN_QUOTE
+  功名利禄一纸书，不过扬灰于尘土。”
   #+END_QUOTE

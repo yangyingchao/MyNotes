@@ -10,7 +10,7 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :shuisheyao:note:ireader:
+#+FILETAGS:#+FILETAGS: :shuisheyao:note:ireader:#+FILETAGS: :shuisheyao:note:ireader:#+FILETAGS: :shuisheyao:note:ireader:#+FILETAGS: :shuisheyao:note:ireader:#+FILETAGS: :shuisheyao:note:ireader:#+FILETAGS: :shuisheyao:note:ireader: :shuisheyao:note:ireader:
 
 - 48-49, 标注, 2025 年 1 月 14 日星期二 下午 1:17:39
   # note_md5: e6ba379f80b42d333105ccb9ada89525
