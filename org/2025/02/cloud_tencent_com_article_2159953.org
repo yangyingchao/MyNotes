@@ -1,0 +1,257 @@
+:PROPERTIES:
+:ID:       205200a8-4cb3-4aad-b8e6-5f1e20673bb4
+:NOTER_DOCUMENT: https://cloud.tencent.com/developer/article/2159953
+:NOTER_OPEN: eww
+:END:
+#+TITLE: AWS教你如何做威胁建模-腾讯云开发者社区-腾讯云
+#+AUTHOR: Yang,Ying-chao
+#+DATE:   2025-02-22
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+LANGUAGE: en
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :stride:model:weixie:
+
+* 准备威胁建模
+** 组建虚拟团队
+
+威胁建模需要听取多种不同观点和经验才能进行，每个团队成员的意见都需要重视，最终在安全、交付、业务之间取得权衡。
+不能仅仅是安全和技术参与，checklist，卡点反而是阻碍威胁建模效果的瓶颈。
+
+具体来说需要五个角色：
+
+- 威胁建模专家：\\
+  是一次威胁建模活动的主导者，经验丰富、洞察威胁建模的过程和控制讨论边界，
+  这个主持人、教练、顾问要参与一线，最终总结材料文档，平时同时兼职攻击者和防守者两个角色。
+- 攻击者：\\
+  发现设计类安全缺陷，类似于沙盘方式设身处地从攻击角度进行头脑风暴。
+- 防守者：\\
+  避免安全防御措施过度设计，设计威胁控制措施。
+- 开发人员：\\
+  主力模块开发者或者系统架构师，有了解当前服务具体如何设计和实现的背景，负责清楚明白威胁和缓解措施。
+- 产品经理：\\
+  类似于交付经理，避免安全措施导致产品需求无法实现，达到安全、效率和体验的平衡。
+
+** 威胁建模的四个阶段
+
+通过在不同的阶段尝试结构化思考回答四个问题：
+
+1. 我们在做什么？
+
+   - 参与者：全部虚拟团队成员
+   - 交付和设计更安全的软件
+
+2. 会出什么问题？
+
+   - 参与者：攻击者、开发者
+
+   - STRIDE 助记符、内部人员风险、OWASPTop10、数据安全风险、组织内部的威胁列表
+
+3. 我们要怎么做？
+
+   - 参与者：防守者、开发者、产品经理
+
+   - 代码控制方案、引入纵深防御、借助云服务的安全措施，评估改进后的方案不影响需求。
+
+4. 我们做得足够好吗？
+
+   - 参与者：威胁建模专家，开发人员
+
+   - 威胁建模是对风险的分析，这个判断是否足够好的阶段区分：
+
+     1. 威胁建模专家审核威胁已经“足够全”，认可缓解措施；
+     2. 开发者交付缓解措施，进行再次 code review；
+     3. 威胁建模专家评估验收标准，根据威胁建模的结果引入安全测试、结项；
+     4. 威胁建模专家归档建模结果、更新知识库，整合各项缓解措施到平台级别的安全基线中，与 SDLC 工具深度集成。
+
+* 注册功能威胁建模例子
+
+接下来以在 AWS 上的一个车联网服务解决方案为例解答如何创建系统模型和威胁模型，以及评估模型的有用性。
+车联网解决方案通常包括物联网车辆、驾驶员、车辆登记、遥测数据等多种模块，这是一个复杂的系统，
+所以要分解到功能、应用服务模块进行建模，而不是一开始为整个系统创建威胁模型。
+
+本次的例子拆分到 story 维度，简化为“作为⻋队经理，我想注册现有的物联⽹连接⻋辆以使其投⼊使⽤。”
+具体场景技术设计上，⻋队经理将使⽤标准 Web 浏览器访问 Web ⻔⼾、进行⾝份验证，并能够将新⻋辆注册到系统中并投⼊使⽤。
+
+
+#+DOWNLOADED: https://ask.qcloudimg.com/http-save/yehe-4752717/930907dff6951c1c3687ccd9c9647e3b.jpg @ 2025-02-22 10:21:51
+#+attr_html: :width 800px
+#+attr_org: :width 800px
+#+CAPTION: 车辆注册模块流程图
+#+NAME: fig:nil
+[[file:images/930907dff6951c1c3687ccd9c9647e3b.jpg]]
+
+
+
+** 我们在做什么？
+
+为车辆登记功能创建系统模型。我们需要完成下面任务。
+
+*** 首先将准备创建数据流图表示上述车辆登记功能的元素，以及它们之间的数据流。
+
+需要的工具就可以是白纸、白板，或者是 draw.io 或者 PlantUML。根据上述系统设计图中了解到系统以 AWS Amplify 托管前
+端静态资源，Amazon Cognito 集成做身份验证，由 AWS Lambda 和 Amazon API Gateway 提供的基于 REST 的 API，后端通过
+DynamoDBTable 和 S3 进行存储。
+
+*** 绘制系统元素、数据流和信任边界
+
+
+#+DOWNLOADED: https://ask.qcloudimg.com/http-save/yehe-4752717/f993eeccfe0d11039e7a6ff7235997ec.jpg @ 2025-02-22 10:21:51
+#+attr_html: :width 800px
+#+attr_org: :width 800px
+#+CAPTION: 数据流要素
+#+NAME: fig:nil
+
+[[file:images/f993eeccfe0d11039e7a6ff7235997ec.jpg]]
+
+
+
+在元素之间，通过绘制箭头来表示数据如果通过车辆登记功能流动，箭头的方向就是数据流的方向，对于 http、rpc 请求意味着必然会向
+调用者返回响应，不必添加返回箭头，存储和查询可以是单向的。
+
+
+#+DOWNLOADED: https://ask.qcloudimg.com/http-save/yehe-4752717/1347a90bb4b663380a0b185e9fe8cce1.jpg @ 2025-02-22 10:21:51
+#+CAPTION: 数据流箭头
+#+NAME: fig:nil
+
+[[file:images/1347a90bb4b663380a0b185e9fe8cce1.jpg]]
+
+
+
+*** 1.3、绘制信任边界
+
+确定车辆注册功能的哪些区域和元素组可以被认为是同等受信任的，化为同一信任域，在每个区域周围绘制虚线框来显示信任边界的未
+知，并添加标签来显示信任域的用途，以下绘制完成的车辆注册功能数据流图。
+
+
+#+DOWNLOADED: https://ask.qcloudimg.com/http-save/yehe-4752717/9b28afd1ebf01b7b3e2c7b34b9fdb30a.jpg @ 2025-02-22 10:21:51
+#+attr_html: :width 800px
+#+attr_org: :width 800px
+#+CAPTION: 完整数据流图
+#+NAME: fig:nil
+
+[[file:images/9b28afd1ebf01b7b3e2c7b34b9fdb30a.jpg]]
+
+
+
+** 会出什么问题？识别功能威胁
+
+开始你的威胁建模头脑风暴，没有错误的答案，我们的目标是尽可能完整得涵盖可能的威胁，不预设可能已经会被缓解的威胁。
+*** 2.1 使⽤ STRIDE-per-Element 查找对⻋辆登记功能的威胁
+
+每个元素，即人类参与者、外部实体、流程、数据存储和数据流可以被对应到不同的 STRIDE 威胁。
+
+
+#+DOWNLOADED: https://ask.qcloudimg.com/http-save/yehe-4752717/165f4b82a9cf53892d2cc47745c2520a.jpg @ 2025-02-22 10:21:51
+#+attr_html: :width 800px
+#+attr_org: :width 800px
+#+CAPTION: STRIDE-per-Element
+#+NAME: fig:nil
+
+[[file:images/165f4b82a9cf53892d2cc47745c2520a.jpg]]
+
+
+
+
+2.1.1 外部实体的威胁由于是注册功能，所以有外部实体 User，从上述的 STRIDE-per-Element 图表中，我们看到会有 Spoofing（欺骗）
+和 Repudiation （否认）威胁，这里不再详述。
+
+2.1.2 对 Process 的威胁：
+
+欺骗:进程的⾝份欺骗是指与其连接的每个元素，比如在同 Amazon S3 通信时可以假装（欺骗）为 Lambda 的身份，恶意连接数据库。
+
+篡改：如果进程的代码、配置或执行环境（如内存空间）以意想不到的⽅式被修改，则可能会篡改进程。考虑如何篡改⻋辆登记功能中
+的流程。例如是否可以向 Lambda 函数提供输⼊以修改函数的行为？
+
+否认：Lambda 函数是否可以在不⽣成审计跟踪条⽬的情况下删除存储桶对象，从⽽不归因于执行了该操作？
+
+信息泄露：Lambda 函数如何返回对错误 S3 对象的引⽤？
+
+拒绝服务：⾮常⼤的对象是否会导致 Lambda 函数出现问题？
+
+权限提升：车辆注册一般不存在普通用户和管理的区别，这里忽略威胁。
+
+2.1.3 对数据存储的威胁：数据存储可能面临篡改、信息泄露和拒绝服务的风险。
+
+拒绝：如果系统设计中没有对系统日志进行存储，应该不会有拒绝威胁。 否认：系统本身没有日志记录，所以没有否认威胁。
+
+泄露泄露：恶意人员如何从 DynamoDB 表中读取数据，或读取存储在 Amazon S3 存储桶内的对象中的数据？
+
+拒绝服务：恶意人员如何从 Amazon S3 存储桶中删除对象？
+
+2.1.4 数据流：当数据流过可能被恶意破坏的通道时比如共享⽹络、中间人，该数据可能会在传输过程中被修改。
+
+信息泄露：当敏感数据流经不被认为是完全可信的⽹络（如共享⽹络）时，该数据可能会泄露给⾮预期的接收者。
+
+拒绝服务：数据流也可能是拒绝服务威胁的⽬标，通常表⽰为影响连接的事件，例如⽹络隔离事件或严重的数据包丢失，阻⽌⽤⼾与
+API Gateway 通信。
+*** 2.2、确定优先级
+
+检查完威胁是否存在重复或者漏过的情况后，通过估算与影响相比的缓解成本来分高、中、低优先级，威胁发生的影响*可能性=风险程
+度，OWASP Risk Rating Methodology 提供类似于 DREAD 的风险判断方法。
+
+
+#+DOWNLOADED: https://ask.qcloudimg.com/http-save/yehe-4752717/c134d99b0c7ac8cc15d772dba87e41b7.jpg @ 2025-02-22 10:21:51
+#+attr_html: :width 800px
+#+attr_org: :width 800px
+#+CAPTION:
+#+NAME: fig:nil
+
+[[file:images/c134d99b0c7ac8cc15d772dba87e41b7.jpg]]
+
+
+OWASP 的风险评估模型
+** 3、我们要怎么做？确定威胁的优先级并选择缓解措施
+
+通过一些安全设计原则和最佳实践将⻛险缓解资源集中在特定服务的威胁上。采用一些基础的安全服务如 AWS IAM、CLoudWatch Log、
+CloudTrail、SecurityHub、KMS、加密 SDK 等。
+
+如果不能解决，选择是减轻⻛险、接受⻛险或将两者结合起来。 如果由于缓解的成本或复杂性⽽⽆法合理缓解⻛险，那么接受⻛险是唯
+⼀的选择，无论风险大小时，接受风险要取得上级的审核，不同管理层对安全的态度是不一样的。
+** 4、我们做得足够好吗？评估威胁建模过程的有效性
+
+威胁建模是一项“安全社交活动”，结尾通过以下问题思考威胁建模过程对组织的有效性：
+
+1、我们知道我们在做什么吗？--是否有合适的资源、工具、流程、文化来执行威胁建模？
+
+2、我们知道会出什么问题吗？--发现的威胁数量是否符合预期？发现的威胁是否⽐预期的更多、相同或更少？
+
+3、我们做了什么？--缓解措施是否充分缓解了发现的威胁？
+
+4、我们执行得好吗？--威胁建模过程是否可以改进？能否真正改进了“车辆登记功能”的安全性？今后是否会为其他功能模块进行威胁建
+模？
+
+总而言之，威胁建模是一项投资——在笔者看来，这是一项很好的投资，因为与以后发现威胁相比，在功能的设计阶段发现和缓解威胁可
+以降低缓解的相对成本。随着时间的推移，持续实施威胁建模也可能会改善组织的安全状况。
+
+* 附录
+** 威胁建模模板
+*** 1、威胁假设
+
+  ID  描述
+  假设-1
+*** 2、威胁模型
+
+  优先级  威胁 ID  标题  细节  潜在的威胁措施  选定的威胁措施  是否有缓解措施
+              （是/否）
+    威胁用户 1  攻击者将合法用户的  未经⾝份验证的攻击
+      身份欺骗到 API 网关  者可以通过向 API
+        Gateway 发出请求来
+        列出、存储、检 索或
+        搜索⽂档。
+    威胁-KMS-1  攻击者伪造 KMS 的身份  攻击者可以伪装成
+      lambda  KMS，例如通过篡改
+        DNS，以诱骗 Lambda
+        使⽤它来加 密/解密
+        对象⽽不是真正的
+        KMS
+** 参考资料
+
+1. https://www.youtube.com/watch?v=Yt0PhyEdZXU&ab_channel=AdamShostack
+2. https://github.com/adamshostack/4QuestionFrame
+3. https://www.youtube.com/watch?v=GuhIefIGeuA&ab_channel=AWSEvents
+   https://github.com/michenriksen/drawio-threatmodeling
+4. https://owasp.org/www-community/Application_Threat_Modeling
+5. https://owasp.org/www-community/OWASP_Risk_Rating_Methodology
