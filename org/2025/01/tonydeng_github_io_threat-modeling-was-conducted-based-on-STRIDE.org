@@ -168,7 +168,7 @@ Kube-APIServer、Scheduler、Container、Pods 等。
 #+NAME: fig:k8s-dataflows
 #+DOWNLOADED: https://tonydeng.github.io/images/blog/stride/k8s-dataflows.jpeg
 #+attr_html: :width 800px
-#+attr_org: :width 800px
+#+attr_org: :width 1200px
 [[file:images/k8s-dataflows.jpeg]]
 
 * 威胁识别

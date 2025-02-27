@@ -100,6 +100,7 @@ In this example, we have used C4 Container level with the following entities:
 #+END_SRC
 #+CAPTION: stride model
 #+attr_html: :width 800px
+#+attr_org: :width 500px
 #+NAME: fig:stride_model
 [[file:images/stride-model-0ef-716b3fe4.png]]
 
@@ -140,6 +141,9 @@ In this example, we have used C4 Container level with the following entities:
 
   @enduml
 #+END_SRC
+#+attr_html: :width 500px
+#+attr_org: :width 500px
+#+NAME: fig:stride_model
 #+CAPTION: stride-with-trust-value
 #+NAME: fig:stride_with_trust_value
 [[./images/stride-with-trust-value-144-716b3fe4.png]]
