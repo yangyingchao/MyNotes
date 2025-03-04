@@ -1,0 +1,49 @@
+:PROPERTIES:
+:ID:       d8b45916-035d-453e-988d-f69af26779bc
+:NOTER_DOCUMENT: https://emacsredux.com/blog/2025/03/01/debugging-errors-in-emacs/
+:NOTER_OPEN: eww
+:END:
+#+TITLE: Debugging Errors in Emacs
+#+AUTHOR: Yang,Ying-chao
+#+DATE:   2025-03-04
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+LANGUAGE: en
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :debug:backtrace:emacs:
+
+
+我最近写了一篇关于[[https://emacsredux.com/blog/2025/02/03/debugging-emacs-commands/][调试 Emacs 命令的文章]]。
+在文章中，我简要提到了 =M-x toggle-debug-on-error= 和 =debug-on-error=，但在发布文章后，我意识到许多人可能不太理解它的具体工作原理。
+
+当 =debug-on-error= 被启用时，显而易见的事情是，当发生错误时，你会看到其回溯
+（或堆栈跟踪，具体取决于你喜欢的术语）。
+不那么明显的是（即使它在名称中），这个缓冲区实际上是一个调试器缓冲区，你可以在其中做很多事情。以下是一些示
+例：
+
+1. 导航堆栈跟踪：在*Backtrace*缓冲区的不同行中移动光标，这些行代表不同的堆栈帧。
+2. 检查局部变量：在堆栈帧上按 v（debugger-toggle-locals）以显示该帧的局部变量。
+3. 评估表达式：使用 e（debugger-eval-expression）在当前帧的上下文中评估 Lisp 表达式。
+4. 单步执行代码：使用 d 逐步进入函数调用，并逐一评估表达式。
+5. 继续执行：按 c 以继续正常执行。（注意，除非你更改了某些内容，否则这将导致你正在调试的错误）
+6. 退出调试：输入 q 以退出调试器并中止当前命令。
+7. 查看帮助：输入?以查看可用调试器命令的列表。
+8. 记录评估：使用 E 来评估一个表达式并将结果保存在 Debugger-record 缓冲区中。
+
+重要的是要理解，调试器在错误的环境中运行，允许你精确检查错误发生时的变量值。这使得它成为理解和修复 Emacs Lisp 代
+码中问题的强大工具。
+
+这种调试体验是 Lisp 的一大强大特性，也是开发和调试 Emacs 包的愉快和高效体验的原因之一。前提是你熟悉如何在这样的
+情况下使用调试器。
+
+在 Emacs 中，你可以通过在调试器缓冲区中按 =C-h m= 获取更多帮助。
+
+所以，综述一下——如果你遇到一些错误，你应该运行命令 =M-x toggle-debug-on-error=，重新运行导致错误的操作，然后在调试
+器中导航堆栈跟踪，以准确找出出错的地方。
+
+要调试在加载初始化文件期间发生的错误，请使用选项 =--debug-init=。这会在加载初始化文件时将 =debug-on-error= 绑定为 t，
+并绕过通常捕获初始化文件中的错误的 condition-case。
+
+今天我就讲到这里。希望你今天学到了一些有用的东西，下次遇到错误时，你能迅速解决它！
