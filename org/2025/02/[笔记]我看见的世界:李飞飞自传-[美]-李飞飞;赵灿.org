@@ -12,6 +12,8 @@
 #+EXCLUDE_TAGS: noexport
 #+FILETAGS:#+FILETAGS: :wokanjiandes:note:ireader:#+FILETAGS: :wokanjiandes:note:ireader:#+FILETAGS: :wokanjiandes:note:ireader:#+FILETAGS: :wokanjiandes:note:ireader:#+FILETAGS: :wokanjiandes:note:ireader:#+FILETAGS: :wokanjiandes:note:ireader:#+FILETAGS: :wokanjiandes:note:ireader:#+FILETAGS: :wokanjiandes:note:ireader:#+FILETAGS: :wokanjiandes:note:ireader:#+FILETAGS: :wokanjiandes:note:ireader:#+FILETAGS: :wokanjiandes:note:ireader:#+FILETAGS: :wokanjiandes:note:ireader:#+FILETAGS: :wokanjiandes:note:ireader:#+FILETAGS: :wokanjiandes:note:ireader:#+FILETAGS: :wokanjiandes:note:ireader:#+FILETAGS: :wokanjiandes:note:ireader:#+FILETAGS: :wokanjiandes:note:ireader:#+FILETAGS: :wokanjiandes:note:ireader:#+FILETAGS: :wokanjiandes:note:ireader:#+FILETAGS: :wokanjiandes:note:ireader:#+FILETAGS: :wokanjiandes:note:ireader:#+FILETAGS: :wokanjiandes:note:ireader:#+FILETAGS: :wokanjiandes:note:ireader:#+FILETAGS: :wokanjiandes:note:ireader:#+FILETAGS: :wokanjiandes:note:ireader:#+FILETAGS: :wokanjiandes:note:ireader:#+FILETAGS: :wokanjiandes:note:ireader:#+FILETAGS: :wokanjiandes:note:ireader:#+FILETAGS: :wokanjiandes:note:ireader:#+FILETAGS: :wokanjiandes:note:ireader:#+FILETAGS: :wokanjiandes:note:ireader:#+FILETAGS: :wokanjiandes:note:ireader: :wokanjiandes:note:ireader:
 
+* Entries
+
 * 简评
 
 本书描写了人工智能领域专家李飞飞教授在 90 年代移居美国后的生活、学习和科研的事情。

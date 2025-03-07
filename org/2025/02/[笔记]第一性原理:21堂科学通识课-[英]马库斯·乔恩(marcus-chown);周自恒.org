@@ -12,6 +12,8 @@
 #+EXCLUDE_TAGS: noexport
 #+FILETAGS:#+FILETAGS: :diyixingyuan:note:ireader:#+FILETAGS: :diyixingyuan:note:ireader:#+FILETAGS: :diyixingyuan:note:ireader:#+FILETAGS: :diyixingyuan:note:ireader:#+FILETAGS: :diyixingyuan:note:ireader:#+FILETAGS: :diyixingyuan:note:ireader:#+FILETAGS: :diyixingyuan:note:ireader:#+FILETAGS: :diyixingyuan:note:ireader: :diyixingyuan:note:ireader:
 
+* Entries
+
 - 31-32, 标注, 2025 年 1 月 23 日星期四 上午 8:10:22
   # note_md5: ac893761e066a2e928b47ed454a107e4
   #+BEGIN_QUOTE
@@ -311,11 +313,11 @@
 - 2681-2682, 标注, 2025 年 2 月 5 日星期三 下午 1:25:56
   # note_md5: f064626e7e0ee438ed0ff7af4b419c30
   #+BEGIN_QUOTE
-  中微子不是只有一种类型，或者说“味道”，而是有三种——电中微子、μ中微子和τ中微子（参见第15章）。大自然不仅将夸克和
+  中微子不是只有一种类型，或者说“味道”，而是有三种——电中微子、μ中微子和τ中微子（参见第 15 章）。大自然不仅将夸克和
   轻子复制了三份，同时也将中微子复制了三份。
   #+END_QUOTE
 
-- 2682-2682, 笔记, 2025年2月5日星期三 下午1:26:54
+- 2682-2682, 笔记, 2025 年 2 月 5 日星期三 下午 1:26:54
   # note_md5: 41824ffd45f0279bb9da46ee78862c74
   #+BEGIN_QUOTE
   也许 三态才是完美的
