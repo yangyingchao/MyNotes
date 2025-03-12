@@ -1,0 +1,958 @@
+:PROPERTIES:
+:ID:       64ec1720-769e-4f39-8bc7-98575b797122
+:NOTER_DOCUMENT: https://learn.microsoft.com/zh-cn/training/modules/tm-introduction-to-threat-modeling/1b-threat-modeling-phases
+:NOTER_OPEN: eww
+:NOTER_PAGE: 1
+:END:
+#+TITLE: 威胁建模简介
+#+AUTHOR: Yang,Ying-chao
+#+DATE:   2025-03-12
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :threat:model:stride:microsoft:ms:
+
+https://learn.microsoft.com/zh-cn/training/modules/tm-introduction-to-threat-modeling
+
+
+* 简介                                                             :noexport:
+:PROPERTIES:
+:NOTER_DOCUMENT: https://learn.microsoft.com/zh-cn/training/modules/tm-introduction-to-threat-modeling/1-introduction
+:NOTER_OPEN: eww
+:NOTER_PAGE: 218
+:END:
+威胁建模是一种有助于保护系统、应用程序、网络和服务的有效技术。
+它可帮助你在开发生命周期的早期确定潜在的威胁和降低风险策略。
+
+威胁建模使用以图形形式演示系统工作方式的数据流关系图。
+之后，它应用一个框架来帮助你发现和修复安全问题。
+
+如果未首先建立威胁模型而发布系统，这将使你的客户和组织面临风险。
+
+注意:简单起见，此学习路径将系统、应用程序和服务统称为系统。
+
+** 何时使用威胁建模
+:PROPERTIES:
+:NOTER_DOCUMENT: https://learn.microsoft.com/zh-cn/training/modules/tm-introduction-to-threat-modeling/1-introduction
+:NOTER_OPEN: eww
+:NOTER_PAGE: 433
+:END:
+
+在设计新系统或更新现有系统时，可使用威胁建模。 示例包括：
+
+- 创建新的 Azure 微服务，用于报告组织的云资源使用情况以便进行预算。
+- 设计公共 API 以向客户提供对数据的访问权限。
+- 向现有应用程序添加新功能。
+
+
+** 谁可以进行威胁建模？
+:PROPERTIES:
+:NOTER_DOCUMENT: https://learn.microsoft.com/zh-cn/training/modules/tm-introduction-to-threat-modeling/1-introduction
+:NOTER_OPEN: eww
+:NOTER_PAGE: 552
+:END:
+
+
+只要了解系统如何工作，并且对安全性有基本的理解，任何人都可以进行威胁建模。 此技术可应用于任何：
+
+- 软件交付方式，如敏捷型或瀑布型。
+- 部署节奏，如每小时、每月或每年。
+
+
+** 学习目标
+:PROPERTIES:
+:NOTER_DOCUMENT: https://learn.microsoft.com/zh-cn/training/modules/tm-introduction-to-threat-modeling/1-introduction
+:NOTER_OPEN: eww
+:NOTER_PAGE: 656
+:END:
+
+在本模块，你将了解威胁建模的四个概括性步骤，以便：
+
+- 了解创建数据流图表时明确要求和假设的重要性。
+- 了解可帮助你查找系统中安全问题的框架。
+- 了解有助于减轻或消除潜在威胁的安全控制类别。
+- 强调在部署之前验证假设、要求和修复的重要性。
+
+
+* 威胁建模阶段                                                     :noexport:
+:PROPERTIES:
+:NOTER_DOCUMENT: https://learn.microsoft.com/zh-cn/training/modules/tm-introduction-to-threat-modeling/1b-threat-modeling-phases
+:NOTER_OPEN: eww
+:NOTER_PAGE: 224
+:END:
+
+
+只要了解系统工作原理，并具有信息安全知识，任何人都可以使用威胁建模技术。
+
+该技术分为四个不同的阶段。 每个阶段都包含有助于创建数据流关系图并分析潜在威胁的重要步骤。
+
+#+DOWNLOADED: https://learn.microsoft.com/zh-cn/training/modules/tm-introduction-to-threat-modeling/media/threat-modeling-steps.png @ 2025-03-12 14:29:19
+[[file:images/threat-modeling-steps.png]]
+
+| 阶段 | 名称 | 说明                                                     |
+|------+------+----------------------------------------------------------|
+|    / | <>   | <>                                                       |
+|    1 | 设计 | 明确系统的所有要求，并创建数据流关系图。                 |
+|    2 | 休息 | 将威胁建模框架应用到数据流关系图，并查找潜在的安全问题。 |
+|    3 | Fix  | 确定如何正确组合安全控制来解决每个问题。                 |
+|    4 | 验证 | 验证是否满足了要求、找到了问题并实现了安全控制。         |
+
+本模块将在后续单元中讨论各个阶段。
+
+
+* 步骤 1 - 设计                                                    :noexport:
+:PROPERTIES:
+:NOTER_DOCUMENT: https://learn.microsoft.com/zh-cn/training/modules/tm-introduction-to-threat-modeling/2-step-1-design-phase
+:NOTER_OPEN: eww
+:NOTER_PAGE: 227
+:END:
+
+设计阶段是进行威胁建模活动的基础。 尽可能多地收集关于所构建内容及所使用工具的数据。
+** 目标
+
+- 清楚地了解系统的工作原理
+- 列出系统使用的每个服务
+- 枚举有关环境和默认安全配置的所有假设
+- 创建使用正确上下文深度级别的数据流关系图
+
+
+** 提出有关系统的问题
+:PROPERTIES:
+:NOTER_DOCUMENT: https://learn.microsoft.com/zh-cn/training/modules/tm-introduction-to-threat-modeling/2-step-1-design-phase
+:NOTER_OPEN: eww
+:NOTER_PAGE: 420
+:END:
+
+尽可能多地提出有关系统的问题。 可以考虑以下问题：
+
+
+  #+CAPTION: 有关系统的问题
+  #+NAME: tbl:lear-6ee86d96
+  +------------------+--------------------------------------------------------------------+
+  | *区域*           | *问题*                                                             |
+  +------------------+--------------------------------------------------------------------+
+  | 系统说明         | 系统的功能是什么？                                                 |
+  |                  | 服务处理的业务流程是什么？                                         |
+  |                  | 是否明确定义了这些流程？                                           |
+  +------------------+--------------------------------------------------------------------+
+  | 系统环境         | 系统是在云中还是在本地构建的？                                     |
+  |                  | 它构建在哪个操作系统上？                                           |
+  |                  | 它是否使用容器？                                                   |
+  |                  | 系统是应用程序、服务还是其他完全不同的东西？                       |
+  +------------------+--------------------------------------------------------------------+
+  | 方案             | 将如何使用系统？                                                   |
+  |                  | 如何不使用系统？                                                   |
+  +------------------+--------------------------------------------------------------------+
+  | 权限             | 是否有脚本执行、数据或硬件访问要求？                               |
+  |                  | 如果有，是哪些要求？                                               |
+  +------------------+--------------------------------------------------------------------+
+  | 云提供商         | 系统会使用哪个云提供商？                                           |
+  |                  | 提供商会提供哪些默认安全配置选项？                                 |
+  |                  | 这些选项如何影响系统安全要求？                                     |
+  +------------------+--------------------------------------------------------------------+
+  | 操作系统         | 系统将使用哪种操作系统？                                           |
+  |                  | 操作系统会提供哪些默认安全配置选项？                               |
+  |                  | 这些选项如何影响系统安全要求？                                     |
+  +------------------+--------------------------------------------------------------------+
+  | 第一方和第       | 系统将使用哪些第一方和第三方服务？                                 |
+  |                  | 它们提供哪些默认安全配置选项？                                     |
+  |                  | 这些选项如何影响系统安全要求？                                     |
+  +------------------+--------------------------------------------------------------------+
+  | 帐户             | 系统使用什么帐户类型，如用户和管理员？                             |
+  |                  | 这些帐户是本地帐户还是启用了云的帐户？                             |
+  |                  | 它们需要哪些访问权限？为什么？                                     |
+  +------------------+--------------------------------------------------------------------+
+  | 标识和访问       | 系统如何帮助保护这些帐户？                                         |
+  |                  | 它是否依赖于 Microsoft Entra ID？                                  |
+  |                  | 它是否使用访问控制列表 (ACL)、多重身份验证 (MFA) 和会话控制等功能？|
+  +------------------+--------------------------------------------------------------------+
+  | 令牌和会话       | 系统会处理 SOAP API 或 REST API 之类的请求吗？                     |
+  |                  | 它如何处理不同的会话？                                             |
+  +------------------+--------------------------------------------------------------------+
+  | 旁路             | 系统是否使用或需要后门？                                           |
+  |                  | 如果为是，该绕过的工作原理是什么？                                 |
+  +------------------+--------------------------------------------------------------------+
+  | 记录、监视和备份 | 系统使用什么机制来记录安全事件、监视异常和备份系统数据？           |
+  |                  | 捕获哪些事件类型？                                                 |
+  +------------------+--------------------------------------------------------------------+
+  | Network          | 将使用哪些入侵检测和保护系统？                                     |
+  |                  | 通信如何加密？                                                     |
+  +------------------+--------------------------------------------------------------------+
+  | 数据             |                  系统将创建或处理什么类型的数据？                  |
+  |                  |             数据分类类型是什么？ 系统如何信任数据源？              |
+  |                  |           它如何分析数据？ 预期的输入和输出行为是什么？            |
+  |                  |              如何处理验证？ 如何跨所有状态加密数据？               |
+  +------------------+--------------------------------------------------------------------+
+  | 机密管理         | 系统如何处理密钥、证书和凭据？                                     |
+  +------------------+--------------------------------------------------------------------+
+
+
+** 创建数据流关系图
+:PROPERTIES:
+:NOTER_DOCUMENT: https://learn.microsoft.com/zh-cn/training/modules/tm-introduction-to-threat-modeling/2-step-1-design-phase
+:NOTER_OPEN: eww
+:NOTER_PAGE: 1468
+:END:
+
+
+详细内容： [[https://learn.microsoft.com/zh-cn/training/modules/tm-create-a-threat-model-using-foundational-data-flow-diagram-elements/][https://learn.microsoft.com/zh-cn/training/modules/tm-create-a-threat-model-using-foundational-data-flow-diagram-elements/]]
+
+使用上述问题的答案创建数据流关系图。
+你的图表显示了数据生命周期中每个阶段的数据，包括信任区中的更改。 示例包括：
+
+- 人类用户可登录到托管在 Azure 中的 Web 应用程序以访问数据
+- 管理员可为 Web 应用程序使用的弹性资源更改默认安全配置
+- 自动运行的每日脚本可监视 Web 应用程序的活动日志并通知管理员任何异常情况
+
+Microsoft 工程团队将提交数据流关系图，这是其安全合规性要求的一部分。 这些关系图有助于进行与安全性相关的探讨。
+
+
+*** 图解工具
+:PROPERTIES:
+:NOTER_DOCUMENT: https://learn.microsoft.com/zh-cn/training/modules/tm-introduction-to-threat-modeling/2-step-1-design-phase
+:NOTER_OPEN: eww
+:NOTER_PAGE: 1713
+:END:
+Microsoft 工程师建议使用现在提供的两种工具之一：
+
+- Threat Modeling Tool
+- Visio
+
+
+*** 关系图元素
+:PROPERTIES:
+:NOTER_DOCUMENT: https://learn.microsoft.com/zh-cn/training/modules/tm-introduction-to-threat-modeling/2-step-1-design-phase
+:NOTER_OPEN: eww
+:NOTER_PAGE: 1782
+:END:
+
+#+DOWNLOADED: screenshot @ 2025-03-12 15:11:03
+#+attr_html: :width 800px
+#+attr_org: :width 800px
+#+CAPTION: 关系图元素
+#+NAME: fig:lear-1ad94c6e
+[[file:images/learn_microsoft_com_tm-introduction-to-threat-modeling/lear_c95beae4.png]]
+数据流关系图元素还需要上下文，以帮助人们了解如何在系统中的使用和保护它们。
+
+
+** 数据流图表中应该包含的信息量
+:PROPERTIES:
+:NOTER_DOCUMENT: https://learn.microsoft.com/zh-cn/training/modules/tm-introduction-to-threat-modeling/2-step-1-design-phase
+:NOTER_OPEN: eww
+:NOTER_PAGE: 3631
+:END:
+数据流关系图中包含的信息量取决于几个关键因素：
+
+#+CAPTION: 关键因素
+#+NAME: tbl:lear-6c2047df
+| 因素                 | 说明                                                                       |
+|----------------------+----------------------------------------------------------------------------|
+| /                    | <>                                                                         |
+| 正在构建的系统类型   | 如果系统不处理敏感数据或仅在内部使用，则需要的上下文可能少于面向外部的系统 |
+| 安全团队所需的上下文 | 安全团队在威胁模型中的目标非常精确。 与安全团队交流，确认所需的层次        |
+
+
+如果未能包含正确的上下文，将导致安全检查不完整、系统存在潜在的风险。
+
+
+*** 关系图层次
+:PROPERTIES:
+:NOTER_DOCUMENT: https://learn.microsoft.com/zh-cn/training/modules/tm-introduction-to-threat-modeling/2-step-1-design-phase
+:NOTER_OPEN: eww
+:NOTER_PAGE: 3834
+:END:
+
+为了帮助你了解要包含的信息量，请在以下四个上下文层次之间进行选择：
+
+
+
++------+--------+------------------------------------------------------------------+
+| 层次 | 标题   | 说明                                                             |
++------+--------+------------------------------------------------------------------+
+|    / | <>     | <>                                                               |
++------+--------+------------------------------------------------------------------+
+|    0 | 系统   | 任何系统的基础。                                                 |
+|      |        | 数据流关系图包含系统的主要部分，并提供足够的上下文，             |
+|      |        | 可帮助你了解其工作原理及彼此交互方式。                           |
++------+--------+------------------------------------------------------------------+
+|    1 | 进程   |    通过使用其他数据流关系图，关注系统每个部件的数据流关系图。    |
+|      |        |          将此层用于每个系统，尤其是在它处理敏感数据时。          |
+|      |        |  此层的上下文有助于确定威胁，以及更高效地降低或消除风险的方法。  |
++------+--------+------------------------------------------------------------------+
+|    2 | 子过程 | 关注系统中某一部分的每个次级部分的数据流关系图。                 |
+|      |        | 用于关键的系统。理高度敏感数据的系统或包含高风险评级的系统。     |
++------+--------+------------------------------------------------------------------+
+|    3 | 更详细 | 关注高度关键的内核级系统。数据流关系图详细描述每个子过程。       |
++------+--------+------------------------------------------------------------------+
+
+详情：[[https://learn.microsoft.com/zh-cn/training/modules/tm-provide-context-with-the-right-depth-layer/][https://learn.microsoft.com/zh-cn/training/modules/tm-provide-context-with-the-right-depth-layer/]]
+
+* 步骤 2 - 分解                                                    :noexport:
+:PROPERTIES:
+:NOTER_DOCUMENT: https://learn.microsoft.com/zh-cn/training/modules/tm-introduction-to-threat-modeling/3-step-2-break-phase
+:NOTER_OPEN: eww
+:NOTER_PAGE: 218
+:END:
+
+
+在分解阶段，需使用数据流关系图查找针对系统的潜在威胁。
+此过程使用威胁建模框架，以帮助你查找最常见的威胁和防范威胁的方法。
+
+** 目标
+
+- 在以“保护系统”和“了解攻击者”为核心的方法中进行选择
+- 使用 STRIDE 框架识别常见威胁
+
+重要： 如果不完成此阶段，就不会发现系统中的潜在威胁，这可能会导致未来出现违规现象。
+
+** 确定方法侧重点
+
+详情： [[https://learn.microsoft.com/zh-cn/training/modules/tm-approach-your-data-flow-diagram-with-the-right-threat-model-focus/][https://learn.microsoft.com/zh-cn/training/modules/tm-approach-your-data-flow-diagram-with-the-right-threat-model-focus/]]
+
+
+首先，选择是要找到保护系统的方法，还是想要尽可能地了解攻击者及其动机。 示例包括：
+
+#+CAPTION: example
+#+NAME: tbl:lear-1a79a4d6
+| 侧重点 | 可以查找的内容示例                                           |
+|--------+--------------------------------------------------------------|
+| /      | <>                                                           |
+| 系统   | 发现用户与系统之间的未加密连接存在问题。                     |
+| 攻击者 | 进一步了解方法、动机和强化系统入口点的方法。                 |
+| 资产   | 基于分类数据处理等功能确定关键资产，主要专注于保护这些资产。 |
+
+Microsoft 产品工程师主要致力于保护系统。 渗透测试团队两者兼顾。
+
+
+** 选择威胁框架
+
+详情：[[https://learn.microsoft.com/zh-cn/training/modules/tm-use-a-framework-to-identify-threats-and-find-ways-to-reduce-or-eliminate-risk/][https://learn.microsoft.com/zh-cn/training/modules/tm-use-a-framework-to-identify-threats-and-find-ways-to-reduce-or-eliminate-risk/]]
+
+接下来，选择一个框架，帮助生成系统中的潜在威胁。
+Microsoft 通常使用 STRIDE（六种主要威胁类别的首字母缩写）提供广泛但未穷尽的威胁列表。
+
+此框架可帮助你提出有关系统的几个重要问题：
+#+CAPTION: strde table
+#+NAME: tbl:lear-0316958a
++----------+----------------------------------+------------------------------------+---------------------------------------------------------+
+| 威胁     | 定义                             | 问题                               | 威胁示例                                                |
++----------+----------------------------------+------------------------------------+---------------------------------------------------------+
+| /        | <>                               | <>                                 | <>                                                      |
++----------+----------------------------------+------------------------------------+---------------------------------------------------------+
+| 欺骗     | 攻击者冒充某人或某物             | 通信的双方是否都通过了身份验证？   |通过看似合法的帐户向用户发送一封带有恶意链接和附件的电子 |
+|          |                                  |                                    |邮件， 以捕获用户的凭据、数据和设备访问权限              |
++----------+----------------------------------+------------------------------------+---------------------------------------------------------+
+| 篡改     | 攻击者在未经授权的情况下更改数据 |如何得知某人无法更改传输中的数据、正| 通过弱 API 调用处理修改内存，导致 崩溃和泄漏敏感错误消息|
+|          |                                  |在使用的数据或静态数据？            |                                                         |
++----------+----------------------------------+------------------------------------+---------------------------------------------------------+
+| 否认性   | 攻击者声称尚未执行任何操作       | 每个操作是否可以绑定到标识？       | 声称没有删除数据库记录                                  |
++----------+----------------------------------+------------------------------------+---------------------------------------------------------+
+| 信息泄露 | 攻击者看到了不应看到的数据       |如何得知某人无法看到传输中的数据、正| 访问安全控制较弱的未授权文档和文件夹                    |
+|          |                                  |      在使用的数据或静态数据？      |                                                         |
++----------+----------------------------------+------------------------------------+---------------------------------------------------------+
+| 拒绝服务 | 攻击者使你的系统崩溃             | 系统中是否存在资源受限的区域？     | 向网络发送大量请求                                      |
++----------+----------------------------------+------------------------------------+---------------------------------------------------------+
+| 权限提升 | 攻击者未经授权而可访问数据       | 如何得知某人可以执行此操作？       | 利用输入处理逻辑或内存中的弱点来提取数据                |
++----------+----------------------------------+------------------------------------+---------------------------------------------------------+
+
+
+*** 欺骗 - 冒充某人或某物
+:PROPERTIES:
+:NOTER_DOCUMENT: https://learn.microsoft.com/zh-cn/training/modules/tm-use-a-framework-to-identify-threats-and-find-ways-to-reduce-or-eliminate-risk/2-spoofing-pretending-to-be-someone-or-something-else
+:NOTER_OPEN: eww
+:NOTER_PAGE: 230
+:END:
+
+
+当恶意人员或程序成功地冒充用户或系统进行恶意活动时，就会发生欺骗。
+
+示例包括：
+
+- 攻击者通过看似合法的帐户向用户发送一封带有恶意链接和附件的电子邮件，以捕获用户的凭据、数据和设备访问权限。
+- 攻击者欺骗 SSID 和 IP 地址，同时使用开放且原本不安全的 TCP/IP 协议向受害者发送恶意的有效负载。
+
+
+
+**** 元素
+:PROPERTIES:
+:NOTER_DOCUMENT: https://learn.microsoft.com/zh-cn/training/modules/tm-use-a-framework-to-identify-threats-and-find-ways-to-reduce-or-eliminate-risk/2-spoofing-pretending-to-be-someone-or-something-else
+:NOTER_OPEN: eww
+:NOTER_PAGE: 429
+:END:
+
+#+DOWNLOADED: screenshot @ 2025-03-12 18:07:30
+#+attr_html: :width 800px
+#+attr_org: :width 800px
+#+CAPTION: 欺骗元素
+#+NAME: fig:lear-0a14bd85
+[[file:images/learn_microsoft_com_tm-introduction-to-threat-modeling/lear_66c9beef.png]]
+
+
+**** 交互
+:PROPERTIES:
+:NOTER_DOCUMENT: https://learn.microsoft.com/zh-cn/training/modules/tm-use-a-framework-to-identify-threats-and-find-ways-to-reduce-or-eliminate-risk/2-spoofing-pretending-to-be-someone-or-something-else
+:NOTER_OPEN: eww
+:NOTER_PAGE: 1174
+:END:
+
+
+#+DOWNLOADED: screenshot @ 2025-03-12 18:09:04
+#+attr_html: :width 800px
+#+attr_org: :width 800px
+#+CAPTION: 欺骗交互
+#+NAME: fig:lear-1da66c33
+[[file:images/learn_microsoft_com_tm-introduction-to-threat-modeling/lear_a1bafebc.png]]
+
+
+**** 如何防止欺骗攻击
+:PROPERTIES:
+:NOTER_DOCUMENT: https://learn.microsoft.com/zh-cn/training/modules/tm-use-a-framework-to-identify-threats-and-find-ways-to-reduce-or-eliminate-risk/2-spoofing-pretending-to-be-someone-or-something-else
+:NOTER_OPEN: eww
+:NOTER_PAGE: 2335
+:END:
+
+身份验证验证了用户和系统的身份是否属实。
+
+示例包括：
+
+- 发送和接收使用数字签名进行签名的消息，以验证来源并确保消息完整性。
+- 使用 SSL/TLS 保护数据传输，以加密信息源和目标之间的流量。
+- 使用具有时效有限的令牌、密码或多重身份验证的唯一凭据来帮助保护用户、管理员和服务帐户。
+
+
+***** 用于降低或消除风险的常用安全控制
+:PROPERTIES:
+:NOTER_DOCUMENT: https://learn.microsoft.com/zh-cn/training/modules/tm-use-a-framework-to-identify-threats-and-find-ways-to-reduce-or-eliminate-risk/2-spoofing-pretending-to-be-someone-or-something-else
+:NOTER_OPEN: eww
+:NOTER_PAGE: 2513
+:END:
+
+****** 对于数据：
+- 哈希
+- 消息验证码
+- 数字签名
+
+
+****** 对于系统：
+
+- 用户身份验证
+- Cookie 身份验证
+- Kerberos
+- SSL/TLS
+- 证书
+- IPSec
+- 数字签名的数据包
+
+
+*** 篡改 - 未经授权更改数据
+:PROPERTIES:
+:NOTER_DOCUMENT: https://learn.microsoft.com/zh-cn/training/modules/tm-use-a-framework-to-identify-threats-and-find-ways-to-reduce-or-eliminate-risk/3-tampering-changing-data-without-authorization
+:NOTER_OPEN: eww
+:NOTER_PAGE: 231
+:END:
+
+当恶意攻击者未经授权在系统中读取、修改、删除或插入数据时，就会发生篡改。
+
+示例包括：
+
+- 修改临时存储在缓存中、通过网络发送或永久存储在数据库中的数据以破坏数据完整性。
+- 将恶意有效负载插入浏览器缓存中，以导致进程和数据存储中的行为异常。
+- 通过弱 API 调用处理修改内存，导致崩溃和泄漏敏感错误消息。
+- 将数据重定向到被入侵的计算机以接管系统。
+- 诱使用户连接网络或下载文件，从而授予他们流量和设备访问权限（与欺骗结合使用）。
+
+
+**** 元素
+:PROPERTIES:
+:NOTER_DOCUMENT: https://learn.microsoft.com/zh-cn/training/modules/tm-use-a-framework-to-identify-threats-and-find-ways-to-reduce-or-eliminate-risk/3-tampering-changing-data-without-authorization
+:NOTER_OPEN: eww
+:NOTER_PAGE: 495
+:END:
+
+
+#+DOWNLOADED: screenshot @ 2025-03-12 18:13:42
+#+attr_html: :width 800px
+#+attr_org: :width 800px
+#+CAPTION: 面临篡改的元素
+#+NAME: fig:lear-b63e921b
+[[file:images/learn_microsoft_com_tm-introduction-to-threat-modeling/lear_01ffe5cb.png]]
+
+
+**** 交互
+:PROPERTIES:
+:NOTER_DOCUMENT: https://learn.microsoft.com/zh-cn/training/modules/tm-use-a-framework-to-identify-threats-and-find-ways-to-reduce-or-eliminate-risk/3-tampering-changing-data-without-authorization
+:NOTER_OPEN: eww
+:NOTER_PAGE: 1540
+:END:
+
+
+#+DOWNLOADED: screenshot @ 2025-03-13 09:21:37
+#+attr_html: :width 800px
+#+attr_org: :width 800px
+#+CAPTION: 面临篡改的交互
+#+NAME: fig:lear-4faccaef
+[[file:images/learn_microsoft_com_tm-introduction-to-threat-modeling/lear_f6397f82.png]]
+
+
+**** 如何防止篡改
+:PROPERTIES:
+:NOTER_DOCUMENT: https://learn.microsoft.com/zh-cn/training/modules/tm-use-a-framework-to-identify-threats-and-find-ways-to-reduce-or-eliminate-risk/3-tampering-changing-data-without-authorization
+:NOTER_OPEN: eww
+:NOTER_PAGE: 2360
+:END:
+
+完整性防止恶意修改数据。 示例包括：
+
+- 验证输入以防止处理恶意有效负载和错误处理意外行为
+- 使用数字签名对消息进行签名，以确保消息不被篡改
+- 使用访问控制列表应用权限
+- 使用 SSL/TLS 保护传输
+- 创建 IPSec 隧道，以保护终结点之间的通信
+
+
+***** 用于降低或消除风险的常用安全控制
+:PROPERTIES:
+:NOTER_DOCUMENT: https://learn.microsoft.com/zh-cn/training/modules/tm-use-a-framework-to-identify-threats-and-find-ways-to-reduce-or-eliminate-risk/3-tampering-changing-data-without-authorization
+:NOTER_OPEN: eww
+:NOTER_PAGE: 2499
+:END:
+
+
+- 操作系统完整性控制
+- 访问控制列表 (ACL)
+- 数字签名
+- 消息验证码
+
+
+*** 否认性 - 不宣称对执行的操作负责
+:PROPERTIES:
+:NOTER_DOCUMENT: https://learn.microsoft.com/zh-cn/training/modules/tm-use-a-framework-to-identify-threats-and-find-ways-to-reduce-or-eliminate-risk/4-repudiation-not-claiming-responsibility-for-an-action-taken
+:NOTER_OPEN: eww
+:NOTER_PAGE: 235
+:END:
+
+当有人出于恶意或无意采取某个操作，但声明其他操作时，就会发生否认性。
+
+示例包括：
+
+- 拒绝修改包含敏感操作的日志。
+- 使用其他人的帐户以避免被抓。
+- 声称没有删除数据库记录。
+
+
+注意： 系统日志是攻击者的金矿，不仅可用于操纵，还可用于收集有关用户、环境和弱点的数据。
+
+
+**** 元素
+:PROPERTIES:
+:NOTER_DOCUMENT: https://learn.microsoft.com/zh-cn/training/modules/tm-use-a-framework-to-identify-threats-and-find-ways-to-reduce-or-eliminate-risk/4-repudiation-not-claiming-responsibility-for-an-action-taken
+:NOTER_OPEN: eww
+:NOTER_PAGE: 416
+:END:
+
+#+DOWNLOADED: screenshot @ 2025-03-13 09:27:37
+#+attr_html: :width 800px
+#+attr_org: :width 800px
+#+CAPTION: 否认的元素
+#+NAME: fig:lear-da4f0293
+[[file:images/learn_microsoft_com_tm-introduction-to-threat-modeling/lear_f866969b.png]]
+
+
+**** 交互
+:PROPERTIES:
+:NOTER_DOCUMENT: https://learn.microsoft.com/zh-cn/training/modules/tm-use-a-framework-to-identify-threats-and-find-ways-to-reduce-or-eliminate-risk/4-repudiation-not-claiming-responsibility-for-an-action-taken
+:NOTER_OPEN: eww
+:NOTER_PAGE: 1502
+:END:
+
+
+#+DOWNLOADED: screenshot @ 2025-03-13 09:49:00
+#+attr_html: :width 800px
+#+attr_org: :width 800px
+#+CAPTION: 否认的交互
+#+NAME: fig:lear-15164e9b
+[[file:images/learn_microsoft_com_tm-introduction-to-threat-modeling/lear_7d2bfac7.png]]
+
+
+**** 如何防止否认性攻击
+:PROPERTIES:
+:NOTER_DOCUMENT: https://learn.microsoft.com/zh-cn/training/modules/tm-use-a-framework-to-identify-threats-and-find-ways-to-reduce-or-eliminate-risk/4-repudiation-not-claiming-responsibility-for-an-action-taken
+:NOTER_OPEN: eww
+:NOTER_PAGE: 2672
+:END:
+
+不可否认性通过创建和保护安全日志来确保每个操作都可以追溯到其来源。
+
+用于降低或消除风险的常用安全控制：
+
+- 强身份验证
+- 安全日志记录和监视
+- 数字签名
+- 安全时间戳
+- 受信任的第三方
+
+
+*** 信息泄露 - 查看不应查看的数据
+:PROPERTIES:
+:NOTER_DOCUMENT: https://learn.microsoft.com/zh-cn/training/modules/tm-use-a-framework-to-identify-threats-and-find-ways-to-reduce-or-eliminate-risk/5-information-disclosure-seeing-data-i-am-not-supposed-to-see
+:NOTER_OPEN: eww
+:NOTER_PAGE: 218
+:END:
+
+向未经授权的个人公开敏感数据时，会发生信息泄漏。 无论是在有意或无意的情况下，都有可能发生信息泄露。
+
+示例包括：
+
+- 系统通过错误消息泄露敏感数据。
+- 用户访问安全控制较弱的未授权文档和文件夹。
+- 用户访问流经非安全网络的数据。
+
+
+**** 元素
+:PROPERTIES:
+:NOTER_DOCUMENT: https://learn.microsoft.com/zh-cn/training/modules/tm-use-a-framework-to-identify-threats-and-find-ways-to-reduce-or-eliminate-risk/5-information-disclosure-seeing-data-i-am-not-supposed-to-see
+:NOTER_OPEN: eww
+:NOTER_PAGE: 395
+:END:
+
+
+#+DOWNLOADED: screenshot @ 2025-03-13 10:14:05
+#+attr_html: :width 800px
+#+attr_org: :width 800px
+#+CAPTION: 信息泄露元素
+#+NAME: fig:lear-33a46964
+[[file:images/learn_microsoft_com_tm-introduction-to-threat-modeling/lear_575e2614.png]]
+
+
+**** 交互
+:PROPERTIES:
+:NOTER_DOCUMENT: https://learn.microsoft.com/zh-cn/training/modules/tm-use-a-framework-to-identify-threats-and-find-ways-to-reduce-or-eliminate-risk/5-information-disclosure-seeing-data-i-am-not-supposed-to-see
+:NOTER_OPEN: eww
+:NOTER_PAGE: 1442
+:END:
+
+
+#+DOWNLOADED: screenshot @ 2025-03-13 10:14:43
+#+attr_html: :width 800px
+#+attr_org: :width 800px
+#+CAPTION: 信息泄漏交互
+#+NAME: fig:lear-a6958294
+[[file:images/learn_microsoft_com_tm-introduction-to-threat-modeling/lear_c656aab6.png]]
+
+
+**** 如何防止信息泄漏
+:PROPERTIES:
+:NOTER_DOCUMENT: https://learn.microsoft.com/zh-cn/training/modules/tm-use-a-framework-to-identify-threats-and-find-ways-to-reduce-or-eliminate-risk/5-information-disclosure-seeing-data-i-am-not-supposed-to-see
+:NOTER_OPEN: eww
+:NOTER_PAGE: 2998
+:END:
+
+机密性确保数据受到保护。
+
+示例包括：
+
+- 应用访问控制列表，以确保合适的用户可以访问适当的数据。
+- 加密静态数据、传输中数据和正在使用的数据。
+- 强制实施 SSL/TLS 以保护传输。
+- 使用 IPSec 隧道保护跨终结点的通信。
+
+用于降低或消除风险的常用安全控制：
+- 加密
+- 访问控制列表 (ACL)
+
+
+*** 拒绝服务 - 系统繁忙
+:PROPERTIES:
+:NOTER_DOCUMENT: https://learn.microsoft.com/zh-cn/training/modules/tm-use-a-framework-to-identify-threats-and-find-ways-to-reduce-or-eliminate-risk/6-denial-of-service-overwhelming-the-system
+:NOTER_OPEN: eww
+:NOTER_PAGE: 229
+:END:
+
+当攻击者导致系统不可用时，将发生拒绝服务。
+
+示例包括：
+
+- 向网络发送大量请求。
+- 占用内存和 CPU 进程。
+- 请求数量过多导致数据存储崩溃。
+
+
+**** 元素
+:PROPERTIES:
+:NOTER_DOCUMENT: https://learn.microsoft.com/zh-cn/training/modules/tm-use-a-framework-to-identify-threats-and-find-ways-to-reduce-or-eliminate-risk/6-denial-of-service-overwhelming-the-system
+:NOTER_OPEN: eww
+:NOTER_PAGE: 348
+:END:
+
+#+DOWNLOADED: screenshot @ 2025-03-13 10:32:15
+#+attr_html: :width 800px
+#+attr_org: :width 800px
+#+CAPTION: 拒绝服务：元素
+#+NAME: fig:lear-fbb73bb1
+[[file:images/learn_microsoft_com_tm-introduction-to-threat-modeling/lear_9bb1d7a0.png]]
+
+
+**** 交互
+:PROPERTIES:
+:NOTER_DOCUMENT: https://learn.microsoft.com/zh-cn/training/modules/tm-use-a-framework-to-identify-threats-and-find-ways-to-reduce-or-eliminate-risk/6-denial-of-service-overwhelming-the-system
+:NOTER_OPEN: eww
+:NOTER_PAGE: 1393
+:END:
+
+
+#+DOWNLOADED: screenshot @ 2025-03-13 11:19:12
+#+attr_html: :width 800px
+#+attr_org: :width 800px
+#+CAPTION: 拒绝服务：交互
+#+NAME: fig:lear-8be14f71
+[[file:images/learn_microsoft_com_tm-introduction-to-threat-modeling/lear_d8930470.png]]
+
+
+**** 如何防止拒绝服务
+:PROPERTIES:
+:NOTER_DOCUMENT: https://learn.microsoft.com/zh-cn/training/modules/tm-use-a-framework-to-identify-threats-and-find-ways-to-reduce-or-eliminate-risk/6-denial-of-service-overwhelming-the-system
+:NOTER_OPEN: eww
+:NOTER_PAGE: 2951
+:END:
+
+可用性确保系统为用户启动且正常运行。 示例包括：
+
+- 使用网络访问控制列表控制传入和传出的流量。
+- 使用弹性资源管理不断增加或减少的使用量。
+- 监视系统以检测是否出现异常。
+- 启用操作系统标志来处理内存和 CPU 进程。
+
+用于降低或消除风险的常用安全控制：
+
+- 访问控制列表 (ACL)
+- 筛选
+- 配额
+- 授权
+- 高可用性
+
+
+*** 权限提升 - 拥有本不应该拥有的权限
+:PROPERTIES:
+:NOTER_DOCUMENT: https://learn.microsoft.com/zh-cn/training/modules/tm-use-a-framework-to-identify-threats-and-find-ways-to-reduce-or-eliminate-risk/7-elevation-of-privilege-having-permissions-i-should-not-have
+:NOTER_OPEN: eww
+:NOTER_PAGE: 236
+:END:
+
+个人未经许可访问资源时，就会发生权限提升。 示例包括：
+
+- 利用输入处理逻辑或内存中的弱点来提取数据。
+- 查找并使用特权帐户破坏服务（与欺骗和篡改威胁结合使用）。
+
+
+**** 元素
+:PROPERTIES:
+:NOTER_DOCUMENT: https://learn.microsoft.com/zh-cn/training/modules/tm-use-a-framework-to-identify-threats-and-find-ways-to-reduce-or-eliminate-risk/7-elevation-of-privilege-having-permissions-i-should-not-have
+:NOTER_OPEN: eww
+:NOTER_PAGE: 362
+:END:
+
+
+#+DOWNLOADED: screenshot @ 2025-03-13 11:31:28
+#+attr_html: :width 800px
+#+attr_org: :width 800px
+#+CAPTION: 权限提升：元素
+#+NAME: fig:lear-c46a3199
+[[file:images/learn_microsoft_com_tm-introduction-to-threat-modeling/lear_2406d676.png]]
+
+
+**** 交互
+:PROPERTIES:
+:NOTER_DOCUMENT: https://learn.microsoft.com/zh-cn/training/modules/tm-use-a-framework-to-identify-threats-and-find-ways-to-reduce-or-eliminate-risk/7-elevation-of-privilege-having-permissions-i-should-not-have
+:NOTER_OPEN: eww
+:NOTER_PAGE: 729
+:END:
+
+
+#+DOWNLOADED: screenshot @ 2025-03-13 11:31:55
+#+attr_html: :width 800px
+#+attr_org: :width 800px
+#+CAPTION: 权限提升：交互
+#+NAME: fig:lear-b3ca05b1
+[[file:images/learn_microsoft_com_tm-introduction-to-threat-modeling/lear_73a9a37a.png]]
+
+
+**** 如何防止权限提升
+:PROPERTIES:
+:NOTER_DOCUMENT: https://learn.microsoft.com/zh-cn/training/modules/tm-use-a-framework-to-identify-threats-and-find-ways-to-reduce-or-eliminate-risk/7-elevation-of-privilege-having-permissions-i-should-not-have
+:NOTER_OPEN: eww
+:NOTER_PAGE: 1884
+:END:
+
+授权确保用户拥有适当的权限。 示例包括：
+
+- 实现授权机制以验证对数据和资源的权限。
+- 应用安全控制，以使用最少的访问权限运行服务。
+- 监视访问以检测异常和未经授权的访问尝试。
+
+用于降低或消除风险的常用安全控制：
+
+- 访问控制列表 (ACL)
+- 基于角色的访问控制 (RBAC)
+- 基于组的访问
+- 权限
+- 输入验证
+
+
+
+* 步骤 3 - 修复                                                    :noexport:
+:PROPERTIES:
+:NOTER_DOCUMENT: https://learn.microsoft.com/zh-cn/training/modules/tm-introduction-to-threat-modeling/4-step-3-fix-phase
+:NOTER_OPEN: eww
+:NOTER_PAGE: 227
+:END:
+
+在修复阶段，需要决定如何处理所有威胁。
+每个 STRIDE 威胁都对应到一项或多项安全控制，这些控制措施提供不同的功能和类型供你选择。
+
+** 目标
+
+- 根据优先级框架或安全 bug 栏衡量每个威胁的优先级。
+- 在 bug 管理服务中将每个威胁作为任务或工作项进行跟踪。
+- 生成对应于 STRIDE 威胁的安全控制建议
+- 通过选择一项或多项安全控制类型和功能来应对每个威胁。
+- 解决任务。
+
+重要: 如果不完成此阶段，就找不到安全控制来帮助降低风险或正确跟踪每个威胁。
+
+** 设置威胁跟踪工作流
+
+设置威胁跟踪工作流，该工作流可确定威胁的优先顺序并创建任务来处理这些威胁。
+
+*** 确定威胁的优先级
+
+首先，根据优先级框架或安全 bug 栏来衡量每个威胁。 此过程可帮助你计划资源来解决对组织而言更重要的问题。
+
+此过程使用三个关键变量：
+
+#+CAPTION: 关键变量
+#+NAME: tbl:lear-12398ed8
+| 变量     | 说明                                                  |
+|----------+-------------------------------------------------------|
+| /        | <>                                                    |
+| 影响     | 使用 STRIDE 类别分配影响。                            |
+| Severity | 使用内部 bug 栏或优先级框架来分配最坏情况下的严重性。 |
+| 风险     | 对安全控制有效性和实现成本进行计算。                  |
+
+提示： \\
+Microsoft 工程师使用内部安全 bug 栏，为威胁分配“严重”、“重要”、“中等”、“低”或“信息”严重性等级。
+
+*** 创建任务
+
+接下来，在 Azure DevOps Services 等 bug 管理解决方案中添加每个威胁。 部分优点包括：
+
+- 进一步确定问题责任人
+- 有效跟踪历史记录
+- 让你能够使用标准化模板来进行优先级和解决方案演练
+
+** 评价安全控制的有效性和成本
+
+查看对应于 STRIDE 威胁的每项安全控制建议。 记下最有效和成本最低的建议。 以下是一些示例：
+
+| 威胁     | 安全控制   | 安全控制示例                                                         |
+|----------+------------+----------------------------------------------------------------------|
+| /        | <>         | <>                                                                   |
+| 欺骗     | 身份验证   | 通过发送和接收使用数字签名进行签名的消息，确保消息完整性并验证来源。 |
+| 篡改     | 完整性     | 验证输入以防止处理恶意有效负载和错误处理意外行为。                   |
+| 否认     | 不可否认性 | 创建和保护包含用户操作和时间戳的安全日志。                           |
+| 信息泄露 | 机密性     | 应用访问控制列表，以确保合适的用户可以访问适当的数据。               |
+| 拒绝服务 | 可用性     | 使用弹性资源管理不断增加或减少的使用量。                             |
+| 特权提升 | 授权       | 使用尽可能少的访问量运行服务。                                       |
+
+*提示*： \\
+可能有可以立即减少或完全消除多个威胁的安全控制。 例如，使用 SSL/TLS 创建安全传输通道，以帮助防止恶意数据修改或泄露。
+
+** 安全控制措施类型和功能
+
+安全控制具有不同的类型和功能。 结合使用时，它们有助于保护系统的安全，并创建多个安全保护层，也称为深层防御。
+
+你可以选择一种或多种安全控制类型：
+
+- 物理类型，如摄像头
+- 技术类型，如加密
+- 管理类型，如策略
+
+这些类型有一项或多项安全控制功能：
+
+| 函数 | 描述                                           |
+|------+------------------------------------------------|
+| /    | <>                                             |
+| 预防 | 降低威胁的概率或影响，如防火墙。               |
+| 检测 | 识别发生的攻击，如监视。                       |
+| 纠正 | 控制系统如何响应其受到的攻击，如系统修补程序。 |
+| 恢复 | 从攻击中恢复系统，如备份。                     |
+| 阻碍 | 阻止攻击者访问系统，如最低权限。               |
+
+** 为每个问题添加安全控制详细信息
+
+在 bug 管理解决方案中为每个问题添加详细信息，然后使用以下其中一个解决方案解决各个问题。 它们在不同组织之间存在略微差异：
+
+| 解决方案 | 描述                                                                                                                                                                                                   |
+|----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| /        | <>                                                                                                                                                                                                     |
+| 减轻     | 通过使用 bug 修复或重新设计来减轻或消除威胁影响和严重性。                                                                                                                                              |
+| 转接     | 将问题分配给另一个系统或团队。                                                                                                                                                                         |
+| 避免     | 去除系统中包含问题的部分。                                                                                                                                                                             |
+| Accept   | 在没有解决方法的情况下接受风险。 此解决方案需要授权风险决策者的批准。 此决定可能基于威胁严重性。 严重威胁可能需要高级领导的批准，而深层防御风险可能需要高级工程师批准。 与你的团队交流以获得战略指导。 |
+
+
+
+* 步骤 4 - 验证                                                    :noexport:
+:PROPERTIES:
+:NOTER_DOCUMENT: https://learn.microsoft.com/zh-cn/training/modules/tm-introduction-to-threat-modeling/5-step-4-verify-phase
+:NOTER_OPEN: eww
+:NOTER_PAGE: 227
+:END:
+
+验证阶段是威胁建模过程的最后一步，通常发生在部署系统之前。
+它涉及到确保满足要求、验证假设以及准备好安全控制。
+
+** 目标
+
+- 确认系统满足所有以前的和新的安全要求。
+- 配置云提供商、操作系统和组件以满足安全要求。
+- 确保使用正确的安全控制解决所有问题。
+- 在部署前对系统进行手动和自动验证
+
+重要： 如果不完成此阶段，就无法验证是否已成功完成安全工作。
+
+** 验证要求和设置默认值
+
+首先，验证是否满足第一阶段创建的所有要求。
+
+示例：
+
+- 网络安全计划
+- 机密管理解决方案实施
+- 日志记录和监视系统
+- 标识和访问控制
+
+然后，确保更改云提供商、操作系统和组件的默认配置设置，这样就能够满足所有安全要求。
+
+示例：
+
+- 启用 Azure SQL 数据库透明数据加密以保护磁盘上的数据。
+- 使用基于角色的访问控制 (RBAC) 向用户、组和应用程序分配权限。
+- 跨所有配置文件启用 Windows 防火墙。
+
+应解决 bug 管理解决方案中记录的所有问题。 验证所有修补程序。
+
+** 执行验证
+
+最后一部分涉及运行手动和自动验证。
+在 Microsoft，系统在部署前要执行一个验证流程。
+该流程可能包括自动扫描程序、代码评审和渗透测试。
+可以在每次部署之前或隔一定的时间（如每 6 - 12 个月）强制执行该过程。
+
+如果以下任一问题的答案为“是”，最好设置较短的验证周期：
+
+- 我的系统会在外部使用吗？
+- 我的系统可以处理机密数据吗？
+- 我必须遵守某些规定吗？
+- 我的组织是否要求实施额外的安全保护流程，以应对隐私影响、运营风险或开发要求？
