@@ -1,0 +1,20 @@
+:PROPERTIES:
+:ID:       82bb171b-5280-45c0-b486-66aae77f6420
+:END:
+#+TITLE: [笔记]诡秘之主-爱潜水的乌贼
+#+AUTHOR: Yang,Ying-chao
+#+DATE:   2025-03-18
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  align nodlcheck oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :guimizhizhu:note:ireader:
+
+
+- 35-36, 标注, 2025 年 3 月 12 日星期三 下午 6:43:44
+  #+BEGIN_QUOTE md5: e4918609c8199ecdc88762e3c4096c0b
+  然而，半睡半醒之时，意志总是飘忽如同烟雾，难以控制，难以收束，他再怎么努力，依旧忍不住思维发散，杂念浮现。
+  #+END_QUOTE
+
+* Unwashed Entries                                                  :noexport:
