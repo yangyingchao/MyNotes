@@ -7,7 +7,7 @@
 #+AUTHOR: 月光
 #+DATE:   2025-01-20
 #+OPTIONS:  ^:nil H:5 num:t toc:nil \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
-#+STARTUP:  align nodlcheck oddeven lognotestate
+#+STARTUP:   oddeven lognotestate
 #+SEQ_TODO: TODO(t) INPROG:tag2:
 #+LATEX_CLASS: article
 #+LATEX_CLASS_OPTIONS: [11pt]
