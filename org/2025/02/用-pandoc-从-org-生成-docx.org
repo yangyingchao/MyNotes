@@ -28,10 +28,10 @@
 ** advice to org-odt-export-to-odt
 
  Emacs 内置有命令 =org-odt-export-to-odt= 可以把 =org= 转换成 =odt= 格式，也可以再通过内置命令 =org-odt-convert=
- 来把 =odt= 转换成 =docx= ， 但这种方式生成的 word 文档在 wps 打开后，总是怪怪的，还是直接使用 pandoc 配合过滤器以及
- reference-document 生成的文档看起来更舒服。
- 所以我给 =org-odt-export-to-odt=  加了个 =advice= ，让他在转换成 =odt= 之后，直接调用 pandoc 来生成 =docx= 。
- 之所以先生成 =odt= ，是为了在生成 =odt= 过程中 evaluate 各种 babel ，以便生成图片之类。
+ 来把 =odt= 转换成 =docx= ， 但这种方式生成的 word 文档在 wps 打开后，总是怪怪的，还是直接使用 pandoc
+ 配合过滤器以及 reference-document 生成的文档看起来更舒服。所以我给 =org-odt-export-to-odt= 加了个 =advice= ，
+ 让他在转换成 =odt= 之后，直接调用 pandoc 来生成 =docx= 。之所以先生成 =odt= ，是为了在生成 =odt= 过程中
+ evaluate 各种 babel ，以便生成图片之类。
 
  #+begin_src emacs-lisp -r
    (yc/defmacro defadvice! (how places symbol arglist &optional docstring &rest body)
