@@ -9,7 +9,7 @@
 #+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
-#+FILETAGS: :shuisheyao:note:ireader:
+#+FILETAGS: :shuisheyao:note:ireader:unwashed:
 #+EXCLUDE_TAGS: noexport
 
 * Entries
@@ -176,14 +176,12 @@
   #+END_QUOTE
 
 
-**** 1996-1998, 标注, 2025 年 3 月 1 日星期六 下午 10:54:58
+- 1996-1998, 标注, 2025 年 3 月 1 日星期六 下午 10:54:58
   # note_md5: 3945774a7bff5a441a70cb7af2120eff
   #+BEGIN_QUOTE
   吴老二蹙着眉头想：我怎么就这么不走运呢？ 他不知道，他的买卖开不好，原因就是他的精神萎靡。他老是这么拖拖沓沓，
   没精打采，吃茶吃饭的顾客，一看见他的呆滞的目光，就倒了胃口了。 一个人要兴旺发达，得有那么一点精气神。
   #+END_QUOTE
-
-* Unwashed Entries                                                  :noexport:
 
 - 2458-2459, 标注, 2025 年 3 月 16 日星期日 下午 10:47:49
   #+BEGIN_QUOTE md5: 81012c53d2c8edf9d1a3a74faea84429
@@ -207,3 +205,5 @@
   谁都怕不定什么时候触动二奶奶的一根什么筋，二奶奶的脸上刷地一下就挂下了一层六月严霜。猫也瘦了，狗也瘦了，
   人也瘦了，花也瘦了。
   #+END_QUOTE
+
+* Unwashed Entries                                                  :noexport:
