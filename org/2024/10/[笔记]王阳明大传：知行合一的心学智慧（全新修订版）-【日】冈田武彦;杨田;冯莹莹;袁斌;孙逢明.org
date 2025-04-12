@@ -1,7 +1,7 @@
 :PROPERTIES:
 :ID:       d7b4f82d-c5f3-4e9f-8d9f-0a767256a1e3
 :END:
-#+TITLE: [笔记]王阳明大传：知行合一的心学智慧（全新修订版）-【日】冈田武彦;杨田;冯莹莹;袁斌;孙逢明
+#+TITLE: [笔记]王阳明大传：知行合一的心学智慧
 #+AUTHOR: Yang,Ying-chao
 #+DATE:   2024-10-26
 #+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc

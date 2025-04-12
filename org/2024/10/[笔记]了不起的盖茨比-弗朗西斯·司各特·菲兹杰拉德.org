@@ -1,7 +1,7 @@
 :PROPERTIES:
 :ID:       d1b2b834-efb1-4b33-9631-b81b1e8e23b2
 :END:
-#+TITLE: [笔记]了不起的盖茨比(随书附赠英文原版！李继宏倾心翻译，世界文学史“完美之书”，村上春树一生挚爱的选择)(果麦经典)-弗朗西斯·司各特·菲兹杰拉德
+#+TITLE: [笔记]了不起的盖茨比-弗朗西斯·司各特·菲兹杰拉德
 #+AUTHOR: Yang Yingchao
 #+DATE:   2024-10-09
 #+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc

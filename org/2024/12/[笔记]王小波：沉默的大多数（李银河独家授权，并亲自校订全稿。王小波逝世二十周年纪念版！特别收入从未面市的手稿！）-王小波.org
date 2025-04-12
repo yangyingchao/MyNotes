@@ -1,7 +1,7 @@
 :PROPERTIES:
 :ID:       3a5ef04c-b8ce-4b6a-841e-52e43a1c9edb
 :END:
-#+TITLE: [笔记]王小波：沉默的大多数（李银河独家授权，并亲自校订全稿。王小波逝世二十周年纪念版！特别收入从未面市的手稿！）-王小波
+#+TITLE: [笔记]王小波：沉默的大多数
 #+AUTHOR: Yang,Ying-chao
 #+DATE:   2024-12-31
 #+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc

@@ -1,7 +1,7 @@
 :PROPERTIES:
 :ID:       f9f7eae3-d3a8-4954-b0d1-26fb42fa6818
 :END:
-#+TITLE: [笔记]人间词话：叶嘉莹讲评本（诗词大家叶嘉莹逐条讲透、点评王国维诗词美学经典，读懂人生三境界）-王国维;叶嘉莹
+#+TITLE: [笔记]人间词话：叶嘉莹讲评本
 #+AUTHOR: Yang,Ying-chao
 #+DATE:   2025-02-07
 #+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
