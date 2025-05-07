@@ -1,0 +1,20 @@
+:PROPERTIES:
+:ID:       a4242fea-fbf3-4d6f-b1d9-75c361bc0564
+:END:
+#+TITLE: 新名字的故事
+#+AUTHOR: Yang,Ying-chao
+#+DATE:   2025-05-07
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :xinmingzideg:note:ireader:unwashed:
+
+* Unwashed Entries                                                  :noexport:
+
+- 314-315, 标注, 2025 年 4 月 5 日星期六 上午 11:24:13
+  #+BEGIN_QUOTE md5: d68cfe50dc77b03d3bd7a30acea4a84d
+  在那一刻，我感觉自己就像一只有缺口的碗——那是我妹妹埃莉莎用来喂猫的碗，后来那只猫再也没有出现，
+  那只空碗落满灰尘，被遗忘在楼梯间。我感觉到一种强烈的焦虑，
+  #+END_QUOTE
