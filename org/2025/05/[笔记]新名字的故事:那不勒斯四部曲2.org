@@ -9,7 +9,7 @@
 #+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :xinmingzideg:note:ireader:unwashed:
+#+FILETAGS: :xinmingzideg:note:ireader:
 
 - 314-315, 标注, 2025 年 4 月 5 日星期六 上午 11:24:13
   #+BEGIN_QUOTE md5: d68cfe50dc77b03d3bd7a30acea4a84d

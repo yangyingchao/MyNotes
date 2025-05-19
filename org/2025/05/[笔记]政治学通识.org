@@ -9,7 +9,7 @@
 #+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :zhengzhixuet:note:ireader:unwashed:
+#+FILETAGS: :zhengzhixuet:note:ireader:
 
 - 182-184, 标注, 2025 年 4 月 5 日星期六 上午 11:38:11
   #+BEGIN_QUOTE md5: c4abf88ccf06c16c5565f89f2bddf5b6
