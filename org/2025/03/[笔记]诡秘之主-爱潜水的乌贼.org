@@ -9,7 +9,7 @@
 #+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :guimizhizhu:note:ireader:unwashed:
+#+FILETAGS: :guimizhizhu:note:ireader:
 
 
 - 35-36, 标注, 2025 年 3 月 12 日星期三 下午 6:43:44
@@ -186,6 +186,33 @@
   #+BEGIN_QUOTE md5: 1bd954f5da1c90d7e0195d2fd52847cd
   你知道了它，它也就知道了你。” 突然，克莱恩“咦”了一声，觉得这样的描述有点眼熟！ “这很像黄昏隐士会啊，凡有言，
   必被知……
+  #+END_QUOTE
+
+
+- 95927-95929, 标注, 2025 年 5 月 20 日星期二 下午 10:34:08
+  #+BEGIN_QUOTE md5: daba2e89dcc8c710b9d0e6cc8857524b
+  那是在漫长黑夜后，于晨曦薄雾里，看见自家花园内有一朵花正缓慢绽放的喜悦，那是离开大都市，前往郊外，
+  在雨后的树林里呼吸清爽空气，目睹蘑菇长出的喜悦，那是万物滋长，新生降临的喜悦。
+  #+END_QUOTE
+
+
+- 96424-96424, 标注, 2025 年 5 月 21 日星期三 上午 8:15:53
+  #+BEGIN_QUOTE md5: d0498416adce725d92165ebf7021eb85
+  不是没脑子，只是懒得用……
+  #+END_QUOTE
+
+
+- 124835-124837, 标注, 2025 年 5 月 23 日星期五 下午 12:40:35
+  #+BEGIN_QUOTE md5: 43e2d4a3e1bd6c15cf24a24cdafbe2b8
+  克莱恩的意识在“福生玄黄天尊”复苏的意志和安提哥努斯的自我认知、精神烙印连番冲击下，如同暴风雨中的帆船，
+  时而被抛高，时而被拍下，时而被侵蚀，时而被横推。
+  #+END_QUOTE
+
+
+- 126857-126859, 标注, 2025 年 5 月 23 日星期五 下午 8:51:05
+  #+BEGIN_QUOTE md5: c916f45ca244a3c1ad552eaf9fbec7e4
+  一本小说，世界观是骨架，剧情是肉，人物则是血，没有好的人物，那这本小说就会死沉沉的，
+  很难让一个大长篇在每个部分都有意思，足够吸引人，也很难去营造共鸣、感动和各种情绪。
   #+END_QUOTE
 
 * Unwashed Entries                                                  :noexport:
