@@ -1,0 +1,49 @@
+:PROPERTIES:
+:ID:       a43c369a-21eb-45d4-a7ff-d96fff498aa2
+:END:
+#+TITLE: 五月读书笔记
+#+AUTHOR: Yang,Ying-chao
+#+DATE:   2025-06-01
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :weixin:
+
+这个月仍然没有读那些严肃的作品，重读了两本书，新开了两本。
+
+* [[file:~/Work/MyNotes/org/2025/05/\[笔记\]欢乐英雄-古龙.org][欢乐英雄]]
+
+
+#+attr_org: :width 800px
+#+attr_html: :width 800px
+#+attr_latex: :float nil
+#+NAME: fig:wuyu-d41d8cd9
+[[./images/huanleyingxiong.jpg]]
+
+古龙的经典之作。第一次读的时候是高中时候，几个主角被同学戏称为“几个小痞子”。
+古龙用其独特的笔锋，描写了“几个小痞子”的生死友谊。其中还不忘顺便调侃一下金庸：
+
+
+#+BEGIN_QUOTE md5: 9937c724fe07016fef50167a3a34e07f,9e90f5fbec7cacbf47a30ee4d8fa3426
+乞丐大多属于丐帮，也就是俗称的穷家帮，他们用的短杖，通常叫作打狗棒，这名字据说是昔日一位姓查的帮主起的，
+但真的来源究竟出自何处，谁也没有认真去考据过。
+#+END_QUOTE
+
+
+* [[file:~/Work/MyNotes/org/2025/05/\[笔记\]悟空传.org][悟空传]]
+
+
+#+attr_org: :width 800px
+#+attr_html: :width 800px
+#+attr_latex: :float nil
+#+NAME: fig:wuyu-d41d8cd9
+[[./images/wukongzhuang.jpg]]
+
+曾经红极一时的网文，可能当时只读过一点半点。故事背后对西游的理解独特，但是文笔、以及人物对话，太过无厘头，大话西游风格严重。
+
+不太推荐。
+
+
+最近又重新把烟雨江南的 《亵渎》捡起来了，相比之下，真是经典。
