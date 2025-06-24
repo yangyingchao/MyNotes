@@ -9,7 +9,7 @@
 #+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :笔记:wukongchuan::note:ireader:unwashed:
+#+FILETAGS: :笔记:wukongchuan::note:ireader:
 
 
 - 121-122, 标注, 2025 年 5 月 21 日星期三 上午 8:30:29
@@ -143,5 +143,3 @@
   全山都弥漫着香气，凡人喝了一口，要醉上一百年。那一天，我们全喝醉了，他拍着我的肩膀笑着说，他不记得自己是谁了，
   我说，不要紧，记得这杯酒就行了。”
   #+END_QUOTE
-
-* Unwashed Entries                                                  :noexport:
