@@ -1,0 +1,19 @@
+:PROPERTIES:
+:ID:       bab852f2-379c-4541-aaf1-63e1c9b9ff02
+:END:
+#+TITLE: 夹缝中的总督:曾国藩的五次生死局-鞠海
+#+AUTHOR: Yang,Ying-chao
+#+DATE:   2025-06-29
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :笔记:jiafengzhong:note:ireader:unwashed:
+
+* Unwashed Entries                                                  :noexport:
+
+- 109-110, 标注, 2025 年 5 月 25 日星期日 下午 10:54:10
+  #+BEGIN_QUOTE md5: 166db8c70e0e8059dea2c286e7703a54
+  中国古人推崇“三不朽”：立德、立功与立言。但在中国历史上真正做到三不朽的却为数极少，“
+  #+END_QUOTE

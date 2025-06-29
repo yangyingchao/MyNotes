@@ -1,0 +1,34 @@
+:PROPERTIES:
+:ID:       5ec2f2fb-dc2b-47e7-82ab-5b3e4a07eeac
+:END:
+#+TITLE: 六月读书笔记
+#+AUTHOR: Yang,Ying-chao
+#+DATE:   2025-06-29
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :weixin:
+
+
+* [[file:\[笔记\]亵渎-烟雨江南.org][亵渎]]
+
+时过境迁，十九年后重读此书，完全没有了当时追书的快乐，只有面对命运洪流时的困苦与无奈，以及，深藏其中的，
+一点点希望。
+
+
+* [[file:\[笔记\]源代码.org][源代码]]
+
+看着也比较又感触，还专门给孩子买了一本纸质书，当作暑假的阅读材料。
+
+看的时候，时常感慨，那个黄金时代的美国教育真的很让人羡慕。
+天才总是与众不同，那种不刻板、不千篇一律的教育，才能发掘他们，让他们成长。
+
+
+#+BEGIN_QUOTE md5: b8d337416b75197241f75d66775b540d
+如果我成长于今时今日，很可能会被诊断为孤独症谱系障碍患者。在我的童年时期，
+一些人大脑处理信息的方式有异于旁人的这一事实并没有得到广泛的理解。（“神经多样性”这个术语直到 20 世纪 90
+年代才出现。）我父母当时没有可参考的指南或教科书，以帮他们理解为什么自己的儿子对某些项目极度痴迷（比如
+“弹丸之地”特拉华州），为什么不懂察言观色，又为什么有时候粗鲁无礼却似乎完全注意不到自身行为对其他人产生的影响。
+ #+END_QUOTE
