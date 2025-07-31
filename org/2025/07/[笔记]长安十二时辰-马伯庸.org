@@ -1,0 +1,37 @@
+#+TITLE:  [笔记]长安十二时辰 马伯庸
+#+AUTHOR: Yang,Ying-chao
+#+DATE:   2025-07-31
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :changanshier:note:ireader:unwashed:
+
+
+- 383-386, 标注, 2025 年 7 月 23 日星期三 上午 8:01:29
+  #+BEGIN_QUOTE md5: 5326557b750c90352556863702326bbd
+  开元十三年，有个叫李泌的七岁神童入宫朝觐。天子正在和中书令张说弈棋。天子令张说、李泌二人以“方圆动静”为题吟棋。
+  张说写的是：“方如棋局，圆如棋子。动如棋生，静如棋死。”而李泌则开口说道：“方如行义，圆如用智。动如逞才，
+  静如遂意。”大得天子赞赏，送其入东宫陪太子读书。
+  #+END_QUOTE
+
+- 1411-1412, 标注, 2025 年 7 月 24 日星期四 上午 8:09:11
+  #+BEGIN_QUOTE md5: 05da85cfcfa6ef4efff787fea88db445
+  棚屋的顶上铺着厚薄不均的茅草，行走其间，透射下来的阳光忽明忽暗，让每个人的表情都显得有些迷离。
+  #+END_QUOTE
+
+- 1416-1418, 标注, 2025 年 7 月 24 日星期四 上午 8:09:48
+  #+BEGIN_QUOTE md5: 412ccfc4974bd092c7e49f1dc35b144d
+  外人都道平康里是个天上销魂处，个个都是仙女神姝，却不知这背后多少污秽。得了淋疮的姑娘、毁了容的凤魁、
+  生来畸残的娃娃……无处可去，无人收容，全都如污水一样流聚到了此处，坐等转生。老奴坏事做尽，从不怕下什么无间地狱——
+  嘿，已然身在其中羯磨，早不觉新鲜了。”
+  #+END_QUOTE
+
+- 4363-4364, 标注, 2025 年 7 月 29 日星期二 上午 8:36:19
+  #+BEGIN_QUOTE md5: c2594799e21a77a006d56274684fa302
+  檀棋觉得整件事太荒唐。阙勒霍多去向不明，长安危如累卵，他们却被一个不知所谓的景僧执事，
+  用不知所谓的理由关在这个不知所谓的鬼地方。
+  #+END_QUOTE
+
+* Unwashed Entries                                                  :noexport:
