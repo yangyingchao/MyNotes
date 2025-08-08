@@ -3,6 +3,7 @@
 :; emacs --no-site-file --script "$0" -- "$@" || __EXITCODE=$?
 :; exit ${__EXITCODE:-0}
 ;;; Code:
+
 (defvar bootstrap-version)
 (defvar straight-base-dir)
 (defvar straight-fix-org)
@@ -16,12 +17,12 @@
       publish--straight-repos-dir (expand-file-name "straight/repos/" straight-base-dir))
 
 (let ((bootstrap-file (expand-file-name "straight/repos/straight.el/bootstrap.el" straight-base-dir))
-      (bootstrap-version 5))
+      (bootstrap-version 7))
   (unless (file-exists-p bootstrap-file)
     (with-current-buffer
-	(url-retrieve-synchronously
-	 "https://raw.githubusercontent.com/raxod502/straight.el/develop/install.el"
-	 'silent 'inhibit-cookies)
+        (url-retrieve-synchronously
+         "https://raw.githubusercontent.com/radian-software/straight.el/develop/install.el"
+         'silent 'inhibit-cookies)
       (goto-char (point-max))
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
