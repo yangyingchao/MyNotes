@@ -46,7 +46,7 @@ jobs:
       - name: Setup Emacs
         uses: purcell/setup-emacs@master
         with:
-          version: snapshot
+          version: 30.1
 
       - name: Export Markdown
         run: |

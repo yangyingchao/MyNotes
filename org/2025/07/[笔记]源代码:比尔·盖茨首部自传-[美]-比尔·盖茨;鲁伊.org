@@ -6,7 +6,7 @@
 #+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :yuandaima:bi:note:ireader:unwashed:
+#+FILETAGS: :yuandaima:bi:note:ireader:
 
 * Unwashed Entries                                                  :noexport:
 
@@ -315,10 +315,10 @@
   我母亲经常提醒我，我只是自己所获取的财富的“管家”。她会对我说，获得财富的同时，也要担起将其捐赠的责任和义务。
   #+END_QUOTE
 
-- 4919-4923, 标注, 2025年6月29日星期日 上午9:45:54
+- 4919-4923, 标注, 2025 年 6 月 29 日星期日 上午 9:45:54
   #+BEGIN_QUOTE md5: bae1557b41cf9f81240171effe2ab210
   不过，随着年龄的增长，我发现自己会越来越多地向后看。事实证明，将那些零散的记忆碎片拼在一起，
   能帮助我更好地理解自己。成年的奇妙之处在于，它让你意识到剥去年岁和学识的层层包裹，
-  你在很大程度上还是最初的那个你。从很多方面来说，我依然是那个坐在外祖母家餐桌前、等着她发牌的8岁男孩。
+  你在很大程度上还是最初的那个你。从很多方面来说，我依然是那个坐在外祖母家餐桌前、等着她发牌的 8 岁男孩。
   我仍怀揣着同样的期待，就像是一个打起十足精神的孩子，想要搞清楚眼前所有的一切。
   #+END_QUOTE
