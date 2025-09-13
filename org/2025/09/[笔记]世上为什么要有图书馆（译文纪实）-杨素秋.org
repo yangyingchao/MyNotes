@@ -1,0 +1,29 @@
+:PROPERTIES:
+:ID:       8a3acd45-5376-4daf-bf66-5810d8a348ce
+:END:
+#+TITLE: 世上为什么要有图书馆（译文纪实）-杨素秋
+#+AUTHOR: Yang,Ying-chao
+#+DATE:   2025-09-13
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :笔记:
+
+- 103-105, 标注, 2025 年 9 月 12 日星期五 下午 1:33:20
+  #+BEGIN_QUOTE md5: 8667cd0181a2c8f6f9d653222afca3e1
+  记不清从什么时候开始，启蒙无数青年学子走向文学道路的语文课变得枯索无聊，
+  记不清从什么时候开始我们不再信任语文课能够帮助学子抵达文学，也记不清从什么时候开始“鲁迅”
+  变成了一些有标准答案的习题。“
+  #+END_QUOTE
+
+- 260-263, 标注, 2025 年 9 月 12 日星期五 下午 10:14:43
+  #+BEGIN_QUOTE md5: c1d18d7358b1eb515717687828519ede
+  他似乎是不在意等级的人。在官场不在意等级，就像在家长群坚持不给孩子报补习班，在高校不重视职称名号，都比较难。
+  也许一开始有锐气，久而久之，或被洗脑，或被排挤，或被利益诱惑，免不了从众。若走一条人少的路，
+  在官场为群众尽力发声，在家长群里关心孩子的求知欲和快乐，在高校里专注知识和学生，那得内心笃定，才扛得住颠簸。
+  #+END_QUOTE
+
+* Unwashed Entries                                                  :noexport:
+
