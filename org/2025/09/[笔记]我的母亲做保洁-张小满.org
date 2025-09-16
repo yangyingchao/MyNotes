@@ -1,0 +1,26 @@
+:PROPERTIES:
+:ID:       a742eb10-16e7-4bef-be5b-ef020c9a8901
+:END:
+#+TITLE: 我的母亲做保洁-张小满
+#+AUTHOR: Yang Yingchao
+#+DATE:   2025-09-16
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :笔记:wodemuqinzuo:note:ireader:unwashed:
+
+* Unwashed Entries                                                  :noexport:
+
+- 57-59, 标注, 2025 年 9 月 16 日星期二 上午 8:03:10
+  #+BEGIN_QUOTE md5: 2afb93a3eba30a257c43b38a2acf0003
+  当我不理解她时，当我遇到困境时，文字和书写时不时拯救我。我想，我同样可以借写作为由去记录母亲的生命史与打工史，
+  捋清楚那些在她记忆里模糊的每一年都发生了什么，以及那时候的我在经历什么。我必须这么做，去了解母亲的过去，
+  记录她正在经历的当下，也追寻过去的自己。
+  #+END_QUOTE
+
+- 218-219, 标注, 2025 年 9 月 16 日星期二 上午 8:23:56
+  #+BEGIN_QUOTE md5: 23cb13c284224ab9f09473dd54962ead
+  我跟所有没有背景的大学毕业生一样，像一叶孤舟被扔进社会这片大海。
+  #+END_QUOTE
