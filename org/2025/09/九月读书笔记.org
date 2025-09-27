@@ -1,0 +1,36 @@
+:PROPERTIES:
+:ID:       60199b18-5392-4164-a64c-d796863d605e
+:END:
+#+TITLE: 九月读书笔记
+#+AUTHOR: Yang,Ying-chao
+#+DATE:   2025-09-27
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :weixin:
+
+九月份意外地读了好几本，而且质量都挺高。
+
+* [[file:\[笔记\]缱绻与决绝-赵德发.org][缱绻与决绝]]
+
+在西安期间迷上了电视剧 《生万物》，看完了意犹未尽找到原著看了。
+
+看完以后感觉，电视简化和美化了很多。原书以土地为中心，描写了二十世纪 20 年代到 90 年代的农村变革，
+包括影视剧里很少涉及到的土改、大跃进等敏感话题。
+
+对电视感兴趣的，建议看看原著。
+
+* [[file:\[笔记\]我的母亲做保洁-张小满.org][我的母亲做保洁]]
+
+从另外一个视角看看这个世界。
+
+* [[file:\[笔记\]世上为什么要有图书馆（译文纪实）-杨素秋.org][世上为什么要有图书馆]]
+
+
+* [[file:\[笔记\]僧侣与哲学家-让-弗朗索瓦•何维勒;马修•理查德;赖声川.org][僧侣与哲学家]]
+
+哲学家父亲与僧侣儿子的对话，解开了许多我对于佛教的疑问。
+
+这本书还没有整理完，需要时间去消化。
