@@ -1,0 +1,33 @@
+:PROPERTIES:
+:ID:       4ed9bb1b-8d6c-42ca-b8cb-9b4b7c1d18da
+:END:
+#+TITLE: 西藏生死书-索甲仁波切;郑振煌
+#+AUTHOR: Yang,Ying-chao
+#+DATE:   2025-10-10
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :笔记:xizangshengs:note:ireader:unwashed:
+
+* Unwashed Entries                                                  :noexport:
+
+- 46-49, 标注, 2025 年 10 月 5 日星期日 上午 6:39:25
+  #+BEGIN_QUOTE md5: a74263b6066f0f289c4598f4ba346230
+  我们大多数人自然都希望死得安详，但如果我们的生活充满暴力，如果我们的心总是被愤怒、执著或恐惧等情绪所控制，
+  我们显然也不可能奢望死得安详。因此，如果我们希望死得好，就必须学习如何活得好：如果我们希望死得安详，
+  就必须在心中和日常生活中培养安详。
+  #+END_QUOTE
+
+- 196-198, 标注, 2025 年 10 月 5 日星期日 下午 4:42:28
+  #+BEGIN_QUOTE md5: 6e4b6c31b8f4ac5cdc5259c2e6215310
+  现代工业社会是一种疯狂的宗教。我们正在铲除、毒害、摧毁地球上的一切生命系统。
+  我们正在透支我们的子孙无法偿付的支票……我们的作为，好象我们就是地球上的最后一代。如果我们不从心理、心灵、
+  见解上做一番彻底的改变，地球将像金星一般地变成焦炭而死亡。
+  #+END_QUOTE
+
+- 300-300, 标注, 2025 年 10 月 5 日星期日 下午 5:13:10
+  #+BEGIN_QUOTE md5: 21bb79d31224b4396de3a654d4563362
+  凡人终将一死。
+  #+END_QUOTE
