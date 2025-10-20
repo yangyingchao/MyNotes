@@ -1,0 +1,74 @@
+:PROPERTIES:
+:ID:       bed7ec42-a879-490a-811d-6b5327a6a7a7
+:NOTER_DOCUMENT: https://www.n0derunner.com/performance-gains-for-postgres-on-linux-with-hugepages/
+:NOTER_OPEN: eww
+:END:
+#+TITLE: Performance gains for postgres on Linux with hugepages
+#+AUTHOR: Yang,Ying-chao
+#+DATE:   2025-10-20
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :linux:pg:hugepage:
+
+对于这个实验，我使用的是 Linux 3.10 内核上的 Postgres v11。目标是查看使用大页可以获得什么收益。我使用“内置”基准
+pgbench 来运行一组简单的查询。
+
+由于我只对大页带来的收益感兴趣，因此选择了 pgbench 的 “-S” 参数，这意味着仅执行“选择”语句。显然，
+这掩盖了在污染大页时可能出现的任何成本——但这样可以使实验不必担心写入文件系统。
+
+* 实验
+
+工作站有 32GB 的内存
+Postgres 被分配了 16GB 的内存，使用参数
+
+#+BEGIN_SRC conf
+shared_buffers = 16384MB
+#+END_SRC
+
+pgbench 使用规模因子为 500 创建了一个 ~7.4GB 的数据库
+
+#+BEGIN_SRC sh
+pgbench -i -s 500
+#+END_SRC
+
+以以下方式运行实验
+
+#+BEGIN_SRC sh
+pgbench -c 10 -S -T 600 -P 1 pgbench
+#+END_SRC
+
+
+* 结果
+
+- 默认：无大页：
+  + =tps = 62190.452850= （不包括连接建立）
+
+- 2MB 大页
+  + =tps = 66864.410968= （不包括连接建立）
+  + 比默认值高 +7.5%
+
+- 1GB 大页
+  + =tps = 69702.358303= （不包括连接建立）
+  + 比默认值高 +12%
+
+* 启用大页
+
+获取默认大页只需在 =/etc/sysctl.conf= 中输入一个值。为了允许 =16GB= 的大页，我使用了 =8400= 的值，然后执行 /sysctl -p/
+
+#+BEGIN_SRC sh
+[root@arches gary]# grep huge /etc/sysctl.conf
+vm.nr_hugepages = 8400
+[root@arches gary]# sysctl -p
+#+END_SRC
+
+要获取 1GB 的大页，内核必须在启动时进行配置，例如：
+
+#+BEGIN_SRC sh
+[root@arches boot]# grep CMDLINE /etc/default/grub
+GRUB_CMDLINE_LINUX="rd.lvm.lv=centos/swap vconsole.font=latarcyrheb-sun16 rd.lvm.lv=centos/root crashkernel=auto vconsole.keymap=us rhgb quiet rdblacklist=nouveau default_hugepagesz=1G hugepagesz=1G
+#+END_SRC
+
+然后重启内核
