@@ -1,0 +1,54 @@
+:PROPERTIES:
+:ID:       ec445887-c5de-42f3-83ba-eb9e6a9bc7f8
+:END:
+#+TITLE: 网络协议头
+#+AUTHOR: Yang,Ying-chao
+#+DATE:   2025-10-28
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :network:protocl:headers:
+
+
+From: https://nmap.org/book/tcpip-ref.html
+
+
+* IP header
+
+#+attr_org: :width 800px
+#+attr_html: :width 800px
+#+attr_latex: :float nil
+#+CAPTION: ip header
+#+NAME: fig:wang-9915a410
+[[./images/ip_header.jpg]]
+
+* TCP header
+
+#+attr_org: :width 800px
+#+attr_html: :width 800px
+#+attr_latex: :float nil
+#+CAPTION: tcp header
+#+NAME: fig:wang-f4d49110
+[[./images/tcp_header.jpg]]
+
+* UDP header
+
+
+#+attr_org: :width 800px
+#+attr_html: :width 800px
+#+attr_latex: :float nil
+#+CAPTION: udp header
+#+NAME: fig:wang-630ff401
+[[./images/udp_header.jpg]]
+
+* ICMP header
+
+
+#+attr_org: :width 800px
+#+attr_html: :width 800px
+#+attr_latex: :float nil
+#+CAPTION: icmp header
+#+NAME: fig:wang-d41d8cd9
+[[./images/icmp_header.jpg]]
