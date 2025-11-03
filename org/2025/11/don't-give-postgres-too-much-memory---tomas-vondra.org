@@ -1,0 +1,105 @@
+:PROPERTIES:
+:ID:       2927fffc-a6c9-46b4-9a05-32fdde33f76d
+:NOTER_DOCUMENT: https://postgr.es/p/7kj
+:NOTER_OPEN: eww
+:END:
+#+TITLE: Don't give Postgres too much memory
+#+AUTHOR: Tomas Vondra
+#+DATE:   2025-11-03
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :pg:postgres:mem:
+
+* issue
+
+不时，我会调查与某种批处理过程相关的问题。如今，这些过程越来越常用非常高的内存限制（ =maintenance_work_mem= 和
+=work_mem= ）。我想有些数据库管理员遵循“更多就是更好”的逻辑，却没有意识到这可能会严重影响性能。
+
+让我用一个我在测试 GIN 索引并行构建修复时遇到的例子来说明这一点。这个错误并不是特别有趣或复杂，
+但它要求使用相当高的 =maintenance_work_mem= 值（最初的报告使用了 20GB）。
+
+为了验证修复，我针对一系列 =maintenance_work_mem= 值运行了 =CREATE INDEX= ，并使用不同数量的并行工作线程。
+目标是检查这些操作是否还有失败的情况，同时我也测量了时间。于是我得到了这个图表：
+
+
+#+DOWNLOADED: https://postgr.es/p/osm-create-index.png @ 2025-11-03 17:35:16
+#+NAME: fig:don_-7b4dafa4
+[[file:images/don't-give-postgres-too-much-memory---tomas-vondra/osm_-f2ca24ca.png]]
+
+
+这是来自 Azure 上的 D96v4 实例，配备 Xeon Platinum 8573C 处理器，384GB RAM 和 RAID0 的 6 个 NVMe。
+这使得它处于完全缓存和 CPU 限制状态。
+
+并行处理确实有很大帮助，使用 2 个工作线程时速度提高了 ~1.8 倍（主线程算作一个工作线程）。这是几乎完美的加速，
+因为构建的最后阶段仍然是串行的。随着工作线程数量的增加，速度提升会降低（使用 8 个工作线程时速度只提高了 ~4.5
+倍），但这是意料之中的。
+
+但图表还显示，增加 maintenance_work_mem 反而使得处理变得更慢！从 64MB 增加到 16GB 后，耗时增加了 30%，
+无论使用多少工作线程。
+
+
+* Why is this happening?
+:PROPERTIES:
+:NOTER_DOCUMENT: https://postgr.es/p/7kj
+:NOTER_OPEN: eww
+:NOTER_PAGE: 1660
+:END:
+
+这种行为可能有多种因素导致。让我解释两个我认为最重要的因素。
+
+** L3 缓存
+
+首先是 L3 缓存的大小。
+
+系统中的所有 RAM 并不是同样快速的，存在几个层次，其性能差异很大。一小部分 RAM 集成在 CPU 中，因此延迟非常低。
+大多数 CPU 只有 ~32-128MB 的这种快速内存，但其速度大约比主内存快一个数量级。
+
+在构建索引时，我们通常会将数据累积到一个缓冲区中，当缓冲区“满”时就处理它，然后将其合并到最终索引中。对于 GIN
+索引，我们将条目添加到哈希表中，这意味着随机内存访问。当哈希表溢出到 L3 缓存时，它就必须更频繁地访问主内存。
+而这比访问 L3 成本高得多，差异大约是 20 个周期对 200 个周期。
+
+通常，更好的做法是以更小的块处理数据，这样块的大小能够适应 L3 缓存。确实，我们会需要更多的块，
+但这可能仍然是有益的。
+
+注意：有关内存的更多有趣信息，请查阅 Ulrich Drepper 的论文《每个程序员都应该知道的内存知识》。这篇论文源于 2007
+年，但基本原理没有改变。
+
+** 内存写入时机
+
+还有其他原因解释了为何以较小的块处理数据可能更好。较大的块可能会增加系统其他部分的压力，并甚至导致停顿。
+
+例如，当哈希表超过内存限制（由 =maintenance_work_mem= 设置）时，数据将被写入磁盘。这些是临时文件，
+没有持久性要求，因此只需将数据写入页面缓存即可。
+
+然而，内核也会试图控制脏数据的数量，使用两个阈值。在超过 =vm.dirty_background_ratio= 后，
+它开始在后台写出脏数据，而用户写入的数据仍然进入页面缓存。如果脏数据的数量不断增长，并且达到 =vm.dirty_ratio= ，
+所有写入都将被强制设为同步。
+
+理想情况下，后台写入足以控制脏数据的数量，并且永远不会达到 =vm.dirty_ratio= 阈值。此主动刷新机制的效果如何，
+取决于内核有多少时间响应。更频繁地以较小的块写入数据，会给内核更多时间刷新出一些数据。
+
+假设您需要一分钟的时间在哈希表中累积 =8GB= 的数据。您可以选择等待这 =8GB= 然后一次性写出。大部分时间不会有写入，
+然后会有一段短时间内写入 =8GB= 的数据。或者，您可以累积并写出 =64MB= 的块。在这种情况下，
+写入会均匀分布在时间上，给内核时间来反应。
+
+当然，在某些情况下，也可能更好地累积更多数据。例如，它可能提高压缩比。很难说。
+
+
+* Summary
+:PROPERTIES:
+:NOTER_DOCUMENT: https://postgr.es/p/7kj
+:NOTER_OPEN: eww
+:NOTER_PAGE: 4480
+:END:
+
+当然，这一切也适用于 =work_mem= 。唯一的区别是 =work_mem= 用于常规查询，而不是维护操作。然而，其推理是完全相同的。
+哈希连接构建的哈希表受 =work_mem= 限制。如果哈希表超过 L3 缓存，它的速度会变慢。哈希聚合、
+排序和其他各种操作也是如此。
+
+我不确定 =maintenance_work_mem= 和 =work_mem= 的“最佳”设置是什么。但这不是这篇文章的重点。我的观点是，
+盲目地设置一个非常高的值可能会相当有害。
+
+我的建议是保持适度的值（例如 =64MB= ），只有在能证明有益的情况下才调整该值。

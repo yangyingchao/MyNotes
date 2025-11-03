@@ -1,0 +1,686 @@
+# -*- yc/org-target-lang: "sql"; -*-
+:PROPERTIES:
+:ID:       9769b6dc-a4a9-498c-b19c-a3a96d31589d
+:NOTER_DOCUMENT: https://boringsql.com/posts/know-the-time-in-postgresql/
+:NOTER_OPEN: eww
+:END:
+#+TITLE: Time to Better Know The Time in PostgreSQL
+#+AUTHOR: Radim Marek
+#+DATE:   2025-11-03
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :postgres:pg:time:date
+
+
+* Simple things
+:PROPERTIES:
+:NOTER_DOCUMENT: https://boringsql.com/posts/know-the-time-in-postgresql/
+:NOTER_OPEN: eww
+:NOTER_PAGE: 189
+:END:
+
+
+我们可以从简单的陈述开始，比如说:
+
+#+BEGIN_SRC sql
+  SELECT '2025-03-30 00:30' as t;
+
+  Result:
+         t
+  ------------------
+  2025-03-30 00:30
+#+END_SRC
+
+这会给你（我希望这不是一个大惊喜）一个简单的文本字面量 (text literal)，而不是与日期和时间有关的内容。
+一旦你在类似于以下的查询中使用这个字符串字面量:
+
+#+BEGIN_SRC sql
+  SELECT * FROM events WHERE start_at > '2025-03-30 00:30';
+#+END_SRC
+
+PostgreSQL 会隐式地将字符串转换为没有时区的时间戳。之所以能够发生这种情况，是因为 =start_at=
+很可能是基于时间戳的字段，允许自动转换以匹配列的数据类型。这不同于查询:
+
+#+BEGIN_SRC sql
+  SELECT '2025-03-30 01:00' - interval '15 minutes';
+
+  Result:
+
+  ERROR:  invalid input syntax for type interval: "2025-03-30 01:00"
+#+END_SRC
+
+
+这将简单地无法工作，因为 PostgreSQL 无法执行自动转换（对此稍后我们会涉及，这可能是意外的行为，但事情就是这样）。
+让这个示例查询正常工作的正确方法是使用以下两种方式之一（功能上等效，但表示法不同）。
+
+#+BEGIN_SRC sql
+  -- PostgreSQL cast notation
+  SELECT '2025-03-30 01:00'::timestamp - interval '15 minutes';
+
+  -- SQL standard explicit type notation
+  SELECT timestamp '2025-03-03 01:00' - interval '15 minutes';
+#+END_SRC
+
+
+* PostgreSQL =timestamp= vs =timestamptz=
+:PROPERTIES:
+:NOTER_DOCUMENT: https://boringsql.com/posts/know-the-time-in-postgresql/
+:NOTER_OPEN: eww
+:NOTER_PAGE: 1483
+:END:
+
+在 PostgreSQL 中处理时间时，下一个可能导致混淆的来源是存在两种不同的数据类型：
+
+- =timestamp= （或 timestamp without time zone 无时区时间戳）
+- =timestamptz= （或 timestamp with time zone 带时区时间戳 ） \\
+  尽管名称暗示了不同，但关键区别不在于它们是否存储时区信息，而在于它们在存储和检索过程中如何处理这些信息。
+
+*重要提示：* 在我们讨论细节之前，请记住始终使用 timestamptz。正如官方“不这样做”页面所示，使用 timestamp
+就像是在存储时钟的图片，而不是某个时间点的快照。尽管这篇文章可能会使用 timestamp，但完全是出于演示目的。
+
+您需要记住的所有事项是，timestamp 存储的是输入的确切日期时间值，没有任何时区上下文或调整。
+它本质上是日历日期和墙壁时钟时间的快照，与任何特定地理位置无关。
+
+#+BEGIN_SRC sql
+  -- this stores what you provided
+  SELECT '2025-03-30 01:30'::timestamp;
+
+  Result:
+
+        timestamp
+  ---------------------
+  2025-03-30 01:30:00
+#+END_SRC
+
+
+另一方面，timestamptz 会将所有输入在内部标准化为 UTC，然后将值转换为会话的时区以进行显示。
+这为您的日期时间值提供了地理上下文。
+
+#+BEGIN_SRC sql
+-- this converts your input to UTC based on your session timezone
+SELECT '2025-03-30 01:30'::timestamptz;
+
+Result:
+
+      timestamptz
+-----------------------
+2025-03-30 01:30:00+01
+#+END_SRC
+
+而这就是潜在混淆可能开始的地方。让我们看一个例子：
+
+#+BEGIN_SRC sql
+  -- With UTC timezone
+  SET timezone = 'UTC';
+  SELECT '2025-03-30 01:30'::timestamptz;
+
+  Result:
+
+        timestamptz
+  -----------------------
+   2025-03-30 01:30:00+00
+  -- With Tokyo timezone
+  SET timezone = 'Asia/Tokyo';
+  SELECT '2025-03-30 01:30'::timestamptz;
+
+  Result:
+
+        timestamptz
+  -----------------------
+   2025-03-30 01:30:00+09
+#+END_SRC
+
+这会根据会话时区为您提供正确的表示。这在我们添加实际存储时非常有用。
+
+#+BEGIN_SRC sql
+  -- Create table and view with Berlin timezone
+  SET timezone = 'Europe/Berlin';
+  CREATE TABLE time_flies(moment timestamp with time zone);
+  INSERT INTO time_flies VALUES ('2025-03-30 00:30');
+  SELECT moment FROM time_flies;
+
+  Result:
+
+           moment
+  ------------------------
+   2025-03-30 00:30:00+01
+
+  -- View the same data with New York timezone
+  SET timezone = 'America/New_York';
+  SELECT moment FROM time_flies;
+
+  Result:
+
+           moment
+  ------------------------
+   2025-03-29 19:30:00-04
+#+END_SRC
+
+这演示了使用自动时区转换的优势，使您不仅能够避免时区错误，还能避免与夏令时相关的问题。
+当我们大多数人在本地夏令时更改期间酣然入睡时，错误地计算时差可就不是一件有趣的事情了。使用 =timestamptz=
+是避免这种情况的确保方法。让我们以最近（在撰写本文时）发生的夏令时变化为例。
+
+#+BEGIN_SRC sql
+  -- Set Berlin timezone (during DST change)
+  SET timezone = 'Europe/Berlin';
+
+  -- Using timestamp (without timezone awareness)
+  SELECT '2025-03-30 01:30'::timestamp + interval '45 minutes' as end_time;
+
+  Result:
+
+        end_time
+  ---------------------
+   2025-03-30 02:15:00
+  -- Using timestamptz (with timezone awareness)
+  SELECT '2025-03-30 01:30'::timestamptz + interval '45 minutes' as end_time;
+
+  Result:
+
+          end_time
+  ------------------------
+   2025-03-30 03:15:00+02
+#+END_SRC
+
+
+* AT TIME ZONE
+:PROPERTIES:
+:NOTER_DOCUMENT: https://boringsql.com/posts/know-the-time-in-postgresql/
+:NOTER_OPEN: eww
+:NOTER_PAGE: 4792
+:END:
+
+PostgreSQL 中另一个强大但可能令人困惑的操作符是 =AT TIME ZONE= ，它允许您在不同的时区之间转换时间戳，
+但其行为根据输入数据类型的不同而有所变化。
+
+** 当应用于 timestamp（无时区时间戳）时
+当您将 AT TIME ZONE 应用于一个时间戳时，PostgreSQL 将输入解释为位于指定的时区，并将其转换为 =timestamptz=:
+
+  #+BEGIN_SRC sql
+    -- First, set UTC timezone
+    SET timezone='UTC';
+    -- Interpret '2025-03-30 01:30' as if it were in the 'Europe/Paris' time zone
+    SELECT '2025-03-30 01:30'::timestamp AT TIME ZONE 'Europe/Paris';
+    Result:
+            timezone
+    ------------------------
+     2025-03-30 00:30:00+00
+  #+END_SRC
+
+它的作用实际上是“取这个墙壁时间，将其视为在指定时区，然后给我这个时刻对应的时间（作为 =timestamptz= ）”。
+这里的表示基于会话时区设置。
+
+#+BEGIN_SRC sql
+-- Set timezone
+SET timezone='America/Port_of_Spain';
+-- Convert the timestamptz to how it would appear on wall clocks in Tokyo
+SELECT '2025-03-30 01:30+01:00'::timestamptz AT TIME ZONE 'Asia/Tokyo';
+Result:
+        timezone
+---------------------
+ 2025-03-30 09:30:00
+#+END_SRC
+
+** 当应用于 =timestamptz= （带时区时间戳）时
+
+当您将 AT TIME ZONE 应用于一个 timestamptz 时，PostgreSQL 会将时间戳转换为指定的时区，并返回一个无时区时间戳：
+
+#+BEGIN_SRC sql
+  -- Set timezone
+  SET timezone='America/Port_of_Spain';
+  -- Convert the timestamptz to how it would appear on wall clocks in Tokyo
+  SELECT '2025-03-30 01:30+01:00'::timestamptz AT TIME ZONE 'Asia/Tokyo';
+  Result:
+          timezone
+  ---------------------
+   2025-03-30 09:30:00
+#+END_SRC
+
+这个操作的意思是：“取这个时刻，告诉我在指定时区会是什么墙壁时间。”
+
+** 实际用法
+
+正确使用时间戳的唯一用途可能是为多个时区提供“墙壁时间”表示，以便进行（视图）表示目的。
+
+#+BEGIN_SRC sql
+  -- 公司范围会议在各办公室的时间是什么？
+  -- What time is the company-wide meeting in various offices?
+  SELECT
+      '2025-03-30 15:00'::timestamptz AS meeting_time_utc,
+      '2025-03-30 15:00'::timestamptz AT TIME ZONE 'Europe/London' AS london_office_time,
+      '2025-03-30 15:00'::timestamptz AT TIME ZONE 'Asia/Tokyo' AS tokyo_office_time;
+  Result:
+      meeting_time_utc    | london_office_time  |  tokyo_office_time
+  ------------------------+---------------------+---------------------
+   2025-03-30 15:00:00+02 | 2025-03-30 14:00:00 | 2025-03-30 22:00:00
+#+END_SRC
+
+
+重要的是要注意，在基于 API 的客户端中，最好始终表示完整的时间表示法，并将表示层留给客户端。类似于此，
+除非您需要处理多个时区，并且依赖于正确的本地时间表示，否则最好使用本地会话时区设置，而不是使用 AT TIME ZONE
+操作符。这适用于时间的输入和输出。
+
+** 常见错误
+
+让我们考虑一个示例，您可能会考虑使用 AT TIME ZONE“神奇地转换”已经存储的时间。
+
+#+BEGIN_SRC sql
+  -- 设置示例
+  -- Setup example
+  SET timezone='Europe/Berlin';
+  CREATE TABLE different_moments(moment1 timestamptz, moment2 timestamptz);
+  INSERT INTO different_moments (moment1) values ('2025-03-30 01:30');
+  -- Apply double time zone conversion
+  UPDATE different_moments SET moment2 = moment1 AT TIME ZONE 'Europe/Berlin' AT TIME ZONE 'America/New_York';
+  -- View the results
+  SELECT * FROM different_moments;
+  Result:
+          moment1         |        moment2
+  ------------------------+------------------------
+   2025-03-30 01:30:00+01 | 2025-03-30 07:30:00+02
+#+END_SRC
+
+
+除非您了解时间戳和时间戳之间的隐式转换以及反向转换，否则您可能会面临很多惊讶。在这个特定情况下，
+第一个转换执行了冗余转换并去除了时区偏移。第二次“强制”它进入纽约时间，而随后的选择在本地会话时区下呈现。
+
+
+* Timestamps and the storage
+:PROPERTIES:
+:NOTER_DOCUMENT: https://boringsql.com/posts/know-the-time-in-postgresql/
+:NOTER_OPEN: eww
+:NOTER_PAGE: 8473
+:END:
+
+虽然您从现在开始将使用 =timestamptz= ，但 PostgreSQL 仍然有几个与其存储数据方式相关的细微差别。
+
+首先，较不为人知的特性可能是时间戳的精度。让我们考虑以下表格：
+
+#+BEGIN_SRC sql
+  -- Table with various timestamp precision specifications
+  CREATE TABLE precision (
+  	t1 timestamp with time zone,        -- default precision (6)
+  	t2 timestamp(0) with time zone,     -- seconds precision
+  	t3 timestamp(2) with time zone,     -- centiseconds precision
+  	t4 timestamp(4) with time zone      -- 10 microseconds precision
+  );
+#+END_SRC
+
+实际上，时间戳的默认精度为 =6= 位数字（微秒），但您可以为时间戳和 timestamptz 类型指定从 =0= 到 =6= 的任意精度。
+与此同时，无论指定的精度如何，它对存储（ =8 字节= ）没有任何影响：
+
+#+BEGIN_SRC sql
+  -- Insert the same timestamp into all columns
+  INSERT INTO precision VALUES (current_timestamp, current_timestamp, current_timestamp, current_timestamp);
+  SELECT * FROM precision;
+
+  Result:
+
+  -[ RECORD 1 ]---------------------
+  t1 | 2025-04-03 21:19:20.952354+02
+  t2 | 2025-04-04 21:19:21+02
+  t3 | 2025-04-04 21:19:20.95+02
+  t4 | 2025-04-04 21:19:20.9524+02
+#+END_SRC
+
+除了精度之外，PostgreSQL 中时间戳存储还有一些其他有趣的方面：
+
+- 它的 =timestamptz= 范围是有限的，范围为 ='4713-01-01 BC'= 和 ='294276-12-31'= 。
+- 同时支持正无穷大和负无穷大, 使用 ='infinity'::timestamptz= 和 ='-infinity'::timestamptz= \\
+  这可能为开放区间提供 =NULL= 的替代品。如果您选择使用无穷大而不是 =NULL= 值，则可以使用 =isfinite(timestamp)=
+  测试所提供的日期/时间戳是否为有限值。
+
+
+* Getting the current time 获取当前时间
+:PROPERTIES:
+:NOTER_DOCUMENT: https://boringsql.com/posts/know-the-time-in-postgresql/
+:NOTER_OPEN: eww
+:NOTER_PAGE: 10233
+:END:
+
+并不是很多开发者意识到在 SQL 中获取当前日期时间的方式有不同的方法。这些方法不仅在语法上有所不同，在其底层逻辑上也有所不同。
+
+
+** =CURRENT_TIMESTAMP= vs =NOW()=
+:PROPERTIES:
+:NOTER_DOCUMENT: https://boringsql.com/posts/know-the-time-in-postgresql/
+:NOTER_OPEN: eww
+:NOTER_PAGE: 10437
+:END:
+
+- =*CURRENT_TIMESTAMP*= \\
+  =CURRENT_TIMESTAMP= 是 SQL 标准的一部分，值得注意的是，它被定义为“时间变化变量”和“日期时间值函数”。在
+  PostgreSQL 中，您可以选择使用或不使用括号，这两种形式都是有效的：
+  #+BEGIN_SRC sql
+    SELECT CURRENT_TIMESTAMP;
+    SELECT CURRENT_TIMESTAMP(2);  -- (2) specifies precision
+  #+END_SRC
+
+  除了 =CURRENT_TIMESTAMP= ，SQL 标准还定义了 CURRENT_TIME 和 CURRENT_DATE，分别用于处理单独的时间和日期组件。
+
+- =*NOW()*= \\
+  =NOW()= 虽然不是 SQL 标准的一部分，但在许多数据库系统中是一个广泛使用的替代方法。与 CURRENT_TIMESTAMP 不同，
+  它严格来说是一个函数，因此在调用时始终需要括号。其简单明了的语法 - =NOW()= - 使其成为开发者们的热门选择。
+
+
+** Transaction Behavior
+:PROPERTIES:
+:NOTER_DOCUMENT: https://boringsql.com/posts/know-the-time-in-postgresql/
+:NOTER_OPEN: eww
+:NOTER_PAGE: 11239
+:END:
+
+=NOW()= 和 =CURRENT_TIMESTAMP= 都具有相同的事务行为：它们返回 *当前事务开始时的时间戳* ，而不是执行时的时刻：
+
+#+BEGIN_SRC sql
+  BEGIN;
+  SELECT NOW();                     -- Returns transaction start time
+  SELECT pg_sleep(5);               -- Wait 5 seconds
+  SELECT NOW();                     -- Still returns the same time
+  COMMIT;
+#+END_SRC
+
+这种行为确保了事务内的数据一致性，但在测量经过时间时可能会令人意外。
+
+
+** Alternative Time Functions
+:PROPERTIES:
+:NOTER_DOCUMENT: https://boringsql.com/posts/know-the-time-in-postgresql/
+:NOTER_OPEN: eww
+:NOTER_PAGE: 11750
+:END:
+
+当您需要实际的当前时间而不考虑事务状态时， =CLOCK_TIMESTAMP()= 是您最好的选择。它返回执行的精确时刻，
+这使得它在测量实际经过时间时特别有用。以下是它与 =NOW()= 的区别：
+
+#+BEGIN_SRC sql
+  BEGIN;
+  SELECT pg_sleep(1);
+  SELECT NOW() AS transaction_time,
+         CLOCK_TIMESTAMP() AS actual_time;
+  COMMIT;
+  Result:
+         transaction_time        |          actual_time
+  ------------------------------+-------------------------------
+   2025-04-03 19:28:25.310254+00 | 2025-04-03 19:28:26.311917+00
+#+END_SRC
+
+另一个有用的函数是 =STATEMENT_TIMESTAMP()= ，它捕获当前语句开始执行的时间。
+这与 =CLOCK_TIMESTAMP()== 有细微的区别，后者给出的是函数执行的确切时刻。这个区别在以下示例中变得清晰：
+
+#+BEGIN_SRC sql
+  SELECT
+      pg_sleep(2),
+      STATEMENT_TIMESTAMP() AS statement,
+      CLOCK_TIMESTAMP() AS wall_time;
+  Result:
+   pg_sleep |           statement           |          wall_time
+  ----------+-------------------------------+------------------------------
+            | 2025-04-03 19:32:15.984459+00 | 2025-04-03 19:32:17.98661+00
+#+END_SRC
+
+这些时间戳函数服务于不同的目的，当您需要测量事务时间或分析语句级性能时，它们是非常宝贵的。
+每个函数为您在数据库操作中的时间提供了不同的视角。
+
+** 总结
+- =CURRENT_TIMESTAMP= & =NOW()= ： 返回事务开始的时刻
+- =STATEMENT_TIMESTAMP()=       ： 返回语句开始的时刻
+- =CLOCK_TIMESTAMP()=           ： 返回函数执行的时刻
+
+
+* Intervals
+:PROPERTIES:
+:NOTER_DOCUMENT: https://boringsql.com/posts/know-the-time-in-postgresql/
+:NOTER_OPEN: eww
+:NOTER_PAGE: 13158
+:END:
+
+可以推测，如果您在 PostgreSQL 中处理过时间，您一定接触过区间（ =interval= ）。
+您可能只是使用类似于 =interval '1 year 2 months 3 days 4 hours'= 的方式输入它。
+从技术上讲，这种表示法是由 =intervalstyle= 设置驱动的，而在这个例子中，它被设置为 =postgres_verbose= 。
+但您还有更多的选项。
+
+#+BEGIN_SRC sql
+  -- PostgreSQL default style
+  SET intervalstyle = 'postgres';
+  SELECT interval '1 year 2 months 3 days 4 hours';
+  Result:
+             interval
+  -------------------------------
+   1 year 2 mons 3 days 04:00:00
+  -- SQL standard style
+  SET intervalstyle = 'sql_standard';
+  SELECT interval '1 year 2 months 3 days 4 hours';
+  Result:
+       interval
+  ------------------
+   +1-2 +3 +4:00:00
+  -- ISO 8601 style
+  SET intervalstyle = 'iso_8601';
+  SELECT interval '1 year 2 months 3 days 4 hours';
+  Result:
+    interval
+  ------------
+   P1Y2M3DT4H
+#+END_SRC
+
+通过会话的 =intervalstyle= ，您只会改变区间格式的表示，而不会改变实际值。然而，您可能会遇到一种区间定义，
+在输入或输出时可能让人不易理解。这时， =justify_interval= 函数就派上用场了—— 它帮助您将时间表达式规范化为常规格式。
+
+#+BEGIN_SRC sql
+-- Normalize complex interval
+SELECT justify_interval(interval '15 months 40 days 30 hours');
+Result:
+        justify_interval
+---------------------------------
+ @ 1 year 4 mons 11 days 6 hours
+-- Practical example: normalize project durations
+SELECT
+    project_name,
+    total_hours || ' hours' AS raw_duration,
+    justify_interval(interval '1 hour' * total_hours) AS normalized_duration
+FROM
+    (VALUES ('Database Migration', 1850),
+            ('API Development', 720),
+            ('UI Redesign', 340))
+    AS projects(project_name, total_hours);
+Result:
+    project_name    | raw_duration |   normalized_duration
+--------------------+--------------+--------------------------
+ Database Migration | 1850 hours   | @ 2 mons 17 days 2 hours
+ API Development    | 720 hours    | @ 1 mon
+ UI Redesign        | 340 hours    | @ 14 days 4 hours
+#+END_SRC
+
+内部规范化的一个重要特性是，它使用 30 天的时间段作为一个月的定义。
+#+BEGIN_SRC sql
+  -- Month definition in normalize intervals
+  SELECT justify_interval(interval '30 days');
+  Result:
+   justify_interval
+  ------------------
+   @ 1 mon
+#+END_SRC
+
+这可能是可以理解的，但在使用天数和月份区间时，您需要注意一些边界情况。
+
+#+BEGIN_SRC sql
+  -- Edge case comparison: month vs 30 days
+  SELECT
+  	date '2025-01-31' + interval '1 month' as example1,
+  	date '2025-01-31' + interval '30 days' as example2;
+  Result:
+  -[ RECORD 1 ]-----------------
+  example1 | 2025-02-28 00:00:00
+  example2 | 2025-03-02 00:00:00
+#+END_SRC
+
+
+最后一点，您可以（与日期/时间戳相同）使用 extract 函数获取特定部分。
+#+BEGIN_SRC sql
+  -- Extract specific parts from intervals
+  SELECT
+      extract(days from interval '1 year 3 months 21 days') AS days,
+      extract(hours from interval '25:30:45') AS hours;
+  Result:
+   days | hours
+  ------+-------
+   21   | 25
+#+END_SRC
+
+
+* Time ranges
+:PROPERTIES:
+:NOTER_DOCUMENT: https://boringsql.com/posts/know-the-time-in-postgresql/
+:NOTER_OPEN: eww
+:NOTER_PAGE: 16261
+:END:
+
+处理时间戳是自然而然的，但时间范围往往被视为丑小鸭。而这其实是不公平的——在 PostgreSQL 中，
+时间戳范围是强大但未被充分利用的特性，可以优雅地解决常见的基于时间的挑战。PostgreSQL 提供了专门的范围类型，
+非常适合建模时间段、预订、日程安排以及任何您需要跟踪具有定义的起始和结束点的间隔的情况：
+
+- =tsrange= - 无时区时间戳的范围
+
+- =tstzrange= - 带时区时间戳的范围 \\
+  遵循之前的建议——就像您应该默认使用时间戳一样，除非您有非常具体的理由，否则始终使用 tstzrange
+  进行时间范围的定义。时间戳范围不仅仅是方便的语法——它们提供了一整套操作，用于确定时间段之间的关系，
+  并启用强大的约束，以处理复杂的业务规则，而无需重新发明轮子。
+  时间戳范围可以使用范围构造函数语法或字符串语法创建。
+
+  #+BEGIN_SRC sql
+    -- Range constructor syntax
+    SELECT tstzrange(
+        '2025-04-01 09:00:00+02'::timestamptz,
+        '2025-04-01 17:30:00+02'::timestamptz,
+        '[)'
+    ) AS workday;
+    -- String syntax
+    SELECT '[2025-04-01 09:00:00+02, 2025-04-01 17:30:00+02)'::tstzrange AS workday;
+    Result:
+                           workday
+    ["2025-04-01 07:00:00+00","2025-04-01 15:30:00+00")
+  #+END_SRC
+
+时间戳范围的默认边界表示法是 =[)= - 下限是包含的（包括开始时间），上限是排除的（不包括结束时间）。
+对于基于时间的应用程序，这种约定特别有价值。考虑安排连续的一小时会议，从 9:00 到 10:00 和从 10:00 到 11:00。使用
+[) 表示法，这些可以表示为 [09:00, 10:00) 和 [10:00, 11:00)，完美地创建相邻而不重叠或间隙。如果使用包含边界
+[09:00, 10:00] 和 [10:00, 11:00]，那么 10:00 的时刻在技术上将属于两个范围——这在调度上是一个逻辑上的不可能性。
+这种与我们对时间段的概念理解的自然对齐，使得 [) 表示法成为大多数应用场景的默认和推荐选择。
+时间戳范围支持许多用于检查关系的操作：
+
+#+BEGIN_SRC sql
+  -- 1. 检查时间戳是否在范围内
+  SELECT
+      '[2025-04-01 09:00, 2025-04-01 17:00)'::tstzrange @> '2025-04-01 12:30'::timestamptz AS is_during_workday;
+  结果：
+   is_during_workday
+  ------------------
+   t
+  -- 2. 检查两个范围是否重叠
+  SELECT
+      '[2025-04-01 09:00, 2025-04-01 12:00)'::tstzrange &&
+      '[2025-04-01 11:00, 2025-04-01 14:00)'::tstzrange AS meetings_overlap;
+  结果：
+   meetings_overlap
+  -----------------
+   t
+  -- 3. 提取时间范围的边界
+  SELECT
+      lower('[2025-04-01 09:00, 2025-04-01 17:00)'::tstzrange) AS start_time,
+      upper('[2025-04-01 09:00, 2025-04-01 17:00)'::tstzrange) AS end_time;
+  结果：
+          start_time        |         end_time
+  --------------------------+--------------------------
+   2025-04-01 09:00:00+00   | 2025-04-01 17:00:00+00
+  以及明显的操作：
+  -- 1. 合并相邻范围
+  SELECT
+      '[2025-04-01 09:00, 2025-04-01 12:00)'::tstzrange +
+      '[2025-04-01 12:00, 2025-04-01 17:00)'::tstzrange AS full_day;
+  结果：
+                             full_day
+  -------------------------------------------------------------
+   ["2025-04-01 09:00:00+00","2025-04-01 17:00:00+00")
+  -- 2. 找到重叠范围之间的交集
+  SELECT
+      '[2025-04-01 09:00, 2025-04-01 14:00)'::tstzrange *
+      '[2025-04-01 12:00, 2025-04-01 17:00)'::tstzrange AS overlap_period;
+  结果：
+                          overlap_period
+  -------------------------------------------------------------
+   ["2025-04-01 12:00:00+00","2025-04-01 14:00:00+00")
+  -- 3. 找到不重叠范围之间的间隙
+  SELECT
+      '[2025-04-01 09:00, 2025-04-01 11:00)'::tstzrange -
+      '[2025-04-01 14:00, 2025-04-01 17:00)'::tstzrange AS gap;
+  结果：
+                               gap
+  -------------------------------------------------------------
+   ["2025-04-01 11:00:00+00","2025-04-01 14:00:00+00")
+#+END_SRC
+
+如果您遵循之前提到的逻辑，您将不会对 tstzrange 处理夏令时过渡感到疑惑。
+
+#+BEGIN_SRC sql
+  -- 测试夏令时过渡处理
+  SET timezone = 'Europe/Berlin';
+  SELECT
+      '[2025-03-30 01:00:00, 2025-03-30 03:00:00)'::tstzrange AS dst_transition_range,
+      upper('[2025-03-30 01:00:00, 2025-03-30 03:00:00)'::tstzrange) -
+      lower('[2025-03-30 01:00:00, 2025-03-30 03:00:00)'::tstzrange) AS actual_duration;
+  结果：
+                  dst_transition_range                 | actual_duration
+  -----------------------------------------------------+-----------------
+   ["2025-03-30 01:00:00+01","2025-03-30 03:00:00+02") | @ 1 hour
+#+END_SRC
+
+时间范围在几乎所有场景中都表现优秀的领域是索引。如果考虑使用 start_at 和 end_at 列的手动实现范围，通常依赖于 B
+树索引。虽然它们可能在简单查询中有效，但对于时间范围而言就不够了。考虑这个例子：
+
+#+BEGIN_SRC sql
+  -- 传统方法，使用两个列和 B 树索引
+  SELECT * FROM events_columns
+  WHERE start_at <= '2025-04-01 17:00'
+    AND end_at >= '2025-04-01 09:00';
+#+END_SRC
+
+对于这个查询，PostgreSQL 可能会使用其中一个索引（如果它的选择性足够高），但基本问题仍然存在：每个 B 树索引只能有效地过滤其自身的列。查询规划器可能会使用 start_at 索引查找在 17:00 之前开始的事件，或使用 end_at 索引查找在 09:00 之后结束的事件，但它不能同时使用这两个索引来查找交集。使用范围类型，我们可以使用专门设计用于范围操作的 GiST（广义搜索树）索引：
+
+#+BEGIN_SRC sql
+  -- 创建专门的 GiST 索引以进行时间范围操作
+  CREATE INDEX idx_events_range ON events_range USING GIST(time_period);
+#+END_SRC
+
+这使您能够将示例查询转化为：
+
+#+BEGIN_SRC sql
+  -- 基于范围的查找，使用 &&（重叠）操作符
+  SELECT * FROM events_range
+  WHERE time_period && tstzrange('2025-04-01 09:00', '2025-04-01 17:00');
+#+END_SRC
+
+这两种方法之间的性能差距是显著的——在大型数据集上，使用 GiST 索引的范围查询通常比传统方法快 2-10 倍。
+随着数据量的增加，这种差异会变得更加明显。
+
+
+* Time to wrap up
+:PROPERTIES:
+:NOTER_DOCUMENT: https://boringsql.com/posts/know-the-time-in-postgresql/
+:NOTER_OPEN: eww
+:NOTER_PAGE: 22538
+:END:
+
+在 PostgreSQL 中处理时间表面上看似简单，但正如我们所探讨的，它充满了细微差别，
+这些细微差别可能会影响您应用程序的可靠性。此次深入探讨的关键要点应包括：
+
+– 总是使用 =timestamptz= 而不是 =timestamp=
+– 有意识地处理时区
+– 利用 PostgreSQL 专用的时间工具
+– 注意边界情况
+
+时间处理仍然是软件工程中最具迷惑性的复杂方面之一，但 PostgreSQL 提供了一个强大的工具包，可以有效地管理时间。
+通过理解这些“无趣”但至关重要的概念，您将避免常见的陷阱，构建能够自信且精准处理时间的应用程序。

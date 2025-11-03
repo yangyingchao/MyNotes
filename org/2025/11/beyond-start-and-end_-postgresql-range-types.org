@@ -1,0 +1,644 @@
+# -*- yc/org-target-lang: "sql"; -*-
+:PROPERTIES:
+:ID:       4c1ebeab-df32-4002-935c-8bf0beb3f2be
+:NOTER_DOCUMENT: https://postgr.es/p/7kw
+:NOTER_OPEN: eww
+:END:
+#+TITLE: Beyond Start and End_ PostgreSQL Range Types
+#+AUTHOR: Yang,Ying-chao
+#+DATE:   2025-11-03
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :postgres:pg:range:
+
+# (setq yc/org-target-lang "sql")
+在 boringSQL 中最受欢迎的文章之一是《[[file:time-to-better-know-the-time-in-postgresql.org][Time to Better Know The Time in PostgreSQL]]》，我们深入探讨了在 PostgreSQL
+中存储和处理时间操作的复杂性。尽管这篇文章介绍了范围数据类型，但它们的应用远不止于此。不仅仅是处理时间范围。
+在本文中，我们将讨论为什么要考虑范围类型以及如何使用它们。
+
+
+* Bug Not Invented Here
+:PROPERTIES:
+:NOTER_DOCUMENT: https://postgr.es/p/7kw
+:NOTER_OPEN: eww
+:NOTER_PAGE: 450
+:END:
+
+但在我们讨论范围类型之前，让我们先理解一下为什么我们首先要关注它们。设想一个用于大型闪购的订票平台，该平台在晚上
+10 点上线，将会被成千上万想要抢票的人蜂拥而至。
+
+#+BEGIN_SRC sql
+  CREATE TABLE seat_holds (
+      hold_id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+      seat_id INTEGER NOT NULL REFERENCES seats(id),
+      user_session_id UUID NOT NULL,
+      -- define the hold period explicitly
+      hold_started_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+      hold_expires_at TIMESTAMPTZ NOT NULL,
+      created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP
+  );
+  CREATE INDEX seat_holds_on_seat_id ON seat_holds(seat_id);
+  CREATE INDEX seat_holds_on_expiration ON seat_holds(hold_expires_at);
+#+END_SRC
+
+虽然表设计看起来完全合理，但它有一个严重的缺陷： \\
+没有数据库级的原子性保证，无法防止在同一时间对同一个 =seat_id= 进行两个预订。
+该表设计依赖于应用逻辑在插入新预订之前检查现有预订，同时也没有提供任何高并发的保证。
+
+如果您手头只有这两列，您最终会增加复杂性以使其正常工作。您一开始遇到了一个问题，
+很快您的应用程序开发人员可能会要求您添加缓存层（很可能是外部的键值存储）以将预订放在那里，您会很快面临 N
+个问题，这时您将不得不构建一个复杂的、定制的应用程序端锁定机制，而这又易出错且难以维护。
+
+另一种可能性是将所有座位预订操作引入更复杂的事务管理。这在极端争用情况下，如闪购票务销售，简直是灾难的邀请。
+不管您使用哪种阻塞策略，SERIALIZABLE 事务隔离或使用 =SELECT ... FOR UPDATE=
+进行的悲观锁定都会在应用逻辑中产生大量开销（重试、大量争用数据库资源等）。
+
+而随着我们即将讨论的范围数据类型，这是直接在数据库级别解决问题的第一种可能选择。
+
+#+BEGIN_SRC sql
+  -- needed to add GiST support to equality of integers (for seat_id)
+  CREATE EXTENSION IF NOT EXISTS btree_gist;
+  ALTER TABLE seat_holds ADD CONSTRAINT seat_holds_no_overlap
+      EXCLUDE USING gist (
+          seat_id WITH =,
+          tsrange(hold_started_at, hold_expires_at) WITH &&
+      );
+#+END_SRC
+
+这将直接在表级别添加约束，并为您的座位预订启用原子冲突检测，且锁定开销最小。
+这保证了数据库永远不会允许对同一个座位存在两个重叠的预订，无论有多少并发用户试图进行预订。
+这里真正的胜利是数据完整性——您使得在数据库中出现无效状态变得不可能，而不仅仅是不太可能。
+尽管当发生冲突时，您仍然需要在应用程序中实现重试逻辑，
+但您已经将正确性保证从应用代码（错误潜藏的地方）转移到了数据库模式（强制执行的地方）。
+
+GiST（广义搜索树）索引是使得在极端负载下检查重叠时间范围有效的关键组件。
+
+但实际上，如果您查看提议的修复措施，这仍然是一种变通方法——我们是在动态地将两个单独的 =TIMESTAMPTZ=
+列转换为范围类型，而范围类型本身就已经内置了 GiST 支持。
+
+
+* Introducing the Data Range Types
+:PROPERTIES:
+:NOTER_DOCUMENT: https://postgr.es/p/7kw
+:NOTER_OPEN: eww
+:NOTER_PAGE: 4025
+:END:
+
+您已经看到了 =EXCLUDE= 约束在解决并发问题上的强大，但为什么要满足于变通方法（除非这是更大重构的临时措施）
+而不完全深入？
+
+这将我们带到问题的核心：PostgreSQL 的原生范围类型。
+
+PostgreSQL 提供了一组内置的范围类型，均遵循类型和范围的模式：
+
+- =int4range= 适用于整数
+- =int8range= 适用于 bigint
+- =numrange= 适用于 numeric
+- =tsrange= 适用于无时区时间戳
+- =tstzrange= 适用于带时区时间戳（我们在上面简要提到过）
+- =daterange= 适用于日期
+
+而且并不止于此。您可以轻松地在任何基本数据类型上定义自定义范围类型。
+
+
+* First win: cleaner schema 第一个优势：更简洁的模式
+:PROPERTIES:
+:NOTER_DOCUMENT: https://postgr.es/p/7kw
+:NOTER_OPEN: eww
+:NOTER_PAGE: 4716
+:END:
+
+在使用开始和结束列时，您并没有明确告诉数据库这两列是表示时间跨度的单一概念。
+这两个列的逻辑仅存在于您的查询和应用程序代码中。
+
+当您重构我们的示例表以采用原生范围类型时，它变得更加表达性强，并且本质上是正确的。
+应用程序代码不再需要管理两个单独的边界。
+
+#+begin_src sql
+CREATE TABLE seat_holds_native (
+    hold_id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    seat_id INTEGER NOT NULL REFERENCES seats(id),
+    user_session_id UUID NOT NULL,
+    hold_period TSTZRANGE NOT NULL,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+#+end_src
+
+这就是一类数据类型的力量。我们将负担从应用逻辑转移到了数据库模式中，使得表定义本身可以更清晰地传达其意图。
+
+
+* Second win: Atomicity guaranteed 第二个优势：保证原子性
+:PROPERTIES:
+:NOTER_DOCUMENT: https://postgr.es/p/7kw
+:NOTER_OPEN: eww
+:NOTER_PAGE: 5692
+:END:
+
+虽然新的模式更简洁，但真正的数据库优势来自于强制我们的并发保证——防止两个座位被重复预订。
+要实现这一点，您可以重用前面演示过的排除约束。
+
+#+begin_src sql
+ALTER TABLE seat_holds_native ADD CONSTRAINT seat_holds_no_overlap
+    EXCLUDE USING gist (
+        seat_id WITH =,
+        hold_period WITH &&
+    );
+#+end_src
+
+这次您可以直接使用 =
+* 范围边界：快速数学复习 #
+
+在我们深入研究操作符之前，我们先来了解 PostgreSQL 如何表示范围边界。如果你记得高中数学，范围类型使用与数学中的区间相同的表示法。
+
+PostgreSQL 范围可以有四种不同的边界类型：
+
+- *包含边界* - =[ 和 ]= \\
+  包含边界在范围内包括端点值。可以把它看作是“小于或等于”或“大于或等于”。
+
+  #+BEGIN_SRC sql
+    -- [10, 20] 包括 10 和 20 两者
+    -- 表示 10 ≤ x ≤ 20
+    SELECT int4range(10, 20, '[]');
+  #+END_SRC
+
+- *排除边界* - =( 和 )= \\
+  排除边界将端点值排除在范围之外。这是“少于”或“多于”，没有等于。
+
+  #+BEGIN_SRC sql
+    -- (10, 20) 排除 10 和 20 两者
+    -- 表示 10 < x < 20
+    SELECT int4range(10, 20, '()');
+#+END_SRC
+
+- *混合边界* - =[) 或 (]= \\
+  您可以组合使用。PostgreSQL 中最常见的默认模式是 =[)= - 包含下限，排除上限。这在时间戳和日期上特别有用，
+  因为它自然表示“从一个周期的开始到（不包括）下一个的开始”。
+
+  正如提到的，默认边界 [) 消除了表示连续周期时的自然模糊性。
+
+  #+BEGIN_SRC sql
+    -- 这些范围是相邻的，而不是重叠的
+    -- 第一周
+    SELECT '[2025-11-01, 2025-11-08)'::tstzrange;
+    -- 第二周
+    SELECT '[2025-11-08, 2025-11-15)'::tstzrange;
+  #+END_SRC
+
+  使用这种表示法，一个周期的结束正好是下一个周期的开始，没有任何间隙或重叠。这使得它非常适合于基于时间的范围、
+  库存可用性窗口或任何将连续体划分为不同段的场景。
+
+* 规范化和范围集合操作 #
+
+边界并不是范围唯一像数学集合一样行为的方面，它还允许算术操作和离散范围的规范化。
+
+对于离散范围类型（int4range、int8range、daterange），多个表示实际上可以表示完全相同的值集。例如，对于整数，范围
+[10, 20]（两端都包含）与 (9, 21)（两端都不包含）表示的值集是相同的，或者 PostgreSQL 的默认规范形式 [10,
+21)（下限包含，上限不包含）。
+
+PostgreSQL 使用一个规范化函数将所有等价的离散范围转换为单一的统一表示（默认的 [) 边界），
+这对于准确的相等检查和索引是至关重要的。
+
+#+BEGIN_SRC sql
+  -- [10, 20] 包含整数 10、11、...、20。
+  SELECT int4range(10, 20, '[]') AS original_range;
+  -- 结果: [10,21)
+  -- (9, 21) 包含整数 10、11、...、20。
+  SELECT int4range(9, 21, '()') AS original_range;
+  -- 结果: [10,21)
+#+END_SRC
+
+例外的是连续范围（如浮点数和带有小数秒的时间戳），在这种情况下，PostgreSQL 不使用规范化，
+因为边界变化总是意味着包含值的变化，因为没有容易定义的“下一个值”。也就是说，20.0 没有下一个值（即不是 20.0001，
+也不是 20.000001 等），改变边界会改变其含义。
+
+* 操作符工具包 #
+
+这些类型范围和它们的 GiST（在本例中为 range_ops）和 GIN（array_ops）索引伴随着许多可以让您生活更轻松的操作符。
+
+- *重叠操作符* - =&&= \\
+  如前所述，重叠操作符是最基本的一个。它简单地检查两个范围是否共享任何公共数据点。
+
+  #+BEGIN_SRC sql
+    -- 查找在 10:00 到 11:00 之间任何时间均处于活动状态的预订
+    SELECT * FROM seat_holds_native WHERE hold_period && '[2025-12-25 10:00, 2025-12-25 11:00)'::tstzrange;
+#+END_SRC
+
+- *包含操作符* - =@>= \\
+  要检查特定时间点，我们可能会使用包含操作符。它验证左侧范围是否完全包含右侧的元素（可以是基本数据类型或范围类型）。
+
+  #+begin_src sql
+    -- 查找在特定时刻处于活动状态的预订
+    SELECT * FROM seat_holds_native WHERE hold_period @> '2025-11-05 15:00'::timestamptz;
+
+    -- 查找在特定时间范围内处于活动状态的预订
+    SELECT * FROM seat_holds_native WHERE hold_period @> '[2025-12-25 10:00, 2025-12-25 10:15)'::tstzrange;
+#+end_src
+
+- *被包含操作符* - =<@= \\
+  相反，被包含操作符检查相反关系——左侧的范围是否完全包含在右侧的范围内。
+
+  #+BEGIN_SRC sql
+    -- 查找在 11 月 '25 期间内的预订
+    SELECT * FROM seat_holds_native WHERE hold_period <@ '[2025-11-01, 2025-12-01)'::tstzrange;
+#+END_SRC
+
+- *严格在前/后操作符* - =<< 和 >>= \\
+  这两个操作符允许您查询与参考范围完全分离的范围（即根本不触及边界）。
+
+  #+BEGIN_SRC sql
+    -- 查找在 11 月 10 日之前严格结束的预订
+    SELECT * FROM seat_holds_native WHERE hold_period << '[2025-11-10, 2025-11-15)'::tstzrange;
+ #+END_SRC
+
+- *边界扩展操作符* - =&< 和 &>= \\
+  这两个操作符让您可以独立判断范围边界，检查一个范围是否超出了另一个范围的端点
+  （即它可以在给定范围内的任何位置开始或结束）。
+
+  #+BEGIN_SRC sql
+    -- 查找在参考范围结束之前或结束的预订
+    SELECT * FROM seat_holds_native WHERE hold_period &< '[2025-11-08 17:00, 2025-11-08 18:00)'::tstzrange;
+    -- 查找在参考范围开始时或之后开始的预订
+    SELECT * FROM seat_holds_native WHERE hold_period &>'[2025-11-08 09:00, 2025-11-08 18:00)'::tstzrange;
+#+END_SRC
+
+- *最后，相邻操作符* - =-|-= \\
+  检查两个范围是否完全连续——它们必须在确切的一个边界点上接触，但不重叠。
+  这在检查客户是否可以延长现有预订而不产生间隙或冲突时可能是无价之宝。
+
+  #+BEGIN_SRC sql
+    -- 删除该范围后，立即相邻的预订
+    SELECT * FROM seat_holds_native WHERE hold_period -|- '[2025-11-08 17:00, 2025-11-08 18:00)'::tstzrange;
+  #+END_SRC
+
+* 到无穷大及更远 #
+
+与基本类型范围类似，PostgreSQL 也可以处理 =NULL= 值，但不仅限于此。还有专门适用于数据类型范围的特殊状态：
+=empty= 和 =infinity= 。
+
+我们从无限边界开始，这种边界展示了范围的真正力量。您可以定义一个在任一方向（或同时两个方向）无限延伸的范围。
+
+#+BEGIN_SRC sql
+  -- 永不过期的范围（上限是无限）
+  SELECT '[2025-11-01 10:00, infinity)'::tstzrange;
+  -- 永远有效的范围（下限是无限）
+  SELECT '[-infinity, 2025-11-01 10:00)'::tstzrange;
+  -- 涵盖所有时间的范围
+  SELECT '[-infinity, infinity)'::tstzrange;
+#+END_SRC
+
+这使您能够描述“从这一点开始”的用例。正如我们稍后将讨论的那样，我们可以轻松定义一种终身订阅。
+
+#+begin_src sql
+-- 永不过期的终身订阅
+INSERT INTO subscriptions (user_id, plan, active_period)
+VALUES (42, 'lifetime', '[2025-11-01, infinity)');
+-- 当前所有有效的订阅
+SELECT * FROM subscriptions WHERE active_period @> NOW();
+#+end_src
+
+使用无穷大是比使用 NULL 值或“特殊”值（如 2099-31-12）更优雅的解决方案——它明确且清晰地传达了数据意图。
+
+您可以随时验证范围是否具有无限边界：
+
+#+BEGIN_SRC sql
+  SELECT
+    lower_inf('[2025-11-01, infinity)'::tstzrange) AS lower_is_infinite,
+    upper_inf('[2025-11-01, infinity)'::tstzrange) AS upper_is_infinite;
+#+END_SRC
+
+* 理解 =NULL= 与 =empty= ：薛定谔的范围 #
+
+范围可以是 =NULL= 或 =empty= ，但这两者完全不同。
+=NULL= 是薛定谔的范围——您尚未查看盒子，因此它可能是任何东西或什么都没有。空是指您已打开盒子并确认它是空的。
+
+让我们看看这如何在实践中体现：
+
+#+BEGIN_SRC sql
+  -- NULL 范围：我们不知道该周期是什么
+  INSERT INTO seat_holds_native (seat_id, user_session_id, hold_period)
+  VALUES (42, 'abc-123', NULL);
+  -- 空范围：我们知道该周期明确为“无”
+  INSERT INTO seat_holds_native (seat_id, user_session_id, hold_period)
+  VALUES (43, 'def-456', 'empty');
+#+END_SRC
+
+它们之间的主要区别在于处理方式。
+
+#+BEGIN_SRC sql
+  SELECT NULL::tstzrange && '[2025-11-01, 2025-11-08)'::tstzrange;
+  -- 结果：NULL（既不是 true，也不是 false——我们不知道）
+  SELECT 'empty'::tstzrange && '[2025-11-01, 2025-11-08)'::tstzrange;
+  -- 结果：false（我们知道它不重叠）
+#+END_SRC
+
+您可以通过使用内置的 isempty 函数在查询中检查它们。
+
+#+BEGIN_SRC sql
+  -- 检查 NULL（就像任何列一样）
+  SELECT * FROM seat_holds_native WHERE hold_period IS NULL;
+  -- 检查空（特殊函数）
+  SELECT * FROM seat_holds_native WHERE isempty(hold_period);
+#+END_SRC
+
+在实践中，您将主要使用 =NOT NULL= 约束来完全防止 =NULL= 范围。空范围虽然有用但很少见——
+通常用于表示需要保留特殊目的的取消/无效期间——例如审计跟踪。
+
+* 实际整数范围用于分层定价 #
+
+虽然我们介绍了范围类型，但我们主要关注了日期/时间处理，范围类型的实用性远不止于此。
+整数范围实际提供真实价值的一个应用实例可以在分层定价中得以展示。
+
+#+begin_src sql
+CREATE TABLE quantity_discounts (
+    discount_id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    product_id INTEGER NOT NULL,
+    quantity_range INT4RANGE NOT NULL,
+    discount_percentage NUMERIC(5,2) NOT NULL,
+
+    -- 无重叠的层级
+    EXCLUDE USING GIST (
+        product_id WITH =,
+        quantity_range WITH &&
+    )
+);
+
+INSERT INTO quantity_discounts (product_id, quantity_range, discount_percentage) VALUES
+    -- 1-9 单位：无折扣
+    (1, '[1,10)',     0.00),
+    -- 10-49 单位：5% 折扣
+    (1, '[10,50)',    5.00),
+    -- 50-99 单位：10% 折扣
+    (1, '[50,100)',   10.00),
+    -- 100+ 单位：15% 折扣
+    (1, '[100,1000)', 15.00);
+
+-- 验证订购 75 单位时提供的折扣是多少？
+SELECT discount_percentage
+FROM quantity_discounts
+WHERE product_id = 1
+  AND quantity_range @> 75;
+-- 结果：10.00
+#+end_src
+
+* 使坏数据成为不可能 #
+
+如果范围类型的引入提供了更干净模式的理由，您可以继续使硬限制在结构上不可能。这并不是倡导将完整的业务逻辑转移到数据库模式中，但您可以消除不应进入数据库的边界情况。
+
+#+begin_src sql
+CREATE TABLE promotional_campaigns (
+    campaign_id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    name TEXT NOT NULL,
+    active_period TSTZRANGE NOT NULL,
+    budget_range NUMRANGE NOT NULL,
+    discount_percentage NUMERIC(5,2) NOT NULL,
+
+    -- 活动必须至少持续 1 天
+    CONSTRAINT campaigns_minimum_duration
+        CHECK (upper(active_period) - lower(active_period) >= INTERVAL '1 days'),
+
+    -- 预算必须在 $1000 到 $100000 之间
+    CONSTRAINT campaigns_valid_budget
+        CHECK (budget_range <@ numrange(1000, 100000, '[]')),
+
+    -- 活动期间不能为空
+    CONSTRAINT campaigns_valid_period
+        CHECK (NOT isempty(active_period))
+);
+#+end_src
+
+虽然这个示例展示了在模式定义中的假设示例，但请记住，它们不应用于实现业务流程。这些约束的目的是强制数据完整性，
+即结构要求（最小持续时间、非空数据）、物理或领域边界。任何其他逻辑都应该进入应用逻辑或更易于修改的部分
+（考虑使用函数）。
+
+* 多范围：当一个范围不够时 #
+
+到目前为止，我们一直在操作单个连续范围。但当您需要表示碎片化范围时会发生什么？过去，您需要一个与外键关系相对应的单独表。使用多范围，您可以在单个列中存储多个不连续的范围。
+
+PostgreSQL 14 引入了所有内置范围类型的多范围类型：
+
+– int4multirange、int8multirange、nummultirange
+– tsmultirange、tstzmultirange、datemultirange
+
+多范围的真正优势在于模式密度和查询效率。我们可以通过比较使用两种不同有效范围模式存储和查询完全相同数据的成本来证明这一点。
+
+让我们考虑存储 20 个碎片化且不连续的周期——这是历史数据的常见模式。
+
+#+begin_src sql
+CREATE TABLE user_periods_single_range (
+    period_id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    user_id INTEGER NOT NULL,
+    active_period TSTZRANGE NOT NULL
+);
+
+CREATE INDEX user_periods_single_range_gist_idx
+    ON user_periods_single_range
+    USING gist (active_period);
+
+-- 为 user_id 42 插入 20 个碎片化周期（共 20 行）
+INSERT INTO user_periods_single_range (user_id, active_period)
+SELECT
+    42,
+    tstzrange(
+        '2025-01-01'::timestamptz + (i * 2 || ' days')::interval,
+        '2025-01-01'::timestamptz + (i * 2 + 1 || ' days')::interval
+    )
+FROM generate_series(1, 20) AS s(i);
+#+end_src
+
+与使用 range_agg 函数聚合数据的相同 20 个周期的 1 行进行比较。
+
+#+begin_src sql
+CREATE TABLE user_periods_multirange (
+    user_id INTEGER PRIMARY KEY,
+    active_periods TSTZMULTIRANGE NOT NULL
+);
+
+CREATE INDEX user_periods_multirange_gist_idx
+    ON user_periods_multirange
+    USING gist (active_periods);
+
+-- 将 20 个 TSTZRANGE 行合并为 1 行 TSTZMULTIRANGE 行
+INSERT INTO user_periods_multirange (user_id, active_periods)
+SELECT
+    user_id,
+    -- range_agg 函数会自动处理合并相邻范围
+    range_agg(active_period)::TSTZMULTIRANGE
+FROM user_periods_single_range
+WHERE user_id = 42
+GROUP BY user_id;
+#+end_src
+
+现在考虑一下两者之间的差异：
+
+#+begin_src sql
+EXPLAIN
+SELECT period_id, user_id
+FROM user_periods_single_range
+WHERE
+    user_id = 42
+    AND active_period @> '2025-01-20 12:00:00+00'::timestamptz;
+
+                                           QUERY PLAN
+-------------------------------------------------------------------------------------------------
+ Bitmap Heap Scan on user_periods_single_range  (cost=4.19..13.67 rows=1 width=12)
+   Recheck Cond: (active_period @> '2025-01-20 13:00:00+01'::timestamp with time zone)
+   Filter: (user_id = 42)
+   ->  Bitmap Index Scan on user_periods_single_range_gist_idx  (cost=0.00..4.19 rows=6 width=0)
+         Index Cond: (active_period @> '2025-01-20 13:00:00+01'::timestamp with time zone)
+#+end_src
+
+而合并数据版本的相同查询：
+
+#+begin_src sql
+EXPLAIN ANALYZE
+SELECT user_id, active_periods
+FROM user_periods_multirange
+WHERE
+    user_id = 42
+    AND active_periods @> '2025-01-20 12:00:00+00'::timestamptz;
+
+                                                 QUERY PLAN
+-------------------------------------------------------------------------------------------------------------
+ Index Scan using user_periods_multirange_pkey on user_periods_multirange  (cost=0.15..8.17 rows=1 width=36)
+   Index Cond: (user_id = 42)
+   Filter: (active_periods @> '2025-01-20 13:00:00+01'::timestamp with time zone)
+#+end_src
+
+这为您提供了显著降低查询成本的结果。虽然这个示例足以展示效果，
+但您可以轻松定义助手架构以获得更好的可索引数据访问和降低存储需求的机会。
+
+一个重要的注意点是 =&&= 操作符的微妙变化。在单个范围中， =&&= 操作符检查两个连续范围是否重叠，而对于多范围，
+该操作符检查多范围中任何范围是否重叠。
+
+* 创建自定义范围类型 #
+
+尽管 PostgreSQL 为常见数据类型提供了内置范围类型，但您可以为任何具有有意义的排序的数据类型创建自定义范围类型。
+让我们用 IP 地址范围类型进行演示。
+
+要创建自定义范围类型，您需要提供一个子类型差异函数，告诉 PostgreSQL 如何计算两个值之间的“距离”：
+
+#+begin_src sql
+-- 计算两个 IP 地址之间差异的函数，使用 bigint
+CREATE OR REPLACE FUNCTION inet_diff(x INET, y INET)
+RETURNS FLOAT8 AS $$
+    SELECT (
+        (host(x)::inet - '0.0.0.0'::inet) -
+        (host(y)::inet - '0.0.0.0'::inet)
+    )::float8;
+$$ LANGUAGE SQL IMMUTABLE STRICT;
+
+-- 自定义的 inetrange 类型
+CREATE TYPE inetrange AS RANGE (
+    subtype = inet,
+    subtype_diff = inet_diff
+);
+
+-- 将 CIDR 范围转换为 inetranges
+CREATE OR REPLACE FUNCTION cidr_to_inetrange(cidr CIDR)
+RETURNS inetrange AS $$
+    SELECT inetrange(
+        host(network($1))::inet,
+        host(broadcast($1))::inet,
+        '[]'
+    );
+$$ LANGUAGE SQL IMMUTABLE STRICT;
+#+end_src
+
+现在，您可以像使用内置类型一样使用这些自定义类型：
+
+#+begin_src sql
+CREATE TABLE ip_blocklists (
+    blocklist_name TEXT PRIMARY KEY,
+    blocked_range inetrange NOT NULL
+);
+
+INSERT INTO ip_blocklists (blocklist_name, blocked_range) VALUES
+    ('attack #434401', cidr_to_inetrange('192.168.1.0/24')),
+    ('attack #434401 (1)', '[203.0.113.50,203.0.113.99]'),
+    ('attack #434401 (2)', '[203.0.113.143,203.0.113.159]');
+#+end_src
+
+并定位哪个攻击已被分配给特定的恶意 IP 地址。
+
+#+begin_src sql
+SELECT blocklist_name, blocked_range
+FROM ip_blocklists
+WHERE blocked_range @> '192.168.1.25'::INET;
+
+ blocklist_name |        blocked_range
+----------------+-----------------------------
+ attack #434401 | [192.168.1.0,192.168.1.255]
+#+end_src
+
+但等一等，使用了多范围的碎片化性质不正是为了多范围吗？
+建立真实的生产和自动适应的屏蔽列表最有可能很快产生极度碎片化的目标集合。
+
+我们可以为我们的自定义范围类型定义它吗？其实不行，因为 PostgreSQL 太强大了！因为 PostgreSQL 14，
+每次您定义自定义范围类型时，它都会自动创建相应的多范围！使得合并与个别攻击相对应的碎片化数据变得更容易。
+
+#+begin_src sql
+SELECT typname FROM pg_type WHERE typname LIKE 'inet%range';
+    typname
+----------------
+ inetmultirange
+ inetrange
+#+end_src
+
+危险区域！创建自定义范围类型时，subtype_diff 函数不仅仅是简单的助手。它在索引和查询性能上扮演着重要角色。
+它真正告诉 PostgreSQL 规划器范围内的值相距多远，这在为范围构建 GiST 索引时至关重要。
+
+在上面的示例中，如果 inet_diff 对每对 IP 地址返回 0，PostgreSQL 将认为所有范围“同样接近”。这将导致不平衡的索引，
+在索引中产生大量热点。最终结果是，范围操作符的性能将几乎与顺序扫描一样慢。
+
+* 性能深入分析：GiST vs GIN #
+
+在整个文章中，我们几乎只使用了 GiST 索引，尤其是在强制排除约束时。但是 PostgreSQL 也支持范围类型的 GIN 索引，了解何时使用每种索引可以在毫秒完成的查询与让数据库停顿的查询之间产生差异。
+
+在深入分析之前，让我们回顾一下这两种索引的作用。GiST（广义搜索树）是一个平衡树结构，通过边界框组织范围，并将“靠近”的范围聚集在同一树节点中。而 GIN（广义倒排索引）则会将范围分解为其组成部分并为其建索引。因此，GiST 适用于连续范围（时间戳和数值），而 GIN 适用于离散范围（因为例如您无法生成不可预测的浮点值范围）。考虑到这些特性，您几乎可以肯定地说 GIN 索引几乎总是比 GiST 大，因为它们总是试图对连续空间进行索引。
+
+最重要的是，作为我们已经在使用而没有明确提及的前提？您不能在 EXCLUDE 约束中使用 GIN。GiST 在这里是强制的。
+
+因此，虽然 GiST 索引将在如下场景中被优先使用：
+
+#+begin_src sql
+CREATE TABLE seat_holds (
+    hold_id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    seat_id INTEGER NOT NULL,
+    hold_period TSTZRANGE NOT NULL
+);
+#+end_src
+
+但 GIN 索引实际上更适合于：
+
+#+begin_src sql
+CREATE TABLE venue_blackouts (
+    venue_id INTEGER,
+    blocked_dates DATERANGE NOT NULL
+);
+#+end_src
+
+原因很简单——日期是离散类型。在给定年份中，只有 365（或 366）个组合。而时间戳具有微秒精度——每天有数百万个可能的值。
+
+索引类型的复杂性远超本文范围，因此让我们简单列出使用哪个索引类型的基本规则。大多数应用程序应使用 GiST 直接继续。性能差异在您处理数百万行和非常特定的查询模式之前通常不重要。不要过早优化——GiST 是安全、多用途的默认值，对于几乎所有情况都适用。如果性能分析显示有帮助，您可以在稍后添加 GIN 索引。PostgreSQL 的查询规划器足够智能，可以在同时可用的两者中选择更好的索引。
+
+* 结论 #
+
+根据我的经验，范围类型代表了 PostgreSQL 最未被充分利用的功能之一，但它们提供了即时的好处：更清洁的模式、
+内置数据完整性，及一旦您接受它们后感觉自然的查询模式。最初作为防止重复预订座位的解决方案，
+发展成全面展示将范围视为一类公民如何改变您的数据库设计。
+
+但我们实际上只是触及了表面。时间戳范围特别打开了我们尚未触及的一整世界的可能性——时间表。
+维护完整的历史记录的能力、自动版本控制、在任意时间点查询数据“截至”和跟踪变化，而不在模式中增加审计列，
+值得我们深入探讨。这是未来文章的话题。
+
+对于现在，下次您想独立使用开始和结束列时，请停下并问自己：“这应该是一个范围吗？”答案往往是肯定的。您的未来自我——在最不方便的时刻调试问题的那位——会感谢您。
+hold_period= 而不需要明确转换。这个约束同时强制了两个规则：
+
+1. =seat_id WITH == 确保约束仅适用于同一座位的预订。
+2. =hold_period WITH &&= 检查预订时间段的重叠，使用操作符 =&&=。
+
+最后， =EXCLUDE USING gist= 是关键的技术细节，告诉 PostgreSQL 使用 GiST 索引来强制执行约束。
+这并不是范围类型特有的，因为没有索引的情况下，排除约束是无法存在的（常见用例可能包括数组、几何数据等）。
