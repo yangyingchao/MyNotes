@@ -1,0 +1,177 @@
+:PROPERTIES:
+:ID:       b120ecef-de97-42a4-bfed-070b5428770d
+:NOTER_DOCUMENT: https://postgr.es/p/7ka
+:NOTER_OPEN: eww
+:END:
+#+TITLE: PostgreSQL and NUMA
+#+AUTHOR: Yang,Ying-chao
+#+DATE:   2025-11-03
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :postgres:numa:memory:
+
+这一系列文章涵盖了在多处理器的大型系统上运行 PostgreSQL 的具体细节。我的经验是，当人们面临这个问题时，
+通常需要花费数月的时间来学习基本知识。这一系列文章旨在通过提供清晰的背景知识来消除这些困难。
+希望未来一代的数据库工程师和管理员不必通过反复试验花费数月的时间来弄明白这些问题。
+
+
+本期文章专注于非均匀内存访问（NUMA）的低级“如何”和“为什么”，以便能够理解后续的解决方案和建议，重点关注概念细节。
+不幸的是，在许多细节上，这需要关注技术细节，因为通常没有细节的概念充其量是令人困惑的。
+
+后续文章将基于本文中的信息。我们建议先阅读此文，然后根据需要进行回顾。
+
+
+* What is NUMA and why do we need it?
+:PROPERTIES:
+:NOTER_DOCUMENT: https://postgr.es/p/7ka
+:NOTER_OPEN: eww
+:NOTER_PAGE: 1008
+:END:
+
+
+** Historical Background
+:PROPERTIES:
+:NOTER_DOCUMENT: https://postgr.es/p/7ka
+:NOTER_OPEN: eww
+:NOTER_PAGE: 1035
+:END:
+
+直到 1990 年代初，处理器系统，包括大型机，使用一种称为统一内存访问（Uniform Memory Access，UMA）的内存架构，
+在这种架构中，所有处理器通过统一的内存控制器访问主内存。通过锁定和其他措施，可以实现访问的并行化。
+随着处理器和内存控制器的改进，在大型机之外并行化内存访问的能力变得愈加重要。
+
+内存管理带来了许多挑战。大多数访问必须是串行的，因为在写入进行时不能进行读取，
+同时在并发读取内存时可能会面临技术或电子限制。因此，我们必须确保每个内存块在读取和写入时都是串行访问的，
+同时又要确保在内存系统的不同部分可以同时进行多次不同的读取和写入操作。
+
+
+大型机通过一个复杂的内存管理层解决了这个问题，其中包括一个用于锁的高速内存区域，但在大型机之外，
+这种方法并未被视为可行，因此非均匀内存访问（NUMA）应运而生。
+
+
+NUMA 的理念是，我们可以放弃访问所有内存具有相似延迟的保证，从而实现架构，
+使得每组处理器能够访问某些比其他内存更快的内存。这一定义是一个实用的权衡，但并没有告诉您 NUMA 如何工作、
+我们为什么需要它以及如何管理它。这个权衡的理由在于，它允许我们在内存控制器之间划分内存，
+内存控制器现在可以保证对它所控制的内存进行串行访问。这个关键细节对于理解硬件层面的 NUMA 及其软件层面至关重要。
+
+
+** How NUMA works
+:PROPERTIES:
+:NOTER_DOCUMENT: https://postgr.es/p/7ka
+:NOTER_OPEN: eww
+:NOTER_PAGE: 2746
+:END:
+
+
+传统的统一内存访问（UMA）对称多处理服务器（每个插槽 2 个内核，2 个插槽）中，每个核心通过外部内存控制器访问内存，
+如下所示：
+
+
+#+DOWNLOADED: https://stormatics.tech/wp-content/uploads/2025/10/Blog-Entry-1-of-4_-Introduction-to-NUMA-3.png @ 2025-11-04 10:07:35
+#+CAPTION:
+#+NAME: fig:nil
+[[file:images/postgresql-and-numa/Blog-Entry-1-of-4_-Introduction-to-NUMA-3.png]]
+
+
+在这里，我们看到每对核心共享一个 L3 缓存，并且它们通过一个共享的内存控制器请求 RAM，
+该控制器可以访问系统上所有的内存。
+
+随着核心数量的增加，这种架构会出现瓶颈。大型机通过基于锁定内存区域和高速共享锁缓存的架构解决了这些问题。然而，
+如果我们接受内存的本地/远程划分，那么并行性将变得更加容易。
+
+因此，我们将系统内存分成多个区域，并将这些区域分配给内存控制器。一个每个插槽 4 个核心的 2 插槽系统，
+且每个插槽有一个内存控制器，可能看起来是这样的：
+
+
+#+DOWNLOADED: https://stormatics.tech/wp-content/uploads/2025/10/Blog-Entry-1-of-4_-Introduction-to-NUMA-1-1.png @ 2025-11-04 10:12:28
+#+CAPTION:
+#+NAME: fig:nil
+[[file:images/postgresql-and-numa/Blog-Entry-1-of-4_-Introduction-to-NUMA-1-1.png]]
+
+现在，每个核心可以访问整个系统中的 RAM，但仅有部分内存可以被直接访问。如果内存是非本地的，
+那么一个内存控制器会向另一个内存控制器请求访问，而数据则通过高速互连在不同 NUMA 节点之间传输。
+如果进程在处理器之间移动，它们的指令和工作内存也必须通过这个总线进行传输，可能是通过页面迁移（见下文）
+或间接访问。
+
+当然，每个插槽可以有多个内存控制器，如下方的主板所示。
+
+#+DOWNLOADED: https://stormatics.tech/wp-content/uploads/2025/10/Blog-Entry-1-of-4_-Introduction-to-NUMA-2-1.png @ 2025-11-04 10:14:45
+#+CAPTION:
+#+NAME: fig:nil
+[[file:images/postgresql-and-numa/Blog-Entry-1-of-4_-Introduction-to-NUMA-2-1.png]]
+
+在这里，您可以看到每个插槽有两组内存银行。CPU 可以进一步将每个内存银行划分为多个区域。
+
+
+** Linux and NUMA
+:PROPERTIES:
+:NOTER_DOCUMENT: https://postgr.es/p/7ka
+:NOTER_OPEN: eww
+:NOTER_PAGE: 4772
+:END:
+
+
+*** Allocation Policies 分配策略
+:PROPERTIES:
+:NOTER_DOCUMENT: https://postgr.es/p/7ka
+:NOTER_OPEN: eww
+:NOTER_PAGE: 4791
+:END:
+
+Linux 内核的调度器可以根据多种不同的 NUMA 策略分配内存和启动进程。该机制的一个重要限制是，
+这些策略会影响分配和线程启动，因此可能产生次优的交互。例如，在交错进程下启动的线程或进程，其自己的分配也会交错，
+因此至少会有部分内存被分配到其他 NUMA 节点。另一方面，如果所有设置为本地，则内存和线程只会在一个 NUMA 域中启动，
+从而导致内存被换出、交换到磁盘，并可能在远程 NUMA 节点中被换入。
+
+主要策略包括：
+
+- =local= 本地（默认）：\\
+  + 如果可能，优先使用当前节点。
+  + 如果不可能，则在其他节点上分配。
+
+- =membind= 内存绑定：\\
+  + 仅在当前节点上分配。
+  + 如果空间不足，则分配失败。
+
+- =interleave= 交错： \\
+  以轮询方式在所有指定节点上分配。 \\
+  + 这意味着当一个进程请求分配时，内存将会在所有可用节点上进行分配。
+  + 这也意味着每个具有这种策略的进程至少会有一部分内存在互联总线中分配，
+    尽管进程和页面的迁移可能会随时间发生变化。
+
+
+*** Page and Process Migration
+:PROPERTIES:
+:NOTER_DOCUMENT: https://postgr.es/p/7ka
+:NOTER_OPEN: eww
+:NOTER_PAGE: 5787
+:END:
+
+分配策略仅提供一个起始点。调度器可以根据需要将进程和页面移动到连接到其他内存控制器的 CPU 内核。
+这意味着随着时间的推移，调度器将尝试根据使用情况将内存和进程进行合并。
+
+Linux 内核扫描内存访问模式，并定期决定将数据页面从一个 CPU 集合（和 NUMA 节点）迁移到另一个。这一过程也很复杂，
+但涉及到将页面固定（锁定）后再移动到内存的另一部分。
+
+还有第二种迁移类型，调度器可能会安排将进程移动到更接近其需要访问的内存的节点。在这种情况下，
+一个进程及其部分或全部本地内存将被移动到同一互联网络上的另一个 NUMA 域。
+
+
+** Conclusions
+:PROPERTIES:
+:NOTER_DOCUMENT: https://postgr.es/p/7ka
+:NOTER_OPEN: eww
+:NOTER_PAGE: 6589
+:END:
+
+NUMA 在现代具有大量核心和大容量内存的服务器中带来了许多挑战。Linux 内核中的基本 NUMA 控制并不够细粒度，
+无法使所有操作都以最佳性能运作，尤其是在应用程序未直接管理其自己的 NUMA 策略的情况下。然而，
+理解这些基础知识为管理在大型系统上运行的软件提供了基础。
+
+理解这些机制是必要的，以便理解权衡。这在本系列后续条目中将变得很重要。
+
+本系列的下一篇文章将讨论在以 Linux 为操作系统的 NUMA 系统上运行 Postgres 17 及更低版本的情况。
+这些建议在一定程度上也适用于 18 版本，即使它支持libnuma。
