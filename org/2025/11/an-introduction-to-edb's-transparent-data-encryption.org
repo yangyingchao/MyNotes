@@ -1,0 +1,241 @@
+:PROPERTIES:
+:ID:       99dc8318-9e62-4293-9f85-327df4156fe7
+:NOTER_DOCUMENT: https://stormatics.tech/blogs/an-introduction-to-edbs-transparent-data-encryption
+:NOTER_OPEN: eww
+:END:
+#+TITLE: An Introduction to EDB's Transparent Data Encryption
+#+AUTHOR: Stormatics
+#+DATE:   2025-11-04
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :pg:data:tde:
+
+最近，在 Stormatics，我们为一个客户实施了一个 PostgreSQL 集群，并设置了 EDB 的透明数据加密（TDE）。
+这个过程涉及了相当大的学习曲线，因此我们认为其他人可能会觉得讨论这个主题是有价值的。
+
+值得注意的是，EDB 的 TDE 与提议给主干 Postgres 的 TDE 补丁在某些方面相似但又不同。虽然有相似之处，
+但在密钥管理方面尤其存在差异。本文讨论了 EDB 的解决方案，同时也提供了一些关于社区 Postgres 提案的说明，
+因为我一直参与推动将 TDE 纳入 Postgres 并参与这些补丁的审查工作。
+
+本文件旨在对透明数据加密（TDE）进行高层次的概述，包括其在 EDB 产品中的实现方式以及待处理的主干补丁集，
+同时也介绍有效使用 TDE 所需的高层次过程环节。这是一份在规划阶段阅读的文档，而不是安装的详细操作指南。在这里，
+规划比设置要复杂得多。
+
+本文假设读者对 PostgreSQL 有一般的掌握，了解系统的一般组成部分、初始化和备份数据库的工具，并且对管理中型
+PostgreSQL 实例感到自如。
+
+
+* What is Transparent Data Encryption and What Problem Does It Solve? 什么是透明数据加密（TDE），它解决了什么问题？
+:PROPERTIES:
+:NOTER_DOCUMENT: https://stormatics.tech/blogs/an-introduction-to-edbs-transparent-data-encryption
+:NOTER_OPEN: eww
+:NOTER_PAGE: 1321
+:END:
+
+默认情况下，PostgreSQL 将数据（如表、索引等）存储在未加密的文件中。这些文件可以被读取或写入而不需要特殊考虑。
+这也意味着，如果物理存储或数据库备份被破解，或者备份的副本被获取，敏感数据可能会被泄露和窃取。
+这可能包括敏感的个人身份信息（PII）或敏感的财务信息（例如定期信用卡收费所需的信息）。在许多情况下，
+公司有法律责任保护这些数据不被泄露。
+
+启用 TDE 后，PostgreSQL 会在写入这些文件之前先加密数据块，并在读取时使用对称加密进行解密。
+加密密钥在运行时存储在内存中，并以某种不可访问的形式存储（以便仅在数据库启动时可以访问）。
+由于密钥以不可访问的方式存储，复制数据文件不足以访问其中的信息。同样，复制数据库的完整备份也不够，
+因为还需要密钥，这需要额外的干预才能打开。
+
+TDE 在 EDB 的 Postgres 扩展和高级服务器产品中可用，并且正在进行社区 Postgres 与其协同工作的努力。在密钥管理方面，
+这些实现存在微妙的差异。
+
+
+* How Does Transparent Data Encryption Work?
+:PROPERTIES:
+:NOTER_DOCUMENT: https://stormatics.tech/blogs/an-introduction-to-edbs-transparent-data-encryption
+:NOTER_OPEN: eww
+:NOTER_PAGE: 2997
+:END:
+
+目前所有针对 PostgreSQL 的 TDE 实现都基于相同的基本原理，尽管在关键细节上有所不同。我们将首先讨论 EDB 的补丁，
+然后讨论提议的 Postgres 补丁集。理解这些实现是非常重要的，因为社区补丁集提供了一些最佳实践，而 EDB
+的实现并不自动支持这些最佳实践（尽管通过一些工作是可以实现的）。
+
+
+** EDB’s TDE Implementation
+:PROPERTIES:
+:NOTER_DOCUMENT: https://stormatics.tech/blogs/an-introduction-to-edbs-transparent-data-encryption
+:NOTER_OPEN: eww
+:NOTER_PAGE: 3471
+:END:
+
+当使用 EDB 的 TDE 产品时，在 initdb 时会创建一个密钥，然后将其“包装”，使其对 Postgres 不可访问。
+这个过程可能包括将密钥存储在其他地方，比如通过 Hashicorp Vault，或者使用 AES 加密对其进行密码加密。
+
+然后，通过逆转“包装”过程将密钥“解包”，以使其可访问。这可以通过从密钥管理系统获取密钥或从文件系统中解密来完成。
+然后将密钥加载到内存中并进行使用。
+
+数据加密密钥无法在不转储和恢复数据库的情况下进行轮换。
+
+一旦加载，该密钥在读取时用于解密文件页面，在写入时用于加密文件页面，如上所述。由于密钥不可访问，
+因此将备份复制到另一台机器将不允许 PostgreSQL 读取该备份。
+
+在这里，TDE 的设置和理解都很困难。密钥管理是一个复杂的领域，如果启动 PostgreSQL 需要密码，这在自动化和 PostgreSQL
+重启方面会产生重大影响。
+
+
+** The Commitfest Submission
+:PROPERTIES:
+:NOTER_DOCUMENT: https://stormatics.tech/blogs/an-introduction-to-edbs-transparent-data-encryption
+:NOTER_OPEN: eww
+:NOTER_PAGE: 4536
+:END:
+
+[[https://commitfest.postgresql.org/46/3985/][commitfest submission]] 提供了更多的密钥管理功能。这里生成一个数据加密密钥，同时也生成一个密钥加密密钥。
+密钥加密密钥预计将存储在 PostgreSQL 数据库之外，但仍可以直接访问的地方。
+这种抽象使得以安全的方式管理密钥变得更加容易，尽管通过一些努力，类似的方法也可以在上述 EDB 的解决方案中使用。
+
+这个社区提交中有一个重要的补充，它在 EDB 的当前版本中并未实现，那就是使用单独的 WAL 密钥和数据关系文件密钥。
+在社区提交中分离这些密钥的目的是为了允许最终的数据密钥轮换，使得副本能够共享一个 WAL 密钥，
+而拥有不同的数据关系文件密钥。某种程度上，密钥轮换可以通过数据库切换来完成。
+
+虽然社区补丁集尚未推出，但承诺将更加完善，并提供比目前市场上产品更好的密钥管理。然而，如果您无法等待，像 EDB
+的实现这样的商业选项今天就可以使用。
+
+另一个显著区别是，社区提交中没有密钥解包的概念。相反，这通过密钥加密密钥框架来处理，因此更加无缝，
+并且不需要太多详细的 shell 知识来使其工作。权衡是，密钥管理本身的灵活性较差，但可以减少疏漏。
+
+社区提交还允许可选地从密码短语生成密钥加密密钥，但这不是必需的。
+
+截至本文撰写时，commitfest 提交仍在审查中，没有明确的时间表纳入。这将在 PostgreSQL 17 版本中最早得到实现，
+可能需要更长的时间。
+
+
+* What Kinds of New Problems does TDE Pose? TDE 带来了哪些新的问题？
+:PROPERTIES:
+:NOTER_DOCUMENT: https://stormatics.tech/blogs/an-introduction-to-edbs-transparent-data-encryption
+:NOTER_OPEN: eww
+:NOTER_PAGE: 6369
+:END:
+
+
+虽然 TDE 在保护个人和财务数据方面是一种非常强大的工具，但它在实施和操作中也带来了重大风险和挑战。
+这些问题主要涉及密钥管理，包括缺失密钥的应对措施，以及由于需要将密钥与数据分离而使操作任务变得复杂。
+
+
+** Key Management Problems 密钥管理问题
+:PROPERTIES:
+:NOTER_DOCUMENT: https://stormatics.tech/blogs/an-introduction-to-edbs-transparent-data-encryption
+:NOTER_OPEN: eww
+:NOTER_PAGE: 6781
+:END:
+
+
+TDE 需要将某种加密密钥存储在与 PostgreSQL 分开的地方。这在管理密钥本身时提出了一些额外的操作要求，
+以确保灾难恢复和其他紧急情况能够生存下来。
+
+1. *密钥备份* \\
+   第一个问题是，如果使用密钥管理系统并且该系统出现故障，则相关的密钥必须在某处得到正确备份。
+   如果密钥管理系统无法使用，那么数据库在没有额外密钥的情况下将无法启动。此外，这意味着密钥必须单独备份，
+   否则备份可能无法使用。
+
+
+2. *密钥轮换* \\
+    第二个问题是在某些高安全环境中可能需要进行密钥轮换，而理解如何进行密钥轮换在两个实现中都是一个复杂的话题。
+   这需要进行规划。对于 EDB 的方案，这需要更改包装加密机制，因为基础数据存储密钥无法轮换。如果需要这样做，
+   则需要通过逻辑复制迁移到一个新实例，以轮换密钥。
+
+密钥管理是一个复杂的领域，没有任何 PostgreSQL TDE 实现涵盖这一点。这是任何在生产中使用 TDE
+的组织需要进行仔细规划的内容。
+
+
+** Operational Problems 操作问题
+:PROPERTIES:
+:NOTER_DOCUMENT: https://stormatics.tech/blogs/an-introduction-to-edbs-transparent-data-encryption
+:NOTER_OPEN: eww
+:NOTER_PAGE: 8335
+:END:
+
+
+TDE 还带来了显著的操作开销，这种开销难以轻易消除。这使得启动数据库所需的基础设施和/或流程组件变得复杂，
+并且使备份和恢复程序变得复杂。
+
+
+*** Starting and Restarting PostgreSQL
+:PROPERTIES:
+:NOTER_DOCUMENT: https://stormatics.tech/blogs/an-introduction-to-edbs-transparent-data-encryption
+:NOTER_OPEN: eww
+:NOTER_PAGE: 8638
+:END:
+
+如果使用密码，则启动 PostgreSQL 需要人工干预。这通常使得在系统启动时启动 PostgreSQL 变得不可取或不可能。
+这进一步意味着，当数据库系统重新启动时，实际上必须有人登录并启动 PostgreSQL，提供密码以解锁密钥。
+
+同样，如果使用密钥管理系统，则无法启动 PostgreSQL，除非该密钥管理系统处于运行状态。
+密钥管理系统通常还有额外的操作要求，例如正确的 SSL 证书，因为它们是与安全相关的重要基础设施。
+这些额外的要求可能会增加需要考虑的重要故障案例（例如，当密钥管理系统的 X.509 证书过期时，PostgreSQL 无法启动）。
+许多需要 TDE 的组织已经有管理此类问题的基础设施，但有些组织并没有，因此在这里负担可能会很大。
+
+
+*** Backup and Restore of Databases
+:PROPERTIES:
+:NOTER_DOCUMENT: https://stormatics.tech/blogs/an-introduction-to-edbs-transparent-data-encryption
+:NOTER_OPEN: eww
+:NOTER_PAGE: 9630
+:END:
+
+透明数据加密（TDE）将读取数据文件所需的密钥与数据本身分开，这意味着仅仅备份数据已不足以从灾难中恢复。
+密钥必须单独备份，并且需要单独保护。可以通过备份密钥管理系统来实现这一点，或者如果使用了密码，
+则可以使用合适的密码管理器来进行备份；也可以通过获取一个密钥加密密钥，用指定的恢复代理的公钥对其进行加密，
+然后将其交给这些代理进行妥善存储。
+
+在 EDB 的实施案例中，我将提倡以下方法：在将未解密的密钥加载到密钥管理系统之前，
+建议将受密码保护的密钥存储在一个备份位置。这使得在紧急情况下，可以重新配置并启动 PostgreSQL，使用备份的、
+密码加密的密钥。
+
+如果无法访问密钥，将意味着 PostgreSQL 在关闭后无法再启动，并且备份也无法恢复。因此，密钥的备份至关重要。
+
+如果密钥丢失，唯一的补救措施是对正在运行的数据库进行逻辑备份，并将其加载到另一个数据库中。
+
+
+* The Alternative to EDB TDE EDB TDE 的替代方案
+:PROPERTIES:
+:NOTER_DOCUMENT: https://stormatics.tech/blogs/an-introduction-to-edbs-transparent-data-encryption
+:NOTER_OPEN: eww
+:NOTER_PAGE: 10778
+:END:
+
+
+TDE 并不是保护静态数据的唯一方法，但它可能是最简便的选择。如果没有使用 EDB 的软件，
+目前最好的做法是手动加密所有存储的数据。在实际操作中，这通常意味着：
+
+1. 在 Linux 上使用 LUKS 加密底层存储，作用于块设备层面。其他操作系统上的工具可能会有所不同。
+2. 在备份时使用加密存储。这可以是 Linux 上的 LUKS 加密卷或其他操作系统中的加密文件系统。还可以使用类似
+   =pg_backrest= 的工具来加密备份。
+3. 强制所有备份过程使用 SSL。尽管 SSL 通常是与数据库进行逻辑交互（包括逻辑复制和执行查询）的要求，但在 TDE
+   环境下的备份不太受益，因为数据文件和预写日志已经被加密。
+
+这种方法是可行的，但复杂得多，处理的操作问题也比上面描述的 TDE 方法要多得多。因此，我一直主张将 TDE 引入主线
+Postgres，因为这可以减少运行加密数据库系统所涉及的一些操作复杂性。
+
+
+* Some General Guidelines For Key Management 密钥管理的一般指南
+:PROPERTIES:
+:NOTER_DOCUMENT: https://stormatics.tech/blogs/an-introduction-to-edbs-transparent-data-encryption
+:NOTER_OPEN: eww
+:NOTER_PAGE: 12098
+:END:
+
+
+我想通过提供一些关于密钥管理的一般指南来结束这篇文章，原因是这一策略并不总是简单明了。这些建议仅适用于 EDB
+的实施，因为主流补丁集尚未提交。
+
+我的第一个建议是先使用短语加密设置 TDE，然后备份密钥并转移到密钥管理系统。记录所需的配置文件更改，
+以便在紧急情况下可以使用受短语保护的密钥启动。这个过程应当被记录，并设计得尽量方便在紧急情况下操作。
+
+对于生产环境，使用一个密钥管理系统，这样可以安全地自动化故障切换。
+这意味着要解密密钥并将其存储在一个密钥管理系统中，例如 Hashicorp Vault。
+
+将备份密钥存放在安全的地方。您可以选择通过加密已加密（即受短语保护）的密钥来进一步保护这个密钥，
+使用指定恢复代理的公钥进行加密。这可以帮助保护加密密钥，并且通过包含已加密的密钥，恢复过程不需要重新加密密钥。
+
+这些指南将为您节省大量的操作麻烦。最终，您可能会发现 TDE 是保护含有敏感数据的数据库的一个有用工具。
