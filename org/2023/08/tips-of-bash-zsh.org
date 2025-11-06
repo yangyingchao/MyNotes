@@ -123,7 +123,7 @@ EOF
 :END:
 
 
-#+begin_src sh
+#+begin_src sh ::results verbatim  :exports none
 
 cat <<-'EOF'
 ### ${PARAMETER:+WORD}
@@ -181,6 +181,7 @@ A=
 echo "2: ${A:=WORD}"
 
 #+end_src
+
 
 * will .bash_profile be sourced when executing scripts?
 :PROPERTIES:
