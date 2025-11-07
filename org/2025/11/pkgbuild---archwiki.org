@@ -1,0 +1,432 @@
+:PROPERTIES:
+:ID:       7eae7883-470d-42f3-866c-bf61a8c83a92
+:NOTER_DOCUMENT: https://wiki.archlinux.org/title/PKGBUILD#Package_name
+:NOTER_OPEN: eww
+:END:
+#+TITLE: PKGBUILD - ArchWiki
+#+AUTHOR: Yang,Ying-chao
+#+DATE:   2025-11-07
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :pkgbuild:arch:
+
+本文讨论了在 PKGBUILD 中由维护者定义的变量。有关 PKGBUILD 函数和创建软件包的一般信息，请参考《创建软件包》。
+同时也请查阅 PKGBUILD(5)。
+
+PKGBUILD 是一个 Bash 脚本，包含 Arch Linux 软件包所需的构建信息。
+
+在 Arch Linux 中，软件包是通过 makepkg 工具构建的。当运行 makepkg 时，它会在当前目录中搜索 PKGBUILD 文件，
+并根据其中的指示编译或获取构建软件包档案所需的文件——即 pkgname.pkg.tar.zst。
+生成的软件包包含二进制文件和安装说明，可以通过 pacman 方便地安装。
+
+必需的变量包括 pkgname、pkgver、pkgrel 和 arch。license 不是构建软件包的严格要求，但建议在与他人共享的 PKGBUILD
+中包含，因为如果不存在，makepkg 会发出警告。
+
+在 PKGBUILD 中按上述顺序定义变量是一种常见做法，但并非强制要求。
+
+* 软件包名称
+
+** pkgbase
+
+在构建常规软件包时，此变量不应在 PKGBUILD 中显式声明：其值默认为 #pkgname 的值。
+
+在构建分片软件包时，此变量可用于显式指定在 makepkg 输出中和源代码仅 tarball 命名中用于引用软件包组的名称。
+其值不能以连字符开头。如果未指定，该值将默认为 pkgname 数组中的第一个元素。
+
+分片软件包的所有选项和指令默认采用 PKGBUILD 中给出的全局值。然而，以下变量可以在每个分片软件包的打包函数中覆盖：
+
+=#pkgdesc= 、 =#arch= 、 =#url= 、 =#license= 、 =#groups= 、 =#depends= 、 =#optdepends= 、 =#provides= 、
+=#conflicts= 、=#replaces= 、 =#backup= 、 =#options= 、 =#install= 和 =#changelog= 。
+
+** pkgname
+
+可以是软件包的名称，例如 =pkgname=foo= ，或对于分片软件包，一个名称数组，例如 =pkgname=(foo bar)= 。
+软件包名称应仅由小写字母数字和以下字符组成： =@._+-= 。名称不能以连字符或句点开头。为了保持一致性，pkgname
+应该与软件源 tarball 的名称匹配：例如，如果软件包是 =foobar-2.5.tar.gz= ，则使用 =pkgname=foobar= 。
+
+* 版本
+
+** pkgver
+
+软件包的版本。这应该与上游软件的作者发布的版本相同。它可以包含字母、数字、句点和下划线，但不能包含连字符（-）。
+如果软件的作者使用连字符，则用下划线（_）替换它。如果在 PKGBUILD 中稍后使用 pkgver 变量，
+则可以很容易地将下划线替换为连字符，例如 =source=("${pkgname}-${pkgver//_/-}.tar.gz")= 。
+
+注意：如果上游使用时间戳版本号（例如 =30102014= ），确保使用反转的日期，即 =20141030= （ISO 8601 格式）。否则，
+它不会被视为新版本。
+
+提示
+
+- 不常见值的排序可以使用 vercmp(8) 测试，该命令由 pacman 软件包提供。
+- makepkg 可以通过在 PKGBUILD 中定义 pkgver() 函数自动更新此变量。有关详细信息，请参阅 VCS 软件包指南#pkgver() 函数。
+
+** pkgrel
+
+发行号。通常为正整数，允许区分同一软件包版本的连续构建。当修复和其他额外功能添加到影响生成软件包的 PKGBUILD 时，
+pkgrel 应增加 1。当软件的新版本发布时，此值必须重置为 1。在特殊情况下，可以使用其他格式，例如 major.minor。
+
+** epoch
+
+警告：只有在绝对必要时才使用 epoch。
+
+用于强制将软件包视为比任何先前版本的新版本，与较低的 epoch。此值必须为非负整数；默认值为 0。
+当软件包的版本编号方案变化（或是字母数字的）时，会打破正常的版本比较逻辑。例如：
+
+#+BEGIN_SRC sh
+  pkgver=5.13
+  pkgrel=2
+  epoch=1
+  1:5.13-2
+#+END_SRC
+
+有关版本比较的更多信息，请参阅 pacman(8)。
+
+* 通用
+
+** pkgdesc
+
+软件包的描述。建议不超过 80 个字符，且不应以自我引用的方式包含软件包名称，除非应用程序名称不同于软件包名称。
+例如，使用 /pkgdesc='X11 的文本编辑器'/  而不是 /pkgdesc='Nedit 是一个 X11 的文本编辑器'/ 。
+
+此外，明智地使用关键字也很重要，以提高在相关搜索查询中出现的机会。
+
+** arch
+
+PKGBUILD 旨在构建和运行的软件包架构数组。Arch 官方仅支持 x86_64，但其他项目可能支持其他架构。例如，Arch Linux 32
+提供对 i686 和 pentium4 的支持，Arch Linux ARM 则支持 armv7h（armv7 硬浮点）和 aarch64（armv8 64 位）。
+
+数组可以使用两种类型的值：
+
+- =arch=(any)= 表示软件包可以在任何架构上构建，并且一旦构建完毕，其编译状态是架构无关的（通常是 shell 脚本、
+  字体、主题、许多类型的插件、Java 程序等）。
+- =arch=(...)= 包含一个或多个架构（但不是 any）表示软件包可以为任何指定的架构编译，但编译后是架构特定的。
+  对于这些软件包，指定 PKGBUILD 正式支持的所有架构。对于官方库和 AUR 软件包，这意味着 =arch=('x86_64')= 。
+  可选择地，AUR 软件包可能还选择支持其他已知工作架构。
+
+在构建过程中，可以通过变量 *CARCH* 访问目标架构。
+
+** url
+
+被打包软件的官方网站的 URL。
+
+** license
+
+软件分发的许可证。Arch Linux 使用 SPDX 许可证标识符。每个许可证必须在 /usr/share/licenses/ 中有相应的条目。
+
+对于常见许可证（如 GPL-3.0-or-later），软件包许可证会提供所有相应的文件。该软件包在默认情况下安装，
+因为它是基础元软件包的依赖项，文件可能在 /usr/share/licenses/spdx/ 中找到。只需根据 SPDX 许可证标识符引用许可证。
+
+如 BSD 或 MIT 这样的许可证家族，严格而言并不是单一许可证，每个实例都需要单独的许可证文件。在许可证变量中以通用
+SPDX 标识符（例如 BSD-3-Clause 或 MIT）引用它们，但随后提供相应的文件，就像它是自定义许可证一样。
+
+对于自定义许可证，标识符应为 LicenseRef-license-name 或 custom:license-name，前提是它们不包含上述通用家族。
+相应的许可证文本必须放置在目录 /usr/share/licenses/pkgname 中。要安装文件，可以在 package()
+部分使用以下代码片段：
+
+#+BEGIN_SRC sh
+  install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+#+END_SRC
+
+注意：pkgdir 变量由 makepkg 定义，详见 PKGBUILD(5) § PACKAGING FUNCTIONS。
+
+合并多个许可证或添加例外应遵循 SPDX 语法。例如，发布在 GNU/GPL 2.0 或 GNU/LGPL 2.1 下的软件包可以使用
+'GPL-2.0-or-later OR LGPL-2.1-or-later'，一个发布在 Apache 2.0 及 LLVM 例外下的软件包将使用 'Apache-2.0 WITH
+LLVM-exception'，而一个部分在 BSD 3 条款下、其他则在 GNU/LGPL 2.1 和一些在 GNU/GPL 2.0 下发布的软件包将使用
+'BSD-3-Clause AND LGPL-2.1-or-later AND GPL-2.0-or-later'。注意，这必须是一个单一字符串，
+因此整个表达式必须用引号括起来。截至 2023 年 11 月，SPDX 示例列表有限，因此通常必须使用自定义许可证的方式。
+
+如果在使用 SPDX 标识符时遇到问题，在过渡期间使用旧标识符（/usr/share/licenses/common 中的目录名称）是可以接受的。
+
+另请参阅 非自由应用程序软件包指南。
+
+有关自由和开源软件许可证的更多信息和观点，请参见以下页面：
+
+- 维基百科：自由软件许可证
+- 维基百科：自由和开源软件许可证比较
+- 开源和自由软件项目法律问题入门
+- GNU 项目 - 各种许可证及其说明
+- Debian - 许可证信息
+- 开源倡议 - 按名称列出的许可证
+
+** groups
+
+软件包所属的组。例如，在安装 plasma 时，也会安装该组下的所有软件包。
+
+* 依赖关系
+
+注意：可以通过在句末添加下划线和架构名称来添加额外的特定架构数组，例如 optdepends_x86_64=()。
+
+** depends
+
+一个必须安装的程序包数组，以便软件能够构建和运行。在 package() 函数内部定义的依赖关系仅在软件运行时需要。
+
+版本限制可以使用比较运算符指定，例如 =depends=('foobar>=1.8.0')= ；如果需要多个限制，则可以为每个限制重复该依赖，
+例如 =depends=('foobar>=1.8.0' 'foobar<2.0.0')= 。
+
+注意：PKGBUILD 格式并不强制执行打包策略。（在 Talk:PKGBUILD 中讨论）
+
+depends 数组应列出所有直接的一阶依赖关系，即使其中一些已经以传递方式声明。例如，如果软件包 foo 依赖于 bar 和 baz，
+而 bar 软件包又依赖于 baz，如果 bar 停止拉取 baz，这将最终导致不希望的行为。在新安装 foo 软件包的系统上，pacman
+不会强制安装 baz，或者已经清理了孤立包的系统，foo 将在运行时崩溃或其他异常行为。
+
+在某些情况下，这不是必需的，也可以选择不列出，例如 glibc 不能被卸载，因为每个系统都需要某种 C 库，或者 python
+对于已经依赖于其他 python 模块的软件包，因为第二个模块根据定义必须依赖于 python，且不能停止拉取。
+
+依赖关系通常应包括构建软件包的所有可选功能的要求。替代地，任何未包含依赖关系的功能应通过配置选项明确禁用。
+未做到这一点可能导致软件包具有 "自动依赖" 的构建时可选功能，
+这些功能由于传递依赖关系或构建机器上安装的无关软件而不可预测地启用，但没有反映在软件包依赖关系中。
+
+如果依赖名称看起来是一个库，例如 depends=(libfoobar.so)，makepkg 将尝试找到依赖于该库的二进制文件，
+并附加该二进制所需的 soname 版本。手动附加版本将禁用自动检测，例如 depends=('libfoobar.so=2')。
+
+** makedepends
+
+一个仅在构建软件包时所需的程序包数组。可以使用与 depends 数组相同的格式指定最小依赖版本。depends
+数组中的软件包隐含地需要构建软件包，不应在此重复。
+
+注意
+
+- 假设在使用 makepkg 构建时，软件包 base-devel 已经安装。此软件包的依赖关系不应包含在 makedepends 数组中。
+- 如果使用 VCS 源，请务必包括相应的 VCS 工具（git、subversion、cvs 等）。
+
+提示 使用 pactree -rsud1 package | grep base-devel 检查特定软件包是否是 base-devel 的直接依赖（需要 pacman-contrib）。
+
+** checkdepends
+
+一个软件在运行其测试套件时依赖的程序包数组，但在运行时不需要。本列表中的软件包格式与 depends 相同。
+这些依赖关系仅在存在 check() 函数并且由 makepkg 运行时才会被考虑。
+
+注意：假设在使用 makepkg 构建时，软件包 base-devel 已经安装。此软件包的依赖关系不应包含在 checkdepends 数组中。
+
+** optdepends
+
+一个不影响软件功能的程序包数组，但提供附加功能。这可能意味着并非所有由软件包提供的可执行文件没有相应的
+optdepends 时将无法运行。如果软件在多个替代依赖项上运行，可以将所有依赖项列在这里，而不是在 depends 数组中。
+
+还应注明每个 optdepend 提供的额外功能的简短描述：
+
+#+BEGIN_SRC sh
+  optdepends=('cups: 打印支持'
+              'sane: 扫描仪支持'
+              'libgphoto2: 数字相机支持'
+              'alsa-lib: 声音支持'
+              'giflib: GIF 图片支持'
+              'libjpeg: JPEG 图片支持'
+              'libpng: PNG 图片支持')
+#+END_SRC
+
+
+* 软件包关系
+
+注意：可以通过在句末添加下划线和架构名称来添加额外的特定架构数组，例如 conflicts_x86_64=()。
+
+** provides
+
+一个额外的软件包数组，软件提供这些软件包的功能，包括虚拟软件包（如 cron 或 sh）和所有外部共享库。
+提供相同项目的软件包可以并排安装，除非至少有一个使用了 conflicts 数组。
+
+注意
+
+- 提供的版本应该予以说明（pkgver 和可能的 pkgrel），以防引用该软件的软件包需要一个。例如，相应的 qt 软件包版本为
+  3.3.8，为 qt-foobar 的软件包应使用 provides=('qt=3.3.8')；省略版本号会导致需要特定版本 qt 的依赖关系失败。
+- 不要将 pkgname 添加到 provides 数组中，因为这是自动完成的。
+
+** conflicts
+
+与该软件包发生冲突或在已安装时会造成问题的软件包数组。所有这些软件包和提供该项目的软件包都需要被删除。
+冲突包的版本属性也可以以 depends 数组相同的格式进行指定。
+
+请注意，冲突不仅对 pkgname 进行检查，还对提供数组中指定的名称进行检查。因此，如果您的软件包提供 foo 特性，则在
+conflicts 数组中指定 foo 将导致您的软件包与提供 foo 的任何其他软件包冲突（即，不必在 conflicts
+数组中列出所有这些冲突包名称）。让我们举一个具体的例子：
+
+- netbeans 隐式提供 netbeans 作为 pkgname 本身
+- 一个假设的 netbeans-cpp 包将提供 netbeans，并与 netbeans 冲突
+- 一个假设的 netbeans-php 包将提供 netbeans，并与 netbeans 冲突，但不需要明确与 netbeans-cpp 冲突，
+  因为提供相同功能的软件包隐式冲突。
+
+当软件包通过 provides 数组提供相同功能时，显式将替代软件包添加到 conflicts 数组中与不添加之间有区别。
+如果显式声明了冲突数组，这两个提供相同特性的包将被视为替代；如果缺失冲突数组，
+则这两个提供相同特性的包将被视为可能共存。在决定是否声明冲突变量时，打包者应始终忽略 provides 变量的内容。
+
+** replaces
+
+被该软件包替换的过时软件包数组，例如 wireshark-qt 使用 replaces=('wireshark')。在同步时，pacman 遇到具有匹配
+replaces 的另一软件包时将立即替换已安装的软件包。如果提供了已存在的包的替代版本或上传到 AUR，请使用 conflicts 和
+provides 数组，只有在实际安装冲突的包时才会进行评估。
+
+* 其他
+
+** backup
+
+包含用户修改的文件数组，在升级或删除软件包时应予以保留，主要用于 /etc 中的配置文件。如果这些文件没有被用户修改，
+将如常规文件在升级或删除期间被移除或替换。
+
+该数组中的文件应使用相对路径，没有开头的斜杠 (/)（例如 etc/pacman.conf，而不是 /etc/pacman.conf）。backup
+数组不支持空目录或通配符，例如 "*"。
+
+在更新时，可以将新版本保存在 file.pacnew 中，以避免覆盖已有并已被用户修改的文件。同样，当软件包被删除时，
+用户修改的文件将被保留为 file.pacsave，除非软件包是使用 pacman -Rn 命令删除的。
+
+另请参阅 Pacnew 和 Pacsave 文件。
+
+** options
+
+该数组允许覆盖一些默认的 makepkg 行为，在 /etc/makepkg.conf 中定义。要设置选项，请将名称包含在数组中。
+要禁用某个选项，请在其前面加上 !。
+
+可在 PKGBUILD(5) § OPTIONS AND DIRECTIVES 中找到可用选项的完整列表。
+
+** install
+
+要包括在软件包中的 .install 脚本的名称。
+
+pacman 可以在安装、删除或升级软件包时存储并执行特定于软件包的脚本。该脚本包含以下在不同时间运行的函数：
+
+- pre_install — 脚本在文件提取之前运行。传入一个参数：新软件包版本。
+- post_install — 脚本在文件提取之后运行。安装软件包后应打印的任何附加说明应放在这里。传入一个参数：新软件包版本。
+- pre_upgrade — 脚本在文件提取之前运行。传入两个参数，顺序为：新软件包版本，旧软件包版本。
+- post_upgrade — 脚本在文件提取之后运行。传入两个参数，顺序为：新软件包版本，旧软件包版本。
+- pre_remove — 脚本在文件删除之前运行。传入一个参数：旧软件包版本。
+- post_remove — 脚本在文件删除之后运行。传入一个参数：旧软件包版本。
+
+每个函数在 pacman 安装目录内以 chroot 模式运行。请参见该线程。
+
+提示
+
+- 原型 .install 文件位于 /usr/share/pacman/proto.install。
+- pacman#Hooks 提供类似功能。
+
+注意：请勿以 exit 结尾脚本。这将阻止所包含的函数执行。
+
+** changelog
+
+软件包变更日志的名称。要查看已安装软件包（具有此文件）的变更日志：
+
+$ pacman -Qc pkgname
+
+* 源
+
+** source
+
+一个构建软件包所需的文件数组。它必须包含软件源的位置，在大多数情况下是完整的 HTTP 或 FTP URL。之前设置的变量
+pkgname 和 pkgver 在这里可以有效使用；例如，source=("https://example.com/${pkgname}-${pkgver}.tar.gz")。
+
+文件也可以在 PKGBUILD 所在的相同目录中提供，将其名称添加到该数组中。在实际构建开始之前，
+数组中引用的所有文件将被下载或检查其存在性，如果任何文件缺失，makepkg 将无法继续。
+
+.install 文件将被 makepkg 自动识别，不应包含在源数组中。来源数组中扩展名为 .sig、.sign 或 .asc 的文件将被
+makepkg 识别为 PGP 签名，并将自动用于验证相应源文件的完整性。
+
+警告：下载的源文件名必须唯一，因为 SRCDEST 目录可以是所有软件包的相同。例如，
+使用项目的版本号作为文件名可能会与其他具有相同版本号的项目冲突。在这种情况下，
+使用的替代唯一文件名称应提供以下语法：source=('unique_package_name::file_uri'); 例如
+
+#+BEGIN_SRC sh
+  source=("${pkgname}-${pkgver}.tar.gz::https://github.com/coder/program/archive/v${pkgver}.tar.gz")。
+#+END_SRC
+
+
+提示
+
+- 可以通过在句末添加下划线和架构名称来添加额外的特定架构数组，例如 source_x86_64=()。
+  必须有相应的完整性数组与哈希值，例如 sha256sums_x86_64=()。
+- 某些服务器通过过滤客户端的 User-Agent 字符串或其他类型的限制来限制下载，可以通过 DLAGENTS 规避。
+- 使用 file:// URL 指向你的计算机文件系统中的目录或文件。例如，可以指定本地 Git 仓库为
+  #+BEGIN_SRC sh
+    "${pkgname}::git+file:///path/to/repository"
+    #+END_SRC
+- 可以使用 transmission-dlagentAUR 作为 DLAGENT 来支持磁力链接，并使用 magnet:// URI 前缀，而不是规范的 magnet:?。
+- 参见 PKGBUILD(5) § USING VCS SOURCES 和 VCS package guidelines#VCS sources 获取有关 VCS 特定选项的详细信息，
+  例如面向特定 Git 分支或提交。
+
+** noextract
+
+数组中列出但不应由 makepkg 从其归档格式中提取的文件。这可以用于无法通过 /usr/bin/bsdtar 处理的归档，
+或需要按原样安装的归档。如果使用其他解压缩工具（如 lrzip），应在 makedepends 数组中添加它，并在 prepare()
+函数的第一行手动提取源归档；例如：
+
+#+BEGIN_SRC sh
+  prepare() {
+      lrzip -d source.tar.lrz
+  }
+#+END_SRC
+
+请注意，虽然源数组接受 URL，但 noextract 只是文件名部分：
+
+#+BEGIN_SRC sh
+  source=("http://foo.org/bar/foobar.tar.xz")
+  noextract=('foobar.tar.xz')
+#+END_SRC
+
+为了不提取任何内容，请考虑以下内容：
+
+- 如果 source 仅包含简单的 URL 而没有自定义文件名，则在最后一个斜杠之前去除 source 数组：
+  #+BEGIN_SRC sh
+    noextract=("${source[@]##*/}")
+  #+END_SRC
+
+- 如果 source 仅包含具有自定义文件名的条目，则在 :: 分隔符之后去除 source 数组（取自 firefox-i18n 的 PKGBUILD
+  的早期版本）：
+  #+BEGIN_SRC sh
+    noextract=("${source[@]%%::*}")
+ #+END_SRC
+
+
+注意：如果一个归档中有多个顶层文件，有将不必要地覆盖从其他源归档中提取的文件的风险。如果是这种情况，
+请考虑将其添加到 noextract 中，并手动提取到子目录中。
+
+** validpgpkeys
+
+一个 PGP 指纹数组。如果使用，makepkg 将仅接受此处列出的密钥的签名，并将忽略密钥环中的信任值。
+如果源文件是用子密钥签名的，makepkg 仍将使用主密钥进行比较。
+
+仅接受完整的指纹。它们必须为大写，并且不得包含空格字符。
+
+注意：使用 gpg --list-keys --fingerprint KEYID 查找适当密钥的指纹。
+
+请阅读 makepkg#Signature checking 获取更多信息。
+
+* 完整性
+
+这些变量是数组，其项目是用于验证源数组中相应文件完整性的校验和字符串。插入 SKIP 表示该特定文件的校验和将不被测试。
+
+校验和类型和数值应始终是上游提供的，例如在发布公告中。当提供多种类型时，应优先使用最强的校验和
+（按照首选顺序从强到弱）：b2、sha512、sha384、sha256、sha224、sha1、md5、ck。
+这最能确保从上游公告到软件包构建下载文件的完整性。
+
+注意：此外，当上游提供数字签名时，应将签名文件添加到源数组，并将 PGP 密钥指纹添加到 validpgpkeys 数组。
+这允许在构建时对文件进行身份验证。
+
+这些变量的值可以通过 makepkg 的 -g/--geninteg 选项自动生成，然后通常使用 makepkg -g >> PKGBUILD 附加。
+pacman-contrib 的 updpkgsums(8) 命令能够更新数组中的变量。两个工具将使用 PKGBUILD 中已设置的变量，
+或者在没有设置的情况下回退到 sha256sums。
+
+可使用 /etc/makepkg.conf 中的 INTEGRITY_CHECK 选项设置使用的文件完整性检查。参见 makepkg.conf(5)。
+
+注意：可以通过在句末添加下划线和架构名称来添加额外的特定架构数组，例如 sha256sums_x86_64=()。
+
+** b2sums
+
+一个 BLAKE2b 校验和数组，摘要大小为 512 位。
+
+** sha512sums、sha384sums、sha256sums、sha224sums
+
+SHA-2 校验和数组，摘要大小分别为 512、384、256 和 224 位。sha256sums 是其中最常见的。
+
+** sha1sums
+
+列出的文件的 160 位 SHA-1 校验和值数组。
+
+** md5sums
+
+列出的文件的 128 位 MD5 校验和值数组。
+
+** cksums
+
+列出的文件的 CRC32 校验和（来自 UNIX 标准 cksum）数组。
+
+取自 "https://wiki.archlinux.org/index.php?title=PKGBUILD&oldid=851505"
