@@ -2,6 +2,7 @@
 :ID:       964c0f0a-b68e-4923-a746-c137703f95a8
 :END:
 #+TITLE: google chrome in hyprland
+#+DATE: 2023-08-01
 #+AUTHOR: Yang,Ying-chao
 #+EMAIL:  yang.yingchao@qq.com
 #+OPTIONS:  ^:nil _:nil H:7 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc author:nil

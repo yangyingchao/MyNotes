@@ -2,6 +2,7 @@
 :ID:       cdf49246-7751-465c-b91c-7f10af09239a
 :END:
 #+TITLE: Tips of Bash/Zsh
+#+DATE: 2023-08-01
 #+AUTHOR: Yang,Ying-chao
 #+EMAIL:  yang.yingchao@qq.com
 #+OPTIONS:  ^:nil _:nil H:7 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc author:nil

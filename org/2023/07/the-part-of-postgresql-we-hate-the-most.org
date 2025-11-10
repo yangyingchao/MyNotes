@@ -4,6 +4,7 @@
 :NOTER_OPEN: eww
 :END:
 #+TITLE: The Part of PostgreSQL We Hate the Most
+#+DATE: 2023-07-01
 #+AUTHOR: Yang Yingchao
 #+EMAIL:  yang.yingchao@qq.com
 #+OPTIONS:  ^:nil _:nil H:7 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc author:nil

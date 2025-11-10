@@ -1,0 +1,53 @@
+:PROPERTIES:
+:ID:       acdf9901-c18d-4ec9-ac6e-1b21109df562
+:END:
+#+TITLE: iReader & Calibre
+#+DATE: 2022-05-01
+#+AUTHOR: Yang,Ying-chao
+#+EMAIL:  yang.yingchao@qq.com
+#+OPTIONS:  ^:nil _:nil H:7 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc author:nil
+#+STARTUP:   oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+TAGS:     noexport(n)
+#+LANGUAGE: en
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :calibre:mtp:
+
+
+* 表现
+:PROPERTIES:
+:CUSTOM_ID: h:57f79f38-e207-4293-a147-b02bfdf82069
+:END:
+通过 Calibre 向 iReader 中传输书籍失败，报 MTP 相关错误。
+
+* 原因
+:PROPERTIES:
+:CUSTOM_ID: h:9678f102-5772-4b3e-941f-438745e83994
+:END:
+不知道为什么，无法在设备存储空间中创建目录
+
+* 绕过方法
+:PROPERTIES:
+:CUSTOM_ID: h:827d4da8-a906-4237-8c61-90b1b020c9df
+:END:
+1. 用文件管理器提前创建 Books 目录 （不推荐）, 或者
+2. 在 Calibre 中找到设备，选择配置，将传输目录指向已有的目录，例如 iTransfer
+
+推荐第二种，配置过后会生成下面的配置文件 =~/.config/calibre/mtp_devices.json=
+
+#+BEGIN_SRC json-ts -r
+  {
+    "blacklist": [],
+    "device-47516c97f972181": {
+      "send_to": [
+        "i-transfer"
+      ]
+    },
+    "history": {
+      "47516c97f972181": [
+        "Ocean 2",
+        "2023-08-09T01:21:19.306004+00:00"
+      ]
+    }
+  }
+#+END_SRC

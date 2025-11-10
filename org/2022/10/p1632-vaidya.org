@@ -3,6 +3,7 @@
 :NOTER_DOCUMENT: attachments/pdf/a/p1632-vaidya.pdf
 :END:
 #+TITLE: SNARF: A Learning-Enhanced Range Filter
+#+DATE: 2022-10-01
 #+AUTHOR: Yang,Ying-chao
 #+EMAIL:  yang.yingchao@qq.com
 #+OPTIONS:  ^:nil _:nil H:7 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc author:nil

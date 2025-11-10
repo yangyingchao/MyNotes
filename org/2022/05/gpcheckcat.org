@@ -1,0 +1,159 @@
+:PROPERTIES:
+:ID:       c49e7747-40ce-4892-95fa-7a13f572207b
+:END:
+#+TITLE: gpcheckcat
+#+DATE: 2022-05-01
+#+AUTHOR: Yang,Ying-chao
+#+EMAIL:  yang.yingchao@qq.com
+#+OPTIONS:  ^:nil _:nil H:7 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc author:nil
+#+STARTUP:   oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+TAGS:     noexport(n)
+#+LANGUAGE: en
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :gp:catlog:repair:
+
+* 概述
+:PROPERTIES:
+:CUSTOM_ID: h:bfa36016-e178-44c5-b78a-c8c0bd52f193
+:END:
+
+GP 提供了 [[https://github.com/greenplum-db/gpdb/blob/master/gpMgmt/bin/gpcheckcat][gpcheckcat]] 用于在集群内检查系统表。
+
+#+CAPTION: gpcheckcat
+#+NAME: tbl-data-table
+| 检查项                 | 描述                                                                      | Utility 模式 | 复合查询 | 错误等级 |
+|------------------------+---------------------------------------------------------------------------+--------------+----------+----------|
+| pg_class               | Check pg_class entry that does not have any correspond pg_attribute entry | Y            | N        | NOREPAIR |
+| namespace              | Check for schemas with a missing schema definition                        | Y            | N        | NOREPAIR |
+| unique_index_violation | Check for violated unique indexes                                         | N            | Y        | NOREPAIR |
+| duplicate              | Check for duplicate entries                                               | N            | Y        |          |
+| missing_extraneous     | Cross consistency check for missing or extraneous entries                 | N            | Y        |          |
+| inconsistent           | Cross consistency check for coordinator segment inconsistency             | N            |          |          |
+| foreign_key            | Check foreign keys                                                        | N            |          |          |
+
+
+Note:
+- Utility 模式： 对应 SQL 是否执行在 utility 模式下 \\
+  有些 SQL 只能在集群中执行
+
+- 复合查询： 下发的 SQL 是否为动态生成 \\
+  有些 SQL 为根据表定义或者其他条件拼接而成
+
+- 错误等级：
+  + SUCCESS \\
+    success
+  + REMOVE \\
+    error, with repair script removes objects
+  + RESYNC \\
+    error, with repair script that resynchronizes objects
+  + NOREPAIR \\
+     error, no repair script
+
+
+* pg_class
+:PROPERTIES:
+:CUSTOM_ID: h:85f7df11-2f89-46c4-909c-db8f5f11cd1b
+:END:
+
+#+BEGIN_SRC sql -r
+  SELECT relname, relkind, tc.oid as oid
+  FROM   pg_class tc left outer join
+         pg_attribute ta on (tc.oid = ta.attrelid)
+  WHERE  ta.attrelid is NULL and tc.relnatts != 0;
+#+END_SRC
+
+* namespace
+:PROPERTIES:
+:CUSTOM_ID: h:d87adc91-5c8e-46a9-84fd-1e5415b0bc5f
+:END:
+#+BEGIN_SRC sql -r
+    SELECT o.catalog, o.nsp
+    FROM pg_namespace n right outer join
+         (select 'pg_class' as catalog, relnamespace as nsp from pg_class
+          union
+          select 'pg_type' as catalog, typnamespace as nsp from pg_type
+          union
+          select 'pg_operator' as catalog, oprnamespace as nsp from pg_operator
+          union
+          select 'pg_proc' as catalog,pronamespace as nsp from pg_proc) o on
+          (n.oid = o.nsp)
+    WHERE n.oid is NULL;
+#+END_SRC
+
+
+* unique_index_violation
+:PROPERTIES:
+:CUSTOM_ID: h:f8543ff9-a368-452c-a51f-a5c76ba2b516
+:END:
+
+
+SQL 为拼接而成，分成两步：
+1. 获取有唯一索引约束的表和索引
+2. 逐一检查每个表是否违反了唯一约束
+
+
+代码： [[https://github.com/greenplum-db/gpdb/blob/master/gpMgmt/bin/gpcheckcat_modules/unique_index_violation_check.py][unique_index_violation_check.py]]
+
+#+BEGIN_SRC python -r
+  class UniqueIndexViolationCheck:
+      unique_indexes_query = """
+          select table_oid, index_name, table_name, array_agg(attname) as column_names
+          from pg_attribute, (
+              select pg_index.indrelid as table_oid, index_class.relname as index_name, table_class.relname as table_name, unnest(pg_index.indkey) as column_index
+              from pg_index, pg_class index_class, pg_class table_class
+              where pg_index.indisunique='t'
+              and index_class.relnamespace = (select oid from pg_namespace where nspname = 'pg_catalog')
+              and index_class.relkind = 'i'
+              and index_class.oid = pg_index.indexrelid
+              and table_class.oid = pg_index.indrelid
+          ) as unique_catalog_index_columns
+          where attnum = column_index
+          and attrelid = table_oid
+          group by table_oid, index_name, table_name;
+      """
+
+      def __init__(self):
+          self.violated_segments_query = """
+              select distinct(gp_segment_id) from (
+                  (select gp_segment_id, %s
+                  from gp_dist_random('%s')
+                  where (%s) is not null
+                  group by gp_segment_id, %s
+                  having count(*) > 1)
+                  union
+                  (select gp_segment_id, %s
+                  from %s
+                  where (%s) is not null
+                  group by gp_segment_id, %s
+                  having count(*) > 1)
+              ) as violations
+          """
+
+      def runCheck(self, db_connection):
+          unique_indexes = db_connection.query(self.unique_indexes_query).getresult()
+          violations = []
+
+          for (table_oid, index_name, table_name, column_names) in unique_indexes:
+              column_names = ",".join(column_names)
+              sql = self.get_violated_segments_query(table_name, column_names)
+              violated_segments = db_connection.query(sql).getresult()
+              if violated_segments:
+                  violations.append(dict(table_oid=table_oid,
+                                         table_name=table_name,
+                                         index_name=index_name,
+                                         column_names=column_names,
+                                         violated_segments=[row[0] for row in violated_segments]))
+
+          return violations
+
+      def get_violated_segments_query(self, table_name, column_names):
+          return self.violated_segments_query % (
+              column_names, table_name, column_names, column_names, column_names, table_name, column_names, column_names
+          )
+#+END_SRC
+
+* duplicate
+:PROPERTIES:
+:CUSTOM_ID: h:4aae321e-1ac2-462c-8adf-6ed7b44069d3
+:END:

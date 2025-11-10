@@ -4,6 +4,7 @@
 :NOTER_OPEN: find-file
 :END:
 #+TITLE: The Design and Implementation of Modern Column-Oriented Database Systems
+#+DATE: 2023-03-01
 #+AUTHOR: Yang,Ying-chao
 #+EMAIL:  yang.yingchao@qq.com
 #+OPTIONS:  ^:nil _:nil H:7 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc author:nil

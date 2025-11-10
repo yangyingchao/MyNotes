@@ -1,0 +1,17 @@
+:PROPERTIES:
+:ID:       9dbc7613-2332-4be4-927e-a209cf0d327c
+:NOTER_DOCUMENT: https://github.com/powa-team/powa
+:NOTER_OPEN: eww
+:END:
+#+TITLE: GitHub - powa-team/powa: PostgreSQL Workload Analyzer
+#+DATE: 2022-05-01
+#+AUTHOR: Yang,Ying-chao
+#+EMAIL:  yang.yingchao@qq.com
+#+OPTIONS:  ^:nil _:nil H:7 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc author:nil
+#+STARTUP:   oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+TAGS:     noexport(n)
+#+LANGUAGE: en
+#+EXCLUDE_TAGS: noexport
+
+Workload Analyzer.

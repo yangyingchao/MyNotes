@@ -3,6 +3,7 @@
 :NOTER_DOCUMENT: attachments/pdf/2/p3535-gaffney.pdf
 :END:
 #+TITLE: SQLite: Past, Present, and Future
+#+DATE: 2022-10-01
 #+AUTHOR: Yang Yingchao
 #+EMAIL:  yang.yingchao@qq.com
 #+OPTIONS:  ^:nil _:nil H:7 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc author:nil
@@ -28,7 +29,7 @@
 - several characteristics combine to make SQLite useful in a broad range of scenario:
   + Cross-platform
     * 数据库保存在单一文件中，文件可以随意拷贝，兼容：
-      * 32位/64位
+      * 32 位/64 位
       * 大端，小端架构
     * SQLite 可以运行在很多类型的机器上
 

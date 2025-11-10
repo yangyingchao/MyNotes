@@ -2,6 +2,7 @@
 :ID:       851f5425-d4b9-40f4-86bf-f15c61150911
 :END:
 #+TITLE: ByteHTAP: ByteDance’s HTAP System with High Data Freshness and Strong Data Consistency
+#+DATE: 2022-10-01
 #+AUTHOR: Yang,Ying-chao
 #+EMAIL:  yang.yingchao@qq.com
 #+FILETAGS: :HTAP:ByteDance:

@@ -1,0 +1,67 @@
+:PROPERTIES:
+:ID:       253d78c8-71b2-469e-b0c1-cadda2a21e24
+:NOTER_DOCUMENT: attachments/pdf/c/red_hat_enterprise_linux-7-performance_tuning_guide-en-us.pdf
+:NOTER_OPEN: find-file
+:END:
+#+TITLE: Red Hat Enterprise Linux 7 Performance Tuning Guide
+#+DATE: 2022-05-01
+#+AUTHOR: Yang,Ying-chao
+#+EMAIL:  yang.yingchao@qq.com
+#+OPTIONS:  ^:nil _:nil H:7 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc author:nil
+#+STARTUP:   oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+TAGS:     noexport(n)
+#+LANGUAGE: en
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :OS:tune:performance:redhat:
+
+
+* TOOLS
+:PROPERTIES:
+:NOTER_PAGE: 10
+:CUSTOM_ID: h:1a35c677-f00f-4065-8677-6c23aa72fa3a
+:END:
+** top
+:PROPERTIES:
+:CUSTOM_ID: h:1ea5eef4-6983-4810-a21f-1e24673a0b07
+:END:
+** ps
+:PROPERTIES:
+:CUSTOM_ID: h:1099edda-bbac-4396-bed3-41bc97732644
+:END:
+** vmstat -- Virtual Memory Statistics
+:PROPERTIES:
+:CUSTOM_ID: h:28bdc842-2f41-4a74-9b2c-941ddd7b392d
+:END:
+** sar -- System Activity Repoter
+:PROPERTIES:
+:CUSTOM_ID: h:356fe62a-2a11-45cc-95ee-7ff233bfd25e
+:END:
+** perf
+:PROPERTIES:
+:CUSTOM_ID: h:59f585f6-b2c3-485f-ae9a-ae5bc411d608
+:END:
+** tubostat
+:PROPERTIES:
+:CUSTOM_ID: h:aa1c7c86-31ee-47d9-83ac-25a1ed90cf1f
+:END:
+** iostat
+:PROPERTIES:
+:CUSTOM_ID: h:beb68901-f122-48d9-b5e9-a0bf2c7ae668
+:END:
+** irqbalance
+:PROPERTIES:
+:CUSTOM_ID: h:b9edc259-c08f-42a1-bf32-a12dc326881d
+:END:
+** ss  -- socket statistics
+:PROPERTIES:
+:CUSTOM_ID: h:a1b0576a-074d-4fc9-9386-58fb3d25d492
+:END:
+** numastat
+:PROPERTIES:
+:CUSTOM_ID: h:04ebff72-f620-42af-ad32-c98fe5cc3e8d
+:END:
+** numad
+:PROPERTIES:
+:CUSTOM_ID: h:02113b83-fb83-49fd-bfcc-45c773daa67d
+:END:

@@ -4,6 +4,7 @@
 :NOTER_OPEN: find-file
 :END:
 #+TITLE: Towards a New File Format for Big Data - SIMD-Friendly Composable Compression
+#+DATE: 2023-06-01
 #+AUTHOR: Yang,Ying-chao
 #+EMAIL:  yang.yingchao@qq.com
 #+OPTIONS:  ^:nil _:nil H:7 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc author:nil

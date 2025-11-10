@@ -2,6 +2,7 @@
 :ID:       4fddc47b-bc3a-42c9-a9ae-b4445c42de9e
 :END:
 #+TITLE: Design Trade-offs for a Robust Dynamic Hybrid Hash Join
+#+DATE: 2022-09-01
 #+AUTHOR: Yang,Ying-chao
 #+EMAIL:  yang.yingchao@qq.com
 #+OPTIONS:  ^:nil _:nil H:7 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc author:nil
@@ -146,4 +147,4 @@
   + 当内存耗尽时， *动态选择* 一个分片进行溢出操作
 
 
-该方法尤其适用于当输入大小或者join 属性的分布未知或者不准确的时候。
+该方法尤其适用于当输入大小或者 join 属性的分布未知或者不准确的时候。

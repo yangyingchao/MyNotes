@@ -3,6 +3,7 @@
 :NOTER_DOCUMENT: attachments/pdf/3/performanceOf10GbE.pdf
 :END:
 #+TITLE: Performance of 10 G Ethernet Using Commodity Hardware
+#+DATE: 2022-10-01
 #+AUTHOR: Yang Yingchao
 #+EMAIL:  yang.yingchao@qq.com
 #+OPTIONS:  ^:nil _:nil H:7 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc author:nil

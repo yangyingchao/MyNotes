@@ -3,6 +3,7 @@
 :NOTER_DOCUMENT: attachments/pdf/e/p1911-lee.pdf
 :END:
 #+TITLE: Your Read is Our Priority in Flash Storage
+#+DATE: 2022-10-01
 #+AUTHOR: Yang,Ying-chao
 #+EMAIL:  yang.yingchao@qq.com
 #+OPTIONS:  ^:nil _:nil H:7 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc author:nil

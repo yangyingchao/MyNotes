@@ -3,6 +3,7 @@
 :NOTER_DOCUMENT: https://vincent.bernat.ch/en/blog/2014-tcp-time-wait-state-linux#summary
 :END:
 #+TITLE: Coping with the TCP TIME-WAIT state on busy Linux servers
+#+DATE: 2022-10-01
 #+AUTHOR: Yang,Ying-chao
 #+EMAIL:  yang.yingchao@qq.com
 #+OPTIONS:  ^:nil _:nil H:7 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc author:nil

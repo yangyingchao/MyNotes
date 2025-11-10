@@ -1,0 +1,22 @@
+:PROPERTIES:
+:ID:       b3c2ad79-c0b0-4133-95c6-bc940c6e57ad
+:NOTER_DOCUMENT: attachments/pdf/6/p1024-deep.pdf
+:END:
+#+TITLE: Ranked Enumeration of Join Queries with Projections
+#+DATE: 2022-05-01
+#+AUTHOR: Yang Yingchao
+#+EMAIL:  yang.yingchao@qq.com
+#+OPTIONS:  ^:nil _:nil H:7 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc author:nil
+#+STARTUP:   oddeven lognotestate 
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+TAGS:     noexport(n)
+#+LANGUAGE: en
+#+EXCLUDE_TAGS: noexport
+
+
+* ABSTRACT
+:PROPERTIES:
+:NOTER_DOCUMENT: attachments/pdf/6/p1024-deep.pdf
+:NOTER_PAGE: 1
+:CUSTOM_ID: h:bc1d35fd-c110-4dd9-a3e4-27da14c986f7
+:END:

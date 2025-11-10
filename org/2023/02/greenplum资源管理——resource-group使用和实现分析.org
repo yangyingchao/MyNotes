@@ -4,6 +4,7 @@
 :NOTER_OPEN: eww
 :END:
 #+TITLE: Greenplum 资源管理——Resource Group使用和实现分析
+#+DATE: 2023-02-01
 #+AUTHOR: Yang,Ying-chao
 #+EMAIL:  yang.yingchao@qq.com
 #+OPTIONS:  ^:nil _:nil H:7 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc author:nil

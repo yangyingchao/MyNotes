@@ -3,6 +3,7 @@
 :NOTER_DOCUMENT: attachments/pdf/f/p1714-kossmann.pdf
 :END:
 #+TITLE: Adaptive Range Filters for Cold Data: Avoiding Trips to Siberia
+#+DATE: 2022-10-01
 #+AUTHOR: Yang Yingchao
 #+EMAIL:  yang.yingchao@qq.com
 #+OPTIONS:  ^:nil _:nil H:7 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc author:nil

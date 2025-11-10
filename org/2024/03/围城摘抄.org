@@ -1,4 +1,5 @@
 #+TITLE:  围城摘抄
+#+DATE: 2024-03-01
 #+OPTIONS:  ^:nil date:nil author:nil  _:nil H:7 num:t toc:nil \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
 #+STARTUP:   oddeven lognotestate
 #+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)

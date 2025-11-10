@@ -2,6 +2,7 @@
 :ID:       1c0dda06-b8d9-48d6-8609-6fb9c137e9d9
 :END:
 #+TITLE: OceanBase 707M tpmC
+#+DATE: 2022-09-01
 #+AUTHOR: Yang,Ying-chao
 #+EMAIL:  yang.yingchao@qq.com
 #+FILETAGS: :database:oceanbase:tpmc:
