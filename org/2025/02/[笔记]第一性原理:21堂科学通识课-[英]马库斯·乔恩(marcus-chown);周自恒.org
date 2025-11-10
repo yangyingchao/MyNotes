@@ -10,7 +10,7 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS:#+FILETAGS: :diyixingyuan:note:ireader:#+FILETAGS: :diyixingyuan:note:ireader:#+FILETAGS: :diyixingyuan:note:ireader:#+FILETAGS: :diyixingyuan:note:ireader:#+FILETAGS: :diyixingyuan:note:ireader:#+FILETAGS: :diyixingyuan:note:ireader:#+FILETAGS: :diyixingyuan:note:ireader:#+FILETAGS: :diyixingyuan:note:ireader: :diyixingyuan:note:ireader:
+#+FILETAGS:#+FILETAGS: :diyixingyuan:note
 
 * Entries
 

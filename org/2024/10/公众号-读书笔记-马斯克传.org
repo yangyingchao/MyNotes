@@ -10,7 +10,7 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :wechat:masike:note:
+#+FILETAGS: :wechat:masike:clip:
 
 
 前几天看完了《埃隆·马斯克传》，仍然在书写传奇的硅谷钢铁侠。这本书整体上来说非常好，个人感觉比《乔布斯传》要好，

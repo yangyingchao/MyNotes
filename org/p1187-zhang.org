@@ -12,7 +12,7 @@
 #+TAGS:     noexport(n)
 #+LANGUAGE: en
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :Persistent Memory:tag2:
+#+FILETAGS: :Persistent Memory:
 
 - *PM* stands for Persistent Memory， 持久内存，它是一种非易失性内存，即使断电也能保留数据。
 - *eADR* 保证了 CPU 缓存中的数据在电源故障时会被刷新到 PM 中

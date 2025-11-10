@@ -10,7 +10,7 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :shijiezhixu:note:ireader:
+#+FILETAGS: :shijiezhixu:clip:
 
 - 5-6, 标注, 2022 年 3 月 28 日星期一 下午 9:04:34
   # note_md5: 02b57c07992b925df41c63756f6a9546

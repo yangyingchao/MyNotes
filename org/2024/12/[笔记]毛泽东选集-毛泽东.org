@@ -10,7 +10,7 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :maozedongxua:note:ireader:
+#+FILETAGS: :maozedongxua:clip:
 
 - 218-218, 标注, 2024 年 12 月 14 日星期六 上午 9:23:03
   # note_md5: 02fea9c0e5cb977dbd3c8503520729a0

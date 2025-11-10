@@ -10,7 +10,7 @@
 #+TAGS:     noexport(n)
 #+LANGUAGE: en
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :bigdata:tag2:
+#+FILETAGS: :bigdata:
 
 
 https://motherduck.com/blog/big-data-is-dead/

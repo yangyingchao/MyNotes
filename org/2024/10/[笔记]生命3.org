@@ -7,7 +7,7 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :shengming3.0:note:ireader:
+#+FILETAGS: :shengming3.0:clip:
 
 - 579-580, 标注, 2018 年 9 月 2 日星期日 下午 3:28:17
   # note_md5: 36a0fef0d47d40dab20019c72bb8d914

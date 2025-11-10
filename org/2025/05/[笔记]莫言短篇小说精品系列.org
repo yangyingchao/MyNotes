@@ -9,7 +9,7 @@
 #+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :moyanduanpia:note:ireader:unwashed:
+#+FILETAGS: :moyanduanpia:clip:unwashed:
 
 - 47-48, 标注, 2025 年 4 月 21 日星期一 下午 10:27:58
   #+BEGIN_QUOTE md5: 8e020272fccb315ac4aeb0fe0794d9e0

@@ -10,7 +10,7 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :lishishenchu:note:ireader:
+#+FILETAGS: :lishishenchu:clip:
 
 - 308-309, 标注, 2020 年 12 月 1 日星期二 下午 8:40:19
   # note_md5: 980948e1d61eb06207e576f1e70d577c

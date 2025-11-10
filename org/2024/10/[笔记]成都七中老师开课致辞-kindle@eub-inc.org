@@ -10,7 +10,7 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :chengduqizho:note:ireader:
+#+FILETAGS: :chengduqizho:clip:
 
 - 35-36, 标注, 2020 年 2 月 12 日星期三 上午 7:41:44
   # note_md5: 5832164378376a674fcf18c15575e5de

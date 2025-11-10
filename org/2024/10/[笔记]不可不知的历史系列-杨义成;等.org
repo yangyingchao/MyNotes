@@ -10,7 +10,7 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :bukebuzhidel:note:ireader:
+#+FILETAGS: :bukebuzhidel:clip:
 
 - 281-282, 标注, 2021 年 11 月 7 日星期日 下午 7:54:12
   # note_md5: 72628c2399ad68e0aa4529dd712bd0d0

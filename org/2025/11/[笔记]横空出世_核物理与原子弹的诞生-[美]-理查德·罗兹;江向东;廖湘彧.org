@@ -1,0 +1,35 @@
+:PROPERTIES:
+:ID:       e18fee55-1116-4660-abee-b5d5005f1d73
+:END:
+#+TITLE: 横空出世_核物理与原子弹的诞生-[美] 理查德·罗兹;江向东;廖湘彧
+#+AUTHOR: Yang,Ying-chao
+#+DATE:   2025-11-10
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :hengkongchus:clip:unwashed:
+
+* Unwashed Entries                                                  :noexport:
+
+- 336-339, 标注, 2025 年 11 月 10 日星期一 下午 1:20:51
+  #+BEGIN_QUOTE md5: e3932f775cd7d38179d49414c10cff5c
+  科学是按照人类学家称之为“礼物交换”（gift exchange）的方式运作的：某位科学家将其实验结果公之于众，
+  其他科学家通过研究这些成果找到线索，做进一步的研究，得到进一步的发现，并相应地将结果公布出来。只有这样，
+  科学知识才会朝更加广阔的前沿和更尖的尖端迈进，每位科学家的发现都会促使这项集体工作向前发展。
+  #+END_QUOTE
+
+- 355-357, 标注, 2025 年 11 月 10 日星期一 下午 1:23:00
+  #+BEGIN_QUOTE md5: 628eeda16017dc653770e7b9e817da1d
+  无论是否被用于军事目的，核裂变的发现都不是科学家能够接受或拒绝的浮士德式的交易。核裂变的发现不是孤立的，
+  是从科学知识的历史积淀中涌现出来的，
+  #+END_QUOTE
+
+- 363-366, 标注, 2025 年 11 月 10 日星期一 下午 1:24:32
+  #+BEGIN_QUOTE md5: d8bc7ae0d08314070cb5553f6c393f05
+  战火蔓延到非军事区，死亡人数与日俱增。如果用图表来描述从 18 世纪到 20 世纪因战争死亡的人数，
+  可以发现它大约是按指数增长的，在 1940 年至 1945 年间达到顶峰，约有 7 500 万人因战争而丧生。 核武器在 1945
+  年的出现突然扭转了死亡人数增加的局面。此后，每年在战争中死亡的人数不过一二百万。这样的数字固然触目惊心，
+  却与每年因吸烟而死亡的人数相当。
+  #+END_QUOTE

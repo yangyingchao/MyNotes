@@ -10,7 +10,7 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :jingjingdedu:note:ireader:
+#+FILETAGS: :jingjingdedu:clip:
 
 - 1524-1526, 标注, 2024 年 10 月 28 日星期一 上午 7:57:33
   # note_md5: a82eff86989bfaad909af44253eff2bb
@@ -397,7 +397,7 @@
   曲折，时而下到深谷去，时而又爬上高岗。极目远望——四周围依然是那么一片沉默的大草原。
   #+END_QUOTE
 
-- 27851-27853, 标注, 2024 年 11月10日星期日 下午1:54:48
+- 27851-27853, 标注, 2024 年 11 月 10 日星期日 下午 1:54:48
   # note_md5: a1fe5df72011275acad5fb359e807a03
   #+BEGIN_QUOTE
   他时常梦见孩子、阿克西妮亚、母亲和其他所有已经不在人世的亲人。葛利高里的全部生活都已成为过去，而过去的一切却又

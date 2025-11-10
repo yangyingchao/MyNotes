@@ -9,7 +9,7 @@
 #+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :笔记:bishangengga:note:ireader:
+#+FILETAGS: :bishangengga:clip:
 
 
 - 22-23, 标注, 2025 年 9 月 26 日星期五 上午 7:47:31

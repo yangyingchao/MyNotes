@@ -10,7 +10,7 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :jinyongquanj:note:ireader:
+#+FILETAGS: :jinyongquanj:clip:
 
 - 22818-22818, 标注, 2019 年 12 月 13 日星期五 下午 10:19:09
   # note_md5: f34d1f5f858fec83c37fe5737bb8744c

@@ -5,7 +5,7 @@
 #+AUTHOR: Yang,Ying-chao
 #+EMAIL:  yang.yingchao@qq.com
 #+OPTIONS:  ^:nil _:nil H:7 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc author:nil
-#+STARTUP:   oddeven lognotestate 
+#+STARTUP:   oddeven lognotestate
 #+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
 #+TAGS:     noexport(n)
 #+LANGUAGE: en
@@ -19,6 +19,7 @@
 :NOTER_DOCUMENT: attachments/pdf/8/p3372-pedreira.pdf
 :NOTER_PAGE: 1
 :CUSTOM_ID: h:2feba2b4-8c5e-43d1-a350-894f13c55f6d
+:NOTER_OPEN: find-file
 :END:
 Velox:
 

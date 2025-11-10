@@ -10,7 +10,7 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :yuandaqianch:note:ireader:
+#+FILETAGS: :yuandaqianch:note:
 
 - 354-357, 标注, 2024 年 10 月 17 日星期四 上午 8:01:10
   # note_md5: c9815b7b67281922003e9e229cc93b11

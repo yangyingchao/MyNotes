@@ -11,7 +11,7 @@
 #+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :postgres:disaster:recovery:
+#+FILETAGS: :pg:disaster:recovery:
 
 
 系统故障、硬件故障或意外数据丢失可能会毫无预警地发生。决定操作是顺利恢复还是陷入停滞的因素是灾难恢复设置的强度。

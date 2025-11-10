@@ -10,7 +10,7 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :guojiadechan:note:ireader:
+#+FILETAGS: :guojiadechan:clip:
 
 - 1175-1177, 标注, 2021 年 2 月 3 日星期三 下午 10:16:10
   # note_md5: 8a87728635f2e522be45e67e2fab06d5

@@ -10,7 +10,7 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :mingliangdey:note:ireader:
+#+FILETAGS: :mingliangdey:clip:
 
 - 474-476, 标注, 2024 年 10 月 14 日星期一 下午 6:57:20
   # note_md5: ee2324667fc361df0900498452715095

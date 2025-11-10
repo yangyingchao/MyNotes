@@ -10,7 +10,7 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :biluweijian::note:ireader:
+#+FILETAGS: :biluweijian::note:
 
 - 108-109, 标注, 2024 年 12 月 31 日星期二 下午 11:01:17
   # note_md5: 721086a1b8efcf502d7969123072de1e

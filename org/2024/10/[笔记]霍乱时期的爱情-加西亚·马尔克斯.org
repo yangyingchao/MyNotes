@@ -7,7 +7,7 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :huoluanshiqi:note:ireader:
+#+FILETAGS: :huoluanshiqi:clip:
 
 - 11-12, 标注, 2024 年 10 月 9 日星期三 上午 7:41:40
   # note_md5: 9a05cdfecc67f0b637650fe86591baa0

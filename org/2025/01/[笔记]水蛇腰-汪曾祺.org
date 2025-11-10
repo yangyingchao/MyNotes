@@ -9,7 +9,7 @@
 #+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
-#+FILETAGS: :shuisheyao:note:ireader:
+#+FILETAGS: :shuisheyao:clip:
 #+EXCLUDE_TAGS: noexport
 
 * Entries

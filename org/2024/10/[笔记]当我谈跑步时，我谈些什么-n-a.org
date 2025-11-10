@@ -10,7 +10,7 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :dangwotanpao:note:ireader:
+#+FILETAGS: :dangwotanpao:clip:
 
 - 518-663, 标注, unknown
   # note_md5: f45d337f3cb9b52cc0486b5ebcc18249

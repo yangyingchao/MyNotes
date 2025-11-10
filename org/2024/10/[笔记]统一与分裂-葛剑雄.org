@@ -10,7 +10,7 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :tongyiyufenl:note:ireader:
+#+FILETAGS: :tongyiyufenl:clip:
 
 - 70-73, 标注, 2024 年 9 月 14 日星期六 上午 7:43:21
   # note_md5: a75516197080b9353fcfd423e0b63924

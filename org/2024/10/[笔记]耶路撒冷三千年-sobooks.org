@@ -10,7 +10,7 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :yelusalengsa:note:ireader:
+#+FILETAGS: :yelusalengsa:clip:
 
 - 328-330, 标注, 2020 年 2 月 14 日星期五 下午 11:17:25
   # note_md5: b3cbe902dc42abcadce8db596c4f2456
@@ -301,8 +301,8 @@
   她们告诉你“我们有自己的干爹供养”，并把你也加入她们的名单之中。[
   #+END_QUOTE
 
-- 8867-8868, 标注, 2020年3月19日星期四 下午10:30:04
+- 8867-8868, 标注, 2020 年 3 月 19 日星期四 下午 10:30:04
   # note_md5: 5ba4727ee7ac92566ac7754ebd380ca7
   #+BEGIN_QUOTE
-  1914年6月28日，塞尔维亚恐怖分子暗杀了奥地利王储费迪南大公，大国们震惊不已，接着纷纷卷入第一次世界大战。
+  1914 年 6 月 28 日，塞尔维亚恐怖分子暗杀了奥地利王储费迪南大公，大国们震惊不已，接着纷纷卷入第一次世界大战。
   #+END_QUOTE

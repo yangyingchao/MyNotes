@@ -10,7 +10,7 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :xinpianzhanz:note:ireader:
+#+FILETAGS: :xinpianzhanz:clip:
 
 - 520-851, 标注, unknown
   # note_md5: 51ad4985a7cbd1e41ebe3139cc62b6aa

@@ -9,7 +9,7 @@
 #+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :笔记:xiedu:note:ireader:
+#+FILETAGS: :xiedu:clip:
 
 
 - 207-209, 标注, 2025 年 5 月 26 日星期一 下午 12:45:07

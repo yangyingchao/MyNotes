@@ -9,7 +9,7 @@
 #+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :笔记:huanleyingxi:note:ireader:
+#+FILETAGS: :huanleyingxi:clip:
 
 - 188-189, 标注, 2025 年 5 月 15 日星期四 下午 1:24:06
   #+BEGIN_QUOTE md5: 9489132eaec481818c06df4e9eb9830c,61dc343befb3856bab1356954b1dd281

@@ -10,7 +10,7 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :shinanzhitu:note:ireader:
+#+FILETAGS: :shinanzhitu:clip:
 
 - 1671-1671, 标注, 2024 年 8 月 2 日星期五 下午 9:04:37
   # note_md5: dcefcc7db458ed8e912e08e97c2038d2

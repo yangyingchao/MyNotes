@@ -7,7 +7,7 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :jijianyuzhou:note:ireader:
+#+FILETAGS: :jijianyuzhou:clip:
 
 - 107-109, 标注, 2018 年 2 月 25 日星期日 下午 9:46:08
   # note_md5: 2a2cea05b7b44060179317ac8ea9ec1c

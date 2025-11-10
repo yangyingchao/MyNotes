@@ -6,7 +6,7 @@
 #+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :jianshang:yi:note:ireader:
+#+FILETAGS: :jianshang:yi:note:
 
 - 93-94, 标注, 2025 年 3 月 9 日星期日 下午 8:35:46
  # note_md5: 2649dd82efb896899c7448a04663d714

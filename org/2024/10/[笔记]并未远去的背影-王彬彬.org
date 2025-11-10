@@ -10,7 +10,7 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :bingweiyuanq:note:ireader:
+#+FILETAGS: :bingweiyuanq:clip:
 
 - 3638-3640, 标注, 2023 年 6 月 29 日星期四 下午 12:51:25
   # note_md5: 6ac3982e639f58eb85023038292c49e8

@@ -6,7 +6,7 @@
 #+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :changanshier:note:ireader:
+#+FILETAGS: :changanshier:clip:
 
 
 - 383-386, 标注, 2025 年 7 月 23 日星期三 上午 8:01:29

@@ -10,7 +10,7 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :dao:note:ireader:
+#+FILETAGS: :dao:clip:
 
 - 129-129, 标注, 2022 年 7 月 2 日星期六 下午 5:11:22
   # note_md5: 3043b66b5f45185caf2799b73ec738af

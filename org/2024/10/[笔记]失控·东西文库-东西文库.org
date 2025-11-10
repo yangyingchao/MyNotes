@@ -10,7 +10,7 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :shikong_dong:note:ireader:
+#+FILETAGS: :shikong_dong:clip:
 
 - 308-310, 标注, 2021 年 5 月 21 日星期五 下午 9:54:24
   # note_md5: ca60a8f301041381264a13da38c33434

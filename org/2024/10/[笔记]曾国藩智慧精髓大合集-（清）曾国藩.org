@@ -10,7 +10,7 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :zengguofanzh:note:ireader:
+#+FILETAGS: :zengguofanzh:clip:
 
 - 179-179, 标注, 2020 年 7 月 14 日星期二 下午 12:39:17
   # note_md5: 8043716537ddefdaedef3e0cff6b665c

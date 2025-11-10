@@ -7,7 +7,7 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :﻿bingyuhuozh:note:ireader:
+#+FILETAGS: :﻿bingyuhuozh:clip:
 
 - 6554-6556, 标注, 2018 年 2 月 14 日星期三 上午 7:44:59
   # note_md5: 89c7b898b4cb775147246bd02d45b5b3
@@ -169,7 +169,7 @@
   纪律严明，十战九胜，
   #+END_QUOTE
 
-- 39176-39177, 标注, 2019年7月6日星期六 下午5:07:18
+- 39176-39177, 标注, 2019 年 7 月 6 日星期六 下午 5:07:18
   # note_md5: e17a3841220ac1f88f7dbabd14a6c402
   #+BEGIN_QUOTE
   临阵脱逃者其实最容易遭到攻击，”艾德公爵曾教诲琼恩，“好比受伤的动物，激起对方杀戮的欲望。”

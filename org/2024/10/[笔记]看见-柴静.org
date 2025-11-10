@@ -10,7 +10,7 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :kanjian:note:ireader:
+#+FILETAGS: :kanjian:clip:
 
 - 31-32, 标注, 2020 年 2 月 1 日星期六 下午 10:15:12
   # note_md5: 2e4ba8e62fdd3b8e87c1cd62971f1f03

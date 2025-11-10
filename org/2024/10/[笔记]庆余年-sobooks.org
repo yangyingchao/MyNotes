@@ -10,7 +10,7 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :qingyunian:note:ireader:
+#+FILETAGS: :qingyunian:clip:
 
 - 24-25, 标注, 2019 年 12 月 25 日星期三 上午 9:49:35
   # note_md5: 7911db08818f1e7fcc280ec4e3eefcb3

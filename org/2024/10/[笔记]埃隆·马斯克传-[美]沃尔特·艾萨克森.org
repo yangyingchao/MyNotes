@@ -7,7 +7,7 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :ailong_masik:note:ireader:
+#+FILETAGS: :ailong_masik:clip:
 
 - 85-86, 标注, 2024 年 10 月 4 日星期五 上午 8:39:25
   # note_md5: 294b98d013a5cb2ac149809ed876b9a9

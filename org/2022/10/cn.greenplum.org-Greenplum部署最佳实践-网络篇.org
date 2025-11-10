@@ -11,7 +11,7 @@
 #+TAGS:     noexport(n)
 #+LANGUAGE: en
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :gpdb:network:mtu:jumbo:frame:
+#+FILETAGS: :gp:network:mtu:jumbo:frame:
 
 * 使用高速硬件，降低节点间的延迟
 :PROPERTIES:

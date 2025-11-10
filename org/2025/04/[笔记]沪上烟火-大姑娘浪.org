@@ -9,7 +9,7 @@
 #+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :笔记:hushangyanhu:note:ireader:
+#+FILETAGS: :hushangyanhu:clip:
 
 - 84-88, 标注, 2025 年 4 月 2 日星期三 上午 7:50:37
   #+BEGIN_QUOTE md5: a1f48ee82be7ccd8c04a6a727fbf70f2,9d260f47b30bbafd5905b5f98e77bd4f

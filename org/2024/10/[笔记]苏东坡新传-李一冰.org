@@ -10,7 +10,7 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :sudongpoxinc:note:ireader:
+#+FILETAGS: :sudongpoxinc:clip:
 
 - 139-140, 标注, 2024 年 10 月 17 日星期四 下午 6:16:57
   # note_md5: cd28ae3057c67e0427f2f9a36216ea22

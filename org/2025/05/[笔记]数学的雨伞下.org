@@ -9,7 +9,7 @@
 #+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :shuxuedeyusa:note:ireader:
+#+FILETAGS: :shuxuedeyusa:clip:
 
 - 19-22, 标注, 2025 年 4 月 11 日星期五 下午 1:21:01
   #+BEGIN_QUOTE md5: 5db6a86dd3514783476ec121fadb5047,381c40cec202ceefa6077cbe4f7378c5

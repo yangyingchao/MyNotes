@@ -10,7 +10,7 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :qingxisikao:note:ireader:
+#+FILETAGS: :qingxisikao:clip:
 
 - 198-199, 标注, 2025 年 1 月 4 日星期六 下午 9:45:57
   # note_md5: 205bbe1a6452976d386444c7d2b8680f

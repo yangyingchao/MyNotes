@@ -6,7 +6,7 @@
 #+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :liusudi:note:ireader:
+#+FILETAGS: :liusudi:clip:
 
 
 - 347-348, 标注, 2025 年 7 月 2 日星期三 上午 8:39:34

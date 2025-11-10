@@ -10,7 +10,7 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :chengnanjius:note:ireader:
+#+FILETAGS: :chengnanjius:clip:
 
 - 16-18, 标注, 2019 年 7 月 2 日星期二 下午 9:31:15
   # note_md5: 1d027504914f52b64bccab3a93809400

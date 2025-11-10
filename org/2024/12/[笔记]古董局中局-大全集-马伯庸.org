@@ -10,7 +10,7 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :gudongjuzhon:note:ireader:
+#+FILETAGS: :gudongjuzhon:clip:
 
 - 47-48, 标注, 2024 年 12 月 3 日星期二 上午 7:44:17
   # note_md5: 27757b0453495d024ae226e04de00cdb

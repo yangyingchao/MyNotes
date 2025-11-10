@@ -10,7 +10,7 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :jinzitayuanl:note:ireader:
+#+FILETAGS: :jinzitayuanl:clip:
 
 - 53-54, 标注, 2020 年 6 月 14 日星期日 下午 5:04:36
   # note_md5: 7f381c909aae2168557715e7e67c6015

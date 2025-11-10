@@ -12,7 +12,7 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :pg:cache:inval:msg:postgres:
+#+FILETAGS: :pg:cache:inval:msg:
 
 
 * prelog

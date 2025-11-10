@@ -10,7 +10,7 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :duoyudehua:note:ireader:
+#+FILETAGS: :duoyudehua:clip:
 
 - 499-547, 标注, unknown
   # note_md5: ae965d1c2309f6e3e54aab39a9f7227f

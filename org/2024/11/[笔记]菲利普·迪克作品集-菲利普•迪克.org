@@ -10,7 +10,7 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :feilipu_dike:note:ireader:
+#+FILETAGS: :feilipu_dike:clip:
 
 - 558-559, 标注, 2024 年 11 月 11 日星期一 上午 8:07:12
   # note_md5: dcbd85285d91955b8a6af69cf77a0a08
@@ -246,7 +246,7 @@
   的是 iPhone。屌丝的面子伤不起，古今中外莫不如是。
   #+END_QUOTE
 
-- 18480-18482, 标注, 2024 年 11月30日星期六 上午9:46:28
+- 18480-18482, 标注, 2024 年 11 月 30 日星期六 上午 9:46:28
   # note_md5: 696ed5331532bd31a3392c0832883ac5
   #+BEGIN_QUOTE
   不管是什么时候写的科幻，总会有局限性。但敢于在当时的知识范畴内大胆想象，去做思维体操，去琢磨日常生活中不会碰到

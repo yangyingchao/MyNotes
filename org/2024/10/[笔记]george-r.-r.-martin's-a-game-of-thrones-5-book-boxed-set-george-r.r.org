@@ -10,7 +10,7 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :George_R._R.:note:ireader:
+#+FILETAGS: :George_R._R.:clip:
 
 - 416-419, 标注, 2019 年 3 月 10 日星期日 下午 8:57:40
   # note_md5: b13a0e271547590082fd59a4f4581f66
@@ -1569,19 +1569,19 @@
   “That was the one.” Her face grew somber.
   #+END_QUOTE
 
-- 65881-65881, 标注, 2020年12月19日星期六 上午8:47:54
+- 65881-65881, 标注, 2020 年 12 月 19 日星期六 上午 8:47:54
   # note_md5: a6d8b48630f3fa36ec1b5637750ba15d
   #+BEGIN_QUOTE
   streaked by the sun, and a lean and comely body,
   #+END_QUOTE
 
-- 66744-66745, 标注, 2020年12月20日星期日 下午5:14:21
+- 66744-66745, 标注, 2020 年 12 月 20 日星期日 下午 5:14:21
   # note_md5: e255b41f2c9e268a983b67aa5b52b479
   #+BEGIN_QUOTE
   fickle bitches, loyal only to themselves.
   #+END_QUOTE
 
-- 66805-66806, 标注, 2020年12月20日星期日 下午8:48:29
+- 66805-66806, 标注, 2020 年 12 月 20 日星期日 下午 8:48:29
   # note_md5: 376af525ea2bdc62b64ce5a8ce3f32c4
   #+BEGIN_QUOTE
   saffron that I’m tasting?” Saffron was worth more

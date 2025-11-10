@@ -10,7 +10,7 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :yanshiji:note:ireader:
+#+FILETAGS: :yanshiji:clip:
 
 - 76-76, 标注, 2024 年 9 月 18 日星期三 下午 6:33:01
   # note_md5: 04c5f7b8f3664d4cca9be2e18da6c3b3
@@ -185,7 +185,7 @@
   像是个垂死的人，头发被无形的力量拉扯着。树叶纷纷被风撕下来，未及落地，已高高扬起，一忽儿不见了踪迹。
   #+END_QUOTE
 
-- 6924-6924, 标注, 2024年9月24日星期二 上午7:59:35
+- 6924-6924, 标注, 2024 年 9 月 24 日星期二 上午 7:59:35
   # note_md5: 5cd16e346713c2a9841ff07f796dabed
   #+BEGIN_QUOTE
   人世走一遭，总是辛苦的。

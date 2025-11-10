@@ -6,7 +6,7 @@
 #+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :1984:fanwutu:note:ireader:
+#+FILETAGS: :1984:fanwutu:note:
 
 《1984》是乔治·奥威尔（George Orwell）所著的一本小说，出版于 1949 年。
 这本小说描写了一个类似于极权主义社会的未来世界，人民被强制接受一种叫做“新话”的语言，

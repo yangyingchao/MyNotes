@@ -10,7 +10,7 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :meiguozhongz:note:ireader:
+#+FILETAGS: :meiguozhongz:clip:
 
 - 94-95, 标注, 2020 年 3 月 22 日星期日 下午 9:57:13
   # note_md5: 54f6fbac448086b0b95dba306e097938

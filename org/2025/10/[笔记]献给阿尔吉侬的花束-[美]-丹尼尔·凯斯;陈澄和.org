@@ -9,7 +9,7 @@
 #+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :biji:xiangeiaerji:note:ireader:
+#+FILETAGS: :biji:xiangeiaerji:clip:
 
 
 - 14-17, 标注, 2025 年 10 月 1 日星期三 下午 9:00:58

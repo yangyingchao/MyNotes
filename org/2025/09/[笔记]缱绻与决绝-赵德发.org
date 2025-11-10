@@ -9,7 +9,7 @@
 #+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :笔记:qianquanyuju:note:ireader:
+#+FILETAGS: :qianquanyuju:clip:
 
 - 1455-1457, 标注, 2025 年 9 月 7 日星期日 下午 9:21:47
   #+BEGIN_QUOTE md5: 62b63d916c36f15ec47c9eab8549d954,406a1a777239d5e9cc92810051242da7

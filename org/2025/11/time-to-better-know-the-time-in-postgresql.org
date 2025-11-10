@@ -12,7 +12,7 @@
 #+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :postgres:pg:time:date
+#+FILETAGS: :pg:time:date
 
 
 * Simple things

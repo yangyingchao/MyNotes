@@ -10,7 +10,7 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :jianke:note:ireader:
+#+FILETAGS: :jianke:clip:
 
 - 3279-3280, 标注, 2019 年 10 月 25 日星期五 下午 9:59:57
   # note_md5: b0cfec2fc8eaf3dd3e96d1eba13cf0fc

@@ -12,7 +12,7 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :starrocks:tag2:
+#+FILETAGS: :starrocks:
 
 一条查询 SQL 在关系型分布式数据库中的处理，通常需要经过 3 大步骤：
 

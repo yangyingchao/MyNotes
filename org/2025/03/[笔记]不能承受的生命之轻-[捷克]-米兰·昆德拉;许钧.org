@@ -9,7 +9,7 @@
 #+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :bunengchengs:note:ireader:
+#+FILETAGS: :bunengchengs:clip:
 
 - 30-31, 标注, 2025 年 3 月 26 日星期三 下午 1:09:56
   #+BEGIN_QUOTE md5: cc5e0c53d1212ca43dc874319cd72ade

@@ -10,7 +10,7 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :pingfandeshi:note:ireader:
+#+FILETAGS: :pingfandeshi:clip:
 
 - 380-381, 标注, 2019 年 10 月 11 日星期五 下午 10:05:18
   # note_md5: 3e28bc142872a76a850a57d4249701b2

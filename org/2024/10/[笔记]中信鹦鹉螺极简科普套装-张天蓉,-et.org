@@ -10,7 +10,7 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :zhongxinying:note:ireader:
+#+FILETAGS: :zhongxinying:clip:
 
 - 170-171, 标注, 2020 年 6 月 1 日星期一 下午 10:27:36
   # note_md5: 9dc531e1f127d5126b9086c328fa5670

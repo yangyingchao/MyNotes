@@ -10,7 +10,7 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :kangxidehong:note:ireader:
+#+FILETAGS: :kangxidehong:note:
 
 - 212-212, 标注, 2025 年 1 月 6 日星期一 下午 10:20:16
   # note_md5: 3a03fd181d710b99382698baa5f9eda3

@@ -10,7 +10,7 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :zuiyufa:note:ireader:
+#+FILETAGS: :zuiyufa:clip:
 
 - 32-32, 标注, 2024 年 11 月 30 日星期六 下午 2:02:42
   # note_md5: b75be53038503489f83f44f511bc802c

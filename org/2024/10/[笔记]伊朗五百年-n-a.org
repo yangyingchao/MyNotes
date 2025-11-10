@@ -10,7 +10,7 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :yilangwubain:note:ireader:
+#+FILETAGS: :yilangwubain:clip:
 
 - 501-570, 标注, unknown
   # note_md5: 32c0d39815f730df553bde2b249a7a78

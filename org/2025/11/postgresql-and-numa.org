@@ -11,7 +11,7 @@
 #+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :postgres:numa:memory:
+#+FILETAGS: :pg:numa:memory:
 
 这一系列文章涵盖了在多处理器的大型系统上运行 PostgreSQL 的具体细节。我的经验是，当人们面临这个问题时，
 通常需要花费数月的时间来学习基本知识。这一系列文章旨在通过提供清晰的背景知识来消除这些困难。
@@ -207,7 +207,7 @@ To set CPU affinity mask for a particular systemd service using the manager conf
 
 systemd 提供了单元文件选项 NUMAPolicy 和 NUMAMask 来控制服务的内存分配策略。
 
-**步骤*
+*步骤*
 
 要通过 NUMAPolicy 单元文件选项设置 NUMA 内存策略：
 

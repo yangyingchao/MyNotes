@@ -10,7 +10,7 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :ribenzhizao:note:ireader:
+#+FILETAGS: :ribenzhizao:clip:
 
 - 501-635, 标注, unknown
   # note_md5: 5dddb081bf77ad8cc543e81c846ecd4e

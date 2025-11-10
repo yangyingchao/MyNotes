@@ -8,7 +8,7 @@
 #+STARTUP:   oddeven lognotestate
 #+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
 #+LANGUAGE: en
-#+FILETAGS:#+FILETAGS: :note:ireader:#+FILETAGS: :note:ireader:#+FILETAGS: :note:ireader: :note:ireader:
+#+FILETAGS:#+FILETAGS: :clip:#+FILETAGS: :clip:#+FILETAGS: :clip: :clip:
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
 

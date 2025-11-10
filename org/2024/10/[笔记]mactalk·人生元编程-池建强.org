@@ -10,7 +10,7 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :MacTalk_rens:note:ireader:
+#+FILETAGS: :MacTalk_rens:clip:
 
 - 104-107, 标注, 2019 年 6 月 14 日星期五 上午 8:12:33
   # note_md5: 336b4d31395fa882fa8567c49c2a16ed
@@ -85,5 +85,5 @@
   # note_md5: 3c962b88b29d718c8e868816a1bd0022
   #+BEGIN_QUOTE
   到了 40 岁，该明白的都明白了，不明白的估计你也不想去明白了，所以就不惑了。但现实的情况是，如果你一直在思考、读书、
-  实践，做自己认为对的事情，到了40岁，你会发现不是不惑，而是有了更多的惑。这种未知的恐惧可能会伴随我们的一生
+  实践，做自己认为对的事情，到了 40 岁，你会发现不是不惑，而是有了更多的惑。这种未知的恐惧可能会伴随我们的一生
   #+END_QUOTE

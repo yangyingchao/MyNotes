@@ -10,7 +10,7 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :jianlai:note:ireader:
+#+FILETAGS: :jianlai:clip:
 
 - 4260-4261, 标注, 2020 年 10 月 24 日星期六 下午 1:42:42
   # note_md5: b4092c9671fafa31645db3cbeca36c91

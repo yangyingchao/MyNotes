@@ -7,7 +7,7 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :﻿qitangjijia:note:ireader:
+#+FILETAGS: :﻿qitangjijia:clip:
 
 - 41-41, 标注, 2018 年 2 月 24 日星期六 上午 3:59:43
   # note_md5: 80f54b86cc1c792f60352a17e5700fe8

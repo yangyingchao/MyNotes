@@ -10,7 +10,7 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :feibaoligout:note:ireader:
+#+FILETAGS: :feibaoligout:clip:
 
 - 10-13, 标注, 2024 年 9 月 24 日星期二 下午 1:29:45
   # note_md5: 3f1a6de6109ae3a98e086870f78b8f61

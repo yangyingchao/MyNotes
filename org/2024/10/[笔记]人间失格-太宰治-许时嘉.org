@@ -10,7 +10,7 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :renjianshige:note:ireader:
+#+FILETAGS: :renjianshige:clip:
 
 - 142-145, 标注, 2022 年 3 月 27 日星期日 下午 6:05:30
   # note_md5: 68c126e29b8fc7b3e9261f40fdfedd82

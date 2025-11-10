@@ -9,7 +9,7 @@
 #+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :笔记:
+#+FILETAGS: :
 
 - 103-105, 标注, 2025 年 9 月 12 日星期五 下午 1:33:20
   #+BEGIN_QUOTE md5: 8667cd0181a2c8f6f9d653222afca3e1

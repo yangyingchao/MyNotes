@@ -10,7 +10,7 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :qiuzhuangsha:note:ireader:
+#+FILETAGS: :qiuzhuangsha:clip:
 
 - 618-620, 标注, 2019 年 3 月 1 日星期五 下午 11:06:38
   # note_md5: 033a4b4d99df275601981d2c7658144b

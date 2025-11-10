@@ -7,7 +7,7 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :ireader:daguimo:fenbushi:cunchu:
+#+FILETAGS: :daguimo:fenbushi:cunchu:
 
 - 564-565, 标注, 2018 年 8 月 11 日星期六 下午 8:56:08
   # note_md5: ddff7fb62c5d97c0c3ad74211d0c073d

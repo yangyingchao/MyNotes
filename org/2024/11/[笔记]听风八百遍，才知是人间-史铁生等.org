@@ -10,7 +10,7 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :tingfengbaba:note:ireader:
+#+FILETAGS: :tingfengbaba:clip:
 
 - 12-13, 标注, 2024 年 11 月 2 日星期六 上午 10:38:24
   # note_md5: 6390c7b3c73c54402071524b2a03dfec

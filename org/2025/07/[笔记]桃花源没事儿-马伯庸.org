@@ -6,7 +6,7 @@
 #+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :taohuayuanme:note:ireader:
+#+FILETAGS: :taohuayuanme:clip:
 
 - 225-225, 标注, 2025 年 7 月 10 日星期四 下午 7:06:27
   #+BEGIN_QUOTE md5: a145816fde3450e182d8e27e456d16f9

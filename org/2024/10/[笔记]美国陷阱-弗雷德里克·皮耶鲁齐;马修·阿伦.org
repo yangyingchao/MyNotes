@@ -10,7 +10,7 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :meiguoxianji:note:ireader:
+#+FILETAGS: :meiguoxianji:clip:
 
 - 326-328, 标注, 2019 年 10 月 20 日星期日 下午 9:59:21
   # note_md5: 3a10a2f744d7a60cafdf9db88f5fd549

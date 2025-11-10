@@ -12,7 +12,7 @@
 #+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :postgres:pg:range:
+#+FILETAGS: :pg:range:
 
 # (setq yc/org-target-lang "sql")
 在 boringSQL 中最受欢迎的文章之一是《[[file:time-to-better-know-the-time-in-postgresql.org][Time to Better Know The Time in PostgreSQL]]》，我们深入探讨了在 PostgreSQL

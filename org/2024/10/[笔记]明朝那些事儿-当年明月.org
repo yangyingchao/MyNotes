@@ -10,7 +10,7 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :mingzhaonaxi:note:ireader:
+#+FILETAGS: :mingzhaonaxi:clip:
 
 - 348-350, 标注, 2020 年 10 月 16 日星期五 下午 10:01:03
   # note_md5: 16d942f997f67c0c916c7d3718d3854d

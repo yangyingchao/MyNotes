@@ -10,7 +10,7 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :cidihuakai:note:ireader:
+#+FILETAGS: :cidihuakai:clip:
 
 - 77-78, 标注, 2022 年 7 月 2 日星期六 上午 9:35:26
   # note_md5: c57ad88cce3b085c7bc4c83509edf88b

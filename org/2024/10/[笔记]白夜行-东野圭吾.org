@@ -10,7 +10,7 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :baiyexing:note:ireader:
+#+FILETAGS: :baiyexing:clip:
 
 - 7220-7222, 标注, 2024 年 9 月 13 日星期五 下午 10:41:32
   # note_md5: d4990d096b68eb8ae300c830fa7c831f

@@ -10,7 +10,7 @@
 #+LANGUAGE: en
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :weilaishijie:note:ireader:
+#+FILETAGS: :weilaishijie:clip:
 
 - 231-232, 标注, 2020 年 10 月 10 日星期六 下午 9:29:19
   # note_md5: a4375ee7989a904934bb99022ea4e7e1

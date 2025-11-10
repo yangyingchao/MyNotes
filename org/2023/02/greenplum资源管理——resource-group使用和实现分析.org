@@ -12,7 +12,7 @@
 #+TAGS:     noexport(n)
 #+LANGUAGE: en
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :gpdb:resource:group:
+#+FILETAGS: :gp:resource:group:
 
 Greenplum 是一款广泛应用的开源 MPP 数据库的产品，兼容 PostgreSQL 生态，被广泛应用与大数据的存储与分析。
 
