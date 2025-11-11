@@ -179,19 +179,19 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
   # Search config
   # 搜索配置
   [params.search]
-    enable = true
+    enable = false
     type = "lunr"
     # max index length of the chunked content
-    contentLength = 4000
+    contentLength = 8192
     # placeholder of the search bar
     placeholder = ""
-    # LoveIt NEW | 0.2.1 max number of results length
+    # max number of results length
     maxResultLength = 10
-    # LoveIt NEW | 0.2.3 snippet length of the result
+    # snippet length of the result
     snippetLength = 30
-    # LoveIt NEW | 0.2.1 HTML tag name of the highlight part in results
+    # HTML tag name of the highlight part in results
     highlightTag = "em"
-    # LoveIt NEW | 0.2.4 whether to use the absolute URL based on the baseURL in search index
+    # whether to use the absolute URL based on the baseURL in search index
     absoluteURL = false
 
 
@@ -443,7 +443,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
 # Options to make hugo output files
 # 用于 Hugo 输出文档的设置
 [outputs]
-  home = ["HTML", "RSS"]
+  home = ["HTML", "RSS", "JSON"]
   page = ["HTML"]
   section = ["HTML", "RSS"]
   taxonomy = ["HTML", "RSS"]
