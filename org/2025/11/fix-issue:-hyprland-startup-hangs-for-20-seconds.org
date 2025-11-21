@@ -1,0 +1,41 @@
+:PROPERTIES:
+:ID:       2d8c2d8f-3cae-47da-97e9-25b9dd10e3e1
+:END:
+#+TITLE: fix issue: hyprland startup hangs for 20 seconds
+#+AUTHOR: Yang,Ying-chao
+#+DATE:   2025-11-21
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :tag1:tag2:
+
+奇怪的现象，不知道从什么时候开始，每次 Hyprland 启动都会卡上 20 多秒，今天才注意到有如下错误：
+
+#+BEGIN_SRC text -r
+11月 21 12:07:39 DFJX-TJ00676 kernel: [drm:atom_op_jump [amdgpu]] *ERROR* atombios stuck in loop for more than 20secs aborting
+11月 21 12:07:39 DFJX-TJ00676 kernel: [drm:amdgpu_atom_execute_table_locked [amdgpu]] *ERROR* atombios stuck executing D7F8 (len 282, WS 4, PS 4) @ 0xD8EF
+11月 21 12:07:39 DFJX-TJ00676 kernel: [drm:amdgpu_atom_execute_table_locked [amdgpu]] *ERROR* atombios stuck executing B57C (len 293, WS 4, PS 0) @ 0xB681
+11月 21 12:07:39 DFJX-TJ00676 kernel: [drm:amdgpu_atom_execute_table_locked [amdgpu]] *ERROR* atombios stuck executing B3D4 (len 140, WS 0, PS 8) @ 0xB42D
+11月 21 12:07:39 DFJX-TJ00676 kernel: amdgpu 0000:02:00.0: amdgpu: amdgpu asic init failed
+11月 21 12:07:39 DFJX-TJ00676 kernel: [drm] PCIE GART of 256M enabled (table at 0x000000F400000000).
+11月 21 12:07:44 DFJX-TJ00676 kernel: amdgpu 0000:02:00.0: amdgpu: last message was failed ret is 0
+11月 21 12:07:47 DFJX-TJ00676 kernel: amdgpu 0000:02:00.0: amdgpu: last message was failed ret is 0
+11月 21 12:07:50 DFJX-TJ00676 kernel: amdgpu 0000:02:00.0: amdgpu: last message was failed ret is 0
+11月 21 12:07:54 DFJX-TJ00676 kernel: amdgpu 0000:02:00.0: amdgpu: last message was failed ret is 0
+11月 21 12:07:57 DFJX-TJ00676 kernel: amdgpu 0000:02:00.0: amdgpu: last message was failed ret is 0
+11月 21 12:07:59 DFJX-TJ00676 kernel: amdgpu: SMU load firmware failed
+11月 21 12:07:59 DFJX-TJ00676 kernel: amdgpu: fw load failed
+11月 21 12:07:59 DFJX-TJ00676 kernel: amdgpu: smu firmware loading failed
+11月 21 12:07:59 DFJX-TJ00676 kernel: amdgpu 0000:02:00.0: amdgpu: amdgpu_device_ip_resume failed (-22).
+11月 21 12:08:01 DFJX-TJ00676 kernel: pcieport 0000:00:1c.0: broken device, retraining non-functional downstream link at 2.5GT/s
+#+END_SRC
+
+
+禁用了 amdgpu 的电源管理解决了问题：
+
+=/etc/default/grub=
+#+BEGIN_SRC conf -r
+GRUB_CMDLINE_LINUX_DEFAULT="amdgpu.runpm=0 amdgpu.aspm=0 amdgpu.bapm=0 pcie_aspm=off amdgpu.audio=0 amdgpu.dpm=0"
+#+END_SRC
