@@ -9,9 +9,8 @@
 #+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :boshudaodeji:clip:unwashed:
+#+FILETAGS: :boshudaodeji:clip:
 
-* Unwashed Entries                                                  :noexport:
 
 - 219-222, 标注, 2025 年 10 月 10 日星期五 下午 10:44:39
   #+BEGIN_QUOTE md5: ec6b31169a3c9da203ebd2ca725f5247

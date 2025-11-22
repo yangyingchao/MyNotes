@@ -9,7 +9,7 @@
 #+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :moyanduanpia:clip:unwashed:
+#+FILETAGS: :moyanduanpia:clip:
 
 - 47-48, 标注, 2025 年 4 月 21 日星期一 下午 10:27:58
   #+BEGIN_QUOTE md5: 8e020272fccb315ac4aeb0fe0794d9e0
@@ -406,6 +406,3 @@
   #+BEGIN_QUOTE md5: c910626f45cda0d1d0adf2613d25dc18
   东边天际上有几条长长的云，像几条紫红色的绸纱巾。一会儿，紫红变成橘红，橘红又变成了金黄。
   #+END_QUOTE
-
-* Unwashed Entries                                                  :noexport:
-

@@ -9,9 +9,7 @@
 #+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
 #+TAGS:     noexport(n)
 #+EXCLUDE_TAGS: noexport
-#+FILETAGS: :hengkongchus:clip:unwashed:
-
-* Unwashed Entries                                                  :noexport:
+#+FILETAGS: :hengkongchus:clip:
 
 - 336-339, 标注, 2025 年 11 月 10 日星期一 下午 1:20:51
   #+BEGIN_QUOTE md5: e3932f775cd7d38179d49414c10cff5c
@@ -370,7 +368,7 @@
   这是孩提时代思考的事情，但由于我的智力发展迟缓，因而我在长大后才开始对空间和时间感到惊奇。
   #+END_QUOTE
 
-- 5327-5328, 标注, 2025年11月17日星期一 下午1:37:37
+- 5327-5328, 标注, 2025 年 11 月 17 日星期一 下午 1:37:37
   #+BEGIN_QUOTE md5: f70b8cce38bf8040aab03e1c2d38c999
   “我相信所有的年轻人都考虑过他们的人生道路该怎样走，”莉泽·迈特纳在晚年回顾往事时这样写道，“当我考虑此事时，
   我终于得出这样的结论：生活无须安逸，只要不空虚就行。

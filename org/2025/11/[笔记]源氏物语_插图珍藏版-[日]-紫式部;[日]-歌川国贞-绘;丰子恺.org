@@ -1,0 +1,19 @@
+:PROPERTIES:
+:ID:       4c99b4aa-6e63-4aac-8d95-b515824a98c4
+:END:
+#+TITLE: 源氏物语_插图珍藏版-[日] 紫式部;[日] 歌川国贞 绘;丰子恺
+#+AUTHOR: Yang,Ying-chao
+#+DATE:   2025-11-22
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :yuanshiwuyu_:clip:unwashed:
+
+* Unwashed Entries                                                  :noexport:
+
+- 542-542, 标注, 2025 年 11 月 21 日星期五 上午 11:35:59
+  #+BEGIN_QUOTE md5: 4a24d906935832e8bda56407d55d3e13
+  “物语”一词源自日本平安时代，意为故事。
+  #+END_QUOTE
