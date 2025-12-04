@@ -1,0 +1,193 @@
+:PROPERTIES:
+:ID:       143c98de-40a3-463a-aae7-04047d05f53b
+:NOTER_DOCUMENT: https://www.linuxjournal.com/content/hacking-made-easy-beginners-guide-penetration-testing-kali-linux
+:NOTER_OPEN: eww
+:END:
+#+TITLE: Hacking Made Easy_ A Beginner's Guide to Penetration Testing with Kali Linux
+#+AUTHOR: Yang Yingchao
+#+DATE:   2025-12-04
+#+OPTIONS:  ^:nil H:5 num:t toc:2 \n:nil ::t |:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:  oddeven lognotestate
+#+SEQ_TODO: TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+TAGS:     noexport(n)
+#+EXCLUDE_TAGS: noexport
+#+FILETAGS: :kali:shentou:tools:penetration:
+
+
+* Introduction
+:PROPERTIES:
+:NOTER_DOCUMENT: https://www.linuxjournal.com/content/hacking-made-easy-beginners-guide-penetration-testing-kali-linux
+:NOTER_OPEN: eww
+:NOTER_PAGE: 201
+:END:
+
+渗透测试，是网络安全领域中的一项关键实践。它涉及对系统、网络或网络应用程序进行模拟网络攻击，
+以识别可能被恶意行为者利用的漏洞。这种主动的方式使组织能够在实际攻击发生之前增强他们的防御能力。
+为了进行有效的渗透测试，安全专业人员依赖于为此而设计的专业工具和平台。在这个领域中，最著名的平台之一是 Kali
+Linux，这是一种基于 Debian 的发行版，专门为渗透测试和安全审计而定制。
+
+
+* Essential Tools in Kali Linux
+:PROPERTIES:
+:NOTER_DOCUMENT: https://www.linuxjournal.com/content/hacking-made-easy-beginners-guide-penetration-testing-kali-linux
+:NOTER_OPEN: eww
+:NOTER_PAGE: 3704
+:END:
+
+Kali Linux 以其丰富的渗透测试工具而闻名。这些工具根据其功能进行分类，涵盖了网络安全操作的各个方面。
+
+
+** 信息收集
+:PROPERTIES:
+:NOTER_DOCUMENT: https://www.linuxjournal.com/content/hacking-made-easy-beginners-guide-penetration-testing-kali-linux
+:NOTER_OPEN: eww
+:NOTER_PAGE: 3927
+:END:
+
+1. *Nmap* ：\\
+   一种强大的网络扫描工具，用于发现网络上的主机和服务。它可以识别开放端口、正在运行的服务和操作系统。
+  #+BEGIN_SRC shell -r
+    nmap -sV <目标_IP>
+  #+END_SRC
+
+
+2. *Whois* ：\\
+   一个命令行工具，用于查询域名注册信息。
+   #+BEGIN_SRC shell -r
+     whois <域名>
+   #+END_SRC
+
+3. *DNSenum* ：\\
+   一种 DNS 枚举工具，用于收集关于目标域的 DNS 信息。
+  #+BEGIN_SRC shell -r
+    dnsenum <domain_name>
+  #+END_SRC
+
+
+** 漏洞分析 Vulnerability Analysis
+:PROPERTIES:
+:NOTER_DOCUMENT: https://www.linuxjournal.com/content/hacking-made-easy-beginners-guide-penetration-testing-kali-linux
+:NOTER_OPEN: eww
+:NOTER_PAGE: 4336
+:END:
+
+1. *OpenVAS* ：\\
+   一个开源的漏洞扫描器和管理工具。它可以执行全面的扫描并生成关于发现的漏洞的详细报告。
+   #+BEGIN_SRC shell -r
+     openvas-setup openvas-start
+   #+END_SRC
+
+2. *Nikto* ：一个 Web 服务器扫描器，用于测试各种漏洞，如过期的软件和错误配置。
+   #+BEGIN_SRC shell -r
+     nikto -h <目标_IP>
+   #+END_SRC
+
+3. *WPScan* ：一个 WordPress 漏洞扫描器，用于识别 WordPress 安装中的安全问题。
+
+   #+BEGIN_SRC shell -r
+   wpscan --url <目标_URL>
+   #+END_SRC
+
+
+** 利用工具 Exploitation Tools
+:PROPERTIES:
+:NOTER_DOCUMENT: https://www.linuxjournal.com/content/hacking-made-easy-beginners-guide-penetration-testing-kali-linux
+:NOTER_OPEN: eww
+:NOTER_PAGE: 4858
+:END:
+
+
+1. *Metasploit Framework* ：\\
+   最流行的渗透测试框架之一，Metasploit 提供了一套工具，用于开发和执行针对目标系统的利用代码。
+
+   #+BEGIN_SRC shell -r
+   msfconsole
+   #+END_SRC
+
+
+2. *BeEF（浏览器利用框架）* ：\\
+   一个专注于利用 Web 浏览器的渗透测试工具。它允许安全专业人员评估 Web 应用程序和浏览器的安全态势。
+
+   #+BEGIN_SRC shell -r
+   beef-xss
+   #+END_SRC
+
+
+3. *Sqlmap* ：\\
+   一个开源工具，用于自动化检测和利用 Web 应用程序中的 SQL 注入漏洞。
+
+   #+BEGIN_SRC shell -r
+   sqlmap -u <目标_URL>
+   #+END_SRC
+
+
+** 密码攻击
+
+1. *John the Ripper* ：\\
+   一个快速的密码破解工具，支持多种密码哈希类型。用于对密码哈希执行字典攻击和暴力破解。
+
+   #+BEGIN_SRC shell -r
+   john <哈希文件>
+   #+END_SRC
+
+
+2. *Hydra* ：\\
+   一个网络登录破解工具，支持多种协议，包括 FTP、HTTP 和 SSH。它对身份验证服务执行基于字典的攻击。
+
+   #+BEGIN_SRC shell -r
+   hydra -l <用户名> -P <密码列表> <目标_IP> <服务>
+   #+END_SRC
+
+
+3. *Hashcat* ：\\
+   一个强大的密码恢复工具，支持广泛的哈希类型。它利用 GPU 的计算能力进行快速的密码破解。
+
+   #+BEGIN_SRC shell -r
+   hashcat -m <哈希类型> <哈希文件> <字典>
+   #+END_SRC
+
+
+** 无线攻击
+
+1. *Aircrack-ng* ：\\
+   一套用于审计无线网络的工具。它包括捕获数据包、解除客户端认证以及破解 WEP 和 WPA/WPA2 密钥的工具。
+
+   #+BEGIN_SRC shell -r
+   airmon-ng start <接口> airodump-ng <接口> aircrack-ng <捕获文件>
+   #+END_SRC
+
+
+2. *Reaver* ：\\
+   一个针对 Wi-Fi Protected Setup（WPS）PIN 进行暴力破解的工具，用于恢复 WPA/WPA2 密码。
+
+   #+BEGIN_SRC shell -r
+   reaver -i <接口> -b <BSSID> -vv
+   #+END_SRC
+
+
+3. *Fern WiFi Cracker* ：\\
+   一个用于破解和恢复 WEP/WPA/WPS 密钥的图形应用程序。它自动化了无线渗透测试中涉及的许多任务。
+
+** 取证工具 Forensics Tools
+
+1. *Autopsy* ：一个数字取证平台和图形界面，结合了 The Sleuth Kit，允许您分析磁盘映像和恢复已删除的文件。
+
+   #+BEGIN_SRC shell -r
+   autopsy
+   #+END_SRC
+
+
+2. *Foremost* ：\\
+   一个命令行程序，用于根据文件的头部、尾部和内部数据结构恢复文件。
+
+   #+BEGIN_SRC shell -r
+   foremost -i <映像文件> -o <输出目录>
+   #+END_SRC
+
+
+3. *Volatility* ：\\
+   一个高级内存取证框架，用于分析易失性内存转储，以揭露与恶意活动相关的证据。
+
+   #+BEGIN_SRC shell -r
+   volatility -f <内存转储> --profile=<配置文件> <插件>
+   #+END_SRC
